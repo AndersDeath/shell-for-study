@@ -1,0 +1,41 @@
+:host{
+  .words-table {
+    width: 100%;
+  }
+
+  .word-card {
+    min-width: 400px;
+    margin: 20px;
+  }
+
+  .cards-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .spacer {
+    flex:1 1 auto
+  }
+
+  .group-title {
+    margin-top: 20px;
+    margin-left: 25px;
+    font-size: 28px;
+    text-decoration: underline;
+    min-height: 40px;
+    display: inline-block;
+  }
+
+  .logo {
+    background-image: url('../../../assets/logo2.png');
+    width: 30px;
+    height: 30px;
+    background-size: contain;
+    background-position: center;
+  }
+
+  .logo-title {
+    margin-left: 5px;
+  }
+}
