@@ -1,11 +1,11 @@
 <mat-toolbar color="primary" class="toolbar">
   <div class="logo"></div>
-  <div class="logo-title">Dictionary</div>
+  <div class="logo-title">Dictionary <span class="app-version">{{version}}</span></div>
   <span class="spacer"></span>
- <button (click)="isTableViewHandler(false)" *ngIf="isTableView" mat-icon-button aria-label="Show words as cards" matTooltip="Show words as cards">
+ <button (click)="isTableViewHandler(viewsTypes.cards)" *ngIf="viewType === viewsTypes.table " mat-icon-button aria-label="Show words as cards" matTooltip="Show words as cards">
   <mat-icon>view_stream</mat-icon>
 </button>
-<button (click)="isTableViewHandler(true)" *ngIf="!isTableView" mat-icon-button aria-label="Show words as a table" matTooltip="Show words as a table">
+<button (click)="isTableViewHandler(viewsTypes.table)" *ngIf="viewType === viewsTypes.cards " mat-icon-button aria-label="Show words as a table" matTooltip="Show words as a table">
   <mat-icon>table_chart</mat-icon>
 </button>
 </mat-toolbar>
@@ -13,7 +13,7 @@
   <mat-tab [label]="item.title" *ngFor="let item of dictionary.sections">
     <ng-container *ngFor="let group of item.groups">
 
-      <ng-container *ngIf="isTableView">
+      <ng-container *ngIf="viewType === viewsTypes.table">
         <span class="group-title">{{group.title}}</span>
         <table mat-table [dataSource]="group.subjects" class="words-table">
           <ng-container matColumnDef="subject">
@@ -32,7 +32,7 @@
           <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
         </table>
       </ng-container>
-      <ng-container *ngIf="!isTableView">
+      <ng-container *ngIf="viewType === viewsTypes.cards">
         <span class="group-title">{{group.title}}</span>
         <hr>
         <div class="cards-container">
