@@ -4,7 +4,7 @@
   }
 
   .word-card {
-    min-width: 400px;
+    width: 400px;
     margin: 20px;
   }
 
@@ -38,4 +38,11 @@
   .logo-title {
     margin-left: 5px;
   }
+
+  @media (max-width: 320px) {
+    .word-card {
+      width: 100%;
+    }
+ }
 }
+
