@@ -42,11 +42,27 @@
   .app-version {
     font-size: 14px;
   }
-
+  .fake-flash-card-view {
+    width: 100%;
+    display: inline-flex;
+    .flash-card {
+      width: 400px;
+      margin: 20px auto;
+    }
+  }
   @media (max-width: 320px) {
     .word-card {
       width: 100%;
     }
+    .fake-flash-card-view {
+      width: 100%;
+      .flash-card {
+        margin: 0;
+        width: 100%;
+      }
+     }
  }
+
+
 }
 
