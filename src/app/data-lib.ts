@@ -5,6 +5,37 @@ export const DictionaryMock : Dictionary = {
       title: '6 Minute English',
       groups: [
         {
+          title: 'What is fat-shaming?',
+          subjects: [
+            {
+              subject: 'fat-shaming',
+              ru: '',
+              en: 'criticising, humiliating or drawing attention to someone for being fat'
+            },
+            {
+              subject: 'obese',
+              ru: '',
+              en: 'overweight in a way that is dangerous for health, as measured by BMI or the body mass index'
+            },              {
+              subject: 'coin (a word or phrase)',
+              ru: '',
+              en: 'invent a new word or phrase or use it in a particular way for the first time'
+            },              {
+              subject: 'moral fibre',
+              ru: '',
+              en: 'the ability or determination to behave ethically'
+            },              {
+              subject: 'attribute',
+              ru: '',
+              en: 'a quality, characteristic or feature that someone has'
+            },              {
+              subject: 'scorn',
+              ru: '',
+              en: 'strong feeling or contempt or disrespect'
+            }
+          ]
+        },
+        {
           title: 'Is punctuality important?',
           subjects: [
             {
