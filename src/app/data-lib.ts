@@ -147,19 +147,20 @@ export const DictionaryMock : Dictionary = {
       ]
     },
     {
-      title: 'Second Section',
+      title: 'Transitional Devices',
       groups: [
         {
-          title: 'first group',
+          title: 'TO ADD',
           subjects: [
             {
-              subject: 'word',
-              ru: 'пример',
-              en: 'example'
-            },              {
-              subject: 'word',
-              ru: 'пример',
-              en: 'example'
+              subject: 'and',
+              ru: '',
+              en: ''
+            },
+            {
+              subject: 'again',
+              ru: '',
+              en: ''
             },
           ]
         }

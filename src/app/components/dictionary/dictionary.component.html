@@ -2,6 +2,13 @@
   <div class="logo"></div>
   <div class="logo-title">Dictionary <span class="app-version">{{version}}</span></div>
   <span class="spacer"></span>
+  <a [href]="fileUrl" [download]="fileName" (click)="downloadCollection()" mat-icon-button aria-label="download collection" matTooltip="Download collection">
+    <mat-icon>cloud_download</mat-icon>
+  </a>
+  <input #collectionInput hidden="true" type="file" onclick="this.value=null" (change)="collectionInputChange($event)" accept=".dict"/>
+  <button mat-icon-button (click)="collectionInput.click()"><mat-icon>cloud_upload</mat-icon></button>
+
+
  <button (click)="isTableViewHandler(viewsTypes.cards)" *ngIf="viewType === viewsTypes.table " mat-icon-button aria-label="Show words as cards" matTooltip="Show words as cards">
   <mat-icon>view_stream</mat-icon>
 </button>
