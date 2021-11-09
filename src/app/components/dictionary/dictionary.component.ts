@@ -19,7 +19,7 @@ export class DictionaryComponent {
     cards: CARDS_VIEW,
     table: TABLE_VIEW
   }
-  version = 'v0.0.1';
+  version = 'v0.0.2';
   fileUrl:SafeResourceUrl = '';
   fileName: string = 'collection.dict';
   fileReader = new FileReader();
