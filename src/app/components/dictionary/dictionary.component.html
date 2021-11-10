@@ -1,13 +1,13 @@
 <mat-toolbar color="primary" class="toolbar">
   <div class="logo"></div>
   <div class="logo-title">Dictionary <span class="app-version">{{version}}</span></div>
-  <button (click)="isTableViewHandler(viewsTypes.cards)" mat-icon-button aria-label="Show words as cards" matTooltip="Show words as cards">
+  <button (click)="setDictView(viewsTypes.cards)" mat-icon-button aria-label="Show words as cards" matTooltip="Show words as cards">
     <mat-icon>view_stream</mat-icon>
   </button>
-  <button (click)="isTableViewHandler(viewsTypes.table)" mat-icon-button aria-label="Show words as a table" matTooltip="Show words as a table">
+  <button (click)="setDictView(viewsTypes.table)" mat-icon-button aria-label="Show words as a table" matTooltip="Show words as a table">
     <mat-icon>table_chart</mat-icon>
   </button>
-  <button (click)="isTableViewHandler(viewsTypes.fakeFlash)" mat-icon-button aria-label="Fake flash cards" matTooltip="Fake flash cards">
+  <button (click)="setDictView(viewsTypes.fakeFlash)" mat-icon-button aria-label="Fake flash cards" matTooltip="Fake flash cards">
     <mat-icon>flash_on</mat-icon>
   </button>
   <span class="spacer"></span>
@@ -17,7 +17,7 @@
   <input #collectionInput hidden="true" type="file" onclick="this.value=null" (change)="collectionInputChange($event)" accept=".dict"/>
   <button mat-icon-button (click)="collectionInput.click()"><mat-icon>cloud_upload</mat-icon></button>
 </mat-toolbar>
-<mat-tab-group>
+<mat-tab-group *ngIf="viewType !== viewsTypes.fakeFlash">
   <mat-tab [label]="item.title" *ngFor="let item of dictionary.sections">
     <ng-container *ngFor="let group of item.groups">
       <ng-container *ngIf="viewType === viewsTypes.table">
@@ -64,26 +64,27 @@
       </ng-container>
 
     </ng-container>
-    <div (touchstart)="swipe($event, 'start')" (touchend)="swipe($event, 'end')" *ngIf="viewType === viewsTypes.fakeFlash" class="fake-flash-card-view">
-      <mat-card  class="flash-card">
-        <mat-card-header>
-          <mat-card-title>{{currentFlashCard.subject}}</mat-card-title>
-        </mat-card-header>
-        <mat-card-content>
-          <p>
-            {{currentFlashCard.ru}}
-          </p>
-        </mat-card-content>
-        <mat-card-content>
-          <p>
-            {{currentFlashCard.en}}
-          </p>
-        </mat-card-content>
-        <mat-card-actions align="end">
-          <button mat-button (click)="previousFlashCard()">Previous</button>
-          <button mat-button (click)="nextFlashCard()" >Next</button>
-        </mat-card-actions>
-      </mat-card>
-    </div>
+
   </mat-tab>
 </mat-tab-group>
+<div (touchstart)="swipe($event, 'start')" (touchend)="swipe($event, 'end')" *ngIf="viewType === viewsTypes.fakeFlash" class="fake-flash-card-view">
+  <mat-card  class="flash-card">
+    <mat-card-header>
+      <mat-card-title>{{currentFlashCard.subject}}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <p>
+        {{currentFlashCard.ru}}
+      </p>
+    </mat-card-content>
+    <mat-card-content>
+      <p>
+        {{currentFlashCard.en}}
+      </p>
+    </mat-card-content>
+    <mat-card-actions align="end">
+      <button mat-button (click)="previousFlashCard()">Previous</button>
+      <button mat-button (click)="nextFlashCard()" >Next</button>
+    </mat-card-actions>
+  </mat-card>
+</div>

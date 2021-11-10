@@ -20,7 +20,7 @@ export class DictionaryComponent {
     table: TABLE_VIEW,
     fakeFlash: FAKE_FLASHCARDS_VIEW
   }
-  version = 'v0.0.2';
+  version = 'v0.0.3';
   fileUrl: SafeResourceUrl = '';
   fileName: string = 'collection.dict';
   fileReader = new FileReader();
@@ -52,7 +52,7 @@ export class DictionaryComponent {
 
   }
 
-  isTableViewHandler(val: string) {
+  setDictView(val: string) {
     this.viewType = val;
     localStorage.setItem(this.storageName, val)
   }
