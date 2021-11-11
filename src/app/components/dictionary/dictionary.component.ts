@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
-import { DictionaryMock, Dictionary, Subject } from '../../data-lib';
+import { DictionaryMock, Dictionary, Subject, DictionaryBuilder } from '../../data-lib';
 
 const TABLE_VIEW = 'TABLE_VIEW';
 
@@ -13,14 +13,14 @@ const FAKE_FLASHCARDS_VIEW = "FAKE_FLASHCARDS_VIEW";
 })
 export class DictionaryComponent {
   viewType: string = TABLE_VIEW;
-  displayedColumns: string[] = ['subject', 'ru', 'en'];
+  displayedColumns: string[] = ['subject', /**'ru',**/ 'en'];
   storageName: string = 'viewType';
   viewsTypes = {
     cards: CARDS_VIEW,
     table: TABLE_VIEW,
     fakeFlash: FAKE_FLASHCARDS_VIEW
   }
-  version = 'v0.0.3';
+  version = 'v0.0.4';
   fileUrl: SafeResourceUrl = '';
   fileName: string = 'collection.dict';
   fileReader = new FileReader();
@@ -35,7 +35,7 @@ export class DictionaryComponent {
 
   swipeCoord: any;
   swipeTime: any;
-  public dictionary: Dictionary = DictionaryMock;
+  public dictionary: Dictionary =  DictionaryBuilder(DictionaryMock);
 
   constructor(private sanitizer: DomSanitizer) {
 
