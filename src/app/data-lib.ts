@@ -178,22 +178,38 @@ export const DictionaryMock : Dictionary = {
       ]
     },
     {
-      title: 'Transitional Devices',
+      title: 'I keep forgetting',
       groups: [
         {
-          title: 'TO ADD',
+          title: 'First group',
           subjects: [
             {
-              subject: 'and',
-              ru: '',
-              en: ''
+              subject: 'Sufficient',
+              ru: 'достаточный, достаточное количество',
+              en: 'as much as is needed for a particular purpose '
             },
             {
-              subject: 'again',
-              ru: '',
-              en: ''
+              subject: 'distinction',
+              ru: 'различие',
+              en: 'a difference between two similar things:'
+            },
+            {
+              subject: 'efficient',
+              ru: 'эффективный',
+              en: 'working or operating quickly and effectively in an organized way:'
+            },
+            {
+              subject: 'exceed',
+              ru: 'превосходить, превышать',
+              en: 'to be greater than a number or amount, or to go past an allowed limit'
+            },
+            {
+              subject: 'opaque',
+              ru: 'непрозрачный, матовый',
+              en: 'preventing light from travelling through, and therefore not transparent or translucent'
             },
           ]
+
         }
       ]
     },

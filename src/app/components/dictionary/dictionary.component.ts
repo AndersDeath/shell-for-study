@@ -13,7 +13,7 @@ const FAKE_FLASHCARDS_VIEW = "FAKE_FLASHCARDS_VIEW";
 })
 export class DictionaryComponent {
   viewType: string = TABLE_VIEW;
-  displayedColumns: string[] = ['subject', /**'ru',**/ 'en'];
+  displayedColumns: string[] = ['subject', 'ru', 'en'];
   storageName: string = 'viewType';
   viewsTypes = {
     cards: CARDS_VIEW,
