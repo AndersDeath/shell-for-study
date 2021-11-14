@@ -178,6 +178,67 @@ export const DictionaryMock : Dictionary = {
       ]
     },
     {
+      title: 'Phrases',
+      groups: [
+        {
+          title: 'First group ',
+          subjects: [
+            {
+              subject: 'This sequential approach',
+              ru: 'Этот последовательный подход',
+              en: ''
+            },
+            {
+              subject: 'progressive elaboration',
+              ru: "прогрессивная разработка",
+              en: ''
+            }
+          ]
+        }
+      ]
+    },
+    {
+      title: 'New words',
+      groups: [
+        {
+          title: 'First group',
+          subjects: [
+            {
+              subject: "distinguish",
+              ru: 'различать',
+              en: 'to recognize the difference between two people or things'
+            },
+            {
+              subject: "empirical",
+              ru: 'эмпирический, основанный на опыте',
+              en: 'based on experiments or experience rather than ideas or theories'
+            },
+            {
+              subject: "ludicrous",
+              ru: 'смехотворен',
+              en: 'unreasonable; that you cannot take seriously'
+            },
+            {
+              subject: "subsequent",
+              ru: 'последующий',
+              en: 'happening or coming after something else'
+            },
+            {
+              subject: "nurturing",
+              ru: 'воспитание',
+              en: 'to care for and protect somebody/something while they are growing and developing'
+            },
+
+            {
+              subject: "embark",
+              ru: 'начинать, грузиться, задиться на корабль',
+              en: 'to get onto a ship or plane; to put somebody/something onto a ship or plane'
+            },
+          ]
+        }
+      ]
+    },
+    {
       title: 'I keep forgetting',
       groups: [
         {
@@ -208,7 +269,12 @@ export const DictionaryMock : Dictionary = {
               ru: 'непрозрачный, матовый',
               en: 'preventing light from travelling through, and therefore not transparent or translucent'
             },
-          ]
+            {
+              subject: 'assumption',
+              ru: 'предположение',
+              en: 'a belief or feeling that something is true or that something will happen, although there is no proof'
+            }
+          ],
 
         }
       ]
