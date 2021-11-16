@@ -1,8 +1,8 @@
 {
   "name": "vnb-dictionary",
   "short_name": "vnb-dictionary",
-  "theme_color": "#673ab7",
-  "background_color": "#333333",
+  "theme_color": "#009688",
+  "background_color": "#009688",
   "display": "standalone",
   "scope": "./",
   "start_url": "./",
