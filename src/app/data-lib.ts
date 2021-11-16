@@ -192,6 +192,16 @@ export const DictionaryMock : Dictionary = {
               subject: 'progressive elaboration',
               ru: "прогрессивная разработка",
               en: ''
+            },
+            {
+              subject: 'animal welfare',
+              ru: '',
+              en: 'is the well-being of non-human animals. Formal standards of animal welfare vary between contexts, but are debated mostly by animal welfare groups, legislators, and academics'
+            },
+            {
+              subject: 'alongside this',
+              ru: 'рядом с этим',
+              en: 'in parrallel position of it'
             }
           ]
         }
@@ -228,12 +238,61 @@ export const DictionaryMock : Dictionary = {
               ru: 'воспитание',
               en: 'to care for and protect somebody/something while they are growing and developing'
             },
-
             {
               subject: "embark",
               ru: 'начинать, грузиться, задиться на корабль',
               en: 'to get onto a ship or plane; to put somebody/something onto a ship or plane'
             },
+            {
+              subject: "bond",
+              ru: 'узы, связь',
+              en: 'a close connection joining two or more people'
+            },
+            {
+              subject: 'zoonotic',
+              ru: 'зоогенное',
+              en: '(of a disease) able to spread from animals to humans'
+            },
+            {
+              subject: 'dimension',
+              ru: 'измерение, аспект',
+              en: 'a measurement of something in a particular direction, especially its height, length, or width:'
+            },
+            {
+              subject: 'tension',
+              ru: 'напряженность',
+              en: 'a feeling of fear or anger between two groups of people who do not trust each other'
+            },
+            {
+              subject: 'dispute',
+              ru: 'пререкания, спор',
+              en: 'a disagreement, especially one that lasts a long time'
+            },
+            {
+              subject: 'unwieldy',
+              ru: 'громоздкий',
+              en: 'An unwieldy object is difficult to carry because it is heavy, large, or a strange shape.'
+            },
+            {
+              subject: 'authority',
+              ru: 'власть',
+              en: 'the official power to make decisions or to control other people'
+            },
+            {
+              subject: 'beliefs',
+              ru: 'мнение, убеждение',
+              en: 'something that you believe is true or real, an idea that you are certain is true'
+            },
+            {
+              subject: 'committee',
+              ru: 'комитет',
+              en: 'a group of people who have been chosen to represent a larger organization and make decisions for it'
+            },
+            {
+              subject: 'obesity',
+              ru: 'тучность, ожирение',
+              en: 'the state of being obese'
+            }
           ]
         }
       ]
@@ -273,6 +332,11 @@ export const DictionaryMock : Dictionary = {
               subject: 'assumption',
               ru: 'предположение',
               en: 'a belief or feeling that something is true or that something will happen, although there is no proof'
+            },
+            {
+              subject: 'certainly',
+              ru: 'непременно, безусловно',
+              en: 'used to emphasize something and show that there is no doubt about it'
             }
           ],
 

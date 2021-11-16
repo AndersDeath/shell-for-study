@@ -4,8 +4,9 @@
   }
 
   .word-card {
-    width: 400px;
+    width: 350px;
     margin: 20px;
+    background-color: #d9c643;
   }
 
   .cards-container {
@@ -48,6 +49,7 @@
     .flash-card {
       width: 400px;
       margin: 20px auto;
+      background-color: #d9c643;
     }
   }
   @media (max-width: 320px) {

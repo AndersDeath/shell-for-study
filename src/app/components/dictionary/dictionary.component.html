@@ -19,47 +19,62 @@
 </mat-toolbar>
 <mat-tab-group *ngIf="viewType !== viewsTypes.fakeFlash">
   <mat-tab [label]="item.title" *ngFor="let item of dictionary.sections">
+
+
     <ng-container *ngFor="let group of item.groups">
       <ng-container *ngIf="viewType === viewsTypes.table">
-        <span class="group-title">{{group.title}}</span>
-        <table mat-table [dataSource]="group.subjects" class="words-table">
-          <ng-container matColumnDef="subject">
-            <th mat-header-cell *matHeaderCellDef> Word/Phrase</th>
-            <td mat-cell *matCellDef="let element"> {{element.subject}} </td>
-          </ng-container>
-          <ng-container matColumnDef="ru">
-            <th mat-header-cell *matHeaderCellDef> Translation/Meaning </th>
-            <td mat-cell *matCellDef="let element"> {{element.ru}} </td>
-          </ng-container>
-          <ng-container matColumnDef="en">
-            <th mat-header-cell *matHeaderCellDef> Meaning in English </th>
-            <td mat-cell *matCellDef="let element"> {{element.en}} </td>
-          </ng-container>
-          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-        </table>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              {{group.title}}
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <table mat-table [dataSource]="group.subjects" class="words-table">
+            <ng-container matColumnDef="subject">
+              <th mat-header-cell *matHeaderCellDef> Word/Phrase</th>
+              <td mat-cell *matCellDef="let element"> {{element.subject}} </td>
+            </ng-container>
+            <ng-container matColumnDef="ru">
+              <th mat-header-cell *matHeaderCellDef> Translation/Meaning </th>
+              <td mat-cell *matCellDef="let element"> {{element.ru}} </td>
+            </ng-container>
+            <ng-container matColumnDef="en">
+              <th mat-header-cell *matHeaderCellDef> Meaning in English </th>
+              <td mat-cell *matCellDef="let element"> {{element.en}} </td>
+            </ng-container>
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+          </table>
+        </mat-expansion-panel>
       </ng-container>
       <ng-container *ngIf="viewType === viewsTypes.cards">
-        <span class="group-title">{{group.title}}</span>
-        <hr>
-        <div class="cards-container">
-          <mat-card class="word-card" *ngFor="let subject of group.subjects">
-            <mat-card-header>
-              <mat-card-title>{{subject.subject}}</mat-card-title>
-            </mat-card-header>
-            <mat-card-content>
-              <p>
-                {{subject.ru}}
-              </p>
-            </mat-card-content>
-            <mat-card-content>
-              <p>
-                {{subject.en}}
-              </p>
-            </mat-card-content>
-          </mat-card>
 
-        </div>
+        <mat-expansion-panel expanded="true">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              <strong>{{group.title}}</strong>
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <div class="cards-container">
+            <mat-card class="word-card" *ngFor="let subject of group.subjects">
+              <mat-card-header>
+                <mat-card-title>{{subject.subject}}</mat-card-title>
+              </mat-card-header>
+              <mat-card-content>
+                <p>
+                  {{subject.ru}}
+                </p>
+              </mat-card-content>
+              <mat-card-content>
+                <p>
+                  {{subject.en}}
+                </p>
+              </mat-card-content>
+            </mat-card>
+
+          </div>
+        </mat-expansion-panel>
+
 
       </ng-container>
 
