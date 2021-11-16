@@ -1,4 +1,6 @@
 :host{
+
+  $card-bg-color: #e2e3ae;
   .words-table {
     width: 100%;
   }
@@ -6,7 +8,7 @@
   .word-card {
     width: 350px;
     margin: 20px;
-    background-color: #d9c643;
+    background-color: $card-bg-color;
   }
 
   .cards-container {
@@ -49,7 +51,7 @@
     .flash-card {
       width: 400px;
       margin: 20px auto;
-      background-color: #d9c643;
+      background-color: $card-bg-color;
     }
   }
   @media (max-width: 320px) {
