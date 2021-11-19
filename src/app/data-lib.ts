@@ -5,6 +5,41 @@ export const DictionaryMock : Dictionary = {
       title: '6 Minute English',
       groups: [
         {
+          title: "The woman whose cells never die",
+          subjects: [
+            {
+              subject: "in vitro fertilization",
+              ru: "",
+              en: "technique for women who cannot become pregnant naturally in which an egg is fertilized outside her body and the resulting embryo replaced in her womb"
+            },
+            {
+              subject: "figure out",
+              ru: "",
+              en: "understand or solve something; work out"
+            },
+            {
+              subject: "workhorse",
+              ru: "",
+              en: "someone who does a large amount work, especially dull or routine work"
+            },
+            {
+              subject: "scourge",
+              ru: "",
+              en: "something that causes much trouble or suffering"
+            },
+            {
+              subject: "unwitting",
+              ru: "",
+              en: "done without knowing or planning"
+            },
+            {
+              subject: "centenary",
+              ru: "",
+              en: "the 100th anniversary of an important event"
+            }
+          ]
+        },
+        {
           title: 'What is fat-shaming?',
           subjects: [
             {
