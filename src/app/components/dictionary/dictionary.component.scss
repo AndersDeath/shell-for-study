@@ -1,6 +1,17 @@
 :host{
 
   $card-bg-color: #e2e3ae;
+
+  .toolbar {
+    position: fixed;
+    z-index: 200;
+    top: 0
+  }
+
+  .tabs-area {
+    margin-top: 64px;
+  }
+
   .words-table {
     width: 100%;
   }
@@ -41,10 +52,14 @@
   .fake-flash-card-view {
     width: 100%;
     display: inline-flex;
+    height: 100%;
+    align-items: center;
+
     .flash-card {
       width: 400px;
       margin: 20px auto;
       background-color: $card-bg-color;
+      height: fit-content;
     }
   }
   @media (max-width: 320px) {

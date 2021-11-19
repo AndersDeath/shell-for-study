@@ -17,7 +17,7 @@
   <input #collectionInput hidden="true" type="file" onclick="this.value=null" (change)="collectionInputChange($event)" accept=".dict"/>
   <button mat-icon-button (click)="collectionInput.click()"><mat-icon>cloud_upload</mat-icon></button>
 </mat-toolbar>
-<mat-tab-group *ngIf="viewType !== viewsTypes.fakeFlash">
+<mat-tab-group *ngIf="viewType !== viewsTypes.fakeFlash" class="tabs-area">
   <mat-tab [label]="item.title" *ngFor="let item of dictionary.sections">
 
 

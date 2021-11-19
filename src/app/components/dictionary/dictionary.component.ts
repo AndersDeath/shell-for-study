@@ -20,7 +20,7 @@ export class DictionaryComponent {
     table: TABLE_VIEW,
     fakeFlash: FAKE_FLASHCARDS_VIEW
   }
-  version = 'v0.0.8';
+  version = 'v0.0.9';
   fileUrl: SafeResourceUrl = '';
   fileName: string = 'collection.dict';
   fileReader = new FileReader();

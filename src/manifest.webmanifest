@@ -2,7 +2,7 @@
   "name": "vnb-dictionary",
   "short_name": "vnb-dictionary",
   "theme_color": "#009688",
-  "background_color": "#009688",
+  "background_color": "#fafafa",
   "display": "standalone",
   "scope": "./",
   "start_url": "./",
