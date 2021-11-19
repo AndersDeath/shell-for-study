@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1637072798441,
+  "timestamp": 1637328507840,
   "index": "https://andersdeath.github.io/vnb-dictionary/index.html",
   "assetGroups": [
     {
@@ -13,7 +13,7 @@
       "urls": [
         "https://andersdeath.github.io/vnb-dictionary/favicon.ico",
         "https://andersdeath.github.io/vnb-dictionary/index.html",
-        "https://andersdeath.github.io/vnb-dictionary/main.b670ae1a9ec97cd00c5e.js",
+        "https://andersdeath.github.io/vnb-dictionary/main.53e92fefec4c8e351c61.js",
         "https://andersdeath.github.io/vnb-dictionary/manifest.webmanifest",
         "https://andersdeath.github.io/vnb-dictionary/polyfills.e224b81bbdce5c24e927.js",
         "https://andersdeath.github.io/vnb-dictionary/runtime.3350d337d6338aedf7e5.js",
@@ -56,8 +56,8 @@
     "https://andersdeath.github.io/vnb-dictionary/assets/icons/icon-72x72.png": "e44dd3ee2b8a0c02e63598256e42418f88ee8da0",
     "https://andersdeath.github.io/vnb-dictionary/assets/icons/icon-96x96.png": "72b9c3decfcd2004b5ea26545cd00968bc111606",
     "https://andersdeath.github.io/vnb-dictionary/favicon.ico": "bee1b30fddb92010938b86e6ecab35975e17930b",
-    "https://andersdeath.github.io/vnb-dictionary/index.html": "24f06b408f74280013afa3e443d56d9e2e814977",
-    "https://andersdeath.github.io/vnb-dictionary/main.b670ae1a9ec97cd00c5e.js": "a92efef8d6c1393baa751f19bd9f6686392f1b0a",
+    "https://andersdeath.github.io/vnb-dictionary/index.html": "2e8921f0776d3246b8527eb0132bcbee2d3f69a4",
+    "https://andersdeath.github.io/vnb-dictionary/main.53e92fefec4c8e351c61.js": "99b935a6d03a7d4840ddddabf2c8471b9fcca063",
     "https://andersdeath.github.io/vnb-dictionary/manifest.webmanifest": "7e2b94528791d6386270f80079b6f4cb37be12f8",
     "https://andersdeath.github.io/vnb-dictionary/polyfills.e224b81bbdce5c24e927.js": "6eee817347a2396695c9ccb9444565cfbbb5f2df",
     "https://andersdeath.github.io/vnb-dictionary/runtime.3350d337d6338aedf7e5.js": "737e64b2022990f243a3d0a5ff37ead1bb4985cb",
