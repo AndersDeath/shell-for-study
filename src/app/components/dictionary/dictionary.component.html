@@ -11,11 +11,7 @@
     <mat-icon>flash_on</mat-icon>
   </button>
   <span class="spacer"></span>
-  <a [href]="fileUrl" [download]="fileName" (click)="downloadCollection()" mat-icon-button aria-label="download collection" matTooltip="Download collection">
-    <mat-icon>cloud_download</mat-icon>
-  </a>
-  <input #collectionInput hidden="true" type="file" onclick="this.value=null" (change)="collectionInputChange($event)" accept=".dict"/>
-  <button mat-icon-button (click)="collectionInput.click()"><mat-icon>cloud_upload</mat-icon></button>
+  <button mat-icon-button (click)="openMore()"><mat-icon>more_vert</mat-icon></button>
 </mat-toolbar>
 <mat-tab-group *ngIf="viewType !== viewsTypes.fakeFlash" class="tabs-area">
   <mat-tab [label]="item.title" *ngFor="let item of dictionary.sections">

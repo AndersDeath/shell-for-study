@@ -1,0 +1,20 @@
+<div mat-dialog-content class="settings-page">
+  <mat-list>
+    <mat-list-item>
+      <strong>Dictionary version: {{dictionary.version}}</strong>
+    </mat-list-item>
+    <mat-list-item>
+      <a color="primary" [href]="fileUrl" [download]="fileName" (click)="downloadCollection()" mat-raised-button aria-label="download collection" matTooltip="Download collection">
+        Download
+        <mat-icon>cloud_download</mat-icon>
+      </a>
+    </mat-list-item>
+    <!-- <mat-list-item>
+      <input #collectionInput hidden="true" type="file" onclick="this.value=null" (change)="collectionInputChange($event)" accept=".dict"/>
+      <button mat-raised-button (click)="collectionInput.click()">Upload collection <mat-icon>cloud_upload</mat-icon></button>
+    </mat-list-item> -->
+   </mat-list>
+<div>
+<div mat-dialog-actions>
+  <button mat-raised-button mat-dialog-close>Close</button>
+</div>

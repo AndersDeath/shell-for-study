@@ -11,12 +11,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgMaterialModule } from './material.module';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { SettingsComponent } from './components/settings/settings.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    DictionaryComponent
+    DictionaryComponent,
+    SettingsComponent
   ],
   imports: [
     BrowserModule,

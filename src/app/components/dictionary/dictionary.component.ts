@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { DictionaryMock, Dictionary, Subject, DictionaryBuilder } from '../../data-lib';
+import { MatDialog } from '@angular/material/dialog';
+import { SettingsComponent } from '../settings/settings.component';
 
 const TABLE_VIEW = 'TABLE_VIEW';
 
@@ -20,10 +21,7 @@ export class DictionaryComponent {
     table: TABLE_VIEW,
     fakeFlash: FAKE_FLASHCARDS_VIEW
   }
-  version = 'v0.0.9';
-  fileUrl: SafeResourceUrl = '';
-  fileName: string = 'collection.dict';
-  fileReader = new FileReader();
+  version = 'v0.0.10';
   flashCardsData: any[] = [];
   flasCardsDataLength = 0;
   flashCardsCurrentNum = 0;
@@ -37,31 +35,18 @@ export class DictionaryComponent {
   swipeTime: any;
   public dictionary: Dictionary =  DictionaryBuilder(DictionaryMock);
 
-  constructor(private sanitizer: DomSanitizer) {
+  constructor(
+    public dialog: MatDialog) {
 
   }
-  collectionInputChange(fileInputEvent: any) {
-    const file: File = fileInputEvent.target.files[0]
-    this.fileReader.onload = () => {
-      const result = this.fileReader.result;
-      if (result) {
-        this.dictionary = JSON.parse(result.toString());
-      }
-    }
-    this.fileReader.readAsText(file);
 
-  }
 
   setDictView(val: string) {
     this.viewType = val;
     localStorage.setItem(this.storageName, val)
   }
 
-  downloadCollection() {
-    const data = this.dictionary;
-    const blob = new Blob([JSON.stringify(data).replace(/(\r\n|\n|\r)/g, "")], { type: 'application/octet-stream' });
-    this.fileUrl = this.sanitizer.bypassSecurityTrustResourceUrl(window.URL.createObjectURL(blob));
-  }
+
 
   ngOnInit() {
     const item = localStorage.getItem(this.storageName) || '';
@@ -80,6 +65,9 @@ export class DictionaryComponent {
     this.flasCardsDataLength = this.flashCardsData.length;
   }
 
+  openMore() {
+    this.dialog.open(SettingsComponent);
+  }
   swipe(e: TouchEvent, when: string): void {
     const coord: [number, number] = [e.changedTouches[0].clientX, e.changedTouches[0].clientY];
     const time = new Date().getTime();

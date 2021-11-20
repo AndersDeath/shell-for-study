@@ -1,5 +1,6 @@
 export const DictionaryMock : Dictionary = {
   title: 'MyDict',
+  version: 1,
   sections: [
     {
       title: '6 Minute English',
@@ -237,6 +238,21 @@ export const DictionaryMock : Dictionary = {
               subject: 'alongside this',
               ru: 'рядом с этим',
               en: 'in parrallel position of it'
+            },
+            {
+              subject: "very restrained ",
+              ru: "очень сдержанный",
+              en: "characterized by reserve or moderation; unemotional or dispassionate."
+            },
+            {
+              subject: "well put together ",
+              ru: "Хорошо сложеный",
+              en: "excellent proportions, pleasing features, nicely dressed, very attractive"
+            },
+            {
+              subject: "there is got to be smth",
+              ru: "должно же быть",
+              en: ""
             }
           ]
         }
@@ -327,6 +343,16 @@ export const DictionaryMock : Dictionary = {
               subject: 'obesity',
               ru: 'тучность, ожирение',
               en: 'the state of being obese'
+            }
+          ]
+        },
+        {
+          title: "Second group",
+          subjects: [
+            {
+              subject: "obstacles",
+              ru: "препятствия",
+              en: "a situation, an event, etc. that makes it difficult for you to do or achieve something"
             }
           ]
         }
@@ -438,6 +464,7 @@ export class Dictionary {
   title: string = '';
   sections: DictionarySection[] = [];
   id?: number = 0
+  version?: number = 1;
   constructor(title:string = '', sections:DictionarySection[] = []) {
     this.title = title;
     this.sections = sections.map((s: DictionarySection) => {
