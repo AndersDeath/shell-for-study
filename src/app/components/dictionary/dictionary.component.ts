@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { DictionaryMock, Dictionary, Subject, DictionaryBuilder } from '../../data-lib';
 import { MatDialog } from '@angular/material/dialog';
 import { SettingsComponent } from '../settings/settings.component';
+import { SidebarService } from 'src/app/services/sidebar.service';
 
 const TABLE_VIEW = 'TABLE_VIEW';
 
@@ -21,7 +22,6 @@ export class DictionaryComponent {
     table: TABLE_VIEW,
     fakeFlash: FAKE_FLASHCARDS_VIEW
   }
-  version = 'v0.0.10';
   flashCardsData: any[] = [];
   flasCardsDataLength = 0;
   flashCardsCurrentNum = 0;
@@ -36,7 +36,9 @@ export class DictionaryComponent {
   public dictionary: Dictionary =  DictionaryBuilder(DictionaryMock);
 
   constructor(
-    public dialog: MatDialog) {
+    public dialog: MatDialog,
+    public sidebar: SidebarService,
+    ) {
 
   }
 
@@ -106,5 +108,10 @@ export class DictionaryComponent {
     }
     this.flashCardsCurrentNum = n;
     this.currentFlashCard = this.flashCardsData[n];
+  }
+
+
+  toggleSidebar() {
+    this.sidebar.toggle();
   }
 }

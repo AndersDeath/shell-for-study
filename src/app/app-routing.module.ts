@@ -5,7 +5,12 @@ import { DictionaryComponent } from './components/dictionary/dictionary.componen
 const routes: Routes = [{
   path: '',
   component: DictionaryComponent
-}];
+},
+{
+  path: 'glossary-of-terms',
+  component: DictionaryComponent
+}
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

@@ -12,6 +12,7 @@ import { NgMaterialModule } from './material.module';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { SettingsComponent } from './components/settings/settings.component';
+import { SidebarService } from './services/sidebar.service';
 
 
 @NgModule({
@@ -35,7 +36,7 @@ import { SettingsComponent } from './components/settings/settings.component';
       registrationStrategy: 'registerWhenStable:30000'
     })
   ],
-  providers: [],
+  providers: [SidebarService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
