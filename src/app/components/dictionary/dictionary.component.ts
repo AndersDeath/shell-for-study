@@ -1,19 +1,18 @@
-import { Component } from '@angular/core';
-import { DictionaryMock, Dictionary, Subject, DictionaryBuilder } from '../../data-lib';
+import { Component, Input } from '@angular/core';
+import { Dictionary, Subject } from '../../data/data-lib';
 import { MatDialog } from '@angular/material/dialog';
 import { SettingsComponent } from '../settings/settings.component';
 import { SidebarService } from 'src/app/services/sidebar.service';
+import { CARDS_VIEW, FAKE_FLASHCARDS_VIEW, TABLE_VIEW } from 'src/app/constants';
 
-const TABLE_VIEW = 'TABLE_VIEW';
-
-const CARDS_VIEW = 'CARDS_VIEW';
-const FAKE_FLASHCARDS_VIEW = "FAKE_FLASHCARDS_VIEW";
 @Component({
   selector: 'app-dictionary',
   templateUrl: './dictionary.component.html',
   styleUrls: ['./dictionary.component.scss']
 })
 export class DictionaryComponent {
+  @Input() dictionary: Dictionary = new Dictionary();
+  @Input() title: string = '';
   viewType: string = TABLE_VIEW;
   displayedColumns: string[] = ['subject', 'ru', 'en'];
   storageName: string = 'viewType';
@@ -33,7 +32,6 @@ export class DictionaryComponent {
 
   swipeCoord: any;
   swipeTime: any;
-  public dictionary: Dictionary =  DictionaryBuilder(DictionaryMock);
 
   constructor(
     public dialog: MatDialog,
@@ -68,7 +66,11 @@ export class DictionaryComponent {
   }
 
   openMore() {
-    this.dialog.open(SettingsComponent);
+    this.dialog.open(SettingsComponent,{
+      data: {
+        dictionary: this.dictionary
+      }
+    });
   }
   swipe(e: TouchEvent, when: string): void {
     const coord: [number, number] = [e.changedTouches[0].clientX, e.changedTouches[0].clientY];

@@ -1,7 +1,7 @@
 <div mat-dialog-content class="settings-page">
   <mat-list>
     <mat-list-item>
-      <strong>Dictionary version: {{dictionary.version}}</strong>
+      <strong>{{dictionary.title}} version: {{dictionary.version}}</strong>
     </mat-list-item>
     <mat-list-item>
       <a color="primary" [href]="fileUrl" [download]="fileName" (click)="downloadCollection()" mat-raised-button aria-label="download collection" matTooltip="Download collection">

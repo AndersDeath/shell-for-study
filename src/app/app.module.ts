@@ -13,13 +13,23 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { SettingsComponent } from './components/settings/settings.component';
 import { SidebarService } from './services/sidebar.service';
+import { TabsViewComponent } from './components/tabs-view/tabs-view.component';
+import { CardsViewComponent } from './components/cards-view/cards-view.component';
+import { TableViewComponent } from './components/table-view/table-view.component';
+import { DictionaryPageComponent } from './components/dictionary-page/dictionary-page.component';
+import { GlossaryPageComponent } from './components/glossary-page/glossary-page.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     DictionaryComponent,
-    SettingsComponent
+    SettingsComponent,
+    TabsViewComponent,
+    CardsViewComponent,
+    TableViewComponent,
+    DictionaryPageComponent,
+    GlossaryPageComponent
   ],
   imports: [
     BrowserModule,

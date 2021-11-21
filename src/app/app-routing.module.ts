@@ -1,14 +1,15 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { DictionaryComponent } from './components/dictionary/dictionary.component';
+import { DictionaryPageComponent } from './components/dictionary-page/dictionary-page.component';
+import { GlossaryPageComponent } from './components/glossary-page/glossary-page.component';
 
 const routes: Routes = [{
   path: '',
-  component: DictionaryComponent
+  component: DictionaryPageComponent
 },
 {
-  path: 'glossary-of-terms',
-  component: DictionaryComponent
+  path: 'glossary',
+  component: GlossaryPageComponent
 }
 ];
 

@@ -1,0 +1,4 @@
+
+export const TABLE_VIEW = 'TABLE_VIEW';
+export const CARDS_VIEW = 'CARDS_VIEW';
+export const FAKE_FLASHCARDS_VIEW = "FAKE_FLASHCARDS_VIEW";

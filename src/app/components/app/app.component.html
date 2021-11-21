@@ -2,7 +2,7 @@
   <mat-drawer class="side-navigation" #drawer [opened]="sidebar.opened" (closedStart)="watchClose()" mode="over">
 
     <button color="primary" mat-flat-button [routerLink]="'/'" (click)="toggleSidebar()">English dictionary</button>
-    <button color="primary" mat-flat-button disabled [routerLink]="'/glossary-of-terms'"(click)="toggleSidebar()">Glossary of terms</button>
+    <button color="primary" mat-flat-button [routerLink]="'/glossary'"(click)="toggleSidebar()">Glossary of terms</button>
     <div class="app-version">Words and terms learning shell <br> (WATLS) <br> {{version}}</div>
 
   </mat-drawer>
