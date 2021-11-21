@@ -2,7 +2,7 @@ import { Dictionary } from "./data-lib";
 
 export const TranslationsData : Dictionary = {
   title: 'MyDict',
-  version: 1,
+  version: 2,
   sections: [
     {
       title: '6 Minute English',
@@ -255,6 +255,11 @@ export const TranslationsData : Dictionary = {
               subject: "there is got to be smth",
               ru: "должно же быть",
               en: ""
+            },
+            {
+              subject: "let’s recap ",
+              ru: "давайте резюмируем",
+              en: "to give a summary of something"
             }
           ]
         }
@@ -355,6 +360,16 @@ export const TranslationsData : Dictionary = {
               subject: "obstacles",
               ru: "препятствия",
               en: "a situation, an event, etc. that makes it difficult for you to do or achieve something"
+            },
+            {
+              subject: 'crucial',
+              ru: "решающий",
+              en: 'extremely important, because it will affect other things'
+            },
+            {
+              subject: 'awe',
+              ru: "",
+              en: "feelings of respect and slight fear; feelings of being very impressed by something/somebody"
             }
           ]
         }
