@@ -10,12 +10,12 @@
         <mat-card-title>{{subject.subject}}</mat-card-title>
       </mat-card-header>
       <mat-card-content>
-        <p>
+        <p markdown [data]="subject.ru">
           {{subject.ru}}
         </p>
       </mat-card-content>
       <mat-card-content>
-        <p>
+        <p markdown [data]="subject.en">
           {{subject.en}}
         </p>
       </mat-card-content>

@@ -18,7 +18,7 @@ import { CardsViewComponent } from './components/cards-view/cards-view.component
 import { TableViewComponent } from './components/table-view/table-view.component';
 import { DictionaryPageComponent } from './components/dictionary-page/dictionary-page.component';
 import { GlossaryPageComponent } from './components/glossary-page/glossary-page.component';
-
+import { MarkdownModule } from 'ngx-markdown';
 
 @NgModule({
   declarations: [
@@ -41,6 +41,7 @@ import { GlossaryPageComponent } from './components/glossary-page/glossary-page.
     FormsModule,
     HttpClientModule,
     NgMaterialModule,
+    MarkdownModule.forRoot(),
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,
       registrationStrategy: 'registerWhenStable:30000'

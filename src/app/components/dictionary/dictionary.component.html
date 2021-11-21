@@ -30,13 +30,11 @@
       <mat-card-title>{{currentFlashCard.subject}}</mat-card-title>
     </mat-card-header>
     <mat-card-content>
-      <p>
-        {{currentFlashCard.ru}}
+      <p markdown [data]="currentFlashCard.ru">
       </p>
     </mat-card-content>
     <mat-card-content>
-      <p>
-        {{currentFlashCard.en}}
+      <p markdown [data]="currentFlashCard.en">
       </p>
     </mat-card-content>
     <mat-card-actions align="end">

@@ -9,7 +9,7 @@ import { Subscription } from 'rxjs';
 })
 export class AppComponent implements OnInit {
   public isOpened = false;
-  version = 'Version 0.1.1';
+  version = 'Version 0.1.2';
 
   constructor(
     public sidebar: SidebarService
