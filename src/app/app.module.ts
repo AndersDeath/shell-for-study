@@ -19,6 +19,7 @@ import { TableViewComponent } from './components/table-view/table-view.component
 import { DictionaryPageComponent } from './components/dictionary-page/dictionary-page.component';
 import { GlossaryPageComponent } from './components/glossary-page/glossary-page.component';
 import { MarkdownModule } from 'ngx-markdown';
+import { ArticleViewComponent } from './components/article-view/article-view.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { MarkdownModule } from 'ngx-markdown';
     CardsViewComponent,
     TableViewComponent,
     DictionaryPageComponent,
-    GlossaryPageComponent
+    GlossaryPageComponent,
+    ArticleViewComponent
   ],
   imports: [
     BrowserModule,

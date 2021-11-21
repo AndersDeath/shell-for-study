@@ -4,27 +4,31 @@
   </button>
   <div class="logo"></div>
   <div class="logo-title">{{title}}</div>
-  <button (click)="setDictView(viewsTypes.cards)" mat-icon-button aria-label="Show words as cards" matTooltip="Show words as cards">
+  <button *ngIf="isViewEnable(CARDS_VIEW)" (click)="setDictView(CARDS_VIEW)" mat-icon-button aria-label="Show words as cards" matTooltip="Show words as cards">
     <mat-icon>view_stream</mat-icon>
   </button>
-  <button (click)="setDictView(viewsTypes.table)" mat-icon-button aria-label="Show words as a table" matTooltip="Show words as a table">
+  <button *ngIf="isViewEnable(TABLE_VIEW)" (click)="setDictView(TABLE_VIEW)" mat-icon-button aria-label="Show words as a table" matTooltip="Show words as a table">
     <mat-icon>table_chart</mat-icon>
   </button>
-  <button (click)="setDictView(viewsTypes.fakeFlash)" mat-icon-button aria-label="Fake flash cards" matTooltip="Fake flash cards">
+  <button *ngIf="isViewEnable(ARTICLE_VIEW)" (click)="setDictView(ARTICLE_VIEW)" mat-icon-button aria-label="Article view" matTooltip="Article view">
+    <mat-icon>insert_drive_file</mat-icon>
+  </button>
+  <button *ngIf="isViewEnable(FAKE_FLASHCARDS_VIEW)" (click)="setDictView(FAKE_FLASHCARDS_VIEW)" mat-icon-button aria-label="Fake flash cards" matTooltip="Fake flash cards">
     <mat-icon>flash_on</mat-icon>
   </button>
   <span class="spacer"></span>
   <button mat-icon-button (click)="openMore()"><mat-icon>more_vert</mat-icon></button>
 </mat-toolbar>
-<mat-tab-group *ngIf="viewType !== viewsTypes.fakeFlash" class="tabs-area">
+<mat-tab-group *ngIf="viewType !== FAKE_FLASHCARDS_VIEW" class="tabs-area">
   <mat-tab [label]="item.title" *ngFor="let item of dictionary.sections">
     <ng-container *ngFor="let group of item.groups">
-      <app-table-view [group]="group" *ngIf="viewType === viewsTypes.table"></app-table-view>
-      <app-cards-view  [group]="group" *ngIf="viewType === viewsTypes.cards"></app-cards-view>
+      <app-table-view [group]="group" *ngIf="isViewEnable(TABLE_VIEW) && viewType === TABLE_VIEW"></app-table-view>
+      <app-cards-view  [group]="group" *ngIf="isViewEnable(CARDS_VIEW) && viewType === CARDS_VIEW"></app-cards-view>
+      <app-article-view  [group]="group" *ngIf="isViewEnable(ARTICLE_VIEW) && viewType === ARTICLE_VIEW"></app-article-view>
     </ng-container>
   </mat-tab>
 </mat-tab-group>
-<div (touchstart)="swipe($event, 'start')" (touchend)="swipe($event, 'end')" *ngIf="viewType === viewsTypes.fakeFlash" class="fake-flash-card-view">
+<div (touchstart)="swipe($event, 'start')" (touchend)="swipe($event, 'end')" *ngIf="viewType === FAKE_FLASHCARDS_VIEW" class="fake-flash-card-view">
   <mat-card  class="flash-card">
     <mat-card-header>
       <mat-card-title>{{currentFlashCard.subject}}</mat-card-title>

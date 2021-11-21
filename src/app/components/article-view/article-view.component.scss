@@ -1,0 +1,17 @@
+:host {
+
+  $card-bg-color: #e2e3ae;
+
+  .word-card {
+    width: 95%;
+    margin: 20px;
+    background-color: $card-bg-color;
+  }
+
+  .cards-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+}

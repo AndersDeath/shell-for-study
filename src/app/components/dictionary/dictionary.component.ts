@@ -3,7 +3,7 @@ import { Dictionary, Subject } from '../../data/data-lib';
 import { MatDialog } from '@angular/material/dialog';
 import { SettingsComponent } from '../settings/settings.component';
 import { SidebarService } from 'src/app/services/sidebar.service';
-import { CARDS_VIEW, FAKE_FLASHCARDS_VIEW, TABLE_VIEW } from 'src/app/constants';
+import { ARTICLE_VIEW, CARDS_VIEW, FAKE_FLASHCARDS_VIEW, TABLE_VIEW } from 'src/app/constants';
 
 @Component({
   selector: 'app-dictionary',
@@ -13,14 +13,18 @@ import { CARDS_VIEW, FAKE_FLASHCARDS_VIEW, TABLE_VIEW } from 'src/app/constants'
 export class DictionaryComponent {
   @Input() dictionary: Dictionary = new Dictionary();
   @Input() title: string = '';
-  viewType: string = TABLE_VIEW;
+  @Input() viewTypes: string[] = [];
+
+  viewType: string = '';
   displayedColumns: string[] = ['subject', 'ru', 'en'];
-  storageName: string = 'viewType';
-  viewsTypes = {
-    cards: CARDS_VIEW,
-    table: TABLE_VIEW,
-    fakeFlash: FAKE_FLASHCARDS_VIEW
-  }
+
+  storageName: string = '';
+
+  CARDS_VIEW = CARDS_VIEW;
+  FAKE_FLASHCARDS_VIEW = FAKE_FLASHCARDS_VIEW;
+  TABLE_VIEW = TABLE_VIEW;
+  ARTICLE_VIEW = ARTICLE_VIEW;
+
   flashCardsData: any[] = [];
   flasCardsDataLength = 0;
   flashCardsCurrentNum = 0;
@@ -40,17 +44,18 @@ export class DictionaryComponent {
 
   }
 
-
   setDictView(val: string) {
     this.viewType = val;
     localStorage.setItem(this.storageName, val)
   }
 
-
-
   ngOnInit() {
+    this.storageName = this.dictionary.title + 'Storage'
     const item = localStorage.getItem(this.storageName) || '';
-    if ([CARDS_VIEW, TABLE_VIEW, FAKE_FLASHCARDS_VIEW].includes(item)) {
+    if(item === '') {
+      this.viewType = this.viewTypes[0] || '';
+    }
+    if (this.viewTypes.includes(item)) {
       this.viewType = item;
     }
     this.dictionary.sections.forEach((e) => {
@@ -63,6 +68,10 @@ export class DictionaryComponent {
     this.flashCardsData.sort(() => Math.random() - 0.5);
     this.currentFlashCard = this.flashCardsData[this.flashCardsCurrentNum];
     this.flasCardsDataLength = this.flashCardsData.length;
+  }
+
+  isViewEnable(view: string) {
+    return this.viewTypes.includes(view);
   }
 
   openMore() {
