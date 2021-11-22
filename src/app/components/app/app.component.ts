@@ -1,6 +1,5 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { SidebarService } from 'src/app/services/sidebar.service';
-import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +8,7 @@ import { Subscription } from 'rxjs';
 })
 export class AppComponent implements OnInit {
   public isOpened = false;
-  version = 'Version 0.1.4';
+  version = 'Version 0.1.5';
 
   constructor(
     public sidebar: SidebarService

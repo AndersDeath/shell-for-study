@@ -20,6 +20,7 @@ import { DictionaryPageComponent } from './components/dictionary-page/dictionary
 import { GlossaryPageComponent } from './components/glossary-page/glossary-page.component';
 import { MarkdownModule } from 'ngx-markdown';
 import { ArticleViewComponent } from './components/article-view/article-view.component';
+import { FreeDictionaryPageComponent } from './components/free-dictionary-page/free-dictionary-page.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { ArticleViewComponent } from './components/article-view/article-view.com
     TableViewComponent,
     DictionaryPageComponent,
     GlossaryPageComponent,
-    ArticleViewComponent
+    ArticleViewComponent,
+    FreeDictionaryPageComponent
   ],
   imports: [
     BrowserModule,
@@ -44,6 +46,8 @@ import { ArticleViewComponent } from './components/article-view/article-view.com
     HttpClientModule,
     NgMaterialModule,
     MarkdownModule.forRoot(),
+    HttpClientModule,
+    ReactiveFormsModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,
       registrationStrategy: 'registerWhenStable:30000'
