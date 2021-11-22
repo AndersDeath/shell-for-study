@@ -1,9 +1,4 @@
-<mat-expansion-panel expanded="true">
-  <mat-expansion-panel-header>
-    <mat-panel-title>
-      <strong>{{group.title}}</strong>
-    </mat-panel-title>
-  </mat-expansion-panel-header>
+<div class="mat-h2 title">{{group.title}}</div>
   <div class="cards-container">
     <mat-expansion-panel expanded="false" *ngFor="let subject of group.subjects">
       <mat-expansion-panel-header>
@@ -16,16 +11,15 @@
           <mat-card-title>{{subject.subject}}</mat-card-title>
         </mat-card-header>
         <mat-card-content>
-          <p markdown [data]="subject.ru">
+          <p markdown [data]="subject.ru" *ngIf="subject.ru">
             {{subject.ru}}
           </p>
         </mat-card-content>
         <mat-card-content>
-          <p markdown [data]="subject.en">
+          <p markdown [data]="subject.en" *ngIf="subject.en">
             {{subject.en}}
           </p>
         </mat-card-content>
       </mat-card>
     </mat-expansion-panel>
   </div>
-</mat-expansion-panel>

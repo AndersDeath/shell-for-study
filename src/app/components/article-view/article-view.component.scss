@@ -2,9 +2,14 @@
 
   $card-bg-color: #e2e3ae;
 
+  .title {
+    margin-left: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-decoration: underline;
+  }
   .word-card {
-    width: 95%;
-    margin: 20px;
+    margin-top: 10px;
     background-color: $card-bg-color;
   }
 
