@@ -17,6 +17,8 @@ export class FreeDictionaryPageComponent implements OnInit, OnDestroy {
   public title: string = "Free Dictionary";
   public result: any;
 
+  public wordExample = [{"word":"hello","phonetic":"həˈləʊ","phonetics":[{"text":"həˈləʊ","audio":"//ssl.gstatic.com/dictionary/static/sounds/20200429/hello--_gb_1.mp3"},{"text":"hɛˈləʊ"}],"origin":"early 19th century: variant of earlier hollo ; related to holla.","meanings":[{"partOfSpeech":"exclamation","definitions":[{"definition":"used as a greeting or to begin a phone conversation.","example":"hello there, Katie!","synonyms":[],"antonyms":[]}]},{"partOfSpeech":"noun","definitions":[{"definition":"an utterance of ‘hello’; a greeting.","example":"she was getting polite nods and hellos from people","synonyms":[],"antonyms":[]}]},{"partOfSpeech":"verb","definitions":[{"definition":"say or shout ‘hello’.","example":"I pressed the phone button and helloed","synonyms":[],"antonyms":[]}]}]}];
+
   private subsciptions: Subscription[] = [];
   constructor(
     public sidebar: SidebarService,
@@ -28,14 +30,20 @@ export class FreeDictionaryPageComponent implements OnInit, OnDestroy {
       debounceTime(1000),
       distinctUntilChanged()
     ).subscribe((e) => {
-      this.search(e);
-    })
+      if(e.trim().length > 0) {
+        this.search(e);
+
+      }
+      })
+
+    console.log(this.wordExample)
 
   }
 
   search(word: string) {
       let sub = this.api.search(word).subscribe((e) => {
-        console.log(e);
+        console.log(JSON.stringify(e));
+        console.log(e)
         this.result = e;
         sub.unsubscribe();
       }, err => {

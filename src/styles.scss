@@ -28,3 +28,48 @@ html {
   background-color: #009688;
 }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; background-color: #efefef;}
+
+
+.search-area {
+  margin-top: 20px;
+  padding-top: 20px;
+  margin-bottom: 20px;
+  background-color: #1760bb;
+  display: flex;
+
+  align-items: center;
+  justify-content: start;
+
+  .mat-form-field-outline {
+    .mat-form-field-outline-start {
+      background: #fff !important;
+    }
+    .mat-form-field-outline-gap  {
+      background: #fff;
+
+    }
+
+    .mat-form-field-outline-end {
+      background: #fff;
+    }
+  }
+
+  .search-field {
+    margin-left: 25px;
+    width: 100%;
+    max-width: 450px;
+    // background: #fff;
+
+  }
+}
+
+@media screen and (max-width: 475px) {
+  .search-area {
+    .search-field{
+      margin-left: 5px;
+      margin-right: 5px;
+      width: 100%;
+
+    }
+  }
+}

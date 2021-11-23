@@ -7,6 +7,45 @@
 </mat-toolbar>
 <div>
 
-  <input [formControl]="searchControl" type="text">
-  Free dictionary
+  <div class="search-area">
+
+    <mat-form-field class="search-field" appearance="outline">
+      <mat-label>Search</mat-label>
+      <input matInput type="text" [formControl]="searchControl">
+      <button *ngIf="searchControl.value" matSuffix mat-icon-button aria-label="Clear" (click)="searchControl.setValue('')">
+        <mat-icon>close</mat-icon>
+      </button>
+    </mat-form-field>
+
+  </div>
+
+  <div *ngFor="let item of result">
+    <strong>Word itself:</strong> {{ item.word }} <br>
+    <strong>Origin:</strong> {{ item.origin }} <br>
+    <strong>Phonetic:</strong> [ {{ item.phonetic }} ] <br>
+    <ul>
+      <li *ngFor="let phoneticItem of item.phonetics">
+        <audio *ngIf="phoneticItem.audio" controls>
+          <source [src]="phoneticItem.audio" type="audio/mpeg">
+        Your browser does not support the audio element.
+        </audio> {{ phoneticItem.text }}
+      </li>
+    </ul>
+    <div *ngFor="let meaning of item.meanings">
+      {{meaning.partOfSpeech}}
+      <div *ngFor="let definition of meaning.definitions">
+        {{definition.definition}} <br>
+        {{definition.example}} <br>
+        <span *ngFor="let syn of definition.synonyms">
+          {{syn}},
+        </span>
+        <span *ngFor="let ant of definition.antonyms">
+          {{ant}},
+        </span>
+
+
+      </div>
+    </div>
+    <hr>
+  </div>
 </div>
