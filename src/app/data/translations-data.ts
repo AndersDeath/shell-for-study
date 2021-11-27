@@ -2,11 +2,46 @@ import { Dictionary } from "./data-lib";
 
 export const TranslationsData : Dictionary = {
   title: 'MyDict',
-  version: 2,
+  version: 3,
   sections: [
     {
       title: '6 Minute English',
       groups: [
+        {
+          title: "Working for yourself",
+          subjects: [
+            {
+              subject: "drum up",
+              ru: "",
+              en: "increase or ecourage support or sales for something"
+            },
+            {
+              subject: "freelance",
+              ru: "",
+              en: "work for yourself, selling your skills or services to different businesses"
+            },
+            {
+              subject: "petrifying",
+              ru: "",
+              en: "frightening, so you can’t speak or move"
+            },
+            {
+              subject: "self-sabotage",
+              ru: "",
+              en: "having doubts and fears that stop you achieving something"
+            },
+            {
+              subject: "fulfilment",
+              ru: "",
+              en: "good feeling of achieving something for yourself"
+            },
+            {
+              subject: "financial freedom",
+              ru: "",
+              en: "able to control how you earn and use your money"
+            }
+          ]
+        },
         {
           title: "The woman whose cells never die",
           subjects: [
