@@ -19,6 +19,7 @@
   <span class="spacer"></span>
   <button mat-icon-button (click)="openMore()"><mat-icon>more_vert</mat-icon></button>
 </mat-toolbar>
+
 <mat-tab-group *ngIf="viewType !== FAKE_FLASHCARDS_VIEW" class="tabs-area">
   <mat-tab [label]="item.title" *ngFor="let item of dictionary.sections">
     <ng-container *ngFor="let group of item.groups">
@@ -28,22 +29,4 @@
     </ng-container>
   </mat-tab>
 </mat-tab-group>
-<div (touchstart)="swipe($event, 'start')" (touchend)="swipe($event, 'end')" *ngIf="viewType === FAKE_FLASHCARDS_VIEW" class="fake-flash-card-view">
-  <mat-card  class="flash-card">
-    <mat-card-header>
-      <mat-card-title>{{currentFlashCard.subject}}</mat-card-title>
-    </mat-card-header>
-    <mat-card-content>
-      <p markdown [data]="currentFlashCard.ru">
-      </p>
-    </mat-card-content>
-    <mat-card-content>
-      <p markdown [data]="currentFlashCard.en">
-      </p>
-    </mat-card-content>
-    <mat-card-actions align="end">
-      <button mat-button (click)="previousFlashCard()">Previous</button>
-      <button mat-button (click)="nextFlashCard()" >Next</button>
-    </mat-card-actions>
-  </mat-card>
-</div>
+<app-fake-flashcards-view  [dictionary]="dictionary" *ngIf="viewType === FAKE_FLASHCARDS_VIEW"></app-fake-flashcards-view>

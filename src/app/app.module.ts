@@ -21,6 +21,7 @@ import { GlossaryPageComponent } from './components/glossary-page/glossary-page.
 import { MarkdownModule } from 'ngx-markdown';
 import { ArticleViewComponent } from './components/article-view/article-view.component';
 import { FreeDictionaryPageComponent } from './components/free-dictionary-page/free-dictionary-page.component';
+import { FakeFlashcardsViewComponent } from './components/fake-flashcards-view/fake-flashcards-view.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { FreeDictionaryPageComponent } from './components/free-dictionary-page/f
     DictionaryPageComponent,
     GlossaryPageComponent,
     ArticleViewComponent,
-    FreeDictionaryPageComponent
+    FreeDictionaryPageComponent,
+    FakeFlashcardsViewComponent
   ],
   imports: [
     BrowserModule,

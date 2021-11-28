@@ -1,0 +1,20 @@
+
+<div (touchstart)="swipe($event, 'start')" (touchend)="swipe($event, 'end')" class="fake-flash-card-view">
+  <mat-card  class="flash-card">
+    <mat-card-header>
+      <mat-card-title>{{currentFlashCard.subject}}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <p markdown [data]="currentFlashCard.ru">
+      </p>
+    </mat-card-content>
+    <mat-card-content>
+      <p markdown [data]="currentFlashCard.en">
+      </p>
+    </mat-card-content>
+    <mat-card-actions align="end">
+      <button mat-button (click)="previousFlashCard()">Previous</button>
+      <button mat-button (click)="nextFlashCard()" >Next</button>
+    </mat-card-actions>
+  </mat-card>
+</div>

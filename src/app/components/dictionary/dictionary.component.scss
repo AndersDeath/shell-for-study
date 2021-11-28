@@ -32,31 +32,10 @@
     margin-left: 5px;
   }
 
-
-  .fake-flash-card-view {
-    width: 100%;
-    display: inline-flex;
-    height: 100%;
-    align-items: center;
-
-    .flash-card {
-      width: 400px;
-      margin: 20px auto;
-      background-color: $card-bg-color;
-      height: fit-content;
-    }
-  }
   @media (max-width: 320px) {
     .word-card {
       width: 100%;
     }
-    .fake-flash-card-view {
-      width: 100%;
-      .flash-card {
-        margin: 0;
-        width: 100%;
-      }
-     }
  }
 
 
