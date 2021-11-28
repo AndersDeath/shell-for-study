@@ -2,7 +2,7 @@ import { Dictionary } from "./data-lib";
 
 export const TranslationsData : Dictionary = {
   title: 'MyDict',
-  version: 3,
+  version: 4,
   sections: [
     {
       title: '6 Minute English',
@@ -450,11 +450,136 @@ export const TranslationsData : Dictionary = {
               subject: 'certainly',
               ru: 'непременно, безусловно',
               en: 'used to emphasize something and show that there is no doubt about it'
+            },
+            {
+              subject: "thorough",
+              ru: 'тщательный',
+              en: 'complete with regard to every detail; not superficial or partial.'
             }
           ],
 
         }
       ]
     },
+    {
+      title: "101 useful advanced english words (in progress)",
+      groups: [
+        {
+          title: "First group",
+          subjects: [
+            {
+              subject: "Elated",
+              ru: "",
+              en: "Extrimely happy"
+            },
+            {
+              subject: "Painstakingly",
+              ru: "",
+              en: "being very careful and thorough"
+            },
+            {
+              subject: "Daunting",
+              ru: "",
+              en: "something about to happen that makes you afraid"
+            },
+            {
+              subject: "Besotted",
+              ru: "",
+              en: "extrimely attached of in love in something"
+            },
+            {
+              subject: "Pertinent",
+              ru: "",
+              en: " Relevant and significant"
+            },
+            {
+              subject: "Handy",
+              ru: "",
+              en: "convenient and available"
+            },
+            {
+              subject: "Delectation",
+              ru: "",
+              en: "enjoyment and pleasure"
+            },
+            {
+              subject: "To teem",
+              ru: "",
+              en: " full of, overflowing with"
+            },
+            {
+              subject: "Serendipitous",
+              ru: "",
+              en: "as a result of a happy accident"
+            },
+            {
+              subject: "To entice",
+              ru: "",
+              en: "encourage or persuade"
+            },
+            {
+              subject: "To delve (in):",
+              ru: "",
+              en: "examine, explore"
+            },
+            {
+              subject: "(at) Loggerheads",
+              ru: "",
+              en: " a dispute or strong disagreement with someone"
+            },
+            {
+              subject: "Array",
+              ru: "",
+              en: "a selection, a range"
+            },
+            {
+              subject: "Attire",
+              ru: "",
+              en: " a formal word for clothes"
+            },
+            {
+              subject: "Belated",
+              ru: "",
+              en: "happening later than it was supposed to "
+            },
+            {
+              subject: "Blatant",
+              ru: "",
+              en: "doing something bad in an open and obvious way"
+            },
+            {
+              subject: "Bribe",
+              en: "dishonestly influencing someone's behavior by giving them money",
+              ru: ""
+            },
+            {
+              subject: "Brittle",
+              ru: "",
+              en: "something hard that breaks easily"
+            },
+            {
+              subject: "Burden",
+              ru: "",
+              en: "something that causes trouble, worry, or difficulty"
+            },
+            {
+              subject: "Chuckle",
+              ru: "",
+              en: "to laugh quietly or inwardly"
+            },
+            {
+              subject: "Crook",
+              ru: "",
+              en: "a thief, a dishonest person"
+            },
+            {
+              subject: "Cumbersome",
+              ru: "",
+              en: "slow, complicated, and inefficient "
+            }
+          ]
+        }
+      ]
+    }
   ]
 }

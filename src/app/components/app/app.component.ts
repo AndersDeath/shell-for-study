@@ -8,7 +8,7 @@ import { SidebarService } from 'src/app/services/sidebar.service';
 })
 export class AppComponent implements OnInit {
   public isOpened = false;
-  version = 'Version 0.2.0';
+  version = 'Version 0.2.1';
 
   constructor(
     public sidebar: SidebarService
