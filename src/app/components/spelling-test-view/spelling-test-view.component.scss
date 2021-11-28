@@ -1,0 +1,38 @@
+:host {
+  $card-bg-color: #fff;
+
+  .fake-flash-card-view {
+    width: 100%;
+    display: inline-flex;
+    height: 100%;
+    align-items: center;
+
+    .flash-card {
+      width: 400px;
+      margin: 20px auto;
+      background-color: $card-bg-color;
+      height: fit-content;
+    }
+  }
+  .variant {
+    width: 100%;
+  }
+
+  .wrong-icon {
+    color: #c62828;
+  }
+
+  .success-icon {
+    color: #64dd17;
+  }
+  @media (max-width: 320px) {
+
+    .fake-flash-card-view {
+      width: 100%;
+      .flash-card {
+        margin: 0;
+        width: 100%;
+      }
+     }
+ }
+}

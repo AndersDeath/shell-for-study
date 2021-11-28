@@ -1,0 +1,39 @@
+<div class="fake-flash-card-view">
+  <mat-card  class="flash-card">
+    <span *ngIf="!isAnswered">
+      <mat-card-content>
+        <audio *ngIf="currentFlashCard.audio" controls>
+          <source [src]="currentFlashCard.audio" type="audio/mpeg">
+        Your browser does not support the audio element.
+        </audio>
+      </mat-card-content>
+      <mat-card-content>
+        <mat-form-field  class="variant" appearance="outline">
+          <mat-label>Type your variant</mat-label>
+          <input [formControl]="answerControl" matInput placeholder="Placeholder">
+          <mat-hint>{{currentFlashCard.en}}</mat-hint>
+        </mat-form-field>
+      </mat-card-content>
+    </span>
+    <span *ngIf="isAnswered">
+      <mat-card-header>
+        <mat-card-title>{{currentFlashCard.subject}}</mat-card-title>
+      </mat-card-header>
+      <mat-card-header>
+        <mat-card-title>{{answerControl.value}}
+          <mat-icon class="wrong-icon" *ngIf="currentFlashCard.subject.toLocaleLowerCase() !== answerControl.value.toLocaleLowerCase()" >error</mat-icon>
+          <mat-icon class="success-icon" *ngIf="currentFlashCard.subject.toLocaleLowerCase() === answerControl.value.toLocaleLowerCase()" >check_circle</mat-icon>
+
+        </mat-card-title>
+      </mat-card-header>
+
+    </span>
+
+    <mat-card-actions align="end">
+      <button mat-button (click)="previousFlashCard()">Previous</button>
+      <button mat-button (click)="nextFlashCard()">Next</button>
+      <button mat-raised-button color="primary"  *ngIf="!isAnswered" (click)="checkAnswer()">Check it</button>
+
+    </mat-card-actions>
+  </mat-card>
+</div>

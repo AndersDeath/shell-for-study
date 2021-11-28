@@ -22,6 +22,7 @@ import { MarkdownModule } from 'ngx-markdown';
 import { ArticleViewComponent } from './components/article-view/article-view.component';
 import { FreeDictionaryPageComponent } from './components/free-dictionary-page/free-dictionary-page.component';
 import { FakeFlashcardsViewComponent } from './components/fake-flashcards-view/fake-flashcards-view.component';
+import { SpellingTestViewComponent } from './components/spelling-test-view/spelling-test-view.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { FakeFlashcardsViewComponent } from './components/fake-flashcards-view/f
     GlossaryPageComponent,
     ArticleViewComponent,
     FreeDictionaryPageComponent,
-    FakeFlashcardsViewComponent
+    FakeFlashcardsViewComponent,
+    SpellingTestViewComponent
   ],
   imports: [
     BrowserModule,
