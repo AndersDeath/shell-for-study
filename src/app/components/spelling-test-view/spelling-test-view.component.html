@@ -1,5 +1,7 @@
 <div class="fake-flash-card-view">
   <mat-card  class="flash-card">
+    <ngx-ui-loader [fgsType]="SPINNER.wanderingCubes" [bgsSize]="90" [hasProgressBar]="false" [loaderId]="'loader-01'" [overlayColor]="'#ffffff'"></ngx-ui-loader>
+
     <span *ngIf="!isAnswered">
       <mat-card-content>
         <audio *ngIf="currentFlashCard.audio" controls>

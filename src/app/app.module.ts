@@ -23,6 +23,10 @@ import { ArticleViewComponent } from './components/article-view/article-view.com
 import { FreeDictionaryPageComponent } from './components/free-dictionary-page/free-dictionary-page.component';
 import { FakeFlashcardsViewComponent } from './components/fake-flashcards-view/fake-flashcards-view.component';
 import { SpellingTestViewComponent } from './components/spelling-test-view/spelling-test-view.component';
+import { NgxUiLoaderModule,
+  SPINNER,
+  POSITION,
+  PB_DIRECTION, } from "ngx-ui-loader";
 
 @NgModule({
   declarations: [
@@ -52,6 +56,17 @@ import { SpellingTestViewComponent } from './components/spelling-test-view/spell
     MarkdownModule.forRoot(),
     HttpClientModule,
     ReactiveFormsModule,
+    NgxUiLoaderModule.forRoot(
+      {
+        bgsColor: "white",
+        bgsPosition: POSITION.bottomCenter,
+        bgsSize: 40,
+        bgsType: SPINNER.ballSpin, // background spinner type
+        fgsType: SPINNER.chasingDots, // foreground spinner type
+        pbDirection: PB_DIRECTION.leftToRight, // progress bar direction
+        pbThickness: 5, // progress bar thickness
+      }
+    ),
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,
       registrationStrategy: 'registerWhenStable:30000'

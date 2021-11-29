@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
+import { NgxUiLoaderService, SPINNER } from 'ngx-ui-loader';
 import { Dictionary, Subject } from 'src/app/data/data-lib';
 import { ApiService } from 'src/app/services/api.service';
 
@@ -22,6 +23,7 @@ export class SpellingTestViewComponent implements OnInit {
   flashCardsData: any[] = [];
   flasCardsDataLength = 0;
   flashCardsCurrentNum = 0;
+  SPINNER = SPINNER;
   currentFlashCard: ISpellingTestSubject = {
     en: '',
     ru: '',
@@ -32,7 +34,8 @@ export class SpellingTestViewComponent implements OnInit {
   isAnswered = false;
 
   constructor(
-    private api: ApiService
+    private api: ApiService,
+    private ngxService: NgxUiLoaderService
   ) { }
 
   ngOnInit(): void {
@@ -49,26 +52,25 @@ export class SpellingTestViewComponent implements OnInit {
     this.flashCardsData.sort(() => Math.random() - 0.5);
     this.currentFlashCard.audio = '';
     this.currentFlashCard = this.flashCardsData[this.flashCardsCurrentNum];
-
     this.searchAudio(this.currentFlashCard.subject);
     this.flasCardsDataLength = this.flashCardsData.length;
   }
 
   searchAudio(word: string) {
+    this.ngxService.startLoader("loader-01");
     let sub = this.api.search(word).subscribe((e:any) => {
       if(e[0].phonetics[0] && e[0].phonetics[0].audio !== undefined) {
         this.currentFlashCard.audio = e[0].phonetics[0].audio;
-        console.log('dd')
-        console.log(e[0])
-        console.log(this.currentFlashCard);
+        this.ngxService.stopLoader("loader-01");
       } else {
         this.nextFlashCard();
+        this.ngxService.stopLoader("loader-01");
         sub.unsubscribe();
       }
       sub.unsubscribe();
     }, err => {
       if(err.status === 404) {
-        console.log('Nothing found')
+        this.ngxService.stopLoader("loader-01");
         this.nextFlashCard();
       }
     })
