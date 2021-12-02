@@ -2,7 +2,7 @@ import { Dictionary } from "./data-lib";
 
 export const TranslationsData : Dictionary = {
   title: 'MyDict',
-  version: 5,
+  version: 6,
   sections: [
     {
       title: '6 Minute English',
@@ -295,6 +295,41 @@ export const TranslationsData : Dictionary = {
               subject: "let’s recap ",
               ru: "давайте резюмируем",
               en: "to give a summary of something"
+            },
+            {
+              subject: "due to the fact",
+              ru: "в связи с тем, что",
+              en: ""
+            },
+            {
+              subject: "Unusual keepsakes",
+              ru: "Необычные сувениры",
+              en: ""
+            },
+            {
+              subject: "financial flexibility",
+              ru: "финансовая гибкость",
+              en: ""
+            },
+            {
+              subject: "good acquaintances",
+              ru: "хорошие знакомые",
+              en: ""
+            },
+            {
+              subject: "meet up",
+              ru: "встретиться",
+              en: ""
+            },
+            {
+              subject: "through thick and thin",
+              ru: "во что бы то ни стало. пройти сквозь огонь и воду",
+              en: ""
+            },
+            {
+              subject: "fair-weather friend",
+              ru: "ненадежный друг",
+              en: ""
             }
           ]
         }
@@ -405,6 +440,151 @@ export const TranslationsData : Dictionary = {
               subject: 'awe',
               ru: "",
               en: "feelings of respect and slight fear; feelings of being very impressed by something/somebody"
+            },
+            {
+              subject: "commitment",
+              ru: "",
+              en: "a promise to do something or to behave in a particular way; a promise to support somebody/something; the fact of committing yourself"
+            },
+            {
+              subject: "keen",
+              ru: "",
+              en: "wanting to do something or wanting something to happen very much"
+            },
+            {
+              subject: "considerations",
+              ru: "",
+              en: "the act of thinking carefully about something"
+            },
+            {
+              subject: "precisely",
+              ru: "",
+              en: "used to emphasize that something is very true or obvious, exactly"
+            },
+            {
+              subject: "deviation",
+              ru: "",
+              en: " the act of moving away from what is normal or acceptable; a difference from what is expected or acceptable"
+            },
+            {
+              subject: "withstand",
+              ru: "",
+              en: " to be strong enough not to be hurt or damaged by extreme conditions, the use of force, etc."
+            },
+            {
+              subject: "resilience",
+              ru: "",
+              en: "the ability of people or things to recover quickly after something unpleasant, such as shock, injury, etc."
+            },
+            {
+              subject: "resilient",
+              ru: "",
+              en: "able to recover quickly after something unpleasant such as shock, injury, etc."
+            },
+            {
+              subject: "competitor",
+              ru: "",
+              en: "a person who takes part in a competition"
+            },
+            {
+              subject: "stamina",
+              ru: "",
+              en: "​the physical or mental strength that enables you to do something difficult for long periods of time"
+            },
+            {
+              subject: "deficit",
+              ru: "",
+              en: " the amount by which money spent or owed is greater than money earned in a particular period of time"
+            },
+            {
+              subject: "tough",
+              ru: "",
+              en: "having or causing problems or difficulties"
+            },
+            {
+              subject: "contestant",
+              ru: "",
+              en: "a person who takes part in a contest or competition"
+            },
+            {
+              subject: "belly",
+              ru: "",
+              en: "the part of the body below the chest"
+            },
+            {
+              subject: "reign",
+              ru: "",
+              en: "the period during which a king, queen, emperor, etc. rules"
+            },
+            {
+              subject: "resinous",
+              ru: "",
+              en: "producing, consisting of or smelling of resin"
+            },
+            {
+              subject: "resin",
+              ru: "",
+              en: "​a sticky substance that is produced by some trees and is used in making varnish, medicine, etc."
+            }
+          ]
+        },
+        {
+          title: "Third group",
+          subjects: [
+            {
+              subject: "concern",
+              ru: "",
+              en: "to affect somebody/something; to involve somebody/something"
+            },
+            {
+              subject: "species",
+              ru: "",
+              en: "a group into which animals, plants, etc. that are able to have sex with each other and produce healthy young are divided, smaller than a genus and identified by a Latin name"
+            },
+            {
+              subject: "rodent",
+              ru: "",
+              en: "any small animal that belongs to a group of animals with strong sharp front teeth. Mice, rats and squirrels are all rodents."
+            },
+            {
+              subject: "notoriety",
+              ru: "",
+              en: "the state of being famous for being bad in some way"
+            },
+            {
+              subject: "threat",
+              ru: "",
+              en: "a statement in which you tell somebody that you will punish or harm them, especially if they do not do what you want"
+            },
+            {
+              subject: "shuffle",
+              ru: "",
+              en: "to walk slowly without lifting your feet completely off the ground / to mix cards up in a pack of playing cards before playing a game"
+            },
+            {
+              subject: "reshuffle",
+              ru: "",
+              en: "reorganize or change the positions of (government appointees, members of a team, etc.)."
+            },
+            {
+              subject: "tycoon",
+              ru: "",
+              en: "a person who is successful in business or industry and has become rich and powerful"
+            },
+            {
+              subject: "tycoon",
+              ru: "",
+              en: "a person who is successful in business or industry and has become rich and powerful"
+            },
+            {
+              subject: "venue",
+              ru: "",
+              en: "​a place where people meet for an organized event, for example a concert, sporting event or conference"
+            },
+            {
+              subject: "worthwhile",
+              ru: "",
+              en: "important, pleasant, interesting, etc.; worth spending time, money or effort on"
             }
           ]
         }
