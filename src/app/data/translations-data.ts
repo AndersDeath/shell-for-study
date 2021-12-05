@@ -248,6 +248,41 @@ export const TranslationsData : Dictionary = {
             },
           ]
         },
+        {
+          title: "What's the key to happiness",
+          subjects: [
+            {
+              subject: "the glass is half full/empty",
+              ru: "",
+              en: "used to say that someone has a tendency to look at situations in a positive or negative way"
+            },
+            {
+              subject: "alignment",
+              ru: "",
+              en: "correct position in relation to something else"
+            },
+            {
+              subject: "gratitude",
+              ru: "",
+              en: "feeling grateful, expressing thanks to another person"
+            },
+            {
+              subject: "hamster on a wheel",
+              ru: "",
+              en: "someone involved in activities that make them busy all the time but without ever achieving anything important or managing to finish a task"
+            },
+            {
+              subject: "satisfaction",
+              ru: "",
+              en: "the pleasure you feel when you do something you wanted to do, or get something you wanted to get"
+            },
+            {
+              subject: "hedonic treadmill",
+              ru: "",
+              en: "the human tendency to return to the same level of happiness after something very good or very bad has happened"
+            }
+          ]
+        }
       ]
     },
     {
