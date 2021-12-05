@@ -1,0 +1,22 @@
+
+<div (touchstart)="swipe($event, 'start')" (touchend)="swipe($event, 'end')" class="fake-flash-card-view">
+  <mat-card  class="flash-card">
+    <mat-card-header class="flashcard-header"  *ngIf="!isOpen">
+      <mat-card-title>{{currentFlashCard.subject}}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content *ngIf="isOpen">
+      <p markdown [data]="currentFlashCard.ru">
+      </p>
+    </mat-card-content>
+    <mat-card-content *ngIf="isOpen">
+      <p markdown [data]="currentFlashCard.en">
+      </p>
+    </mat-card-content>
+    <mat-card-actions align="end">
+      <button mat-button (click)="previousFlashCard()">Previous</button>
+      <button mat-button (click)="nextFlashCard()" >Next</button>
+      <button mat-button (click)="toggle()">Toggle</button>
+
+    </mat-card-actions>
+  </mat-card>
+</div>

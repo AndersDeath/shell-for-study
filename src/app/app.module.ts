@@ -27,6 +27,7 @@ import { NgxUiLoaderModule,
   SPINNER,
   POSITION,
   PB_DIRECTION, } from "ngx-ui-loader";
+import { FlashcardsViewComponent } from './components/flashcards-view/flashcards-view.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { NgxUiLoaderModule,
     ArticleViewComponent,
     FreeDictionaryPageComponent,
     FakeFlashcardsViewComponent,
-    SpellingTestViewComponent
+    SpellingTestViewComponent,
+    FlashcardsViewComponent
   ],
   imports: [
     BrowserModule,

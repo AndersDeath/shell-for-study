@@ -3,7 +3,7 @@ import { Dictionary, Subject } from '../../data/data-lib';
 import { MatDialog } from '@angular/material/dialog';
 import { SettingsComponent } from '../settings/settings.component';
 import { SidebarService } from 'src/app/services/sidebar.service';
-import { ARTICLE_VIEW, CARDS_VIEW, FAKE_FLASHCARDS_VIEW, TABLE_VIEW, SPELLING_TEST_VIEW } from 'src/app/constants';
+import { ARTICLE_VIEW, CARDS_VIEW, FAKE_FLASHCARDS_VIEW, TABLE_VIEW, SPELLING_TEST_VIEW, FLASHCARDS_VIEW } from 'src/app/constants';
 
 @Component({
   selector: 'app-dictionary',
@@ -25,6 +25,7 @@ export class DictionaryComponent {
   TABLE_VIEW = TABLE_VIEW;
   ARTICLE_VIEW = ARTICLE_VIEW;
   SPELLING_TEST_VIEW = SPELLING_TEST_VIEW;
+  FLASHCARDS_VIEW = FLASHCARDS_VIEW;
 
   constructor(
     public dialog: MatDialog,

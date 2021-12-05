@@ -1,0 +1,32 @@
+:host {
+  $card-bg-color: #e2e3ae;
+
+  .fake-flash-card-view {
+    width: 100%;
+    display: inline-flex;
+    height: 100%;
+    align-items: center;
+
+    .flash-card {
+      width: 400px;
+      margin: 20px auto;
+      background-color: $card-bg-color;
+      height: fit-content;
+    }
+  }
+  .flashcard-header {
+    justify-content: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  @media (max-width: 320px) {
+
+    .fake-flash-card-view {
+      width: 100%;
+      .flash-card {
+        margin: 0;
+        width: 100%;
+      }
+     }
+ }
+}
