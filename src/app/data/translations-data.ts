@@ -2,7 +2,7 @@ import { Dictionary } from "./data-lib";
 
 export const TranslationsData : Dictionary = {
   title: 'MyDict',
-  version: 6,
+  version: 7,
   sections: [
     {
       title: '6 Minute English',
