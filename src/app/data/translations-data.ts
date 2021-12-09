@@ -2,7 +2,7 @@ import { Dictionary } from "./data-lib";
 
 export const TranslationsData : Dictionary = {
   title: 'MyDict',
-  version: 7,
+  version: 8,
   sections: [
     {
       title: '6 Minute English',
@@ -791,7 +791,76 @@ export const TranslationsData : Dictionary = {
               subject: "Cumbersome",
               ru: "",
               en: "slow, complicated, and inefficient "
-            }
+            },{
+              subject: "Daub",
+              ru: "",
+              en: "to cover a surface carelessly with paint or another substance"
+            },
+            {
+              subject: "Doomed",
+              ru: "",
+              en: "destined to have a bad outcome"
+            },
+            {
+              subject: "Egregious",
+              ru: "",
+              en: "stikingly bad"
+            },
+            {
+              subject: "Entangled",
+              ru: "",
+              en: "caught or trapped in a complicated situation"
+            },
+            {
+              subject: "Era",
+              ru: "",
+              en: "a long period of history"
+            },
+            {
+              subject: "Erstwhile",
+              ru: "",
+              en: "former, previous"
+            },
+            {
+              subject: "Eyesore",
+              ru: "",
+              en: "a thing so ugly it hurts your eyes"
+            },
+            {
+              subject: "Fidget",
+              ru: "",
+              en: "make small movements with the hands or feet especially when nervous"
+            },
+            {
+              subject: "Fleeting",
+              ru: "",
+              en: "for a very short amount of time"
+            },
+            {
+              subject: "Foolproof",
+              ru: "",
+              en: "a method that cannot fail"
+            },
+            {
+              subject: "Forego",
+              ru: "",
+              en: "to do without"
+            },
+            {
+              subject: "Foremost",
+              ru: "",
+              en: "the person with most important or higest position in a pacticular field"
+            },
+            {
+              subject: "Fret",
+              ru: "",
+              en: "to worry or be anxious"
+            },
+            {
+              subject: "Fruition",
+              ru: "",
+              en: "the successful result of a plan"
+            },
           ]
         }
       ]
