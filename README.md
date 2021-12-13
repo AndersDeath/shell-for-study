@@ -1,4 +1,4 @@
-# VnbDictionary
+# Shell for Study
 
 This is Angular based ui shell for personal dictionaries.
 
