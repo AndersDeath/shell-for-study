@@ -2,7 +2,7 @@ import { Dictionary } from "./data-lib";
 
 export const TranslationsData : Dictionary = {
   title: 'MyDict',
-  version: 8,
+  version: 9,
   sections: [
     {
       title: '6 Minute English',
@@ -524,7 +524,7 @@ export const TranslationsData : Dictionary = {
             {
               subject: "stamina",
               ru: "",
-              en: "​the physical or mental strength that enables you to do something difficult for long periods of time"
+              en: "the physical or mental strength that enables you to do something difficult for long periods of time"
             },
             {
               subject: "deficit",
@@ -559,7 +559,7 @@ export const TranslationsData : Dictionary = {
             {
               subject: "resin",
               ru: "",
-              en: "​a sticky substance that is produced by some trees and is used in making varnish, medicine, etc."
+              en: "a sticky substance that is produced by some trees and is used in making varnish, medicine, etc."
             }
           ]
         },
@@ -614,12 +614,42 @@ export const TranslationsData : Dictionary = {
             {
               subject: "venue",
               ru: "",
-              en: "​a place where people meet for an organized event, for example a concert, sporting event or conference"
+              en: "a place where people meet for an organized event, for example a concert, sporting event or conference"
             },
             {
               subject: "worthwhile",
               ru: "",
               en: "important, pleasant, interesting, etc.; worth spending time, money or effort on"
+            },
+            {
+              subject: "facilitate",
+              ru: "",
+              en: "facilitate something to make an action or a process possible or easier"
+            },
+            {
+              subject: "vast",
+              ru: "",
+              en: "extremely large in area, size, amount, etc."
+            },
+            {
+              subject: "vital",
+              ru: "",
+              en: "necessary or essential in order for something to succeed or exist"
+            },
+            {
+              subject: "significant",
+              ru: "",
+              en: "large or important enough to have an effect or to be noticed"
+            },
+            {
+              subject: "cause",
+              ru: "причина",
+              en: "the person or thing that makes something happen"
+            },
+            {
+              subject: "tangible",
+              ru: "",
+              en: "that can be clearly seen to exist"
             }
           ]
         }
