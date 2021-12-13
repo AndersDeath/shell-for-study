@@ -48,6 +48,17 @@ export class DictionaryComponent {
     if (this.viewTypes.includes(item)) {
       this.viewType = item;
     }
+    let count = 0;
+    this.dictionary.sections.forEach(section => {
+      section.groups.forEach((group) => {
+        count = count + group.subjects.length;
+      });
+    });
+
+    console.log('Dictionary name: ', this.dictionary.title);
+    console.log('Dictionary version: ', this.dictionary.version);
+    console.log('Subjects count: ', count);
+    console.log('----------------------');
   }
 
   isViewEnable(view: string) {

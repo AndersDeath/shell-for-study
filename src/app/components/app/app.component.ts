@@ -8,17 +8,19 @@ import { SidebarService } from 'src/app/services/sidebar.service';
 })
 export class AppComponent implements OnInit {
   public isOpened = false;
-  version = 'Version 0.4.0';
+  version = 'v0.4.1';
 
   constructor(
     public sidebar: SidebarService
     ) {
 
   }
-  title = 'vnb-dictionary';
 
   ngOnInit() {
     this.isOpened = this.sidebar.opened;
+    console.log('----------------------');
+    console.log('Shell for study (SFS) ' + this.version);
+    console.log('----------------------');
   }
 
   toggleSidebar() {
