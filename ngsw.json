@@ -1,7 +1,7 @@
 {
   "configVersion": 1,
-  "timestamp": 1639396063795,
-  "index": "https://andersdeath.github.io/vnb-dictionary/index.html",
+  "timestamp": 1639396771408,
+  "index": "https://andersdeath.github.io/shell-for-study/index.html",
   "assetGroups": [
     {
       "name": "app",
@@ -11,14 +11,14 @@
         "ignoreVary": true
       },
       "urls": [
-        "https://andersdeath.github.io/vnb-dictionary/favicon.ico",
-        "https://andersdeath.github.io/vnb-dictionary/index.html",
-        "https://andersdeath.github.io/vnb-dictionary/main.cef592f0facb43e50c86.js",
-        "https://andersdeath.github.io/vnb-dictionary/manifest.webmanifest",
-        "https://andersdeath.github.io/vnb-dictionary/polyfills.46b1a5d0a532670f205c.js",
-        "https://andersdeath.github.io/vnb-dictionary/runtime.68cba66a562b7862ddc8.js",
-        "https://andersdeath.github.io/vnb-dictionary/scripts.3c3e9a19f3e3801f8abe.js",
-        "https://andersdeath.github.io/vnb-dictionary/styles.d0ca1ac3b96347c77991.css"
+        "https://andersdeath.github.io/shell-for-study/favicon.ico",
+        "https://andersdeath.github.io/shell-for-study/index.html",
+        "https://andersdeath.github.io/shell-for-study/main.ec3d6d5b4d8529fab639.js",
+        "https://andersdeath.github.io/shell-for-study/manifest.webmanifest",
+        "https://andersdeath.github.io/shell-for-study/polyfills.2b23e9ead7879487ea95.js",
+        "https://andersdeath.github.io/shell-for-study/runtime.194c07d385a4bdc52c6e.js",
+        "https://andersdeath.github.io/shell-for-study/scripts.3c3e9a19f3e3801f8abe.js",
+        "https://andersdeath.github.io/shell-for-study/styles.d0ca1ac3b96347c77991.css"
       ],
       "patterns": []
     },
@@ -30,40 +30,40 @@
         "ignoreVary": true
       },
       "urls": [
-        "https://andersdeath.github.io/vnb-dictionary/assets/icons/icon-128x128.png",
-        "https://andersdeath.github.io/vnb-dictionary/assets/icons/icon-144x144.png",
-        "https://andersdeath.github.io/vnb-dictionary/assets/icons/icon-152x152.png",
-        "https://andersdeath.github.io/vnb-dictionary/assets/icons/icon-16x16.png",
-        "https://andersdeath.github.io/vnb-dictionary/assets/icons/icon-192x192.png",
-        "https://andersdeath.github.io/vnb-dictionary/assets/icons/icon-32x32.png",
-        "https://andersdeath.github.io/vnb-dictionary/assets/icons/icon-384x384.png",
-        "https://andersdeath.github.io/vnb-dictionary/assets/icons/icon-512x512.png",
-        "https://andersdeath.github.io/vnb-dictionary/assets/icons/icon-72x72.png",
-        "https://andersdeath.github.io/vnb-dictionary/assets/icons/icon-96x96.png"
+        "https://andersdeath.github.io/shell-for-study/assets/icons/icon-128x128.png",
+        "https://andersdeath.github.io/shell-for-study/assets/icons/icon-144x144.png",
+        "https://andersdeath.github.io/shell-for-study/assets/icons/icon-152x152.png",
+        "https://andersdeath.github.io/shell-for-study/assets/icons/icon-16x16.png",
+        "https://andersdeath.github.io/shell-for-study/assets/icons/icon-192x192.png",
+        "https://andersdeath.github.io/shell-for-study/assets/icons/icon-32x32.png",
+        "https://andersdeath.github.io/shell-for-study/assets/icons/icon-384x384.png",
+        "https://andersdeath.github.io/shell-for-study/assets/icons/icon-512x512.png",
+        "https://andersdeath.github.io/shell-for-study/assets/icons/icon-72x72.png",
+        "https://andersdeath.github.io/shell-for-study/assets/icons/icon-96x96.png"
       ],
       "patterns": []
     }
   ],
   "dataGroups": [],
   "hashTable": {
-    "https://andersdeath.github.io/vnb-dictionary/assets/icons/icon-128x128.png": "b18755c8f03f84e415ef486fd544884b84766311",
-    "https://andersdeath.github.io/vnb-dictionary/assets/icons/icon-144x144.png": "6aac7af53736ad09851bf6cd08f83ab3c08306c2",
-    "https://andersdeath.github.io/vnb-dictionary/assets/icons/icon-152x152.png": "7051b7512a7bfa4384517699cda292194f403207",
-    "https://andersdeath.github.io/vnb-dictionary/assets/icons/icon-16x16.png": "ab505db904bb9ec216c4d29f10fd203d172c8d77",
-    "https://andersdeath.github.io/vnb-dictionary/assets/icons/icon-192x192.png": "eaba71a0875307001a91dd3d9e4a0ec8eff802fb",
-    "https://andersdeath.github.io/vnb-dictionary/assets/icons/icon-32x32.png": "4559529038de2920b3755ab0cea10beb965ed282",
-    "https://andersdeath.github.io/vnb-dictionary/assets/icons/icon-384x384.png": "33bb86756e9aaa535ae28d99787022a0ce342408",
-    "https://andersdeath.github.io/vnb-dictionary/assets/icons/icon-512x512.png": "2660f04b80edd849ff89f33d1f8dc2225915690c",
-    "https://andersdeath.github.io/vnb-dictionary/assets/icons/icon-72x72.png": "e44dd3ee2b8a0c02e63598256e42418f88ee8da0",
-    "https://andersdeath.github.io/vnb-dictionary/assets/icons/icon-96x96.png": "72b9c3decfcd2004b5ea26545cd00968bc111606",
-    "https://andersdeath.github.io/vnb-dictionary/favicon.ico": "bee1b30fddb92010938b86e6ecab35975e17930b",
-    "https://andersdeath.github.io/vnb-dictionary/index.html": "9c8fb5cad917fdc3cc7b737392d35b9d6fbc0983",
-    "https://andersdeath.github.io/vnb-dictionary/main.cef592f0facb43e50c86.js": "59dc12c737e23090c16b7330b97f10c02c133aa9",
-    "https://andersdeath.github.io/vnb-dictionary/manifest.webmanifest": "0ddd2b18313fb269f7dede4024f6be6e5662d5f3",
-    "https://andersdeath.github.io/vnb-dictionary/polyfills.46b1a5d0a532670f205c.js": "6eee817347a2396695c9ccb9444565cfbbb5f2df",
-    "https://andersdeath.github.io/vnb-dictionary/runtime.68cba66a562b7862ddc8.js": "4ea918b17db2c29c4451dcfc26634db5f0497622",
-    "https://andersdeath.github.io/vnb-dictionary/scripts.3c3e9a19f3e3801f8abe.js": "8919f4a7420c5cd856469980fa640681c491de7a",
-    "https://andersdeath.github.io/vnb-dictionary/styles.d0ca1ac3b96347c77991.css": "efa04a542555d78396e162e60eb9541098d10480"
+    "https://andersdeath.github.io/shell-for-study/assets/icons/icon-128x128.png": "b18755c8f03f84e415ef486fd544884b84766311",
+    "https://andersdeath.github.io/shell-for-study/assets/icons/icon-144x144.png": "6aac7af53736ad09851bf6cd08f83ab3c08306c2",
+    "https://andersdeath.github.io/shell-for-study/assets/icons/icon-152x152.png": "7051b7512a7bfa4384517699cda292194f403207",
+    "https://andersdeath.github.io/shell-for-study/assets/icons/icon-16x16.png": "ab505db904bb9ec216c4d29f10fd203d172c8d77",
+    "https://andersdeath.github.io/shell-for-study/assets/icons/icon-192x192.png": "eaba71a0875307001a91dd3d9e4a0ec8eff802fb",
+    "https://andersdeath.github.io/shell-for-study/assets/icons/icon-32x32.png": "4559529038de2920b3755ab0cea10beb965ed282",
+    "https://andersdeath.github.io/shell-for-study/assets/icons/icon-384x384.png": "33bb86756e9aaa535ae28d99787022a0ce342408",
+    "https://andersdeath.github.io/shell-for-study/assets/icons/icon-512x512.png": "2660f04b80edd849ff89f33d1f8dc2225915690c",
+    "https://andersdeath.github.io/shell-for-study/assets/icons/icon-72x72.png": "e44dd3ee2b8a0c02e63598256e42418f88ee8da0",
+    "https://andersdeath.github.io/shell-for-study/assets/icons/icon-96x96.png": "72b9c3decfcd2004b5ea26545cd00968bc111606",
+    "https://andersdeath.github.io/shell-for-study/favicon.ico": "bee1b30fddb92010938b86e6ecab35975e17930b",
+    "https://andersdeath.github.io/shell-for-study/index.html": "dab295449e2c2cbad29dc77164b4b061c3659589",
+    "https://andersdeath.github.io/shell-for-study/main.ec3d6d5b4d8529fab639.js": "3ec7ef226ae66e88c851a76fafc088ade1b896d8",
+    "https://andersdeath.github.io/shell-for-study/manifest.webmanifest": "f646651d22121448e8b8204c933b70edce64c4f2",
+    "https://andersdeath.github.io/shell-for-study/polyfills.2b23e9ead7879487ea95.js": "957cc0cea824b2a5b80121bc4ee7ed85e9cbe16d",
+    "https://andersdeath.github.io/shell-for-study/runtime.194c07d385a4bdc52c6e.js": "55fd0fc03eedb5a9b29a761e1199edc4262f78ad",
+    "https://andersdeath.github.io/shell-for-study/scripts.3c3e9a19f3e3801f8abe.js": "8919f4a7420c5cd856469980fa640681c491de7a",
+    "https://andersdeath.github.io/shell-for-study/styles.d0ca1ac3b96347c77991.css": "efa04a542555d78396e162e60eb9541098d10480"
   },
   "navigationUrls": [
     {
