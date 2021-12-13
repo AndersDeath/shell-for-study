@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "vnb-dictionary": {
+    "shell-for-study": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -20,7 +20,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/vnb-dictionary",
+            "outputPath": "dist/shell-for-study",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -78,10 +78,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "vnb-dictionary:build:production"
+              "browserTarget": "shell-for-study:build:production"
             },
             "development": {
-              "browserTarget": "vnb-dictionary:build:development"
+              "browserTarget": "shell-for-study:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -89,7 +89,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "vnb-dictionary:build"
+            "browserTarget": "shell-for-study:build"
           }
         },
         "test": {
@@ -117,5 +117,5 @@
       }
     }
   },
-  "defaultProject": "vnb-dictionary"
+  "defaultProject": "shell-for-study"
 }

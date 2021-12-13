@@ -25,7 +25,7 @@ module.exports = function (config) {
       suppressAll: true // removes the duplicated traces
     },
     coverageReporter: {
-      dir: require('path').join(__dirname, './coverage/vnb-dictionary'),
+      dir: require('path').join(__dirname, './coverage/shell-for-study'),
       subdir: '.',
       reporters: [
         { type: 'html' },

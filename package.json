@@ -1,6 +1,6 @@
 {
-  "name": "vnb-dictionary",
-  "version": "0.4.1",
+  "name": "shell-for-study",
+  "version": "0.4.2",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -8,8 +8,8 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "build:production": "ng build --configuration production",
-    "gh-prepare": "ng build --configuration production --base-href https://andersdeath.github.io/vnb-dictionary/",
-    "gh-deploy": "ngh --dir=dist/vnb-dictionary/",
+    "gh-prepare": "ng build --configuration production --base-href https://andersdeath.github.io/shell-for-study/",
+    "gh-deploy": "ngh --dir=dist/shell-for-study/",
     "gh": "npm run gh-prepare && npm run gh-deploy"
   },
   "private": true,
