@@ -2,7 +2,7 @@ import { Dictionary } from "./data-lib";
 
 export const TranslationsData : Dictionary = {
   title: 'MyDict',
-  version: 9,
+  version: 10,
   sections: [
     {
       title: '6 Minute English',
@@ -280,6 +280,71 @@ export const TranslationsData : Dictionary = {
               subject: "hedonic treadmill",
               ru: "",
               en: "the human tendency to return to the same level of happiness after something very good or very bad has happened"
+            }
+          ]
+        },
+        {
+          title: "Digital help for blind people",
+          subjects: [
+            {
+              subject: "assistive technology",
+              ru: "",
+              en: "equipment and technology that help individuals with disabilities to perform functions that might otherwise be difficult or impossible"
+            },
+            {
+              subject: "obstacle",
+              ru: "",
+              en: "object that blocks your movement because it is in your way"
+            },
+            {
+              subject: "echo-location",
+              ru: "",
+              en: "ultrasound system used by some animals to determine the position of nearly objects by measuring how long it takes for an echo to return from the object"
+            },
+            {
+              subject: "visually impaired",
+              ru: "",
+              en: "having a decreased ability to see that causes problems, whether disabling or not"
+            },
+            {
+              subject: "normalises",
+              ru: "",
+              en: "treats as normal something which has not been accepted as being normal before"
+            }
+          ]
+        },
+        {
+          title: "A quieter world",
+          subjects: [
+            {
+              subject: "grate",
+              ru: "",
+              en: "annoy or irritate"
+            },
+            {
+              subject: "conscious",
+              ru: "",
+              en: "aware of something"
+            },
+            {
+              subject: "get into the habit of (something)",
+              ru: "",
+              en: "start doing something regularly, often without even thinking about it"
+            },
+            {
+              subject: "suppressing",
+              ru: "",
+              en: "preventing, stopping or reducing"
+            },
+            {
+              subject: "honk",
+              ru: "",
+              en: "short, loud sound a car horn makes"
+            },
+            {
+              subject: "express yourself",
+              ru: "",
+              en: "show how you feel"
             }
           ]
         }
