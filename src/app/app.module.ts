@@ -16,11 +16,11 @@ import { SidebarService } from './services/sidebar.service';
 import { TabsViewComponent } from './components/tabs-view/tabs-view.component';
 import { CardsViewComponent } from './components/cards-view/cards-view.component';
 import { TableViewComponent } from './components/table-view/table-view.component';
-import { DictionaryPageComponent } from './components/dictionary-page/dictionary-page.component';
-import { GlossaryPageComponent } from './components/glossary-page/glossary-page.component';
+import { DictionaryPageComponent } from './pages/dictionary-page/dictionary-page.component';
+import { GlossaryPageComponent } from './pages/glossary-page/glossary-page.component';
 import { MarkdownModule } from 'ngx-markdown';
 import { ArticleViewComponent } from './components/article-view/article-view.component';
-import { FreeDictionaryPageComponent } from './components/free-dictionary-page/free-dictionary-page.component';
+import { FreeDictionaryPageComponent } from './pages/free-dictionary-page/free-dictionary-page.component';
 import { FakeFlashcardsViewComponent } from './components/fake-flashcards-view/fake-flashcards-view.component';
 import { SpellingTestViewComponent } from './components/spelling-test-view/spelling-test-view.component';
 import { NgxUiLoaderModule,
@@ -28,6 +28,7 @@ import { NgxUiLoaderModule,
   POSITION,
   PB_DIRECTION, } from "ngx-ui-loader";
 import { FlashcardsViewComponent } from './components/flashcards-view/flashcards-view.component';
+import { TransitionWordsPageComponent } from './pages/transition-words-page/transition-words-page.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { FlashcardsViewComponent } from './components/flashcards-view/flashcards
     FreeDictionaryPageComponent,
     FakeFlashcardsViewComponent,
     SpellingTestViewComponent,
-    FlashcardsViewComponent
+    FlashcardsViewComponent,
+    TransitionWordsPageComponent
   ],
   imports: [
     BrowserModule,
