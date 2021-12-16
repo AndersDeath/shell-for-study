@@ -2,7 +2,7 @@ import { Dictionary } from "./data-lib";
 
 export const TransitionWordsData : Dictionary = {
   title: 'Transition words',
-  version: 1,
+  version: 2,
   sections: [
     {
       title: 'Cause and effect',
@@ -33,6 +33,56 @@ export const TransitionWordsData : Dictionary = {
           ]
         }
       ]
-    }
+    },
+    {
+      title: 'Clarification',
+      groups: [
+        {
+          title: "Words",
+          subjects: [
+            {
+              subject: "That is to say,",
+              ru: "Иными словами, представляющий сам себя в суде.",
+              en: "That is to say, representing himself."
+            },
+            {
+              subject: "in other words",
+              ru: "Таким образом, в качестве критерия должна выступать объективная оценка или, иными словами, обоснованность.",
+              en: "So the benchmark is objective assessment or in other words reasonability."
+            },
+            {
+              subject: "to clarify",
+              ru: "Для уточнения этой цели было внесено предложение исключить слова \"или опыта\".",
+              en: "A suggestion was made that the words \"or expertise\" should be deleted to clarify that objective."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      title: 'Contrast',
+      groups: [
+        {
+          title: "Words",
+          subjects: [
+            {
+              subject: "But",
+              ru: "Однако одни только эти меры просто не в состоянии быть эффективными без поддержки.",
+              en: "But these measures simply cannot work alone."
+            },
+            {
+              subject: "however",
+              ru: "Мы не уверены, однако, в том, что подобное соображение позволит рассеять все сомнения.",
+              en: "We wonder, however, whether such a consideration dispels all doubts."
+            },
+            {
+              subject: "on the other hand",
+              ru: "С другой стороны, защита окружающей среды требует наличия определенных механизмов регулирования.",
+              en: "Environmental protection, on the other hand, involves regulation."
+            }
+          ]
+        }
+      ]
+    },
   ]
 }
