@@ -29,6 +29,9 @@ html {
 }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; background-color: #efefef;}
 
+.mat-drawer-inner-container {
+  max-width: 200px;
+}
 
 .search-area {
   margin-top: 20px;
