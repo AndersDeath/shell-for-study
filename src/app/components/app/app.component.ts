@@ -1,5 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { MatMenuTrigger } from '@angular/material/menu';
 import { SidebarService } from 'src/app/services/sidebar.service';
+
+function getSelectionText() {
+  let text = "";
+  if ((window as any).getSelection) {
+      text = (window as any).getSelection().toString();
+
+  }
+  return text;
+}
 
 @Component({
   selector: 'app-root',
@@ -8,13 +18,34 @@ import { SidebarService } from 'src/app/services/sidebar.service';
 })
 export class AppComponent implements OnInit {
   public isOpened = false;
-  version = 'v0.5.2';
+  version = 'v0.5.3';
+  showContextMenu = false;
+  @ViewChild(MatMenuTrigger)
+  trigger!: MatMenuTrigger;
 
+  menuX = 0;
+  menuY = 0;
   constructor(
     public sidebar: SidebarService
     ) {
 
   }
+
+
+  onRightClick(event: any) {
+    event.preventDefault();
+    console.log(getSelectionText());
+    this.showContextMenu = true;
+      this.menuX = event.clientX;
+      this.menuY = event.clientY;
+      this.trigger.menuData = {item: getSelectionText()}
+      this.trigger.openMenu();
+
+   }
+
+   searchInGoogle() {
+     window.open('https://www.google.com/search?q=' + getSelectionText(),  '_blank')
+   }
 
   ngOnInit() {
     this.isOpened = this.sidebar.opened;

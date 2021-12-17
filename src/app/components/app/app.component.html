@@ -9,8 +9,20 @@
     <div class="app-version">Shell for study <br> (SFS) <br> {{version}}</div>
 
   </mat-drawer>
-  <mat-drawer-content>
+
+  <mat-drawer-content (contextmenu)="onRightClick($event)">
+  <div style="visibility: hidden; position: fixed;"
+    [style.left.px]="menuX"
+    [style.top.px]="menuY"
+    [matMenuTriggerFor]="settingsMenu"></div>
+    <mat-menu  [style.position]="'absolute'" [style.left.px]="menuX" [style.top.px]="menuY"   #settingsMenu>
+      <ng-template matMenuContent let-item="item">
+      <menu mat-menu-item (click)='searchInGoogle()'>Search in google: {{item}}</menu>
+      </ng-template>
+    </mat-menu>
     <router-outlet></router-outlet>
   </mat-drawer-content>
+
+
 </mat-drawer-container>
 
