@@ -2,7 +2,7 @@ import { Dictionary } from "./data-lib";
 
 export const TranslationsData : Dictionary = {
   title: 'MyDict',
-  version: 10,
+  version: 11,
   sections: [
     {
       title: '6 Minute English',
@@ -715,6 +715,36 @@ export const TranslationsData : Dictionary = {
               subject: "tangible",
               ru: "",
               en: "that can be clearly seen to exist"
+            }
+          ]
+        },
+        {
+          title: "Fourth group",
+          subjects: [
+            {
+              subject: "swell",
+              ru: "выпуклость",
+              en: " to become bigger or rounder"
+            },
+            {
+              subject: "sourpuss",
+              ru: "человек, который не весел или приятен",
+              en: "a person who is not cheerful or pleasants"
+            },
+            {
+              subject: "mangy",
+              ru: "паршивый",
+              en: "dirty and in bad condition"
+            },
+            {
+              subject: "indulgently",
+              ru: "снисходительно",
+              en: " in a way that allows somebody to have or do whatever they want"
+            },
+            {
+              subject: "aplomb",
+              ru: "если кто-то делает что-то aplomb, то уверенно и успешно, часто в сложной ситуации",
+              en: "if somebody does something with aplomb, they do it in a confident and successful way, often in a difficult situation"
             }
           ]
         }
