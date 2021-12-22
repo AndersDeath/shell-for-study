@@ -2,7 +2,7 @@ import { Dictionary } from "./data-lib";
 
 export const TransitionWordsData : Dictionary = {
   title: 'Transition words',
-  version: 3,
+  version: 4,
   sections: [
     {
       title: 'Cause and effect',
@@ -29,6 +29,26 @@ export const TransitionWordsData : Dictionary = {
               subject: "consequently",
               ru: "Следовательно, она не может быть отодвинута на задний план в рамках процесса развития.",
               en: "It cannot, consequently, be marginalized in the development process."
+            },
+            {
+              subject: "Accordingly",
+              ru: "Соответственно, проблема предоставления ОПР продолжает сохранять актуальный характер для многих развивающихся стран.",
+              en: "Accordingly, ODA remained crucial for many developing countries."
+            },
+            {
+              subject: "For this reason",
+              ru: "Поэтому ее методы работы должны быть в срочном порядке пересмотрены и изменены.",
+              en: "For this reason, its methods must be urgently reformulated."
+            },
+            {
+              subject: "Hence",
+              ru: "Поэтому, в свою очередь, страны, обладающие ядерным оружием, должны быть связаны обязательствами в соответствии с протоколом.",
+              en: "Hence, the nuclear-weapon States should be equally committed to the protocol."
+            },
+            {
+              subject: "Thus",
+              ru: "Таким образом, ответственность на основании вины возлагается за ущерб, причиненный биоразнообразию.",
+              en: "Thus fault-based liability attaches to biodiversity damage."
             }
           ]
         }
@@ -174,6 +194,36 @@ export const TransitionWordsData : Dictionary = {
               subject: "in short",
               ru: "Ну, короче говоря, мы никогда не знаем людей, которые окружают нас.",
               en: "Well, in short, you never know the people around you."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      title: "Intention",
+      groups: [
+        {
+          title: "words",
+          subjects: [
+            {
+              subject: "For this purpose",
+              ru: "Для этой цели в кантонах должны быть созданы бюро по взысканию и авансированию алиментов.",
+              en: "For this purpose, the cantons are required to establish an office responsible for collection and advance payment of maintenance allowances."
+            },
+            {
+              subject: "In order to do this",
+              ru: "Для этого нам нужны новые инструменты и новая культура сотрудничества.",
+              en: "In order to do this, we need new tools and a new culture of cooperation."
+            },
+            {
+              subject: "To this end	",
+              ru: "С этой целью программы обучения для преподавателей должны включать образование в области прав человека. В этой связи Пакистан будет и далее продолжать осуществлять деятельность в этом направлении.",
+              en: "To this end, teacher-training programmes should incorporate human rights education. To this end, Pakistan will continue to remain engaged."
+            },
+            {
+              subject: "With this in mind	",
+              ru: "С учетом этого необходимо заметить, что существенные структурные реформы были связаны с ростом расходов.",
+              en: "With this in mind, it should be noted that significant structural reforms were involved in the rising expenditures."
             }
           ]
         }
