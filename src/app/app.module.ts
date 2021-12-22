@@ -73,7 +73,7 @@ import { TransitionWordsPageComponent } from './pages/transition-words-page/tran
     ),
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,
-      registrationStrategy: 'registerWhenStable:30000'
+      registrationStrategy: 'registerWithDelay:3000'
     })
   ],
   providers: [SidebarService],
