@@ -51,6 +51,9 @@ export class AppComponent implements OnInit {
     window.open('https://www.oxfordlearnersdictionaries.com/definition/english/' + getSelectionText(),  '_blank')
   }
 
+  translateToRussian() {
+    window.open('https://translate.google.com/?sl=en&tl=ru&text=' + getSelectionText(),  '_blank')
+  }
 
   ngOnInit() {
     this.isOpened = this.sidebar.opened;

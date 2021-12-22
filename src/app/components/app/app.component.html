@@ -19,6 +19,7 @@
       <ng-template matMenuContent let-item="item">
       <menu mat-menu-item (click)='searchInGoogle()'>Search in Google: {{item}}</menu>
       <menu mat-menu-item (click)='searchInOxford()'>Search in Oxford dictionary: {{item}}</menu>
+      <menu mat-menu-item (click)='translateToRussian()'>Translate it to russian: {{item}}</menu>
       </ng-template>
     </mat-menu>
     <router-outlet></router-outlet>
