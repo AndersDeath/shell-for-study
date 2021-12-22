@@ -18,7 +18,7 @@ function getSelectionText() {
 })
 export class AppComponent implements OnInit {
   public isOpened = false;
-  version = 'v0.5.3';
+  version = 'v0.5.4';
   showContextMenu = false;
   @ViewChild(MatMenuTrigger)
   trigger!: MatMenuTrigger;
@@ -46,6 +46,11 @@ export class AppComponent implements OnInit {
    searchInGoogle() {
      window.open('https://www.google.com/search?q=' + getSelectionText(),  '_blank')
    }
+
+   searchInOxford() {
+    window.open('https://www.oxfordlearnersdictionaries.com/definition/english/' + getSelectionText(),  '_blank')
+  }
+
 
   ngOnInit() {
     this.isOpened = this.sidebar.opened;

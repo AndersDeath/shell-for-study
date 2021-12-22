@@ -17,7 +17,8 @@
     [matMenuTriggerFor]="settingsMenu"></div>
     <mat-menu  [style.position]="'absolute'" [style.left.px]="menuX" [style.top.px]="menuY"   #settingsMenu>
       <ng-template matMenuContent let-item="item">
-      <menu mat-menu-item (click)='searchInGoogle()'>Search in google: {{item}}</menu>
+      <menu mat-menu-item (click)='searchInGoogle()'>Search in Google: {{item}}</menu>
+      <menu mat-menu-item (click)='searchInOxford()'>Search in Oxford dictionary: {{item}}</menu>
       </ng-template>
     </mat-menu>
     <router-outlet></router-outlet>
