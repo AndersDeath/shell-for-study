@@ -2,7 +2,7 @@ import { Dictionary } from "./data-lib";
 
 export const TranslationsData : Dictionary = {
   title: 'MyDict',
-  version: 11,
+  version: 12,
   sections: [
     {
       title: '6 Minute English',
@@ -345,6 +345,76 @@ export const TranslationsData : Dictionary = {
               subject: "express yourself",
               ru: "",
               en: "show how you feel"
+            }
+          ]
+        },
+        {
+          title: "Hermits",
+          subjects: [
+            {
+              subject: "hermit",
+              ru: "",
+              en: "someone who lives alone and apart from the rest of society, especially for religious reasons"
+            },
+            {
+              subject: "dictum",
+              ru: "",
+              en: "short statement or saying giving wise advice or a general truth about life"
+            },
+            {
+              subject: "recluse",
+              ru: "",
+              en: "someone who lives alone and deliberately avoids other people"
+            },
+            {
+              subject: "drop out",
+              ru: "",
+              en: "reject the normal rules and conventions of society and live outside the system"
+            },
+            {
+              subject: "bereavement",
+              ru: "",
+              en: "(sadness you feel) when a close friend or relative dies"
+            },
+            {
+              subject: "treat",
+              ru: "",
+              en: "reward or gift of something special and enjoyable"
+            }
+          ]
+        },
+        {
+          title: "The language of wine",
+          subjects: [
+            {
+              subject: "plonk",
+              ru: "",
+              en: "cheap, poor quality wine"
+            },
+            {
+              subject: "connoisseur",
+              ru: "",
+              en: "someone who enjoys a particular thing and knows a lot about it"
+            },
+            {
+              subject: "sommelier",
+              ru: "",
+              en: "someone who serves and give advice about wine in a restaurant"
+            },
+            {
+              subject: "sheer",
+              ru: "",
+              en: "word used to emphasise the amount of something; nothing but"
+            },
+            {
+              subject: "palate",
+              ru: "",
+              en: "describes someone’s ability to distinguish and appreciate different tastes"
+            },
+            {
+              subject: "encodes",
+              ru: "",
+              en: "changes information into something we can use or understand"
             }
           ]
         }
