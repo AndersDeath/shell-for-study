@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1640169619423,
+  "timestamp": 1641108637406,
   "index": "https://andersdeath.github.io/shell-for-study/index.html",
   "assetGroups": [
     {
@@ -13,7 +13,7 @@
       "urls": [
         "https://andersdeath.github.io/shell-for-study/favicon.ico",
         "https://andersdeath.github.io/shell-for-study/index.html",
-        "https://andersdeath.github.io/shell-for-study/main.0455b20605bef185d7d4.js",
+        "https://andersdeath.github.io/shell-for-study/main.056febd4f7bf0d535ad8.js",
         "https://andersdeath.github.io/shell-for-study/manifest.webmanifest",
         "https://andersdeath.github.io/shell-for-study/polyfills.2b23e9ead7879487ea95.js",
         "https://andersdeath.github.io/shell-for-study/runtime.194c07d385a4bdc52c6e.js",
@@ -57,8 +57,8 @@
     "https://andersdeath.github.io/shell-for-study/assets/icons/icon-72x72.png": "de63359459513dd78a3cfd3cdf53916ce99e6ede",
     "https://andersdeath.github.io/shell-for-study/assets/icons/icon-96x96.png": "5922962684dfc937e8776c1b45b2e20166fdb3e5",
     "https://andersdeath.github.io/shell-for-study/favicon.ico": "3c4ff2ee02a31e0e00522807b0234d0a7da158f9",
-    "https://andersdeath.github.io/shell-for-study/index.html": "ca8799094130a283b224887fe4b16e03e357202f",
-    "https://andersdeath.github.io/shell-for-study/main.0455b20605bef185d7d4.js": "ff9ff19be57d6822aafeefa61d470449846e492c",
+    "https://andersdeath.github.io/shell-for-study/index.html": "1d3f462bf2220d9e125f7b5d49cd918b6e774c5b",
+    "https://andersdeath.github.io/shell-for-study/main.056febd4f7bf0d535ad8.js": "3906f4e15aedeb7de687df3d38b3292e34c6eba8",
     "https://andersdeath.github.io/shell-for-study/manifest.webmanifest": "f646651d22121448e8b8204c933b70edce64c4f2",
     "https://andersdeath.github.io/shell-for-study/polyfills.2b23e9ead7879487ea95.js": "957cc0cea824b2a5b80121bc4ee7ed85e9cbe16d",
     "https://andersdeath.github.io/shell-for-study/runtime.194c07d385a4bdc52c6e.js": "55fd0fc03eedb5a9b29a761e1199edc4262f78ad",
