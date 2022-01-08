@@ -29,6 +29,7 @@ import { NgxUiLoaderModule,
   PB_DIRECTION, } from "ngx-ui-loader";
 import { FlashcardsViewComponent } from './components/flashcards-view/flashcards-view.component';
 import { TransitionWordsPageComponent } from './pages/transition-words-page/transition-words-page.component';
+import { JsInterviewQuestionsPageComponent } from './pages/js-interview-questions-page/js-interview-questions-page.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { TransitionWordsPageComponent } from './pages/transition-words-page/tran
     TableViewComponent,
     DictionaryPageComponent,
     GlossaryPageComponent,
+    JsInterviewQuestionsPageComponent,
     ArticleViewComponent,
     FreeDictionaryPageComponent,
     FakeFlashcardsViewComponent,

@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { DictionaryPageComponent } from './pages/dictionary-page/dictionary-page.component';
 import { FreeDictionaryPageComponent } from './pages/free-dictionary-page/free-dictionary-page.component';
 import { GlossaryPageComponent } from './pages/glossary-page/glossary-page.component';
+import { JsInterviewQuestionsPageComponent } from './pages/js-interview-questions-page/js-interview-questions-page.component';
 import { TransitionWordsPageComponent } from './pages/transition-words-page/transition-words-page.component';
 
 const routes: Routes = [{
@@ -16,6 +17,10 @@ const routes: Routes = [{
 {
   path: 'glossary',
   component: GlossaryPageComponent
+},
+{
+  path: 'js-interview-questions',
+  component: JsInterviewQuestionsPageComponent
 },
 {
   path: 'free-dictionary',
