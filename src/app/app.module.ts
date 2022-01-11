@@ -5,48 +5,34 @@ import { AppComponent } from './components/app/app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DictionaryComponent } from './components/dictionary/dictionary.component';
 import { MatTabsModule } from '@angular/material/tabs';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { MatNativeDateModule } from '@angular/material/core';
 import { HttpClientModule } from '@angular/common/http';
-import { NgMaterialModule } from './material.module';
+import { NgMaterialModule } from './modules/material.module';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { SettingsComponent } from './components/settings/settings.component';
 import { SidebarService } from './services/sidebar.service';
-import { TabsViewComponent } from './components/tabs-view/tabs-view.component';
-import { CardsViewComponent } from './components/cards-view/cards-view.component';
-import { TableViewComponent } from './components/table-view/table-view.component';
 import { DictionaryPageComponent } from './pages/dictionary-page/dictionary-page.component';
 import { GlossaryPageComponent } from './pages/glossary-page/glossary-page.component';
-import { MarkdownModule } from 'ngx-markdown';
-import { ArticleViewComponent } from './components/article-view/article-view.component';
 import { FreeDictionaryPageComponent } from './pages/free-dictionary-page/free-dictionary-page.component';
-import { FakeFlashcardsViewComponent } from './components/fake-flashcards-view/fake-flashcards-view.component';
-import { SpellingTestViewComponent } from './components/spelling-test-view/spelling-test-view.component';
 import { NgxUiLoaderModule,
   SPINNER,
   POSITION,
   PB_DIRECTION, } from "ngx-ui-loader";
-import { FlashcardsViewComponent } from './components/flashcards-view/flashcards-view.component';
 import { TransitionWordsPageComponent } from './pages/transition-words-page/transition-words-page.component';
 import { JsInterviewQuestionsPageComponent } from './pages/js-interview-questions-page/js-interview-questions-page.component';
+import { ViewsModule } from './modules/views/views.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     DictionaryComponent,
     SettingsComponent,
-    TabsViewComponent,
-    CardsViewComponent,
-    TableViewComponent,
     DictionaryPageComponent,
     GlossaryPageComponent,
     JsInterviewQuestionsPageComponent,
-    ArticleViewComponent,
     FreeDictionaryPageComponent,
-    FakeFlashcardsViewComponent,
-    SpellingTestViewComponent,
-    FlashcardsViewComponent,
     TransitionWordsPageComponent
   ],
   imports: [
@@ -55,13 +41,11 @@ import { JsInterviewQuestionsPageComponent } from './pages/js-interview-question
     BrowserAnimationsModule,
     MatTabsModule,
     MatNativeDateModule,
-    ReactiveFormsModule,
-    FormsModule,
     HttpClientModule,
     NgMaterialModule,
-    MarkdownModule.forRoot(),
     HttpClientModule,
     ReactiveFormsModule,
+    ViewsModule,
     NgxUiLoaderModule.forRoot(
       {
         bgsColor: "white",

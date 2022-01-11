@@ -1,15 +1,7 @@
 <mat-drawer-container class="container" [hasBackdrop]="true">
   <mat-drawer class="side-navigation" #drawer [opened]="sidebar.opened" (closedStart)="watchClose()" mode="over">
-
-    <button color="primary" mat-flat-button [routerLink]="'/'" (click)="toggleSidebar()">English dictionary</button>
-    <button color="primary" mat-flat-button [routerLink]="'/transition-words'" (click)="toggleSidebar()">Transition words</button>
-    <button color="primary" mat-flat-button [routerLink]="'/glossary'"(click)="toggleSidebar()">Glossary of terms</button>
-    <button color="primary" mat-flat-button [routerLink]="'/js-interview-questions'"(click)="toggleSidebar()">JS interview questions</button>
-
-    <button color="primary" mat-flat-button [routerLink]="'/free-dictionary'"(click)="toggleSidebar()">Free Dictionary</button>
-
+    <button *ngFor="let item of menuData" color="primary" mat-flat-button [routerLink]="item.path" (click)="toggleSidebar()">{{item.name}}</button>
     <div class="app-version">Shell for study <br> (SFS) <br> {{version}}</div>
-
   </mat-drawer>
 
   <mat-drawer-content (contextmenu)="onRightClick($event)">
@@ -24,6 +16,7 @@
       <menu mat-menu-item (click)='translateToRussian()'>Translate it to russian: {{item}}</menu>
       </ng-template>
     </mat-menu>
+
     <router-outlet></router-outlet>
   </mat-drawer-content>
 

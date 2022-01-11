@@ -2,6 +2,11 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatMenuTrigger } from '@angular/material/menu';
 import { SidebarService } from 'src/app/services/sidebar.service';
 
+interface SFSMenuItem {
+  path: string;
+  name: string;
+}
+
 function getSelectionText() {
   let text = "";
   if ((window as any).getSelection) {
@@ -23,6 +28,30 @@ export class AppComponent implements OnInit {
   @ViewChild(MatMenuTrigger)
   trigger!: MatMenuTrigger;
 
+  public menuData:SFSMenuItem[] = [
+    {
+      path: '/',
+      name: 'English dictionary'
+    },
+    {
+      path: '/transition-words',
+      name: 'Transition words'
+    },
+    {
+      path: '/glossary',
+      name: 'Glossary of terms'
+    },
+    {
+      path: '/js-interview-questions',
+      name: 'JS interview questions'
+    },
+    {
+      path: '/free-dictionary',
+      name: 'Free Dictionary'
+    }
+
+  ]
+
   menuX = 0;
   menuY = 0;
   constructor(
@@ -34,13 +63,11 @@ export class AppComponent implements OnInit {
 
   onRightClick(event: any) {
     event.preventDefault();
-    console.log(getSelectionText());
     this.showContextMenu = true;
       this.menuX = event.clientX;
       this.menuY = event.clientY;
       this.trigger.menuData = {item: getSelectionText()}
       this.trigger.openMenu();
-
    }
 
    searchInGoogle() {
