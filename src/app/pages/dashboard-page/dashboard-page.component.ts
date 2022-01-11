@@ -16,7 +16,6 @@ export class DashboardPageComponent implements OnInit {
     ) { }
 
   ngOnInit(): void {
-    console.log(this.items);
   }
 
   toggleSidebar() {
