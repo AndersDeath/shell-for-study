@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { Subscription } from 'rxjs';
 import { ApiService } from 'src/app/services/api.service';
@@ -7,11 +7,12 @@ import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
 
 
 @Component({
-  selector: 'app-free-dictionary',
+  selector: 'sfs-free-dictionary',
   templateUrl: './free-dictionary.component.html',
   styleUrls: ['./free-dictionary.component.scss']
 })
 export class FreeDictionaryComponent implements OnInit {
+  @Input() word = '';
   public searchControl = new FormControl('');
   public result: any  = [];
 
@@ -23,15 +24,19 @@ export class FreeDictionaryComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    const sub = this.searchControl.valueChanges.pipe(
-
-    debounceTime(1000),
-    distinctUntilChanged()
-  ).subscribe((e) => {
-    if(e.trim().length > 0) {
-      this.search(e);
+    if(this.word.trim() !== '') {
+      this.searchControl.setValue(this.word);
+      this.search(this.word);
     }
-  });
+    const sub = this.searchControl.valueChanges.pipe(
+      debounceTime(1000),
+      distinctUntilChanged()
+    ).subscribe((e) => {
+      if(e.trim().length > 0) {
+        this.search(e);
+      }
+    });
+    this.subsciptions.push(sub);
   }
 
   search(word: string) {

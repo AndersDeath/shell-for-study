@@ -24,6 +24,7 @@ import { TransitionWordsPageComponent } from './pages/transition-words-page/tran
 import { JsInterviewQuestionsPageComponent } from './pages/js-interview-questions-page/js-interview-questions-page.component';
 import { ViewsModule } from './modules/views/views.module';
 import { FreeDictionaryModule } from './modules/free-dictionary/free-dictionary.module';
+import { FreeDictionaryPopupComponent } from './popups/free-dictionary-popup/free-dictionary-popup.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { FreeDictionaryModule } from './modules/free-dictionary/free-dictionary.
     GlossaryPageComponent,
     JsInterviewQuestionsPageComponent,
     FreeDictionaryPageComponent,
-    TransitionWordsPageComponent
+    TransitionWordsPageComponent,
+    FreeDictionaryPopupComponent
   ],
   imports: [
     BrowserModule,

@@ -6,7 +6,7 @@ import { SidebarService } from 'src/app/services/sidebar.service';
 import { ARTICLE_VIEW, CARDS_VIEW, FAKE_FLASHCARDS_VIEW, TABLE_VIEW, SPELLING_TEST_VIEW, FLASHCARDS_VIEW } from 'src/app/constants';
 
 @Component({
-  selector: 'app-dictionary',
+  selector: 'sfs-dictionary',
   templateUrl: './dictionary.component.html',
   styleUrls: ['./dictionary.component.scss']
 })

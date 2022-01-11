@@ -17,13 +17,13 @@ function getSelectionText() {
 }
 
 @Component({
-  selector: 'app-root',
+  selector: 'sfs-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
   public isOpened = false;
-  version = 'v0.6.2';
+  version = 'v0.6.3';
   showContextMenu = false;
   @ViewChild(MatMenuTrigger)
   trigger!: MatMenuTrigger;

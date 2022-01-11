@@ -2,7 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { SubjectGroup } from 'src/app/data/data-lib';
 
 @Component({
-  selector: 'app-article-view',
+  selector: 'sfs-article-view',
   templateUrl: './article-view.component.html',
   styleUrls: ['./article-view.component.scss']
 })

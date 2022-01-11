@@ -29,12 +29,12 @@
 <mat-tab-group *ngIf="viewType !== FAKE_FLASHCARDS_VIEW && viewType !== SPELLING_TEST_VIEW  && viewType !== FLASHCARDS_VIEW" class="tabs-area">
   <mat-tab [label]="item.title" *ngFor="let item of dictionary.sections">
     <ng-container *ngFor="let group of item.groups">
-      <app-table-view [group]="group" *ngIf="isViewEnable(TABLE_VIEW) && viewType === TABLE_VIEW"></app-table-view>
-      <app-cards-view  [group]="group" *ngIf="isViewEnable(CARDS_VIEW) && viewType === CARDS_VIEW"></app-cards-view>
-      <app-article-view  [group]="group" *ngIf="isViewEnable(ARTICLE_VIEW) && viewType === ARTICLE_VIEW"></app-article-view>
+      <sfs-table-view [group]="group" *ngIf="isViewEnable(TABLE_VIEW) && viewType === TABLE_VIEW"></sfs-table-view>
+      <sfs-cards-view  [group]="group" *ngIf="isViewEnable(CARDS_VIEW) && viewType === CARDS_VIEW"></sfs-cards-view>
+      <sfs-article-view  [group]="group" *ngIf="isViewEnable(ARTICLE_VIEW) && viewType === ARTICLE_VIEW"></sfs-article-view>
     </ng-container>
   </mat-tab>
 </mat-tab-group>
-<app-fake-flashcards-view  [dictionary]="dictionary" *ngIf="viewType === FAKE_FLASHCARDS_VIEW"></app-fake-flashcards-view>
-<app-flashcards-view  [dictionary]="dictionary" *ngIf="viewType === FLASHCARDS_VIEW"></app-flashcards-view>
-<app-spelling-test-view  [dictionary]="dictionary" *ngIf="viewType === SPELLING_TEST_VIEW"></app-spelling-test-view>
+<sfs-fake-flashcards-view  [dictionary]="dictionary" *ngIf="viewType === FAKE_FLASHCARDS_VIEW"></sfs-fake-flashcards-view>
+<sfs-flashcards-view  [dictionary]="dictionary" *ngIf="viewType === FLASHCARDS_VIEW"></sfs-flashcards-view>
+<sfs-spelling-test-view  [dictionary]="dictionary" *ngIf="viewType === SPELLING_TEST_VIEW"></sfs-spelling-test-view>

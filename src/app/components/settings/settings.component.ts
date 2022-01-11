@@ -5,7 +5,7 @@ import { TranslationsData } from 'src/app/data/translations-data';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 @Component({
-  selector: 'app-settings',
+  selector: 'sfs-settings',
   templateUrl: 'settings.component.html',
   styleUrls: ['./settings.component.scss']
 

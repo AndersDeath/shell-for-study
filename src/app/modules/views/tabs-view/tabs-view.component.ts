@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-tabs-view',
+  selector: 'sfs-tabs-view',
   templateUrl: './tabs-view.component.html',
   styleUrls: ['./tabs-view.component.scss']
 })

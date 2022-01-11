@@ -4,7 +4,7 @@ import { Dictionary, DictionaryBuilder } from 'src/app/data/data-lib';
 import { jsQuestionsData } from 'src/app/data/js-questions-data';
 
 @Component({
-  selector: 'app-js-interview-questions-page',
+  selector: 'sfs-js-interview-questions-page',
   templateUrl: './js-interview-questions-page.component.html',
   styleUrls: ['./js-interview-questions-page.component.scss']
 })

@@ -5,7 +5,7 @@ import { TransitionWordsData } from 'src/app/data/transition-words-data';
 import { TranslationsData } from 'src/app/data/translations-data';
 
 @Component({
-  selector: 'app-transition-words-page',
+  selector: 'sfs-transition-words-page',
   templateUrl: './transition-words-page.component.html',
   styleUrls: ['./transition-words-page.component.scss']
 })

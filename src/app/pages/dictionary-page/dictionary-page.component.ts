@@ -4,7 +4,7 @@ import { Dictionary, DictionaryBuilder } from 'src/app/data/data-lib';
 import { TranslationsData } from 'src/app/data/translations-data';
 
 @Component({
-  selector: 'app-dictionary-page',
+  selector: 'sfs-dictionary-page',
   templateUrl: './dictionary-page.component.html',
   styleUrls: ['./dictionary-page.component.scss']
 })

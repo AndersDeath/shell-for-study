@@ -2,7 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { SubjectGroup } from 'src/app/data/data-lib';
 
 @Component({
-  selector: 'app-cards-view',
+  selector: 'sfs-cards-view',
   templateUrl: './cards-view.component.html',
   styleUrls: ['./cards-view.component.scss']
 })

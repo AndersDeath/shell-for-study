@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { SidebarService } from 'src/app/services/sidebar.service';
 
 @Component({
-  selector: 'app-free-dictionary-page',
+  selector: 'sfs-free-dictionary-page',
   templateUrl: './free-dictionary-page.component.html',
   styleUrls: ['./free-dictionary-page.component.scss']
 })

@@ -2,7 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Dictionary, Subject } from 'src/app/data/data-lib';
 
 @Component({
-  selector: 'app-flashcards-view',
+  selector: 'sfs-flashcards-view',
   templateUrl: './flashcards-view.component.html',
   styleUrls: ['./flashcards-view.component.scss']
 })

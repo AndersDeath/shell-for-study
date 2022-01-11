@@ -9,7 +9,7 @@ interface ISpellingTestSubject extends Subject {
 }
 
 @Component({
-  selector: 'app-spelling-test-view',
+  selector: 'sfs-spelling-test-view',
   templateUrl: './spelling-test-view.component.html',
   styleUrls: ['./spelling-test-view.component.scss']
 })

@@ -2,7 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Dictionary, Subject } from 'src/app/data/data-lib';
 
 @Component({
-  selector: 'app-fake-flashcards-view',
+  selector: 'sfs-fake-flashcards-view',
   templateUrl: './fake-flashcards-view.component.html',
   styleUrls: ['./fake-flashcards-view.component.scss']
 })

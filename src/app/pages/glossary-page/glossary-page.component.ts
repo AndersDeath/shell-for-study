@@ -4,7 +4,7 @@ import { Dictionary, DictionaryBuilder } from 'src/app/data/data-lib';
 import { GlossaryData } from 'src/app/data/glossary-data';
 
 @Component({
-  selector: 'app-glossary-page',
+  selector: 'sfs-glossary-page',
   templateUrl: './glossary-page.component.html',
   styleUrls: ['./glossary-page.component.scss']
 })
