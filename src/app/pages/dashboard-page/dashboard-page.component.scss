@@ -1,0 +1,30 @@
+:host {
+
+  $card-bg-color: #ffffff;
+
+  .title {
+    margin-left: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-decoration: underline;
+  }
+  .dashboard-card {
+    margin-top: 10px;
+    background-color: $card-bg-color;
+    cursor: pointer;
+  }
+  .dashboard-card:hover {
+    background-color: #e7e7e7;
+  }
+
+  .cards-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .cards-container > .dashboard-card {
+    margin: 6px;
+  }
+
+}

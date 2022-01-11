@@ -1,11 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatMenuTrigger } from '@angular/material/menu';
+import { createSFSMenuData, SFSMenuItem } from 'src/app/data/data-lib';
 import { SidebarService } from 'src/app/services/sidebar.service';
 
-interface SFSMenuItem {
-  path: string;
-  name: string;
-}
 
 function getSelectionText() {
   let text = "";
@@ -23,34 +20,12 @@ function getSelectionText() {
 })
 export class AppComponent implements OnInit {
   public isOpened = false;
-  version = 'v0.6.3';
+  version = 'v0.7.0';
   showContextMenu = false;
   @ViewChild(MatMenuTrigger)
   trigger!: MatMenuTrigger;
 
-  public menuData:SFSMenuItem[] = [
-    {
-      path: '/',
-      name: 'English dictionary'
-    },
-    {
-      path: '/transition-words',
-      name: 'Transition words'
-    },
-    {
-      path: '/glossary',
-      name: 'Glossary of terms'
-    },
-    {
-      path: '/js-interview-questions',
-      name: 'JS interview questions'
-    },
-    {
-      path: '/free-dictionary',
-      name: 'Free Dictionary'
-    }
-
-  ]
+  public menuData: SFSMenuItem[] = createSFSMenuData();
 
   menuX = 0;
   menuY = 0;

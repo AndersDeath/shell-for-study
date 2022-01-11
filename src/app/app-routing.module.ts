@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { DashboardPageComponent } from './pages/dashboard-page/dashboard-page.component';
 import { DictionaryPageComponent } from './pages/dictionary-page/dictionary-page.component';
 import { FreeDictionaryPageComponent } from './pages/free-dictionary-page/free-dictionary-page.component';
 import { GlossaryPageComponent } from './pages/glossary-page/glossary-page.component';
@@ -8,6 +9,10 @@ import { TransitionWordsPageComponent } from './pages/transition-words-page/tran
 
 const routes: Routes = [{
   path: '',
+  component: DashboardPageComponent
+},
+{
+  path: 'dictionary',
   component: DictionaryPageComponent
 },
 {

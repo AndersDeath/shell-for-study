@@ -70,3 +70,54 @@ export class Dictionary {
 export function DictionaryBuilder(data: any):Dictionary {
   return new Dictionary(data.title, data.sections, data.version);
 }
+
+
+
+export const TABLE_VIEW = 'TABLE_VIEW';
+export const CARDS_VIEW = 'CARDS_VIEW';
+export const FAKE_FLASHCARDS_VIEW = "FAKE_FLASHCARDS_VIEW";
+export const FLASHCARDS_VIEW = "FLASHCARDS_VIEW";
+export const ARTICLE_VIEW = "ARTICLE_VIEW";
+export const SPELLING_TEST_VIEW = "SPELLING_TEST_VIEW";
+
+export interface SFSMenuItem {
+  path: string;
+  name: string;
+}
+
+
+export function createSFSMenuData(noRoot = false): SFSMenuItem[] {
+  const data = [
+    {
+      path: '/',
+      name: 'Dashboard'
+    },
+    {
+      path: '/dictionary',
+      name: 'English dictionary'
+    },
+    {
+      path: '/transition-words',
+      name: 'Transition words'
+    },
+    {
+      path: '/glossary',
+      name: 'Glossary of terms'
+    },
+    {
+      path: '/js-interview-questions',
+      name: 'JS interview questions'
+    },
+    {
+      path: '/free-dictionary',
+      name: 'Free Dictionary'
+    }
+  ]
+
+  if(noRoot) {
+    return data.filter((e: SFSMenuItem) => {
+      return e.path !== '/';
+    });
+  }
+  return data;
+}

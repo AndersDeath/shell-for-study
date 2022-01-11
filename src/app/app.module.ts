@@ -25,6 +25,7 @@ import { JsInterviewQuestionsPageComponent } from './pages/js-interview-question
 import { ViewsModule } from './modules/views/views.module';
 import { FreeDictionaryModule } from './modules/free-dictionary/free-dictionary.module';
 import { FreeDictionaryPopupComponent } from './popups/free-dictionary-popup/free-dictionary-popup.component';
+import { DashboardPageComponent } from './pages/dashboard-page/dashboard-page.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { FreeDictionaryPopupComponent } from './popups/free-dictionary-popup/fre
     JsInterviewQuestionsPageComponent,
     FreeDictionaryPageComponent,
     TransitionWordsPageComponent,
-    FreeDictionaryPopupComponent
+    FreeDictionaryPopupComponent,
+    DashboardPageComponent
   ],
   imports: [
     BrowserModule,

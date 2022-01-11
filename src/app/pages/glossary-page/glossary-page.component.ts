@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ARTICLE_VIEW, CARDS_VIEW, FAKE_FLASHCARDS_VIEW } from 'src/app/constants';
+import { ARTICLE_VIEW, CARDS_VIEW, FAKE_FLASHCARDS_VIEW } from 'src/app/data/data-lib';
 import { Dictionary, DictionaryBuilder } from 'src/app/data/data-lib';
 import { GlossaryData } from 'src/app/data/glossary-data';
 
