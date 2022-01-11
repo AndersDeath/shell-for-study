@@ -2,7 +2,7 @@ import { Dictionary } from "./data-lib";
 
 export const TranslationsData : Dictionary = {
   title: 'MyDict',
-  version: 12,
+  version: 13,
   sections: [
     {
       title: '6 Minute English',
@@ -415,6 +415,41 @@ export const TranslationsData : Dictionary = {
               subject: "encodes",
               ru: "",
               en: "changes information into something we can use or understand"
+            }
+          ]
+        },
+        {
+          title: "Are humans a messy species?",
+          subjects: [
+            {
+              subject: "out of sight, out of mind",
+              ru: "",
+              en: "said to emphasise that it is easier to forget something when you cannot see it"
+            },
+            {
+              subject: "go to great lengths",
+              ru: "",
+              en: "try very hard to achieve something"
+            },
+            {
+              subject: "territorial markers",
+              ru: "",
+              en: "smells secreted by animals into their dung or urine to mark their territory"
+            },
+            {
+              subject: "disgust",
+              ru: "",
+              en: "strong feeling of dislike or repulsion"
+            },
+            {
+              subject: "nausea",
+              ru: "",
+              en: "the feeling that you are going to vomit or be sick"
+            },
+            {
+              subject: "raise / make a stink about something",
+              ru: "",
+              en: "make a strong public complaint"
             }
           ]
         }
