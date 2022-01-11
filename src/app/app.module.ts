@@ -23,6 +23,7 @@ import { NgxUiLoaderModule,
 import { TransitionWordsPageComponent } from './pages/transition-words-page/transition-words-page.component';
 import { JsInterviewQuestionsPageComponent } from './pages/js-interview-questions-page/js-interview-questions-page.component';
 import { ViewsModule } from './modules/views/views.module';
+import { FreeDictionaryModule } from './modules/free-dictionary/free-dictionary.module';
 
 @NgModule({
   declarations: [
@@ -45,6 +46,7 @@ import { ViewsModule } from './modules/views/views.module';
     NgMaterialModule,
     HttpClientModule,
     ReactiveFormsModule,
+    FreeDictionaryModule,
     ViewsModule,
     NgxUiLoaderModule.forRoot(
       {
