@@ -12,6 +12,10 @@
     margin-top: 10px;
     background-color: $card-bg-color;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
   }
   .dashboard-card:hover {
     background-color: #e7e7e7;

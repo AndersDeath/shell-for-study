@@ -83,6 +83,7 @@ export const SPELLING_TEST_VIEW = "SPELLING_TEST_VIEW";
 export interface SFSMenuItem {
   path: string;
   name: string;
+  icon: string;
 }
 
 
@@ -90,31 +91,38 @@ export function createSFSMenuData(noRoot = false): SFSMenuItem[] {
   const data = [
     {
       path: '/',
-      name: 'Dashboard'
+      name: 'Dashboard',
+      icon: ''
     },
     {
       path: '/dictionary/english-words',
-      name: 'English dictionary'
+      name: 'English dictionary',
+      icon: 'i-en-language'
     },
     {
       path: '/dictionary/transition-words',
-      name: 'Transition words'
+      name: 'Transition words',
+      icon: 'i-en-language'
     },
     {
       path: '/dictionary/glossary',
-      name: 'Glossary of terms'
+      name: 'Glossary of terms',
+      icon: 'i-book'
     },
     {
       path: '/dictionary/js-interview-questions',
-      name: 'JS interview questions'
+      name: 'JS interview questions',
+      icon: 'i-javascript'
     },
     {
       path: '/dictionary/ts-interview-questions',
-      name: 'TS interview questions'
+      name: 'TS interview questions',
+      icon: 'i-typescript'
     },
     {
       path: '/free-dictionary',
-      name: 'Free Dictionary'
+      name: 'Free Dictionary',
+      icon: 'i-dictionary'
     }
   ]
 

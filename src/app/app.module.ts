@@ -23,6 +23,7 @@ import { ViewsModule } from './modules/views/views.module';
 import { FreeDictionaryModule } from './modules/free-dictionary/free-dictionary.module';
 import { FreeDictionaryPopupComponent } from './popups/free-dictionary-popup/free-dictionary-popup.component';
 import { DashboardPageComponent } from './pages/dashboard-page/dashboard-page.component';
+import { IconModule } from './modules/icon/icon.module';
 
 @NgModule({
   declarations: [
@@ -60,7 +61,8 @@ import { DashboardPageComponent } from './pages/dashboard-page/dashboard-page.co
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,
       registrationStrategy: 'registerWithDelay:3000'
-    })
+    }),
+    IconModule
   ],
   providers: [SidebarService],
   bootstrap: [AppComponent]
