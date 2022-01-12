@@ -1,1 +1,1 @@
-<sfs-dictionary [viewTypes]="viewTypes" [title]="title" [dictionary]="dictionary"></sfs-dictionary>
+<sfs-dictionary *ngIf="currentData" [viewTypes]="currentData.viewTypes" [title]="currentData.title" [dictionary]="currentData.dictionary"></sfs-dictionary>

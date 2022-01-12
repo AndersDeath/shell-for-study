@@ -93,19 +93,19 @@ export function createSFSMenuData(noRoot = false): SFSMenuItem[] {
       name: 'Dashboard'
     },
     {
-      path: '/dictionary',
+      path: '/dictionary/english-words',
       name: 'English dictionary'
     },
     {
-      path: '/transition-words',
+      path: '/dictionary/transition-words',
       name: 'Transition words'
     },
     {
-      path: '/glossary',
+      path: '/dictionary/glossary',
       name: 'Glossary of terms'
     },
     {
-      path: '/js-interview-questions',
+      path: '/dictionary/js-interview-questions',
       name: 'JS interview questions'
     },
     {

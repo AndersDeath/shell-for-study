@@ -1,5 +1,5 @@
-import { Component, Input } from '@angular/core';
-import { Dictionary, Subject } from '../../data/data-lib';
+import { Component, Input, OnChanges, OnInit } from '@angular/core';
+import { Dictionary } from '../../data/data-lib';
 import { MatDialog } from '@angular/material/dialog';
 import { SettingsComponent } from '../settings/settings.component';
 import { SidebarService } from 'src/app/services/sidebar.service';
@@ -10,7 +10,7 @@ import { ARTICLE_VIEW, CARDS_VIEW, FAKE_FLASHCARDS_VIEW, TABLE_VIEW, SPELLING_TE
   templateUrl: './dictionary.component.html',
   styleUrls: ['./dictionary.component.scss']
 })
-export class DictionaryComponent {
+export class DictionaryComponent implements OnChanges{
   @Input() dictionary: Dictionary = new Dictionary();
   @Input() title: string = '';
   @Input() viewTypes: string[] = [];
@@ -39,7 +39,8 @@ export class DictionaryComponent {
     localStorage.setItem(this.storageName, val)
   }
 
-  ngOnInit() {
+
+  ngOnChanges() {
     this.storageName = this.dictionary.title + 'Storage'
     const item = localStorage.getItem(this.storageName) || '';
     if(item === '') {
@@ -47,6 +48,8 @@ export class DictionaryComponent {
     }
     if (this.viewTypes.includes(item)) {
       this.viewType = item;
+    } else {
+      this.viewType = this.viewTypes[0] || '';
     }
     let count = 0;
     this.dictionary.sections.forEach(section => {
