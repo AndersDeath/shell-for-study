@@ -14,6 +14,7 @@ import { GlossaryData } from 'src/app/data/glossary-data';
 import { jsQuestionsData } from 'src/app/data/js-questions-data';
 import { TransitionWordsData } from 'src/app/data/transition-words-data';
 import { TranslationsData } from 'src/app/data/translations-data';
+import { tsQuestionsData } from 'src/app/data/ts-questions-data';
 
 @Component({
   selector: 'sfs-dictionary-page',
@@ -51,6 +52,12 @@ export class DictionaryPageComponent implements OnInit, OnDestroy {
         title: 'JS Interview Questions',
         viewTypes: [CARDS_VIEW, ARTICLE_VIEW],
         dictionary: DictionaryBuilder(jsQuestionsData()),
+      },
+      {
+        dictionaryId: 'ts-interview-questions',
+        title: 'Ts Interview Questions',
+        viewTypes: [CARDS_VIEW, ARTICLE_VIEW],
+        dictionary: DictionaryBuilder(tsQuestionsData()),
       },
       {
         dictionaryId: 'transition-words',

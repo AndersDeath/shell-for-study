@@ -109,6 +109,10 @@ export function createSFSMenuData(noRoot = false): SFSMenuItem[] {
       name: 'JS interview questions'
     },
     {
+      path: '/dictionary/ts-interview-questions',
+      name: 'TS interview questions'
+    },
+    {
       path: '/free-dictionary',
       name: 'Free Dictionary'
     }

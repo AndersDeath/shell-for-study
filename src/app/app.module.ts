@@ -14,14 +14,11 @@ import { environment } from '../environments/environment';
 import { SettingsComponent } from './components/settings/settings.component';
 import { SidebarService } from './services/sidebar.service';
 import { DictionaryPageComponent } from './pages/dictionary-page/dictionary-page.component';
-import { GlossaryPageComponent } from './pages/glossary-page/glossary-page.component';
 import { FreeDictionaryPageComponent } from './pages/free-dictionary-page/free-dictionary-page.component';
 import { NgxUiLoaderModule,
   SPINNER,
   POSITION,
   PB_DIRECTION, } from "ngx-ui-loader";
-import { TransitionWordsPageComponent } from './pages/transition-words-page/transition-words-page.component';
-import { JsInterviewQuestionsPageComponent } from './pages/js-interview-questions-page/js-interview-questions-page.component';
 import { ViewsModule } from './modules/views/views.module';
 import { FreeDictionaryModule } from './modules/free-dictionary/free-dictionary.module';
 import { FreeDictionaryPopupComponent } from './popups/free-dictionary-popup/free-dictionary-popup.component';
@@ -33,10 +30,7 @@ import { DashboardPageComponent } from './pages/dashboard-page/dashboard-page.co
     DictionaryComponent,
     SettingsComponent,
     DictionaryPageComponent,
-    GlossaryPageComponent,
-    JsInterviewQuestionsPageComponent,
     FreeDictionaryPageComponent,
-    TransitionWordsPageComponent,
     FreeDictionaryPopupComponent,
     DashboardPageComponent
   ],
