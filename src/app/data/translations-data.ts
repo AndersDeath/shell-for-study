@@ -2,7 +2,7 @@ import { Dictionary } from "./data-lib";
 
 export const TranslationsData : Dictionary = {
   title: 'MyDict',
-  version: 13,
+  version: 14,
   sections: [
     {
       title: '6 Minute English',
@@ -450,6 +450,36 @@ export const TranslationsData : Dictionary = {
               subject: "raise / make a stink about something",
               ru: "",
               en: "make a strong public complaint"
+            }
+          ]
+        },
+        {
+          title: "Concussion in sport",
+          subjects: [
+            {
+              subject: "concussion",
+              ru: "",
+              en: "a type of traumatic brain injury caused by a bump or blow to the head"
+            },
+            {
+              subject: "(to be) off",
+              ru: "",
+              en: "bad or worse than usual; below the usual standar"
+            },
+            {
+              subject: "warped",
+              ru: "",
+              en: "strange and unpleasant"
+            },
+            {
+              subject: "pick up the pieces",
+              ru: "",
+              en: "try to return to normality after a crisis or collapse",
+            },
+            {
+              subject: "reserve",
+              ru: "",
+              en: "supply of something that is kept and stored for future use"
             }
           ]
         }
