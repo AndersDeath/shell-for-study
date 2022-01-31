@@ -105,6 +105,11 @@ export function createSFSMenuData(noRoot = false): SFSMenuItem[] {
       icon: 'i-en-language'
     },
     {
+      path: '/dictionary/6-minute-english',
+      name: '6 minute English',
+      icon: 'i-en-language'
+    },
+    {
       path: '/dictionary/glossary',
       name: 'Glossary of terms',
       icon: 'i-book'

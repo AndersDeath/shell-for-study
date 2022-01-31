@@ -15,6 +15,7 @@ import { jsQuestionsData } from 'src/app/data/js-questions-data';
 import { TransitionWordsData } from 'src/app/data/transition-words-data';
 import { TranslationsData } from 'src/app/data/translations-data';
 import { tsQuestionsData } from 'src/app/data/ts-questions-data';
+import { SixMinuteEnglish } from '../../data/6-minute-english-data';
 
 @Component({
   selector: 'sfs-dictionary-page',
@@ -46,6 +47,18 @@ export class DictionaryPageComponent implements OnInit, OnDestroy {
         title: 'Glossary',
         viewTypes: [CARDS_VIEW, ARTICLE_VIEW],
         dictionary: DictionaryBuilder(GlossaryData),
+      },
+      {
+        dictionaryId: '6-minute-english',
+        title: '6 minute English',
+        viewTypes: [
+          CARDS_VIEW,
+          FAKE_FLASHCARDS_VIEW,
+          TABLE_VIEW,
+          SPELLING_TEST_VIEW,
+          FLASHCARDS_VIEW,
+        ],
+        dictionary: DictionaryBuilder(SixMinuteEnglish),
       },
       {
         dictionaryId: 'js-interview-questions',
