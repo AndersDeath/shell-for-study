@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatMenuTrigger } from '@angular/material/menu';
+import { TranslateService } from '@ngx-translate/core';
 import { createSFSMenuData, SFSMenuItem } from 'src/app/data/data-lib';
 import { SidebarService } from 'src/app/services/sidebar.service';
 
@@ -20,7 +21,7 @@ function getSelectionText() {
 })
 export class AppComponent implements OnInit {
   public isOpened = false;
-  version = 'v0.8.1';
+  version = 'v0.8.2';
   showContextMenu = false;
   @ViewChild(MatMenuTrigger)
   trigger!: MatMenuTrigger;
@@ -30,7 +31,8 @@ export class AppComponent implements OnInit {
   menuX = 0;
   menuY = 0;
   constructor(
-    public sidebar: SidebarService
+    public sidebar: SidebarService,
+    private translate: TranslateService
     ) {
 
   }
@@ -62,6 +64,8 @@ export class AppComponent implements OnInit {
     console.log('----------------------');
     console.log('Shell for study (SFS) ' + this.version);
     console.log('----------------------');
+    this.translate.setDefaultLang('en');
+    this.translate.use('en');
   }
 
   toggleSidebar() {

@@ -7,7 +7,7 @@ import { DictionaryComponent } from './components/dictionary/dictionary.componen
 import { MatTabsModule } from '@angular/material/tabs';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatNativeDateModule } from '@angular/material/core';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { NgMaterialModule } from './modules/material.module';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
@@ -25,7 +25,12 @@ import { FreeDictionaryPopupComponent } from './popups/free-dictionary-popup/fre
 import { DashboardPageComponent } from './pages/dashboard-page/dashboard-page.component';
 import { IconModule } from './modules/icon/icon.module';
 import { UserPageComponent } from './pages/user-page/user-page.component';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http);
+}
 @NgModule({
   declarations: [
     AppComponent,
@@ -46,6 +51,13 @@ import { UserPageComponent } from './pages/user-page/user-page.component';
     HttpClientModule,
     NgMaterialModule,
     HttpClientModule,
+    TranslateModule.forRoot({
+      loader: {
+          provide: TranslateLoader,
+          useFactory: HttpLoaderFactory,
+            deps: [HttpClient]
+        }
+    }),
     ReactiveFormsModule,
     FreeDictionaryModule,
     ViewsModule,
