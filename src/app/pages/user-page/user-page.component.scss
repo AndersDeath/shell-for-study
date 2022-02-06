@@ -1,0 +1,11 @@
+:host {
+  .user-card {
+    max-width: 400px;
+    margin: 10px auto;
+  }
+
+  .user-header-image {
+    background-image: url('../../../assets/demo_avatar.jpg');
+    background-size: cover;
+  }
+}

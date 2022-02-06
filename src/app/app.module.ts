@@ -24,6 +24,7 @@ import { FreeDictionaryModule } from './modules/free-dictionary/free-dictionary.
 import { FreeDictionaryPopupComponent } from './popups/free-dictionary-popup/free-dictionary-popup.component';
 import { DashboardPageComponent } from './pages/dashboard-page/dashboard-page.component';
 import { IconModule } from './modules/icon/icon.module';
+import { UserPageComponent } from './pages/user-page/user-page.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { IconModule } from './modules/icon/icon.module';
     DictionaryPageComponent,
     FreeDictionaryPageComponent,
     FreeDictionaryPopupComponent,
-    DashboardPageComponent
+    DashboardPageComponent,
+    UserPageComponent,
   ],
   imports: [
     BrowserModule,
