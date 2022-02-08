@@ -24,6 +24,7 @@
   </button>
   <span class="spacer"></span>
   <button mat-icon-button (click)="openMore()"><mat-icon>more_vert</mat-icon></button>
+  <sfs-user-button></sfs-user-button>
 </mat-toolbar>
 
 <mat-tab-group *ngIf="viewType !== FAKE_FLASHCARDS_VIEW && viewType !== SPELLING_TEST_VIEW  && viewType !== FLASHCARDS_VIEW" class="tabs-area">

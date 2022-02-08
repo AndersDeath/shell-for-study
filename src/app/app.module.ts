@@ -27,6 +27,7 @@ import { IconModule } from './modules/icon/icon.module';
 import { UserPageComponent } from './pages/user-page/user-page.component';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { UserButtonComponent } from './components/user-button/user-button.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -41,6 +42,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     FreeDictionaryPopupComponent,
     DashboardPageComponent,
     UserPageComponent,
+    UserButtonComponent,
   ],
   imports: [
     BrowserModule,
