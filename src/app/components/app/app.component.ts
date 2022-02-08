@@ -21,7 +21,7 @@ function getSelectionText() {
 })
 export class AppComponent implements OnInit {
   public isOpened = false;
-  version = 'v0.8.2';
+  version = 'v0.8.3';
   showContextMenu = false;
   @ViewChild(MatMenuTrigger)
   trigger!: MatMenuTrigger;
