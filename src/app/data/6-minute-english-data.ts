@@ -2,7 +2,7 @@ import { Dictionary } from "./data-lib";
 
 export const SixMinuteEnglish : Dictionary = {
   title: '6 minute English',
-  version: 1,
+  version: 2,
   sections: [
     {
       title: '6 Minute English',
@@ -518,6 +518,41 @@ export const SixMinuteEnglish : Dictionary = {
             }
 
 
+          ]
+        },
+        {
+          title: "The fear of numbers",
+          subjects: [
+            {
+              subject: "put off",
+              ru: "",
+              en: "made to dislike something"
+            },
+            {
+              subject: "primed",
+              ru: "",
+              en: "told to behave in a certain situation"
+            },
+            {
+              subject: "oratory",
+              ru: "",
+              en: "make good and effective public speaking"
+            },
+            {
+              subject: "spurious",
+              ru: "",
+              en: "false, not correct or inaccurate"
+            },
+            {
+              subject: "potential",
+              ru: "",
+              en: "have the possibility within you to do something"
+            },
+            {
+              subject: "numeracy",
+              ru: "",
+              en: "having basic mathematical skills"
+            }
           ]
         }
       ]
