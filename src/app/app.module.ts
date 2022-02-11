@@ -29,6 +29,7 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { UserButtonComponent } from './components/user-button/user-button.component';
 import { SpanishDictionaryModule } from './modules/spanish-dictionary/spanish-dictionary.module';
+import { SpanishDictionaryPageComponent } from './pages/spanish-dictionary-page/spanish-dictionary-page.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -44,6 +45,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     DashboardPageComponent,
     UserPageComponent,
     UserButtonComponent,
+    SpanishDictionaryPageComponent,
   ],
   imports: [
     BrowserModule,
@@ -63,6 +65,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     }),
     ReactiveFormsModule,
     FreeDictionaryModule,
+    SpanishDictionaryModule,
     ViewsModule,
     NgxUiLoaderModule.forRoot(
       {

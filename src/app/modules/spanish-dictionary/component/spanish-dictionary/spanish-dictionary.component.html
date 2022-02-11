@@ -1,0 +1,66 @@
+<div>
+  <div class="search-area">
+    <mat-form-field class="search-field" appearance="outline">
+      <mat-label>Search</mat-label>
+      <input
+        matInput
+        placeholder="Enter a word"
+        [(ngModel)]="searchValue"
+        (keyup.enter)="search()"
+      />
+      <button matSuffix color="primary" class="search-button" mat-raised-button aria-label="Clear" (click)="search()">Search</button>
+    </mat-form-field>
+
+  </div>
+
+  <div class="no-results-msg" *ngIf="viewObj.length <= 0">
+    This is experimantal Spanish Dictionary. It uses <a href="https://dictionaryapi.com/products/api-spanish-dictionary" target="_blank">MERRIAM-WEBSTER'S SPANISH-ENGLISH DICTIONARY WITH AUDIO API    </a>. Type a word in the search bar to get the result
+  </div>
+  <br><br>
+
+  <mat-card *ngIf="viewObj.length === 0">
+    <mat-card-header>
+      <mat-card-subtitle>Empty</mat-card-subtitle>
+    </mat-card-header>
+  </mat-card>
+  <mat-card *ngFor="let item of viewObj">
+    <mat-card-header>
+      <mat-card-title>{{ item.lang }} - {{ item.word }}</mat-card-title>
+      <mat-card-subtitle> {{ item.fl }}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <div>
+        <span *ngIf="item.soundUrls.length > 0">
+          <span *ngFor="let item of item.soundUrls">
+            <audio controls>
+              <source src="{{ item }}" type="audio/mpeg" />
+            </audio>
+          </span>
+        </span>
+      </div>
+      <mat-divider></mat-divider>
+      <div>
+        <h4>Short defenitions</h4>
+        <ul *ngFor="let def of item.shortDef">
+          <li>{{ def }}</li>
+        </ul>
+        <br />
+      </div>
+      <mat-divider></mat-divider>
+      <h4>Defenitions with example and translation (if exist)</h4>
+      <span *ngFor="let variant of item.def.variants.simple">
+        <ul *ngFor="let i of variant">
+          <li>{{ i }},</li>
+        </ul>
+      </span>
+      <span *ngFor="let variant of item.def.variants.translated">
+        <ul *ngFor="let i of variant">
+          <li>
+            {{ i.t }} - <b>{{ i.tr }}</b>
+          </li>
+        </ul>
+      </span>
+      <mat-divider></mat-divider>
+    </mat-card-content>
+  </mat-card>
+</div>

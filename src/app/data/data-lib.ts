@@ -128,6 +128,11 @@ export function createSFSMenuData(noRoot = false): SFSMenuItem[] {
       path: '/free-dictionary',
       name: 'Free Dictionary',
       icon: 'i-dictionary'
+    },
+    {
+      path: '/spanish-dictionary',
+      name: 'Spanish Dictionary',
+      icon: 'i-dictionary'
     }
   ]
 
