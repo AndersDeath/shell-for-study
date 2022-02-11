@@ -27,7 +27,7 @@
     "@angular/service-worker": "~13.2.2",
     "@ngx-translate/core": "^14.0.0",
     "@ngx-translate/http-loader": "^7.0.0",
-    "ngx-markdown": "^13.0.0",
+    "ngx-markdown": "^13.1.0",
     "ngx-ui-loader": "^11.0.0",
     "rxjs": "~6.6.0",
     "tslib": "^2.3.0",
