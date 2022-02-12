@@ -31,4 +31,9 @@
     margin: 6px;
   }
 
+  @media (max-width: 420px) {
+    .dashboard-card {
+      width: 100%;
+    }
+ }
 }
