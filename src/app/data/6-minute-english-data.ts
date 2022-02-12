@@ -2,7 +2,7 @@ import { Dictionary } from "./data-lib";
 
 export const SixMinuteEnglish : Dictionary = {
   title: '6 minute English',
-  version: 2,
+  version: 3,
   sections: [
     {
       title: '6 Minute English',
@@ -552,6 +552,41 @@ export const SixMinuteEnglish : Dictionary = {
               subject: "numeracy",
               ru: "",
               en: "having basic mathematical skills"
+            }
+          ]
+        },
+        {
+          title: "Is technology harmful to youngsters?",
+          subjects: [
+            {
+              subject: "adolescent",
+              ru: "",
+              en: "young person in the process of developing into an adult"
+            },
+            {
+              subject: "smoking gun",
+              ru: "",
+              en: "information or evidence that proves that something is true or that someone has committed a crime"
+            },
+            {
+              subject: "savvy",
+              ru: "",
+              en: "having a good understanding and practical knowledge of something"
+            },
+            {
+              subject: "app blocker",
+              ru: "",
+              en: "software that blocks pop-up apps and websites and allows users to set timers which limit their amount of screen time"
+            },
+            {
+              subject: "designed for addiction",
+              ru: "",
+              en: "immersive video games and social media which are designed to manipulate human psychology",
+            },
+            {
+              subject: "digital native",
+              ru: "",
+              en: "someone who is very familiar and comfortable using digital technology and computers because they have grown up with them"
             }
           ]
         }
