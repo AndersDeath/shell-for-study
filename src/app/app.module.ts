@@ -27,7 +27,7 @@ import { IconModule } from './modules/icon/icon.module';
 import { UserPageComponent } from './pages/user-page/user-page.component';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
-import { UserButtonComponent } from './components/user-button/user-button.component';
+import { UserButtonComponent } from './modules/profile/components/user-button/user-button.component';
 import { SpanishDictionaryModule } from './modules/spanish-dictionary/spanish-dictionary.module';
 import { SpanishDictionaryPageComponent } from './pages/spanish-dictionary-page/spanish-dictionary-page.component';
 import { ProfileModule } from './modules/profile/profile.module';
@@ -45,7 +45,6 @@ export function HttpLoaderFactory(http: HttpClient) {
     FreeDictionaryPopupComponent,
     DashboardPageComponent,
     UserPageComponent,
-    UserButtonComponent,
     SpanishDictionaryPageComponent,
   ],
   imports: [
