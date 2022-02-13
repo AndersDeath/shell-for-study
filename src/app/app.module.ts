@@ -30,6 +30,7 @@ import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { UserButtonComponent } from './components/user-button/user-button.component';
 import { SpanishDictionaryModule } from './modules/spanish-dictionary/spanish-dictionary.module';
 import { SpanishDictionaryPageComponent } from './pages/spanish-dictionary-page/spanish-dictionary-page.component';
+import { ProfileModule } from './modules/profile/profile.module';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -83,7 +84,8 @@ export function HttpLoaderFactory(http: HttpClient) {
       registrationStrategy: 'registerWithDelay:3000'
     }),
     IconModule,
-    SpanishDictionaryModule
+    SpanishDictionaryModule,
+    ProfileModule
   ],
   providers: [SidebarService],
   bootstrap: [AppComponent]

@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./user-button.component.scss']
 })
 export class UserButtonComponent implements OnInit {
-  show: boolean = false;
+  show: boolean = true;
   constructor() { }
 
   ngOnInit(): void {
