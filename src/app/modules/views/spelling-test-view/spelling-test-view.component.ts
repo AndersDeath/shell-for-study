@@ -42,8 +42,8 @@ export class SpellingTestViewComponent implements OnInit {
     this.dictionary.sections.forEach((e) => {
       e.groups.forEach((g) => {
         g.subjects.forEach((s: Subject) => {
-          console.log(s.subject.trim().split(' ').length)
-          if(s.en.trim().split(' ').length !== 1) {
+          let i = s.en || '';
+          if(i.trim().split(' ').length !== 1) {
             this.flashCardsData.push(s);
           }
         });

@@ -4,12 +4,16 @@
     <mat-card-header>
       <mat-card-title>{{currentFlashCard.subject}}</mat-card-title>
     </mat-card-header>
-    <mat-card-content>
+    <mat-card-content *ngIf="currentFlashCard.ru">
       <p markdown [data]="currentFlashCard.ru">
       </p>
     </mat-card-content>
-    <mat-card-content>
+    <mat-card-content *ngIf="currentFlashCard.en">
       <p markdown [data]="currentFlashCard.en">
+      </p>
+    </mat-card-content>
+    <mat-card-content *ngIf="currentFlashCard.es">
+      <p markdown [data]="currentFlashCard.es">
       </p>
     </mat-card-content>
     <mat-card-actions align="end">

@@ -17,6 +17,7 @@ export class FakeFlashcardsViewComponent implements OnInit {
   currentFlashCard: Subject = {
     en: '',
     ru: '',
+    es: '',
     subject: ''
   }
 

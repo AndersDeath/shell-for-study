@@ -12,6 +12,10 @@
       <p markdown [data]="currentFlashCard.en">
       </p>
     </mat-card-content>
+    <mat-card-content *ngIf="isOpen">
+      <p markdown [data]="currentFlashCard.es">
+      </p>
+    </mat-card-content>
     <mat-card-actions align="end">
       <button mat-button (click)="previousFlashCard()">Previous</button>
       <button mat-button (click)="nextFlashCard()" >Next</button>

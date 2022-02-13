@@ -16,7 +16,7 @@ export class DictionaryComponent implements OnChanges{
   @Input() viewTypes: string[] = [];
 
   viewType: string = '';
-  displayedColumns: string[] = ['subject', 'ru', 'en'];
+  displayedColumns: string[] = ['subject', 'ru', 'en', 'es'];
 
   storageName: string = '';
 

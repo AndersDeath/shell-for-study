@@ -15,13 +15,16 @@ const itemIdGen = new IdGenClass();
 
 export class Subject {
   subject: string = '';
-  ru: string = '';
-  en: string = '';
-  id?: number = 0
-  constructor(subject:string = '', ru:string = '', en: string = '') {
+  ru?: string = '';
+  en?: string = '';
+  es?: string = '';
+  id?: number = 0;
+
+  constructor(subject:string = '', ru:string = '', en: string = '', es: string = '') {
     this.subject = subject;
-    this.ru = ru;
-    this.en = en;
+    this.ru = ru || '';
+    this.en = en || '';
+    this.es = es || '';
     this.id = itemIdGen.get();
   }
 }
@@ -33,7 +36,7 @@ export class SubjectGroup {
   constructor(title:string = '', subject:Subject[] = []) {
     this.title = title;
     this.subjects = subject.map((s: Subject) => {
-      return new Subject(s.subject, s.ru, s.en);
+      return new Subject(s.subject, s.ru, s.en, s.es);
     });;
     this.id = itemIdGen.get();
   }
