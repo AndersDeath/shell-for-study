@@ -12,6 +12,7 @@
     <mat-menu  [style.position]="'absolute'" [style.left.px]="menuX" [style.top.px]="menuY"   #settingsMenu>
       <ng-template matMenuContent let-item="item">
       <menu mat-menu-item (click)='searchInGoogle()'>Search in Google: {{item}}</menu>
+      <menu mat-menu-item (click)='searchInYandex()'>Search in Yandex: {{item}}</menu>
       <menu mat-menu-item (click)='searchInOxford()'>Search in Oxford dictionary: {{item}}</menu>
       <menu mat-menu-item (click)='translateToRussian()'>Translate it to Russian: {{item}}</menu>
       </ng-template>

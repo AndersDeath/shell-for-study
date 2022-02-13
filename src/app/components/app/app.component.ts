@@ -2,16 +2,14 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatMenuTrigger } from '@angular/material/menu';
 import { TranslateService } from '@ngx-translate/core';
 import { createSFSMenuData, SFSMenuItem } from 'src/app/data/data-lib';
+import { UtilsService } from 'src/app/services/utils.service';
 import { SidebarService } from 'src/app/services/sidebar.service';
 
-
-function getSelectionText() {
-  let text = "";
-  if ((window as any).getSelection) {
-      text = (window as any).getSelection().toString();
-
-  }
-  return text;
+enum ContextLinks {
+  SearchGoogle = 'https://www.google.com/search?q=',
+  SearchYandex = 'https://yandex.ru/search/?text=',
+  DictionaryOxforn = 'https://www.oxfordlearnersdictionaries.com/definition/english/',
+  TranslateGoogle = 'https://translate.google.com/?sl=en&tl=ru&text='
 }
 
 @Component({
@@ -21,18 +19,18 @@ function getSelectionText() {
 })
 export class AppComponent implements OnInit {
   public isOpened = false;
-  version = 'v0.9.2';
-  showContextMenu = false;
+  public version = 'v0.9.3';
+  public showContextMenu = false;
   @ViewChild(MatMenuTrigger)
-  trigger!: MatMenuTrigger;
+  public trigger!: MatMenuTrigger;
 
   public menuData: SFSMenuItem[] = createSFSMenuData();
-
-  menuX = 0;
-  menuY = 0;
+  public menuX = 0;
+  public menuY = 0;
   constructor(
     public sidebar: SidebarService,
-    private translate: TranslateService
+    private translate: TranslateService,
+    private utils: UtilsService
     ) {
 
   }
@@ -43,20 +41,24 @@ export class AppComponent implements OnInit {
     this.showContextMenu = true;
       this.menuX = event.clientX;
       this.menuY = event.clientY;
-      this.trigger.menuData = {item: getSelectionText()}
+      this.trigger.menuData = {item: this.utils.getSelectionText()}
       this.trigger.openMenu();
    }
 
    searchInGoogle() {
-     window.open('https://www.google.com/search?q=' + getSelectionText(),  '_blank')
+     window.open(ContextLinks.SearchGoogle + this.utils.getSelectionText(),  '_blank')
    }
 
+   searchInYandex() {
+    window.open(ContextLinks.SearchYandex + this.utils.getSelectionText(),  '_blank')
+  }
+
    searchInOxford() {
-    window.open('https://www.oxfordlearnersdictionaries.com/definition/english/' + getSelectionText(),  '_blank')
+    window.open(ContextLinks.DictionaryOxforn + this.utils.getSelectionText(),  '_blank')
   }
 
   translateToRussian() {
-    window.open('https://translate.google.com/?sl=en&tl=ru&text=' + getSelectionText(),  '_blank')
+    window.open(ContextLinks.TranslateGoogle + this.utils.getSelectionText(),  '_blank')
   }
 
   ngOnInit() {
