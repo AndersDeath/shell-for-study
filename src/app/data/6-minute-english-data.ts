@@ -2,7 +2,7 @@ import { Dictionary } from "./data-lib";
 
 export const SixMinuteEnglish : Dictionary = {
   title: '6 minute English',
-  version: 3,
+  version: 6,
   sections: [
     {
       title: '6 Minute English',
@@ -587,6 +587,35 @@ export const SixMinuteEnglish : Dictionary = {
               subject: "digital native",
               ru: "",
               en: "someone who is very familiar and comfortable using digital technology and computers because they have grown up with them"
+            }
+          ]
+        },
+        {
+          title: "Robot Artists",
+          subjects: [
+            {
+              subject: "dystopia",
+              en: "an imaginary future society where everything is bad"
+            },
+            {
+              subject: "non-verbal communication",
+              en: "communication that does not involve speaking such as using physical gestures and facial expressions"
+            },
+            {
+              subject: "appeal",
+              en: "the quality in someone that makes them attractive and interesting"
+            },
+            {
+              subject: "compelling",
+              en: "so exciting and interesting that it holds your attention"
+            },
+            {
+              subject: "battles to win",
+              en: "problems to be solved; obstacles to be overcome"
+            },
+            {
+              subject: "iron (something) out",
+              en: "remove or find solutions to a problem"
             }
           ]
         }
