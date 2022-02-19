@@ -7,11 +7,16 @@ import { UserProfileComponent } from './components/user-profile/user-profile.com
 import { UserLoginComponent } from './components/user-login/user-login.component';
 import { UserRegistrationComponent } from './components/user-registration/user-registration.component';
 
-
+const components = [
+  UserButtonComponent,
+  UserProfileComponent,
+  UserLoginComponent,
+  UserRegistrationComponent
+]
 
 @NgModule({
-  declarations: [UserButtonComponent, UserProfileComponent, UserLoginComponent, UserRegistrationComponent],
-  exports: [UserButtonComponent, UserProfileComponent, UserLoginComponent, UserRegistrationComponent],
+  declarations: components,
+  exports: components,
   imports: [
     CommonModule,
     NgMaterialModule,
