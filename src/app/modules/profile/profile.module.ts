@@ -4,12 +4,14 @@ import { UserButtonComponent } from './components/user-button/user-button.compon
 import { NgMaterialModule } from '../material.module';
 import { AppRoutingModule } from 'src/app/app-routing.module';
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
+import { UserLoginComponent } from './components/user-login/user-login.component';
+import { UserRegistrationComponent } from './components/user-registration/user-registration.component';
 
 
 
 @NgModule({
-  declarations: [UserButtonComponent, UserProfileComponent],
-  exports: [UserButtonComponent, UserProfileComponent],
+  declarations: [UserButtonComponent, UserProfileComponent, UserLoginComponent, UserRegistrationComponent],
+  exports: [UserButtonComponent, UserProfileComponent, UserLoginComponent, UserRegistrationComponent],
   imports: [
     CommonModule,
     NgMaterialModule,
