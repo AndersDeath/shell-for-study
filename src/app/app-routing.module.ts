@@ -5,6 +5,7 @@ import { DictionaryPageComponent } from './pages/dictionary-page/dictionary-page
 import { FreeDictionaryPageComponent } from './pages/free-dictionary-page/free-dictionary-page.component';
 import { UserPageComponent } from './pages/user-page/user-page.component';
 import { SpanishDictionaryPageComponent } from './pages/spanish-dictionary-page/spanish-dictionary-page.component';
+import { UserAuthPageComponent } from './pages/user-auth-page/user-auth-page.component';
 
 const routes: Routes = [{
   path: '',
@@ -25,6 +26,10 @@ const routes: Routes = [{
 {
   path: 'u/demo',
   component: UserPageComponent
+},
+{
+  path: 'auth',
+  component: UserAuthPageComponent
 },
 ];
 

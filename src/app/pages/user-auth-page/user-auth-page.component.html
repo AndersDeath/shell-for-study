@@ -1,0 +1,16 @@
+<mat-toolbar color="primary" class="toolbar">
+  <button mat-icon-button (click)="toggleSidebar()">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <div class="logo"></div>
+  <div class="logo-title">{{title}}</div>
+  <span class="space"></span>
+  <sfs-user-button></sfs-user-button>
+</mat-toolbar>
+<div>
+
+<h1>Auth page</h1>
+<hr>
+<sfs-user-login></sfs-user-login>
+<hr>
+<sfs-user-registration></sfs-user-registration>
