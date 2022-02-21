@@ -7,12 +7,14 @@ import { UserProfileComponent } from './components/user-profile/user-profile.com
 import { UserLoginComponent } from './components/user-login/user-login.component';
 import { UserRegistrationComponent } from './components/user-registration/user-registration.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { UserRestorePasswordComponent } from './components/user-restore-password/user-restore-password.component';
 
 const components = [
   UserButtonComponent,
   UserProfileComponent,
   UserLoginComponent,
-  UserRegistrationComponent
+  UserRegistrationComponent,
+  UserRestorePasswordComponent
 ]
 
 @NgModule({
