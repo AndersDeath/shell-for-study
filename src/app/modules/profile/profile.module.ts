@@ -6,6 +6,7 @@ import { AppRoutingModule } from 'src/app/app-routing.module';
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
 import { UserLoginComponent } from './components/user-login/user-login.component';
 import { UserRegistrationComponent } from './components/user-registration/user-registration.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 const components = [
   UserButtonComponent,
@@ -20,7 +21,9 @@ const components = [
   imports: [
     CommonModule,
     NgMaterialModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class ProfileModule { }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'sfs-user-login',
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserLoginComponent implements OnInit {
 
-  constructor() { }
+  public loginForm: FormGroup;
+  constructor(public fb: FormBuilder) {
+    this.loginForm = this.fb.group({
+      name: [null, [Validators.required]],
+      password: [null, [Validators.required]]
+    })
+  }
 
   ngOnInit(): void {
+  }
+
+  sendFormData(form: any) {
+    console.log('send form data', form);
   }
 
 }
