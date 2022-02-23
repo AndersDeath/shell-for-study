@@ -1,0 +1,15 @@
+.form-layout {
+  display: flex;
+  max-width: 500px;
+  flex-direction: column;
+  padding: 10px;
+  .form-field {
+    width: 100%;
+  }
+  .form-actions {
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: row;
+    align-items: center;
+  }
+}
