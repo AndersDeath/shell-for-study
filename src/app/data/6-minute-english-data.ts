@@ -2,7 +2,7 @@ import { Dictionary } from "./data-lib";
 
 export const SixMinuteEnglish : Dictionary = {
   title: '6 minute English',
-  version: 6,
+  version: 7,
   sections: [
     {
       title: '6 Minute English',
@@ -616,6 +616,35 @@ export const SixMinuteEnglish : Dictionary = {
             {
               subject: "iron (something) out",
               en: "remove or find solutions to a problem"
+            }
+          ]
+        },
+        {
+          title: "Why are people collecting NFTs?",
+          subjects: [
+            {
+              subject: "collectables",
+              en: "desirable objects that people search for and collect as a hobby"
+            },
+            {
+              subject: "non-fungible",
+              en: "having special, unique characteristics meaning that it cannot be interchanged with anything else"
+            },
+            {
+              subject: "the wild west",
+              en: "a situation where people can do whatever they want because there are no laws or controls"
+            },
+            {
+              subject: "rogue",
+              en: "behaving in a different way from what’s normal or expected, often causing damage"
+            },
+            {
+              subject: "digital artefact",
+              en: "any item that is produced and stored as digital or electronic version, for example codes, images or videos and audio files"
+            },
+            {
+              subject: "pyramid scheme",
+              en: "dishonest business trick or scam where money is used to pay a company’s debt instead of to profit investors"
             }
           ]
         }
