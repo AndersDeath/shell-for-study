@@ -8,11 +8,14 @@
   <sfs-user-button></sfs-user-button>
 </mat-toolbar>
 <div>
-
-<h1>Auth page</h1>
-<hr>
-<sfs-user-login></sfs-user-login>
-<hr>
-<sfs-user-registration></sfs-user-registration>
-<hr>
-<sfs-user-restore-password></sfs-user-restore-password>
+<mat-tab-group mat-align-tabs="start">
+  <mat-tab label="User Login">
+    <sfs-user-login></sfs-user-login>
+  </mat-tab>
+  <mat-tab label="User Registration">
+    <sfs-user-registration></sfs-user-registration>
+  </mat-tab>
+  <mat-tab label="User Restore Password">
+    <sfs-user-restore-password></sfs-user-restore-password>
+  </mat-tab>
+</mat-tab-group>
