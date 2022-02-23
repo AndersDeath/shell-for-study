@@ -19,7 +19,7 @@ enum ContextLinks {
 })
 export class AppComponent implements OnInit {
   public isOpened = false;
-  public version = 'v0.9.8';
+  public version = 'v0.9.9';
   public showContextMenu = false;
   @ViewChild(MatMenuTrigger)
   public trigger!: MatMenuTrigger;
