@@ -12,7 +12,7 @@ export class UserApiService {
     console.log('User API Service init')
   }
 
-  register(data: any) {
+  registration(data: any) {
     console.log(HttpUrls.register +': ', data);
     return false;
     return this.http.get(HttpUrls.register);

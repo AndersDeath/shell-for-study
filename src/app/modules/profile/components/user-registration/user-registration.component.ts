@@ -1,14 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, ValidatorFn, AbstractControl, ValidationErrors } from '@angular/forms';
 import { UserApiService } from '../../services/user-api.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'sfs-user-registration',
   templateUrl: './user-registration.component.html',
   styleUrls: ['./user-registration.component.scss']
 })
-export class UserRegistrationComponent implements OnInit {
+export class UserRegistrationComponent implements OnInit, OnDestroy {
   public registrationForm: FormGroup;
+  private subs: Subscription[] = []
   constructor(
     public fb: FormBuilder,
     private api: UserApiService
@@ -26,6 +28,8 @@ export class UserRegistrationComponent implements OnInit {
 
   sendFormData(form: any) {
     console.log('send form data', form);
+    const sub = this.api.registration(form.value);
+    // this.subs.push(sub);
   }
 
   checkPasswords: ValidatorFn = (group: AbstractControl | any):  ValidationErrors | null => {
@@ -36,4 +40,13 @@ export class UserRegistrationComponent implements OnInit {
     }
     return null
   }
+
+  ngOnDestroy() {
+    if(this.subs.length > 0) {
+      this.subs.forEach((s: Subscription) => {
+        s.unsubscribe();
+      })
+    }
+  }
+
 }
