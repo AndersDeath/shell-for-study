@@ -9,6 +9,7 @@ import { UserRegistrationComponent } from './components/user-registration/user-r
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UserRestorePasswordComponent } from './components/user-restore-password/user-restore-password.component';
 import { UserApiService } from './services/user-api.service';
+import { HttpClientModule } from '@angular/common/http';
 
 const components = [
   UserButtonComponent,
@@ -29,7 +30,8 @@ const components = [
     NgMaterialModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ]
 })
 export class ProfileModule { }
