@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UserApiService } from '../../services/user-api.service';
 
 @Component({
   selector: 'sfs-user-login',
@@ -9,7 +10,10 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class UserLoginComponent implements OnInit {
 
   public loginForm: FormGroup;
-  constructor(public fb: FormBuilder) {
+  constructor(
+    public fb: FormBuilder,
+    private api: UserApiService
+    ) {
     this.loginForm = this.fb.group({
       name: [null, [Validators.required]],
       password: [null, [Validators.required]]

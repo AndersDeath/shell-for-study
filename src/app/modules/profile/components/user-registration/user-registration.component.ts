@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, ValidatorFn, AbstractControl, ValidationErrors } from '@angular/forms';
+import { UserApiService } from '../../services/user-api.service';
 
 @Component({
   selector: 'sfs-user-registration',
@@ -8,7 +9,10 @@ import { FormGroup, FormBuilder, Validators, ValidatorFn, AbstractControl, Valid
 })
 export class UserRegistrationComponent implements OnInit {
   public registrationForm: FormGroup;
-  constructor(public fb: FormBuilder) {
+  constructor(
+    public fb: FormBuilder,
+    private api: UserApiService
+    ) {
     this.registrationForm = this.fb.group({
       name: ['', [Validators.required]],
       email: ['', [Validators.required, Validators.email]],

@@ -8,6 +8,7 @@ import { UserLoginComponent } from './components/user-login/user-login.component
 import { UserRegistrationComponent } from './components/user-registration/user-registration.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UserRestorePasswordComponent } from './components/user-restore-password/user-restore-password.component';
+import { UserApiService } from './services/user-api.service';
 
 const components = [
   UserButtonComponent,
@@ -20,6 +21,9 @@ const components = [
 @NgModule({
   declarations: components,
   exports: components,
+  providers: [
+    UserApiService
+  ],
   imports: [
     CommonModule,
     NgMaterialModule,

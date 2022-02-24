@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UserApiService } from '../../services/user-api.service';
 
 @Component({
   selector: 'sfs-user-profile',
@@ -7,7 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserProfileComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private api: UserApiService
+  ) { }
 
   ngOnInit(): void {
   }
