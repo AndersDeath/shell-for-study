@@ -10,6 +10,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UserRestorePasswordComponent } from './components/user-restore-password/user-restore-password.component';
 import { UserApiService } from './services/user-api.service';
 import { HttpClientModule } from '@angular/common/http';
+import { UserProfileSerivce } from './services/user-profile.service';
 
 const components = [
   UserButtonComponent,
@@ -23,7 +24,8 @@ const components = [
   declarations: components,
   exports: components,
   providers: [
-    UserApiService
+    UserApiService,
+    UserProfileSerivce
   ],
   imports: [
     CommonModule,
