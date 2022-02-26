@@ -35,7 +35,7 @@
         <div class="definition-block-line" *ngIf="definition.example">
           <strong>Example:</strong> {{definition.example}}
         </div>
-        <div class="definition-block-line" *ngIf="definition.synonyms.length > 0">
+        <div class="definition-block-line" *ngIf="definition.synonyms">
           <strong>Synonyms:</strong>
           <mat-chip-list>
             <span *ngFor="let syn of definition.synonyms">
@@ -43,7 +43,7 @@
             </span>
           </mat-chip-list>
         </div>
-        <div class="definition-block-line" *ngIf="definition.antonyms.length > 0">
+        <div class="definition-block-line" *ngIf="definition.antonyms">
           <strong>Antonyms:</strong>
           <mat-chip-list>
             <span *ngFor="let ant of definition.antonyms">

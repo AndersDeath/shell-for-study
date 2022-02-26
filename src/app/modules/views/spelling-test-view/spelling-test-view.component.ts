@@ -2,7 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { NgxUiLoaderService, SPINNER } from 'ngx-ui-loader';
 import { Dictionary, Subject } from 'src/app/data/data-lib';
-import { ApiService } from 'src/app/services/api.service';
+import { FreeDictionaryService } from '../../free-dictionary/services/free-dictionary.service';
 
 interface ISpellingTestSubject extends Subject {
   audio: string;
@@ -34,7 +34,7 @@ export class SpellingTestViewComponent implements OnInit {
   isAnswered = false;
 
   constructor(
-    private api: ApiService,
+    private api: FreeDictionaryService,
     private ngxService: NgxUiLoaderService
   ) { }
 

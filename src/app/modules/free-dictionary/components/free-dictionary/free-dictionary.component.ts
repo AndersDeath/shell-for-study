@@ -1,9 +1,9 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { Subscription } from 'rxjs';
-import { ApiService } from 'src/app/services/api.service';
 
 import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
+import { FreeDictionaryService } from '../../services/free-dictionary.service';
 
 
 @Component({
@@ -19,8 +19,7 @@ export class FreeDictionaryComponent implements OnInit {
   private subsciptions: Subscription[] = [];
 
   constructor(
-    private api: ApiService
-
+    private api: FreeDictionaryService
   ) { }
 
   ngOnInit(): void {
