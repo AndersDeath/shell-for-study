@@ -8,7 +8,7 @@ import { SidebarService } from 'src/app/services/sidebar.service';
 const EN = 'en';
 const RU = 'ru';
 
-const version = 'v0.9.12';
+const version = 'v0.9.13';
 
 enum ContextLinks {
   SearchGoogle = 'https://www.google.com/search?q=',
