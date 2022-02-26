@@ -5,11 +5,22 @@ import { createSFSMenuData, SFSMenuItem } from 'src/app/data/data-lib';
 import { UtilsService } from 'src/app/services/utils.service';
 import { SidebarService } from 'src/app/services/sidebar.service';
 
+const EN = 'en';
+const RU = 'ru';
+
+const version = 'v0.9.12';
+
 enum ContextLinks {
   SearchGoogle = 'https://www.google.com/search?q=',
   SearchYandex = 'https://yandex.ru/search/?text=',
   DictionaryOxforn = 'https://www.oxfordlearnersdictionaries.com/definition/english/',
   TranslateGoogle = 'https://translate.google.com/?sl=en&tl=ru&text='
+}
+
+function sfsIntroduction(version: string) {
+  console.log('----------------------');
+  console.log('Shell for study (SFS) ' + version);
+  console.log('----------------------');
 }
 
 @Component({
@@ -19,7 +30,7 @@ enum ContextLinks {
 })
 export class AppComponent implements OnInit {
   public isOpened = false;
-  public version = 'v0.9.12';
+  public version = version;
   public showContextMenu = false;
   @ViewChild(MatMenuTrigger)
   public trigger!: MatMenuTrigger;
@@ -63,11 +74,9 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     this.isOpened = this.sidebar.opened;
-    console.log('----------------------');
-    console.log('Shell for study (SFS) ' + this.version);
-    console.log('----------------------');
-    this.translate.setDefaultLang('en');
-    this.translate.use('en');
+    sfsIntroduction(this.version);
+    this.translate.setDefaultLang(EN);
+    this.translate.use(EN);
   }
 
   toggleSidebar() {
