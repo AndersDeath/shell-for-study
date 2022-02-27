@@ -11,13 +11,15 @@ import { UserRestorePasswordComponent } from './components/user-restore-password
 import { UserApiService } from './services/user-api.service';
 import { HttpClientModule } from '@angular/common/http';
 import { UserProfileSerivce } from './services/user-profile.service';
+import { LoginPopupComponent } from './components/login-popup/login-popup.component';
 
 const components = [
   UserButtonComponent,
   UserProfileComponent,
   UserLoginComponent,
   UserRegistrationComponent,
-  UserRestorePasswordComponent
+  UserRestorePasswordComponent,
+  LoginPopupComponent
 ]
 
 @NgModule({
