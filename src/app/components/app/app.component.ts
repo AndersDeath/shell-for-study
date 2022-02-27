@@ -5,10 +5,22 @@ import { createSFSMenuData, SFSMenuItem } from 'src/app/data/data-lib';
 import { UtilsService } from 'src/app/services/utils.service';
 import { SidebarService } from 'src/app/services/sidebar.service';
 
+interface TranslateModel {
+  download: string;
+}
+
 const EN = 'en';
 const RU = 'ru';
 
 const version = 'v0.9.14';
+
+const EN_TRANSLATION: TranslateModel = {
+  download: 'Download'
+}
+
+const RU_TRANSLATION: TranslateModel = {
+  download: 'Скачать'
+}
 
 enum ContextLinks {
   SearchGoogle = 'https://www.google.com/search?q=',
@@ -75,6 +87,8 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     this.isOpened = this.sidebar.opened;
     sfsIntroduction(this.version);
+    this.translate.setTranslation(EN, EN_TRANSLATION);
+    this.translate.setTranslation(RU, RU_TRANSLATION);
     this.translate.setDefaultLang(EN);
     this.translate.use(EN);
   }

@@ -32,9 +32,9 @@ import { SpanishDictionaryPageComponent } from './pages/spanish-dictionary-page/
 import { ProfileModule } from './modules/profile/profile.module';
 import { UserAuthPageComponent } from './pages/user-auth-page/user-auth-page.component';
 
-export function HttpLoaderFactory(http: HttpClient) {
-  return new TranslateHttpLoader(http);
-}
+// export function HttpLoaderFactory(http: HttpClient) {
+//   return new TranslateHttpLoader(http);
+// }
 @NgModule({
   declarations: [
     AppComponent,
@@ -57,13 +57,13 @@ export function HttpLoaderFactory(http: HttpClient) {
     HttpClientModule,
     NgMaterialModule,
     HttpClientModule,
-    TranslateModule.forRoot({
+    TranslateModule.forRoot(/**{
       loader: {
           provide: TranslateLoader,
           useFactory: HttpLoaderFactory,
             deps: [HttpClient]
         }
-    }),
+    }**/),
     ReactiveFormsModule,
     FreeDictionaryModule,
     SpanishDictionaryModule,
