@@ -94,6 +94,11 @@ export function createSFSMenuData(noRoot = false): SFSMenuItem[] {
   const data = [
     {
       path: '/',
+      name: 'Main',
+      icon: ''
+    },
+    {
+      path: '/dashboard',
       name: 'Dashboard',
       icon: ''
     },
@@ -141,7 +146,7 @@ export function createSFSMenuData(noRoot = false): SFSMenuItem[] {
 
   if(noRoot) {
     return data.filter((e: SFSMenuItem) => {
-      return e.path !== '/';
+      return e.path !== '/' && e.path !== '/dashboard' ;
     });
   }
   return data;

@@ -6,9 +6,15 @@ import { FreeDictionaryPageComponent } from './pages/free-dictionary-page/free-d
 import { UserPageComponent } from './pages/user-page/user-page.component';
 import { SpanishDictionaryPageComponent } from './pages/spanish-dictionary-page/spanish-dictionary-page.component';
 import { UserAuthPageComponent } from './pages/user-auth-page/user-auth-page.component';
+import { MainPageComponent } from './pages/main-page/main-page.component';
 
-const routes: Routes = [{
+const routes: Routes = [
+{
   path: '',
+  component: MainPageComponent
+},
+{
+  path: 'dashboard',
   component: DashboardPageComponent
 },
 {

@@ -31,6 +31,7 @@ import { SpanishDictionaryModule } from './modules/spanish-dictionary/spanish-di
 import { SpanishDictionaryPageComponent } from './pages/spanish-dictionary-page/spanish-dictionary-page.component';
 import { ProfileModule } from './modules/profile/profile.module';
 import { UserAuthPageComponent } from './pages/user-auth-page/user-auth-page.component';
+import { MainPageComponent } from './pages/main-page/main-page.component';
 
 // export function HttpLoaderFactory(http: HttpClient) {
 //   return new TranslateHttpLoader(http);
@@ -47,6 +48,7 @@ import { UserAuthPageComponent } from './pages/user-auth-page/user-auth-page.com
     UserPageComponent,
     SpanishDictionaryPageComponent,
     UserAuthPageComponent,
+    MainPageComponent
   ],
   imports: [
     BrowserModule,
