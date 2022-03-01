@@ -1,5 +1,9 @@
 .login-card {
-  width: 350px;
+  max-width: 350px;
+  min-width: 100px;
+  button {
+    width: 100%;
+  }
 }
 
 .login-area {

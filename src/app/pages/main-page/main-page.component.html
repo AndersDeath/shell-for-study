@@ -8,6 +8,13 @@
 </mat-toolbar>
 <div class="login-area">
   <mat-card class="login-card">
-    <sfs-user-login></sfs-user-login>
+    <span *ngIf="isLoginShow">
+      <sfs-user-login></sfs-user-login>
+    </span>
+    <span *ngIf="isRegisterShow">
+      <sfs-user-registration></sfs-user-registration>
+    </span>
+    <button mat-stroked-button  *ngIf="!isLoginShow" color="basic" (click)="showLogin()">Login</button>
+    <button mat-stroked-button  *ngIf="!isRegisterShow" color="primary" (click)="showRegister()">Register</button>
   </mat-card>
 </div>
