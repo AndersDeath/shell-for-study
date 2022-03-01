@@ -12,7 +12,7 @@ interface TranslateModel {
 const EN = 'en';
 const RU = 'ru';
 
-const version = 'v0.9.19';
+const version = 'v0.9.20';
 
 const EN_TRANSLATION: TranslateModel = {
   download: 'Download'
