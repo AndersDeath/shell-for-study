@@ -10,7 +10,7 @@ export class MainPageComponent implements OnInit {
   public title: string = "Main page";
   public isLoginShow = false;
   public isRegisterShow = false;
-
+  public isRestorePassword = false;
   constructor(
     public sidebar: SidebarService,
     ) { }
@@ -25,11 +25,19 @@ export class MainPageComponent implements OnInit {
   showLogin() {
     this.isLoginShow = true;
     this.isRegisterShow = false;
+    this.isRestorePassword = false;
   }
 
   showRegister() {
     this.isLoginShow = false;
     this.isRegisterShow = true;
+    this.isRestorePassword = false;
   }
 
+  showRestorePassword() {
+    this.isLoginShow = true;
+    this.isRegisterShow = false;
+    this.isRestorePassword = true;
+
+  }
 }

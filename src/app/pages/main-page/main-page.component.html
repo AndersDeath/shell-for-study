@@ -9,7 +9,10 @@
 <div class="login-area">
   <mat-card class="login-card">
     <span *ngIf="isLoginShow">
-      <sfs-user-login></sfs-user-login>
+      <sfs-user-login  *ngIf="!isRestorePassword"></sfs-user-login>
+      <sfs-user-restore-password  *ngIf="isRestorePassword"></sfs-user-restore-password>
+      <button mat-stroked-button  *ngIf="isRestorePassword" color="basic" (click)="showLogin()">Login</button>
+      <button mat-stroked-button  *ngIf="isLoginShow && !isRestorePassword" color="basic" (click)="showRestorePassword()">Forgot password?</button>
     </span>
     <span *ngIf="isRegisterShow">
       <sfs-user-registration></sfs-user-registration>
