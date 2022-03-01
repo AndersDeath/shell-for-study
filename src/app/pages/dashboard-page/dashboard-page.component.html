@@ -7,14 +7,20 @@
   <span class="space"></span>
   <sfs-user-button></sfs-user-button>
 </mat-toolbar>
-<div>
-  <div class="cards-container">
-    <mat-card class="dashboard-card" [routerLink]="item.path"  *ngFor="let item of items">
-      <sfs-icon [icon]="item.icon"></sfs-icon>
-      <mat-card-header>
-        <mat-card-title>{{item.name}}</mat-card-title>
-      </mat-card-header>
-    </mat-card>
+<div class="dashboard-area">
+
+  <div class="dashboard-content">
+    <sfs-user-profile></sfs-user-profile>
+
+    <div class="cards-container">
+      <mat-card class="dashboard-card" [routerLink]="item.path"  *ngFor="let item of items">
+        <sfs-icon [icon]="item.icon"></sfs-icon>
+        <mat-card-header>
+          <mat-card-title>{{item.name}}</mat-card-title>
+        </mat-card-header>
+      </mat-card>
+
+  </div>
 
 
   </div>

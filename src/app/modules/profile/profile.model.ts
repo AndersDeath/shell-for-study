@@ -24,5 +24,4 @@ export const UserMockData = {
 
   The duckling sees a flock of migrating wild swans. He is delighted and excited, but he cannot join them, for he is too young, too ugly, and he cannot fly. Winter arrives. A farmer finds and carries the freezing little duckling home, but the foundling is frightened by the farmer's noisy children and flees the house. He spends a miserable winter alone in the outdoors, mostly hiding in a cave on the lake that partly freezes over. When spring arrives, a flock of swans descends on the lake.
 
-  The ugly duckling, now having fully grown and matured, is unable to endure a life of solitude and hardship any more and decides to throw himself at the flock of swans deciding that it is better to be killed by such beautiful birds than to live a life of ugliness and misery. He is shocked when the swans welcome and accept him, only to realize by looking at his reflection in the water that he had been not a duckling, but a swan all this time. The flock takes to the air, and the now beautiful swan spreads his gorgeous large wings and takes flight with the rest of his new family.`
-}
+`}

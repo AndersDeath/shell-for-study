@@ -1,5 +1,31 @@
 :host {
 
+  .dashboard-area {
+    padding-top: 30px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .dashboard-content {
+    display: flex;
+    flex-direction: row;
+    width: 500px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  sfs-user-profile {
+    min-width: 500px;
+  }
+
+  sfs-icon {
+    max-width: 40px;
+  }
+
   $card-bg-color: #ffffff;
 
   .title {
@@ -14,8 +40,9 @@
     cursor: pointer;
     display: flex;
     align-items: center;
-    justify-content: center;
-    flex-direction: column;
+    justify-content: start;
+    max-height: 50px;
+    min-width: 300px;
   }
   .dashboard-card:hover {
     background-color: #e7e7e7;
@@ -23,8 +50,7 @@
 
   .cards-container {
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    flex-direction: column;
   }
 
   .cards-container > .dashboard-card {
