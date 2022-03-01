@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { SidebarService } from '../../services/sidebar.service';
 
 @Component({
@@ -13,9 +14,13 @@ export class MainPageComponent implements OnInit {
   public isRestorePassword = false;
   constructor(
     public sidebar: SidebarService,
+    private router: Router
     ) { }
 
   ngOnInit(): void {
+    if(localStorage.getItem('isLogin') === 'true') {
+      this.router.navigate(['dashboard']);
+    }
   }
 
   toggleSidebar() {

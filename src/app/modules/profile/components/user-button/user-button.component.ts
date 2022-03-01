@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { Router } from '@angular/router';
 import { LoginPopupComponent } from '../login-popup/login-popup.component';
 
 @Component({
@@ -9,7 +10,10 @@ import { LoginPopupComponent } from '../login-popup/login-popup.component';
 })
 export class UserButtonComponent implements OnInit {
   show: boolean = true;
-  constructor(public dialog: MatDialog) { }
+  constructor(
+    public dialog: MatDialog,
+    private router: Router
+    ) { }
 
   ngOnInit(): void {
   }
@@ -20,6 +24,11 @@ export class UserButtonComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);
     });
+  }
+
+  logout(event: any) {
+    localStorage.removeItem('isLogin');
+    this.router.navigate([''])
   }
 
 }

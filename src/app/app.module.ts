@@ -32,6 +32,7 @@ import { SpanishDictionaryPageComponent } from './pages/spanish-dictionary-page/
 import { ProfileModule } from './modules/profile/profile.module';
 import { UserAuthPageComponent } from './pages/user-auth-page/user-auth-page.component';
 import { MainPageComponent } from './pages/main-page/main-page.component';
+import { AuthGuard } from './auth.guard';
 
 // export function HttpLoaderFactory(http: HttpClient) {
 //   return new TranslateHttpLoader(http);
@@ -89,7 +90,7 @@ import { MainPageComponent } from './pages/main-page/main-page.component';
     SpanishDictionaryModule,
     ProfileModule
   ],
-  providers: [SidebarService],
+  providers: [SidebarService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

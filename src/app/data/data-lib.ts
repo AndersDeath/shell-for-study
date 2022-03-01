@@ -93,11 +93,6 @@ export interface SFSMenuItem {
 export function createSFSMenuData(noRoot = false): SFSMenuItem[] {
   const data = [
     {
-      path: '/',
-      name: 'Main',
-      icon: ''
-    },
-    {
       path: '/dashboard',
       name: 'Dashboard',
       icon: ''

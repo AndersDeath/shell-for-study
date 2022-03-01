@@ -7,6 +7,7 @@ import { UserPageComponent } from './pages/user-page/user-page.component';
 import { SpanishDictionaryPageComponent } from './pages/spanish-dictionary-page/spanish-dictionary-page.component';
 import { UserAuthPageComponent } from './pages/user-auth-page/user-auth-page.component';
 import { MainPageComponent } from './pages/main-page/main-page.component';
+import { AuthGuard } from './auth.guard';
 
 const routes: Routes = [
 {
@@ -15,27 +16,33 @@ const routes: Routes = [
 },
 {
   path: 'dashboard',
-  component: DashboardPageComponent
+  component: DashboardPageComponent,
+  canActivate: [AuthGuard]
 },
 {
   path: 'dictionary/:dictionaryId',
   component: DictionaryPageComponent,
+  canActivate: [AuthGuard]
 },
 {
   path: 'free-dictionary',
-  component: FreeDictionaryPageComponent
+  component: FreeDictionaryPageComponent,
+  canActivate: [AuthGuard]
 },
 {
   path: 'spanish-dictionary',
-  component: SpanishDictionaryPageComponent
+  component: SpanishDictionaryPageComponent,
+  canActivate: [AuthGuard]
 },
 {
   path: 'u/demo',
-  component: UserPageComponent
+  component: UserPageComponent,
+  canActivate: [AuthGuard]
 },
 {
   path: 'auth',
-  component: UserAuthPageComponent
+  component: UserAuthPageComponent,
+  canActivate: [AuthGuard]
 },
 ];
 
