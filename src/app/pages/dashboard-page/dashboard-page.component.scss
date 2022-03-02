@@ -13,13 +13,13 @@
   .dashboard-content {
     display: flex;
     flex-direction: row;
-    width: 500px;
-    align-items: center;
+    width: 860px;
     justify-content: center;
   }
 
   sfs-user-profile {
     min-width: 500px;
+    padding-right: 10px;
   }
 
   sfs-icon {
@@ -57,7 +57,19 @@
     margin: 6px;
   }
 
+  @media (max-width: 860px) {
+    .dashboard-content {
+      flex-direction: column-reverse;
+    }
+
+    .cards-container {
+      width: 100%;
+    }
+  }
   @media (max-width: 420px) {
+    .dashboard-content {
+      flex-direction: column;
+    }
     .dashboard-card {
       width: 100%;
     }
