@@ -18,7 +18,6 @@
   }
 
   sfs-user-profile {
-    min-width: 500px;
     padding-right: 10px;
   }
 
@@ -68,10 +67,7 @@
   }
   @media (max-width: 420px) {
     .dashboard-content {
-      flex-direction: column;
-    }
-    .dashboard-card {
-      width: 100%;
+      flex-direction: column-reverse;
     }
  }
 }
