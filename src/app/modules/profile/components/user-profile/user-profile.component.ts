@@ -19,8 +19,10 @@ export class UserProfileComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     const sub = this.userProfile.get.subscribe((data: User) => {
+      console.log(data);
       this.user = data;
     });
+    this.userProfile.set(this.api.getUserData());
     this.subs.push(sub);
   }
 

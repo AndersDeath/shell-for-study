@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { User, UserMockData } from '../profile.model';
 
 enum HttpUrls {
   register = 'register',
@@ -28,5 +30,9 @@ export class UserApiService {
     console.log(HttpUrls.restore +': ', data);
     return false;
     return this.http.get(HttpUrls.restore);
+  }
+
+  getUserData():User {
+    return new User(UserMockData);
   }
 }
