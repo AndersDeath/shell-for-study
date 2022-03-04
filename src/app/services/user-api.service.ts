@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { User, UserMockData } from '../profile.model';
+import { User, UserMockData } from '../modules/profile/profile.model';
 
 enum HttpUrls {
   register = 'register',

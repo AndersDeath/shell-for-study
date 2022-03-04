@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
 import { FormGroup, Validators, FormBuilder } from '@angular/forms';
-import { UserApiService } from '../../services/user-api.service';
+import { UserApiService } from '../../../../services/user-api.service';
 import { Subscription } from 'rxjs';
+import { EventEmitter } from 'stream';
 
 @Component({
   selector: 'sfs-user-restore-password',
@@ -9,7 +10,7 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./user-restore-password.component.scss']
 })
 export class UserRestorePasswordComponent implements OnInit {
-
+  // @Output() submit: EventEmitter = new EventEmitter();
   public restorePasswordForm: FormGroup;
   private subs: Subscription[] = []
   constructor(
