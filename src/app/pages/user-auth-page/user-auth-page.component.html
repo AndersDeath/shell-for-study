@@ -10,7 +10,7 @@
 <div>
 <mat-tab-group mat-align-tabs="start">
   <mat-tab label="User Login">
-    <sfs-user-login></sfs-user-login>
+    <sfs-user-login [formData]="data" (formDataEmitter)="formDataEmitter($event)" ></sfs-user-login>
   </mat-tab>
   <mat-tab label="User Registration">
     <sfs-user-registration></sfs-user-registration>

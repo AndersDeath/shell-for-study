@@ -1,46 +1,48 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { UserApiService } from '../../../../services/user-api.service';
-import { Subscription } from 'rxjs';
 import { Router } from '@angular/router';
+
+export class UserLoginModel {
+  public name: string = ''
+  public password: string = ''
+  constructor(name?: string, password?:string) {
+    this.name = name || '';
+    this.password = password || '';
+  }
+}
 
 @Component({
   selector: 'sfs-user-login',
   templateUrl: './user-login.component.html',
   styleUrls: ['./user-login.component.scss']
 })
-export class UserLoginComponent implements OnInit, OnDestroy {
-
-  public loginForm: FormGroup;
-  private subs: Subscription[] = []
-  constructor(
-    public fb: FormBuilder,
-    private api: UserApiService,
-    private router: Router
-    ) {
-    this.loginForm = this.fb.group({
-      name: [null, [Validators.required]],
-      password: [null, [Validators.required]]
+export class UserLoginComponent {
+  @Input() set formData(data: any) {
+    this.loginForm.setValue({
+      name: data.name,
+      password: data.password
     })
   }
+  @Output() formDataEmitter = new EventEmitter<UserLoginModel>();
 
-  ngOnInit(): void {
+  public loginForm: FormGroup;
+  constructor(
+    public fb: FormBuilder,
+    private router: Router
+    ) {
+      this.loginForm = this.fb.group({
+        name: [null, [Validators.required]],
+        password: [null, [Validators.required]]
+      })
   }
 
   sendFormData(form: FormGroup) {
-    console.log('send form data', form.value);
-    const sub = this.api.login(form.value);
+    this.formDataEmitter.emit({
+      name: form.value.name,
+      password: form.value.password
+    })
     this.router.navigate(['dashboard']);
     localStorage.setItem('isLogin', 'true');
-    // this.subs.push(sub);
-  }
-
-  ngOnDestroy() {
-    if(this.subs.length > 0) {
-      this.subs.forEach((s: Subscription) => {
-        s.unsubscribe();
-      })
-    }
   }
 
 }
