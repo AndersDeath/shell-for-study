@@ -1,16 +1,41 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, ValidatorFn, AbstractControl, ValidationErrors } from '@angular/forms';
 import { UserApiService } from '../../../../services/user-api.service';
 import { Subscription } from 'rxjs';
-
+export class UserRegistrationModel {
+  public name: string = ''
+  public password: string = ''
+  public password2: string = ''
+  public email: string = ''
+  constructor(
+    name?: string,
+    password?:string,
+    password2?:string,
+    email?:string
+    ) {
+    this.name = name || '';
+    this.password = password || '';
+    this.password2 = password2 || '',
+    this.email = email || ''
+  }
+}
 @Component({
   selector: 'sfs-user-registration',
   templateUrl: './user-registration.component.html',
   styleUrls: ['./user-registration.component.scss']
 })
-export class UserRegistrationComponent implements OnInit, OnDestroy {
+export class UserRegistrationComponent {
+
+  @Input() set formData(data: UserRegistrationModel) {
+    this.registrationForm.setValue({
+      name: data.name,
+      password: data.password,
+      email: data.email,
+    })
+  }
+  @Output() formDataEmitter = new EventEmitter<UserRegistrationModel>();
   public registrationForm: FormGroup;
-  private subs: Subscription[] = []
+
   constructor(
     public fb: FormBuilder,
     private api: UserApiService
@@ -23,13 +48,13 @@ export class UserRegistrationComponent implements OnInit, OnDestroy {
     }, { validators: this.checkPasswords })
   }
 
-  ngOnInit(): void {
-  }
-
-  sendFormData(form: any) {
-    console.log('send form data', form);
-    const sub = this.api.registration(form.value);
-    // this.subs.push(sub);
+  sendFormData(form: FormGroup) {
+    this.formDataEmitter.emit({
+      name: form.value.name,
+      password: form.value.password,
+      password2: form.value.password2,
+      email: form.value.email
+    });
   }
 
   checkPasswords: ValidatorFn = (group: AbstractControl | any):  ValidationErrors | null => {
@@ -40,13 +65,4 @@ export class UserRegistrationComponent implements OnInit, OnDestroy {
     }
     return null
   }
-
-  ngOnDestroy() {
-    if(this.subs.length > 0) {
-      this.subs.forEach((s: Subscription) => {
-        s.unsubscribe();
-      })
-    }
-  }
-
 }
