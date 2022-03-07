@@ -2,23 +2,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, ValidatorFn, AbstractControl, ValidationErrors } from '@angular/forms';
 import { UserApiService } from '../../../../services/user-api.service';
 import { Subscription } from 'rxjs';
-export class UserRegistrationModel {
-  public name: string = ''
-  public password: string = ''
-  public password2: string = ''
-  public email: string = ''
-  constructor(
-    name?: string,
-    password?:string,
-    password2?:string,
-    email?:string
-    ) {
-    this.name = name || '';
-    this.password = password || '';
-    this.password2 = password2 || '',
-    this.email = email || ''
-  }
-}
+import { UserRegistrationModel } from '../../profile.model';
 @Component({
   selector: 'sfs-user-registration',
   templateUrl: './user-registration.component.html',

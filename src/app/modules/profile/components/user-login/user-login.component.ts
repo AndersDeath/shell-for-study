@@ -1,15 +1,7 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-
-export class UserLoginModel {
-  public name: string = ''
-  public password: string = ''
-  constructor(name?: string, password?:string) {
-    this.name = name || '';
-    this.password = password || '';
-  }
-}
+import { UserLoginModel } from '../../profile.model';
 
 @Component({
   selector: 'sfs-user-login',

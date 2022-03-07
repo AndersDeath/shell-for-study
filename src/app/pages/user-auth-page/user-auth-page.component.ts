@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { UserLoginModel } from 'src/app/modules/profile/components/user-login/user-login.component';
+import { UserLoginModel } from 'src/app/modules/profile/profile.model';
 import { SidebarService } from '../../services/sidebar.service';
 
 @Component({

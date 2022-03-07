@@ -25,3 +25,36 @@ export const UserMockData = {
   The duckling sees a flock of migrating wild swans. He is delighted and excited, but he cannot join them, for he is too young, too ugly, and he cannot fly. Winter arrives. A farmer finds and carries the freezing little duckling home, but the foundling is frightened by the farmer's noisy children and flees the house. He spends a miserable winter alone in the outdoors, mostly hiding in a cave on the lake that partly freezes over. When spring arrives, a flock of swans descends on the lake.
 
 `}
+
+export class UserRegistrationModel {
+  public name: string = ''
+  public password: string = ''
+  public password2: string = ''
+  public email: string = ''
+  constructor(
+    name?: string,
+    password?:string,
+    password2?:string,
+    email?:string
+    ) {
+    this.name = name || '';
+    this.password = password || '';
+    this.password2 = password2 || '',
+    this.email = email || ''
+  }
+}
+
+export class UserRestorPasswordModel {
+  public email: string = ''
+  constructor(email?: string) {
+    this.email = email || '';
+  }
+}
+export class UserLoginModel {
+  public name: string = ''
+  public password: string = ''
+  constructor(name?: string, password?:string) {
+    this.name = name || '';
+    this.password = password || '';
+  }
+}
