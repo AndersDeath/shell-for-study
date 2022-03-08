@@ -25,18 +25,13 @@ import { FreeDictionaryPopupComponent } from './popups/free-dictionary-popup/fre
 import { DashboardPageComponent } from './pages/dashboard-page/dashboard-page.component';
 import { IconModule } from './modules/icon/icon.module';
 import { UserPageComponent } from './pages/user-page/user-page.component';
-import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { TranslateModule } from '@ngx-translate/core';
 import { SpanishDictionaryModule } from './modules/spanish-dictionary/spanish-dictionary.module';
 import { SpanishDictionaryPageComponent } from './pages/spanish-dictionary-page/spanish-dictionary-page.component';
 import { ProfileModule } from './modules/profile/profile.module';
 import { UserAuthPageComponent } from './pages/user-auth-page/user-auth-page.component';
 import { MainPageComponent } from './pages/main-page/main-page.component';
 import { AuthGuard } from './auth.guard';
-
-// export function HttpLoaderFactory(http: HttpClient) {
-//   return new TranslateHttpLoader(http);
-// }
 @NgModule({
   declarations: [
     AppComponent,
@@ -60,13 +55,7 @@ import { AuthGuard } from './auth.guard';
     HttpClientModule,
     NgMaterialModule,
     HttpClientModule,
-    TranslateModule.forRoot(/**{
-      loader: {
-          provide: TranslateLoader,
-          useFactory: HttpLoaderFactory,
-            deps: [HttpClient]
-        }
-    }**/),
+    TranslateModule.forRoot(),
     ReactiveFormsModule,
     FreeDictionaryModule,
     SpanishDictionaryModule,
