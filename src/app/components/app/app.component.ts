@@ -4,23 +4,11 @@ import { TranslateService } from '@ngx-translate/core';
 import { createSFSMenuData, SFSMenuItem } from 'src/app/data/data-lib';
 import { UtilsService } from 'src/app/services/utils.service';
 import { SidebarService } from 'src/app/services/sidebar.service';
-
-interface TranslateModel {
-  download: string;
-}
-
-const EN = 'en';
-const RU = 'ru';
+import { EN, RU } from 'src/app/i18n/i18n.model';
+import { EN_TRANSLATION } from 'src/app/i18n/en';
+import { RU_TRANSLATION } from 'src/app/i18n/ru';
 
 const version = 'v0.9.30';
-
-const EN_TRANSLATION: TranslateModel = {
-  download: 'Download'
-}
-
-const RU_TRANSLATION: TranslateModel = {
-  download: 'Скачать'
-}
 
 enum ContextLinks {
   SearchGoogle = 'https://www.google.com/search?q=',
