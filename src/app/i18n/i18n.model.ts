@@ -6,6 +6,16 @@ export interface TranslateModel {
     searchInYandex: string;
     searchInOxfordDict: string;
     translateToRussian: string;
+  },
+  dictionary: {
+    views: {
+      cards: string;
+      table: string;
+      article: string;
+      fakeFlashcards: string;
+      flashCards: string;
+      spellingTest: string;
+    }
   }
 }
 

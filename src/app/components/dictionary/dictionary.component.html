@@ -4,22 +4,22 @@
   </button>
   <div class="logo"></div>
   <div class="logo-title">{{title}}</div>
-  <button *ngIf="isViewEnable(CARDS_VIEW)" (click)="setDictView(CARDS_VIEW)" mat-icon-button aria-label="Show words as cards" matTooltip="Show words as cards">
+  <button *ngIf="isViewEnable(CARDS_VIEW)" (click)="setDictView(CARDS_VIEW)" mat-icon-button matTooltip="{{ 'dictionary.views.cards' | translate}}">
     <mat-icon>view_stream</mat-icon>
   </button>
-  <button *ngIf="isViewEnable(TABLE_VIEW)" (click)="setDictView(TABLE_VIEW)" mat-icon-button aria-label="Show words as a table" matTooltip="Show words as a table">
+  <button *ngIf="isViewEnable(TABLE_VIEW)" (click)="setDictView(TABLE_VIEW)" mat-icon-button matTooltip="{{ 'dictionary.views.table' | translate}}">
     <mat-icon>table_chart</mat-icon>
   </button>
-  <button *ngIf="isViewEnable(ARTICLE_VIEW)" (click)="setDictView(ARTICLE_VIEW)" mat-icon-button aria-label="Article view" matTooltip="Article view">
+  <button *ngIf="isViewEnable(ARTICLE_VIEW)" (click)="setDictView(ARTICLE_VIEW)" mat-icon-button matTooltip="{{ 'dictionary.views.article' | translate}}w">
     <mat-icon>insert_drive_file</mat-icon>
   </button>
-  <button *ngIf="isViewEnable(FAKE_FLASHCARDS_VIEW)" (click)="setDictView(FAKE_FLASHCARDS_VIEW)" mat-icon-button aria-label="Fake flash cards" matTooltip="Fake flash cards">
+  <button *ngIf="isViewEnable(FAKE_FLASHCARDS_VIEW)" (click)="setDictView(FAKE_FLASHCARDS_VIEW)" mat-icon-button matTooltip="{{ 'dictionary.views.fakeFlashcards' | translate}}">
     <mat-icon>flash_off</mat-icon>
   </button>
-  <button *ngIf="isViewEnable(FLASHCARDS_VIEW)" (click)="setDictView(FLASHCARDS_VIEW)" mat-icon-button aria-label="Flash crards" matTooltip="Flash cards">
+  <button *ngIf="isViewEnable(FLASHCARDS_VIEW)" (click)="setDictView(FLASHCARDS_VIEW)" mat-icon-button matTooltip="{{ 'dictionary.views.flashCards' | translate}}">
     <mat-icon>flash_on</mat-icon>
   </button>
-  <button *ngIf="isViewEnable(SPELLING_TEST_VIEW)" (click)="setDictView(SPELLING_TEST_VIEW)" mat-icon-button aria-label="Spelling test" matTooltip="Spelling test">
+  <button *ngIf="isViewEnable(SPELLING_TEST_VIEW)" (click)="setDictView(SPELLING_TEST_VIEW)" mat-icon-button matTooltip="{{ 'dictionary.views.spellingTest' | translate}}">
     <mat-icon>spellcheck</mat-icon>
   </button>
   <span class="spacer"></span>
