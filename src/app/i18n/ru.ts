@@ -8,6 +8,9 @@ export const RU_TRANSLATION: TranslateModel = {
     searchInOxfordDict: 'Искать в Oxford Dictionary:',
     translateToRussian: 'Перевести на русский:'
   },
+  actions: {
+    close: "Закрыть"
+  },
   dictionary: {
     views: {
       cards: 'Показать записи в виде карточек',

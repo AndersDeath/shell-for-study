@@ -7,6 +7,9 @@ export interface TranslateModel {
     searchInOxfordDict: string;
     translateToRussian: string;
   },
+  actions: {
+    close: string;
+  }
   dictionary: {
     views: {
       cards: string;
