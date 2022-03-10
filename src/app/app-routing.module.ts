@@ -8,6 +8,7 @@ import { SpanishDictionaryPageComponent } from './pages/spanish-dictionary-page/
 import { UserAuthPageComponent } from './pages/user-auth-page/user-auth-page.component';
 import { MainPageComponent } from './pages/main-page/main-page.component';
 import { AuthGuard } from './auth.guard';
+import { UserSettingsPageComponent } from './pages/user-settings-page/user-settings-page.component';
 
 const routes: Routes = [
 {
@@ -37,6 +38,11 @@ const routes: Routes = [
 {
   path: 'u/demo',
   component: UserPageComponent,
+  canActivate: [AuthGuard]
+},
+{
+  path: 'u/settings',
+  component: UserSettingsPageComponent,
   canActivate: [AuthGuard]
 },
 {

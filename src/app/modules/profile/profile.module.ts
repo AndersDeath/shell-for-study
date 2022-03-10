@@ -12,6 +12,7 @@ import { UserApiService } from '../../services/user-api.service';
 import { HttpClientModule } from '@angular/common/http';
 import { UserProfileSerivce } from './services/user-profile.service';
 import { LoginPopupComponent } from './components/login-popup/login-popup.component';
+import { UserSettingsComponent } from './components/user-settings/user-settings.component';
 
 const components = [
   UserButtonComponent,
@@ -19,6 +20,7 @@ const components = [
   UserLoginComponent,
   UserRegistrationComponent,
   UserRestorePasswordComponent,
+  UserSettingsComponent,
   LoginPopupComponent
 ]
 

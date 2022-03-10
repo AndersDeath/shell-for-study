@@ -16,6 +16,7 @@ import { FreeDictionaryModule } from '../modules/free-dictionary/free-dictionary
 import { SpanishDictionaryModule } from '../modules/spanish-dictionary/spanish-dictionary.module';
 import { ViewsModule } from '../modules/views/views.module';
 import { DictionaryModule } from '../modules/dictionary/dictionary.module';
+import { UserSettingsPageComponent } from './user-settings-page/user-settings-page.component';
 
 const pages = [
   DictionaryPageComponent,
@@ -29,7 +30,7 @@ const pages = [
 ]
 
 @NgModule({
-  declarations: [...pages],
+  declarations: [...pages, UserSettingsPageComponent],
   imports: [
     CommonModule,
     SharedModule,
