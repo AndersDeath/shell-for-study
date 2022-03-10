@@ -8,7 +8,7 @@ import { SpellingTestViewComponent } from './spelling-test-view/spelling-test-vi
 import { TableViewComponent } from './table-view/table-view.component';
 import { TabsViewComponent } from './tabs-view/tabs-view.component';
 import { MarkdownModule } from 'ngx-markdown';
-import { NgMaterialModule } from 'src/app/modules/material.module';
+import { SharedModule } from 'src/app/modules/shared.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxUiLoaderModule,
   SPINNER,
@@ -32,7 +32,7 @@ const components = [
   imports: [
     CommonModule,
     MarkdownModule.forRoot(),
-    NgMaterialModule,
+    SharedModule,
     FormsModule,
     ReactiveFormsModule,
     NgxUiLoaderModule.forRoot(

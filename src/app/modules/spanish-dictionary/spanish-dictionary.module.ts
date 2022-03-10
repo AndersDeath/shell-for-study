@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SpanishDictionaryComponent } from './component/spanish-dictionary/spanish-dictionary.component';
-import { NgMaterialModule } from '../material.module';
+import { SharedModule } from '../shared.module';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 
@@ -12,7 +12,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
   ],
   imports: [
     CommonModule,
-    NgMaterialModule,
+    SharedModule,
     ReactiveFormsModule,
     FormsModule
   ],

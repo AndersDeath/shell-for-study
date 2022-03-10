@@ -7,8 +7,7 @@ import { DictionaryComponent } from './components/dictionary/dictionary.componen
 import { MatTabsModule } from '@angular/material/tabs';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatNativeDateModule } from '@angular/material/core';
-import { HttpClientModule, HttpClient } from '@angular/common/http';
-import { NgMaterialModule } from './modules/material.module';
+import { HttpClientModule } from '@angular/common/http';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { SettingsComponent } from './components/settings/settings.component';
@@ -32,6 +31,7 @@ import { ProfileModule } from './modules/profile/profile.module';
 import { UserAuthPageComponent } from './pages/user-auth-page/user-auth-page.component';
 import { MainPageComponent } from './pages/main-page/main-page.component';
 import { AuthGuard } from './auth.guard';
+import { SharedModule } from './modules/shared.module';
 @NgModule({
   declarations: [
     AppComponent,
@@ -53,7 +53,7 @@ import { AuthGuard } from './auth.guard';
     MatTabsModule,
     MatNativeDateModule,
     HttpClientModule,
-    NgMaterialModule,
+    SharedModule,
     HttpClientModule,
     TranslateModule.forRoot(),
     ReactiveFormsModule,
