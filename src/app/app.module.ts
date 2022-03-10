@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './components/app/app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { DictionaryComponent } from './components/dictionary/dictionary.component';
+import { DictionaryComponent } from './modules/dictionary/dictionary.component';
 import { MatTabsModule } from '@angular/material/tabs';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatNativeDateModule } from '@angular/material/core';
@@ -32,19 +32,11 @@ import { UserAuthPageComponent } from './pages/user-auth-page/user-auth-page.com
 import { MainPageComponent } from './pages/main-page/main-page.component';
 import { AuthGuard } from './auth.guard';
 import { SharedModule } from './modules/shared.module';
+import { PagesModule } from './pages/pages.module';
 @NgModule({
   declarations: [
     AppComponent,
-    DictionaryComponent,
     SettingsComponent,
-    DictionaryPageComponent,
-    FreeDictionaryPageComponent,
-    FreeDictionaryPopupComponent,
-    DashboardPageComponent,
-    UserPageComponent,
-    SpanishDictionaryPageComponent,
-    UserAuthPageComponent,
-    MainPageComponent
   ],
   imports: [
     BrowserModule,
@@ -60,6 +52,10 @@ import { SharedModule } from './modules/shared.module';
     FreeDictionaryModule,
     SpanishDictionaryModule,
     ViewsModule,
+    IconModule,
+    SpanishDictionaryModule,
+    ProfileModule,
+    PagesModule,
     NgxUiLoaderModule.forRoot(
       {
         bgsColor: "white",
@@ -74,10 +70,7 @@ import { SharedModule } from './modules/shared.module';
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,
       registrationStrategy: 'registerWithDelay:3000'
-    }),
-    IconModule,
-    SpanishDictionaryModule,
-    ProfileModule
+    })
   ],
   providers: [SidebarService, AuthGuard],
   bootstrap: [AppComponent]
