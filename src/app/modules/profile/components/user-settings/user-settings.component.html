@@ -1,3 +1,4 @@
+<button mat-raised-button [routerLink]="'/u/demo'">Back to profile</button>
 <div class="form-layout">
   <form [formGroup]="profileSettingsForm" (ngSubmit)="sendFormData(profileSettingsForm)">
     <mat-form-field class="form-field">
@@ -29,8 +30,23 @@
       </mat-error>
     </mat-form-field>
     <div  class="form-actions">
-      <button mat-raised-button color="primary" type="submit" [disabled]="!profileSettingsForm.valid">Submit</button>
+      <button mat-raised-button color="primary" type="submit" [disabled]="!profileSettingsForm.valid">Save</button>
     </div>
   </form>
 </div>
-<button mat-raised-button [routerLink]="'/u/demo'">Back to profile</button>
+<div class="form-layout">
+  <form [formGroup]="languageForm">
+
+
+    <mat-form-field appearance="fill">
+      <mat-label>Language</mat-label>
+      <mat-select formControlName="select" required>
+        <mat-option *ngFor="let language of languages" [value]="language.value">
+          {{language.name}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+
+  </form>
+</div>

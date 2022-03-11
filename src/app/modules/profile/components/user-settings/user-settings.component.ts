@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 interface UserProfileSettingsModel {
@@ -11,7 +11,7 @@ interface UserProfileSettingsModel {
   templateUrl: './user-settings.component.html',
   styleUrls: ['./user-settings.component.scss']
 })
-export class UserSettingsComponent {
+export class UserSettingsComponent implements OnInit{
   @Input() set user(data: any) {
     this.profileSettingsForm.setValue({
       name: data.name,
@@ -21,7 +21,18 @@ export class UserSettingsComponent {
   }
   @Output() formDataEmitter = new EventEmitter<UserProfileSettingsModel>();
 
+  public languages = [
+    {
+      name: 'English',
+      value:'en'
+    },
+    {
+      name: 'Russian',
+      value:'ru'
+    },
+  ];
   public profileSettingsForm: FormGroup;
+  public languageForm: FormGroup;
   constructor(
     public fb: FormBuilder
   ) {
@@ -29,6 +40,15 @@ export class UserSettingsComponent {
       name: ['', [Validators.required]],
       status: ['', [Validators.required]],
       description: ['', [Validators.required]]
+    });
+    this.languageForm = this.fb.group({
+      select: []
+    });
+  }
+
+  ngOnInit() {
+    this.languageForm.valueChanges.subscribe((e) => {
+      console.log(e.select);
     })
   }
 
