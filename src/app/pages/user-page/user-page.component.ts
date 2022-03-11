@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from 'src/app/modules/profile/profile.model';
-import { UserApiService } from 'src/app/services/user-api.service';
+import { UserProfileSerivce } from 'src/app/services/user-profile.service';
 import { SidebarService } from '../../services/sidebar.service';
 
 @Component({
@@ -14,11 +14,11 @@ export class UserPageComponent implements OnInit {
 
   constructor(
     public sidebar: SidebarService,
-    private api: UserApiService,
-    ) { }
+    private profile: UserProfileSerivce
+  ) { }
 
   ngOnInit(): void {
-    this.user = this.api.getUserData();
+    this.user = this.profile.get();
   }
 
   toggleSidebar() {

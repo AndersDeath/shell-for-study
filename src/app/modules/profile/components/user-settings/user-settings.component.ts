@@ -13,7 +13,6 @@ interface UserProfileSettingsModel {
 })
 export class UserSettingsComponent {
   @Input() set user(data: any) {
-    console.log(data);
     this.profileSettingsForm.setValue({
       name: data.name,
       status: data.status,
