@@ -7,4 +7,4 @@
   <span class="space"></span>
 
 </mat-toolbar>
-<sfs-user-settings></sfs-user-settings>
+<sfs-user-settings [user]="user"  (formDataEmitter)="formDataEmitter($event)" ></sfs-user-settings>

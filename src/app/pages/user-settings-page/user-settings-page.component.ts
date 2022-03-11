@@ -9,7 +9,6 @@ import { UserApiService } from 'src/app/services/user-api.service';
   styleUrls: ['./user-settings-page.component.scss']
 })
 export class UserSettingsPageComponent implements OnInit {
-
   public title: string = "Demo User";
   public user = new User({});
 
@@ -24,5 +23,9 @@ export class UserSettingsPageComponent implements OnInit {
 
   toggleSidebar() {
     this.sidebar.toggle();
+  }
+
+  formDataEmitter(data: any) {
+    console.log(data);
   }
 }

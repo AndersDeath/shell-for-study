@@ -3,7 +3,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 interface UserProfileSettingsModel {
   name: string;
-  password: string;
+  status: string;
+  description: string;
 }
 @Component({
   selector: 'sfs-user-settings',
@@ -11,28 +12,32 @@ interface UserProfileSettingsModel {
   styleUrls: ['./user-settings.component.scss']
 })
 export class UserSettingsComponent {
-  @Input() set formData(data: any) {
-    this.loginForm.setValue({
+  @Input() set user(data: any) {
+    console.log(data);
+    this.profileSettingsForm.setValue({
       name: data.name,
-      password: data.password
+      status: data.status,
+      description: data.description
     })
   }
   @Output() formDataEmitter = new EventEmitter<UserProfileSettingsModel>();
 
-  public loginForm: FormGroup;
+  public profileSettingsForm: FormGroup;
   constructor(
     public fb: FormBuilder
   ) {
-    this.loginForm = this.fb.group({
+    this.profileSettingsForm = this.fb.group({
       name: ['', [Validators.required]],
-      password: ['', [Validators.required]]
+      status: ['', [Validators.required]],
+      description: ['', [Validators.required]]
     })
   }
 
   sendFormData(form: FormGroup) {
     this.formDataEmitter.emit({
       name: form.value.name,
-      password: form.value.password
+      status: form.value.status,
+      description: form.value.description
     });
   }
 
