@@ -1,6 +1,6 @@
 {
   "name": "shell-for-study",
-  "version": "0.9.34",
+  "version": "0.9.35",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",

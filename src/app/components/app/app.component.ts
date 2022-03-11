@@ -8,7 +8,7 @@ import { EN, RU } from 'src/app/i18n/i18n.model';
 import { EN_TRANSLATION } from 'src/app/i18n/en';
 import { RU_TRANSLATION } from 'src/app/i18n/ru';
 
-const version = 'v0.9.34';
+const version = 'v0.9.35';
 
 enum ContextLinks {
   SearchGoogle = 'https://www.google.com/search?q=',
