@@ -11,5 +11,8 @@
     justify-content: flex-end;
     flex-direction: row;
     align-items: center;
+    .fill {
+      width: 100%;
+    }
   }
 }

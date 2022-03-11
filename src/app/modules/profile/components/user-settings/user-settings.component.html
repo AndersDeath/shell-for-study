@@ -30,23 +30,19 @@
       </mat-error>
     </mat-form-field>
     <div  class="form-actions">
-      <button mat-raised-button color="primary" type="submit" [disabled]="!profileSettingsForm.valid">Save</button>
+      <button class="fill" mat-flat-button color="primary" type="submit" [disabled]="!profileSettingsForm.valid">Save</button>
     </div>
   </form>
 </div>
 <div class="form-layout">
   <form [formGroup]="languageForm">
-
-
-    <mat-form-field appearance="fill">
+    <mat-form-field appearance="fill" class="form-field">
       <mat-label>Language</mat-label>
-      <mat-select formControlName="select" required>
+      <mat-select formControlName="select">
         <mat-option *ngFor="let language of languages" [value]="language.value">
           {{language.name}}
         </mat-option>
       </mat-select>
     </mat-form-field>
-
-
   </form>
 </div>
