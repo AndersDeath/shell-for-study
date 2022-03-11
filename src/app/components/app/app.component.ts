@@ -7,6 +7,7 @@ import { SidebarService } from 'src/app/services/sidebar.service';
 import { EN, RU } from 'src/app/i18n/i18n.model';
 import { EN_TRANSLATION } from 'src/app/i18n/en';
 import { RU_TRANSLATION } from 'src/app/i18n/ru';
+import { I18nService } from 'src/app/services/i18n.service';
 
 const version = 'v0.9.35';
 
@@ -40,11 +41,9 @@ export class AppComponent implements OnInit {
   public menuY = 0;
   constructor(
     public sidebar: SidebarService,
-    private translate: TranslateService,
+    private i18n: I18nService,
     private utils: UtilsService
-    ) {
-
-  }
+    ) {}
 
 
   onRightClick(event: any) {
@@ -75,10 +74,7 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     this.isOpened = this.sidebar.opened;
     sfsIntroduction(this.version);
-    this.translate.setTranslation(EN, EN_TRANSLATION);
-    this.translate.setTranslation(RU, RU_TRANSLATION);
-    this.translate.setDefaultLang(EN);
-    this.translate.use(EN);
+    this.i18n.set(EN);
   }
 
   toggleSidebar() {

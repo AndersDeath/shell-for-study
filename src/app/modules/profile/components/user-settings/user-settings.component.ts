@@ -1,5 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { EN, RU } from 'src/app/i18n/i18n.model';
+import { I18nService } from 'src/app/services/i18n.service';
 
 interface UserProfileSettingsModel {
   name: string;
@@ -24,17 +26,18 @@ export class UserSettingsComponent implements OnInit{
   public languages = [
     {
       name: 'English',
-      value:'en'
+      value: EN
     },
     {
       name: 'Russian',
-      value:'ru'
+      value: RU
     },
   ];
   public profileSettingsForm: FormGroup;
   public languageForm: FormGroup;
   constructor(
-    public fb: FormBuilder
+    public fb: FormBuilder,
+    public i18n: I18nService
   ) {
     this.profileSettingsForm = this.fb.group({
       name: ['', [Validators.required]],
@@ -42,13 +45,14 @@ export class UserSettingsComponent implements OnInit{
       description: ['', [Validators.required]]
     });
     this.languageForm = this.fb.group({
-      select: []
+      select: [this.i18n.get()]
     });
   }
 
   ngOnInit() {
     this.languageForm.valueChanges.subscribe((e) => {
       console.log(e.select);
+      this.i18n.set(e.select)
     })
   }
 
