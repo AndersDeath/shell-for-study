@@ -3,6 +3,7 @@ import { createSFSMenuData, SFSMenuItem } from 'src/app/data/data-lib';
 import { User } from 'src/app/modules/profile/profile.model';
 import { SidebarService } from 'src/app/services/sidebar.service';
 import { UserApiService } from 'src/app/services/user-api.service';
+import { UserProfileSerivce } from 'src/app/services/user-profile.service';
 
 @Component({
   selector: 'sfs-dashboard-page',
@@ -17,11 +18,11 @@ export class DashboardPageComponent implements OnInit {
 
   constructor(
     public sidebar: SidebarService,
-    private api: UserApiService,
+    private profile: UserProfileSerivce,
     ) { }
 
   ngOnInit(): void {
-    this.user = this.api.getUserData();
+    this.user = this.profile.get();
   }
 
   toggleSidebar() {
