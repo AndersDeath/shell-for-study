@@ -647,6 +647,35 @@ export const SixMinuteEnglish : Dictionary = {
               en: "dishonest business trick or scam where money is used to pay a company’s debt instead of to profit investors"
             }
           ]
+        },
+        {
+          title: "Bitcoin's energy cost",
+          subjects: [
+            {
+              subject: "get-rich-quick",
+              en: "describes a plan to make a lot of money in a short time, often with little effort or risk"
+            },
+            {
+              subject: "risk-averse",
+              en: "unwilling to take risks or wanting to avoid risks as much as possible"
+            },
+            {
+              subject: "dip a toe into (something)",
+              en: "try doing something slowly and carefully to test whether it will be successful and whether you will like it"
+            },
+            {
+              subject: "pension plan",
+              en: "financial plan funded by contributions from your salary to save money for when you retire"
+            },
+            {
+              subject: "put things into perspective",
+              en: "find the true, objective value or importance of something by comparing it to something similar"
+            },
+            {
+              subject: "on standby",
+              en: "ready to work or be used when needed"
+            }
+          ]
         }
       ]
     }
