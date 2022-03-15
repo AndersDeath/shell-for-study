@@ -2,8 +2,127 @@ import { Dictionary } from "./data-lib";
 
 export const TransitionWordsData : Dictionary = {
   title: 'Transition words',
-  version: 4,
+  version: 5,
   sections: [
+    {
+      title: "Advertising glossary",
+      groups: [
+        {
+          title: "Words",
+          subjects: [
+            {
+              subject: "advertising agency",
+              en: "a company that creates adverts for other companies"
+            },
+            {
+              subject: "advertising budget",
+              en: "the amount of money a company decides to spend on advertising"
+            },
+            {
+              subject: "brand awareness",
+              en: "how well people know a particular brand"
+            },
+            {
+              subject: "brand loyalty",
+              en: "the degree to which people continue to buy from the same brand or company"
+            },
+            {
+              subject: "buy and sell",
+              en: "often used to refer to the buying and selling of items between individuals"
+            },
+            {
+              subject: "call to action",
+              en: "something that encourages someone to take a particular action, such as making a purchase or clicking a link on a website"
+            },
+            {
+              subject: "celebrity endorsement",
+              en: " to have a well-known person promote a product"
+            },
+            {
+              subject: "classified ads",
+              en: "small advertisements often put in a newspaper or magazine by individuals"
+            },
+            {
+              subject: "to cold call",
+              en: "to call someone with the aim of selling something without them asking you to do so"
+            },
+            {
+              subject: "commercial break",
+              en: "the short period during TV programmes when advertisements are shown"
+            },
+            {
+              subject: "commercial channel",
+              en: "TV channels that make money from showing advertisements"
+            },
+            {
+              subject: "to go viral",
+              en: "to quickly become extremely popular on the Internet through social media"
+            },
+            {
+              subject: "junk mail",
+              en: "unwanted promotional leaflets and letters"
+            },
+            {
+              subject: "to launch a product",
+              en: "to introduce a new product"
+            },
+            {
+              subject: "mailing list",
+              en: "a list of names and contact details used by a company to send information and advertisements"
+            },
+            {
+              subject: "mass media",
+              en: "large media outlets like TV, newspapers and magazines"
+            },
+            {
+              subject: "niche product",
+              en: "a product that is aimed at a distinct group of people"
+            },
+            {
+              subject: "to place an advert",
+              en: "to put an advert somewhere"
+            },
+            {
+              subject: "press release",
+              en: "something written by a company for newspapers and magazines and websites to share and publish"
+            },
+            {
+              subject: "prime time",
+              en: "the time during the viewing schedule when most people watch TV or listen to a broadcast"
+            },
+            {
+              subject: "product placement",
+              en: "to advertise a product by using it as a prop in a TV show or film"
+            },
+            {
+              subject: "sales page",
+              en: "a page specifically used to promote a product or service"
+            },
+            {
+              subject: "to show adverts",
+              en: "to display adverts on TV"
+            },
+            {
+              subject: "social media",
+              en: "websites that enable users to create and share content or to participate in social networking"
+            },
+            {
+              subject: "spam email",
+              en: "unwanted, promotional email"
+            },
+            {
+              subject: "target audience",
+              en: "the people a company want to sell their product or service to"
+            },
+            {
+              subject: "word of mouth",
+              en: "recommendations made by individuals to other individuals about a product of service"
+            }
+          ]
+        }
+
+      ]
+    },
     {
       title: 'Cause and effect',
       groups: [
