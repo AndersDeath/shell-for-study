@@ -2,7 +2,7 @@ import { Dictionary } from "./data-lib";
 
 export const SixMinuteEnglish : Dictionary = {
   title: '6 minute English',
-  version: 8,
+  version: 9,
   sections: [
     {
       title: '6 Minute English',
@@ -674,6 +674,35 @@ export const SixMinuteEnglish : Dictionary = {
             {
               subject: "on standby",
               en: "ready to work or be used when needed"
+            }
+          ]
+        },
+        {
+          title: "Where do your tips go?",
+          subjects: [
+            {
+              subject: "discretionary",
+              en: "choice or option to do something; non-obligatory"
+            },
+            {
+              subject: "consistent",
+              en: "acting the same way over time"
+            },
+            {
+              subject: "mandatory",
+              en: "describes something you must do"
+            },
+            {
+              subject: "imposed",
+              en: "forced on someone"
+            },
+            {
+              subject: "cashless",
+              en: "not using cash or coins"
+            },
+            {
+              subject: "pool",
+              en: "collect, group together"
             }
           ]
         }
