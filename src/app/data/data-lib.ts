@@ -18,13 +18,17 @@ export class Subject {
   ru?: string = '';
   en?: string = '';
   es?: string = '';
+  be?: string = '';
+  uk?: string = '';
   id?: number = 0;
 
-  constructor(subject:string = '', ru:string = '', en: string = '', es: string = '') {
+  constructor(subject:string = '', ru:string = '', en: string = '', es: string = '', be: string = '', uk: string = '') {
     this.subject = subject;
     this.ru = ru || '';
     this.en = en || '';
     this.es = es || '';
+    this.be = be || '';
+    this.uk = uk || '';
     this.id = itemIdGen.get();
   }
 }
