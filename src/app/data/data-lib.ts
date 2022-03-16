@@ -22,13 +22,13 @@ export class Subject {
   uk?: string = '';
   id?: number = 0;
 
-  constructor(subject:string = '', ru:string = '', en: string = '', es: string = '', be: string = '', uk: string = '') {
+  constructor(subject:string = '', langData: any) {
     this.subject = subject;
-    this.ru = ru || '';
-    this.en = en || '';
-    this.es = es || '';
-    this.be = be || '';
-    this.uk = uk || '';
+    this.ru = langData['ru'] || '';
+    this.en = langData['en'] || '';
+    this.es = langData['es'] || '';
+    this.be = langData['be'] || '';
+    this.uk = langData['uk'] || '';
     this.id = itemIdGen.get();
   }
 }
@@ -40,7 +40,13 @@ export class SubjectGroup {
   constructor(title:string = '', subject:Subject[] = []) {
     this.title = title;
     this.subjects = subject.map((s: Subject) => {
-      return new Subject(s.subject, s.ru, s.en, s.es);
+      return new Subject(s.subject, {
+        ru: s.ru,
+        en: s.en,
+        es: s.es,
+        be: s.be,
+        uk: s.uk
+      });
     });;
     this.id = itemIdGen.get();
   }
