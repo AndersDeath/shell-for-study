@@ -133,6 +133,21 @@ export function createSFSMenuData(noRoot = false): SFSMenuItem[] {
       icon: 'i-javascript'
     },
     {
+      path: '/phrasebook/ru-be',
+      name: 'Russian-Belarusian Phrasebook',
+      icon: 'i-empty-book'
+    },
+    {
+      path: '/phrasebook/ru-uk',
+      name: 'Russian-Ukranian Phrasebook',
+      icon: 'i-empty-book'
+    },
+    {
+      path: '/phrasebook/ru-es',
+      name: 'Russian-Spanish Phrasebook',
+      icon: 'i-empty-book'
+    },
+    {
       path: '/dictionary/ts-interview-questions',
       name: 'TS interview questions',
       icon: 'i-typescript'
