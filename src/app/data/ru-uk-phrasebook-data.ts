@@ -1,7 +1,6 @@
-
 import { Dictionary } from "./data-lib";
 
-export const RuBePhrasebookData : Dictionary = {
+export const RuUkPhrasebookData : Dictionary = {
   title: 'Russian-Ukranian Phrasebook',
   version: 1,
   sections: []

@@ -16,6 +16,9 @@ import { TransitionWordsData } from 'src/app/data/transition-words-data';
 import { TranslationsData } from 'src/app/data/translations-data';
 import { tsQuestionsData } from 'src/app/data/ts-questions-data';
 import { SixMinuteEnglish } from '../../data/6-minute-english-data';
+import { RuBePhrasebookData } from '../../data/ru-be-phrasebook-data';
+import { RuUkPhrasebookData } from '../../data/ru-uk-phrasebook-data';
+import { RuEsPhrasebookData } from '../../data/ru-es-phrasebook-data';
 
 @Component({
   selector: 'sfs-dictionary-page',
@@ -82,6 +85,39 @@ export class DictionaryPageComponent implements OnInit, OnDestroy {
           FLASHCARDS_VIEW,
         ],
         dictionary: DictionaryBuilder(TransitionWordsData),
+      },
+      {
+        dictionaryId: 'ru-be-phrasebook',
+        title: 'Russian-Belarusian Phrasebook',
+        viewTypes: [
+          CARDS_VIEW,
+          FAKE_FLASHCARDS_VIEW,
+          TABLE_VIEW,
+          FLASHCARDS_VIEW,
+        ],
+        dictionary: DictionaryBuilder(RuBePhrasebookData),
+      },
+      {
+        dictionaryId: 'ru-uk-phrasebook',
+        title: 'Russian-Ukranian Phrasebook',
+        viewTypes: [
+          CARDS_VIEW,
+          FAKE_FLASHCARDS_VIEW,
+          TABLE_VIEW,
+          FLASHCARDS_VIEW,
+        ],
+        dictionary: DictionaryBuilder(RuUkPhrasebookData),
+      },
+      {
+        dictionaryId: 'ru-es-phrasebook',
+        title: 'Russian-Spanish Phrasebook',
+        viewTypes: [
+          CARDS_VIEW,
+          FAKE_FLASHCARDS_VIEW,
+          TABLE_VIEW,
+          FLASHCARDS_VIEW,
+        ],
+        dictionary: DictionaryBuilder(RuEsPhrasebookData),
       },
     ];
 

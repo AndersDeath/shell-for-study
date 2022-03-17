@@ -133,17 +133,17 @@ export function createSFSMenuData(noRoot = false): SFSMenuItem[] {
       icon: 'i-javascript'
     },
     {
-      path: '/phrasebook/ru-be',
+      path: '/dictionary/ru-be-phrasebook',
       name: 'Russian-Belarusian Phrasebook',
       icon: 'i-empty-book'
     },
     {
-      path: '/phrasebook/ru-uk',
+      path: '/dictionary/ru-uk-phrasebook',
       name: 'Russian-Ukranian Phrasebook',
       icon: 'i-empty-book'
     },
     {
-      path: '/phrasebook/ru-es',
+      path: '/dictionary/ru-es-phrasebook',
       name: 'Russian-Spanish Phrasebook',
       icon: 'i-empty-book'
     },
