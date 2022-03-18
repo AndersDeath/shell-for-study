@@ -99,75 +99,74 @@ export interface SFSMenuItem {
   icon: string;
 }
 
+const menuData = [
+  {
+    path: '/dashboard',
+    name: 'Dashboard',
+    icon: ''
+  },
+  {
+    path: '/dictionary/english-words',
+    name: 'English dictionary',
+    icon: 'i-en-language'
+  },
+  {
+    path: '/dictionary/transition-words',
+    name: 'Transition words',
+    icon: 'i-en-language'
+  },
+  {
+    path: '/dictionary/6-minute-english',
+    name: '6 minute English',
+    icon: 'i-en-language'
+  },
+  {
+    path: '/dictionary/glossary',
+    name: 'Glossary of terms',
+    icon: 'i-book'
+  },
+  {
+    path: '/dictionary/js-interview-questions',
+    name: 'JS interview questions',
+    icon: 'i-javascript'
+  },
+  {
+    path: '/dictionary/ru-be-phrasebook',
+    name: 'Russian-Belarusian Phrasebook',
+    icon: 'i-empty-book'
+  },
+  {
+    path: '/dictionary/ru-uk-phrasebook',
+    name: 'Russian-Ukranian Phrasebook',
+    icon: 'i-empty-book'
+  },
+  {
+    path: '/dictionary/ru-es-phrasebook',
+    name: 'Russian-Spanish Phrasebook',
+    icon: 'i-empty-book'
+  },
+  {
+    path: '/dictionary/ts-interview-questions',
+    name: 'TS interview questions',
+    icon: 'i-typescript'
+  },
+  {
+    path: '/free-dictionary',
+    name: 'Free Dictionary',
+    icon: 'i-dictionary'
+  },
+  {
+    path: '/spanish-dictionary',
+    name: 'Spanish Dictionary',
+    icon: 'i-dictionary'
+  }
+];
 
 export function createSFSMenuData(noRoot = false): SFSMenuItem[] {
-  const data = [
-    {
-      path: '/dashboard',
-      name: 'Dashboard',
-      icon: ''
-    },
-    {
-      path: '/dictionary/english-words',
-      name: 'English dictionary',
-      icon: 'i-en-language'
-    },
-    {
-      path: '/dictionary/transition-words',
-      name: 'Transition words',
-      icon: 'i-en-language'
-    },
-    {
-      path: '/dictionary/6-minute-english',
-      name: '6 minute English',
-      icon: 'i-en-language'
-    },
-    {
-      path: '/dictionary/glossary',
-      name: 'Glossary of terms',
-      icon: 'i-book'
-    },
-    {
-      path: '/dictionary/js-interview-questions',
-      name: 'JS interview questions',
-      icon: 'i-javascript'
-    },
-    {
-      path: '/dictionary/ru-be-phrasebook',
-      name: 'Russian-Belarusian Phrasebook',
-      icon: 'i-empty-book'
-    },
-    {
-      path: '/dictionary/ru-uk-phrasebook',
-      name: 'Russian-Ukranian Phrasebook',
-      icon: 'i-empty-book'
-    },
-    {
-      path: '/dictionary/ru-es-phrasebook',
-      name: 'Russian-Spanish Phrasebook',
-      icon: 'i-empty-book'
-    },
-    {
-      path: '/dictionary/ts-interview-questions',
-      name: 'TS interview questions',
-      icon: 'i-typescript'
-    },
-    {
-      path: '/free-dictionary',
-      name: 'Free Dictionary',
-      icon: 'i-dictionary'
-    },
-    {
-      path: '/spanish-dictionary',
-      name: 'Spanish Dictionary',
-      icon: 'i-dictionary'
-    }
-  ]
-
   if(noRoot) {
-    return data.filter((e: SFSMenuItem) => {
+    return menuData.filter((e: SFSMenuItem) => {
       return e.path !== '/' && e.path !== '/dashboard' ;
     });
   }
-  return data;
+  return menuData;
 }
