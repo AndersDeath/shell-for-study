@@ -24,6 +24,16 @@
           {{subject.es}}
         </p>
       </mat-card-content>
+      <mat-card-content *ngIf="subject.uk">
+        <p markdown [data]="subject.uk">
+          {{subject.uk}}
+        </p>
+      </mat-card-content>
+      <mat-card-content *ngIf="subject.be">
+        <p markdown [data]="subject.be">
+          {{subject.be}}
+        </p>
+      </mat-card-content>
     </mat-card>
 
   </div>

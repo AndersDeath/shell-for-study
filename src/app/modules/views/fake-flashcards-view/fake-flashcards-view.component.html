@@ -16,6 +16,14 @@
       <p markdown [data]="currentFlashCard.es">
       </p>
     </mat-card-content>
+    <mat-card-content *ngIf="currentFlashCard.uk">
+      <p markdown [data]="currentFlashCard.uk">
+      </p>
+    </mat-card-content>
+    <mat-card-content *ngIf="currentFlashCard.be">
+      <p markdown [data]="currentFlashCard.be">
+      </p>
+    </mat-card-content>
     <mat-card-actions align="end">
       <button mat-button (click)="previousFlashCard()">Previous</button>
       <button mat-button (click)="nextFlashCard()" >Next</button>
