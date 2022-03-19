@@ -33,10 +33,12 @@ import { MainPageComponent } from './pages/main-page/main-page.component';
 import { AuthGuard } from './auth.guard';
 import { SharedModule } from './modules/shared.module';
 import { PagesModule } from './pages/pages.module';
+import { BibliographyPageComponent } from './pages/bibliography-page/bibliography-page.component';
 @NgModule({
   declarations: [
     AppComponent,
     SettingsComponent,
+    BibliographyPageComponent,
   ],
   imports: [
     BrowserModule,

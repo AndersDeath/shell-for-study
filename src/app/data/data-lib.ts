@@ -159,6 +159,11 @@ const menuData = [
     path: '/spanish-dictionary',
     name: 'Spanish Dictionary',
     icon: 'i-dictionary'
+  },
+  {
+    path: '/bibliography',
+    name: 'Bibliograpy',
+    icon: 'i-empty-book'
   }
 ];
 

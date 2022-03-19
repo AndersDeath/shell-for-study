@@ -9,6 +9,7 @@ import { UserAuthPageComponent } from './pages/user-auth-page/user-auth-page.com
 import { MainPageComponent } from './pages/main-page/main-page.component';
 import { AuthGuard } from './auth.guard';
 import { UserSettingsPageComponent } from './pages/user-settings-page/user-settings-page.component';
+import { BibliographyPageComponent } from './pages/bibliography-page/bibliography-page.component';
 
 const routes: Routes = [
 {
@@ -33,6 +34,11 @@ const routes: Routes = [
 {
   path: 'spanish-dictionary',
   component: SpanishDictionaryPageComponent,
+  canActivate: [AuthGuard]
+},
+{
+  path: 'bibliography',
+  component: BibliographyPageComponent,
   canActivate: [AuthGuard]
 },
 {
