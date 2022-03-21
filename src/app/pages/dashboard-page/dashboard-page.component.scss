@@ -22,7 +22,7 @@
   }
 
   sfs-icon {
-    max-width: 40px;
+    max-width: 22px;
   }
 
   $card-bg-color: #ffffff;
@@ -40,11 +40,16 @@
     display: flex;
     align-items: center;
     justify-content: start;
-    max-height: 50px;
+    max-height: 16px;
     min-width: 300px;
   }
   .dashboard-card:hover {
     background-color: #e7e7e7;
+  }
+
+  .dashboard-card-title {
+    margin-bottom: 0px;
+    font-size: 16px;
   }
 
   .cards-container {

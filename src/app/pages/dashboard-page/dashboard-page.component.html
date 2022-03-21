@@ -17,7 +17,7 @@
       <mat-card class="dashboard-card" [routerLink]="item.path"  *ngFor="let item of items">
         <sfs-icon [icon]="item.icon"></sfs-icon>
         <mat-card-header>
-          <mat-card-title>{{item.name}}</mat-card-title>
+          <mat-card-title class="dashboard-card-title">{{item.name}}</mat-card-title>
         </mat-card-header>
       </mat-card>
 
