@@ -5,14 +5,18 @@ export const RuEsPhrasebookData : Dictionary = {
   version: 1,
   sections: [
     {
-      title: "",
+      title: "Общение",
       groups: [
         {
-          title: "",
+          title: "Приветствие",
           subjects: [
             {
-              subject: '',
-              es: ''
+              subject: 'Привет',
+              es: '¡Hola!'
+            },
+            {
+              subject: 'Здравствуйте / Доброе утро',
+              es: '¡Buenas días!'
             }
           ]
         }
