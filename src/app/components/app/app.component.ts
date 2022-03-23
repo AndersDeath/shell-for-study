@@ -6,7 +6,7 @@ import { SidebarService } from 'src/app/services/sidebar.service';
 import { EN } from 'src/app/i18n/i18n.model';
 import { I18nService } from 'src/app/services/i18n.service';
 
-const version = 'v0.9.44';
+const version = 'v0.9.45';
 
 enum ContextLinks {
   SearchGoogle = 'https://www.google.com/search?q=',
