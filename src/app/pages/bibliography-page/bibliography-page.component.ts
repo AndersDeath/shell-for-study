@@ -11,7 +11,14 @@ export class BibliographyPageComponent implements OnInit {
 
   public items: SFSMenuItem[] = createSFSMenuData(true);
   public title: string = "Bibliography";
-
+  public linksList: any[] = [
+    {
+      url: "https://lingust.ru/",
+      header: "lingust.ru",
+      title: "Изучение иностранных языков с нуля!",
+      description: "Сайт с оцифрованными и преобразованными в уроки самоучителями различных языков"
+    },
+  ]
 
   constructor(
     public sidebar: SidebarService,

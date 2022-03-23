@@ -8,9 +8,16 @@
   <sfs-user-button></sfs-user-button>
 </mat-toolbar>
 <div class="bibliography-area">
-  <mat-card class="bibliography-card">
-    <ul>
-      <li><a href="#" target="_blank">Test</a></li>
-    </ul>
+  <mat-card *ngFor="let item of linksList" class="bibliography-card">
+   <mat-card-title>{{item.header}}</mat-card-title>
+   <mat-card-subtitle>{{item.title}}</mat-card-subtitle>
+    <mat-card-content>
+      <p>
+        {{item.description}}
+      </p>
+    </mat-card-content>
+    <mat-card-actions align="end">
+      <a [href]="item.url" target="_blank" mat-button>Check it</a>
+    </mat-card-actions>
   </mat-card>
 </div>

@@ -1,7 +1,9 @@
 .bibliography-area {
-  padding-top: 40px;
+  flex-direction: row;
+  width: 100%;
+  display: flex;
   .bibliography-card {
-    margin: 0 auto;
-    width: 60%;
+    margin: 20px;
+    width: 200px;
   }
 }
