@@ -1,9 +1,11 @@
 .bibliography-area {
-  flex-direction: row;
   width: 100%;
-  display: flex;
+  display: inline-grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 10px;
+  grid-auto-rows: minmax(100px, auto);
+
   .bibliography-card {
     margin: 20px;
-    width: 200px;
   }
 }
