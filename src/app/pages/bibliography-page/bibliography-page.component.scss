@@ -9,3 +9,22 @@
     margin: 20px;
   }
 }
+
+@media screen and (max-width: 1100px) {
+  .bibliography-area {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+
+@media screen and (max-width: 850px) {
+  .bibliography-area {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (max-width: 475px) {
+  .bibliography-area {
+    grid-template-columns: 1fr;
+  }
+}
