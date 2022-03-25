@@ -8,30 +8,20 @@ import {
   FLASHCARDS_VIEW,
   DictionaryBuilder,
   ARTICLE_VIEW,
-  Dictionary
+  DictionaryItem
 } from '../data/data-lib';
-import { TranslationsData } from '../data/translations-data';
-import { GlossaryData } from '../data/glossary-data';
-import { SixMinuteEnglish } from '../data/6-minute-english-data';
-import { jsQuestionsData } from '../data/js-questions-data';
-import { tsQuestionsData } from '../data/ts-questions-data';
-import { TransitionWordsData } from '../data/transition-words-data';
-import { RuBePhrasebookData } from '../data/ru-be-phrasebook-data';
-import { RuUkPhrasebookData } from '../data/ru-uk-phrasebook-data';
-import { RuEsPhrasebookData } from '../data/ru-es-phrasebook-data';
+import {
+  RuEsPhrasebookData,
+  RuUkPhrasebookData,
+  RuBePhrasebookData,
+  TransitionWordsData,
+  tsQuestionsData,
+  jsQuestionsData,
+  SixMinuteEnglish,
+  GlossaryData,
+  TranslationsData
+ } from '../data/dictionary-data';
 
-class DictionaryItem {
-  public dictionaryId: string = '';
-  public title: string = '';
-  public viewTypes: string[] = [];
-  public dictionary: Dictionary = new Dictionary();
-  constructor(json: any) {
-    this.dictionaryId = json.dictionaryId || '';
-    this.title = json.title || '';
-    this.viewTypes = json.viewTypes;
-    this.dictionary = DictionaryBuilder(json.dictionary) || new Dictionary();
-  }
-}
 
 const defaultData: DictionaryItem[] = [
   {

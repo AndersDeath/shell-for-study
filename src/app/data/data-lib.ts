@@ -175,3 +175,17 @@ export function createSFSMenuData(noRoot = false): SFSMenuItem[] {
   }
   return menuData;
 }
+
+
+export class DictionaryItem {
+  public dictionaryId: string = '';
+  public title: string = '';
+  public viewTypes: string[] = [];
+  public dictionary: Dictionary = new Dictionary();
+  constructor(json: any) {
+    this.dictionaryId = json.dictionaryId || '';
+    this.title = json.title || '';
+    this.viewTypes = json.viewTypes;
+    this.dictionary = DictionaryBuilder(json.dictionary) || new Dictionary();
+  }
+};
