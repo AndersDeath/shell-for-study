@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { createSFSMenuData, SFSMenuItem } from 'src/app/data/data-lib';
 import { User } from 'src/app/modules/profile/profile.model';
 import { SidebarService } from 'src/app/services/sidebar.service';
-import { UserApiService } from 'src/app/services/user-api.service';
 import { UserProfileSerivce } from 'src/app/services/user-profile.service';
 
 @Component({

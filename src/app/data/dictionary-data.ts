@@ -12,7 +12,7 @@ import { RuEsPhrasebookData } from './ru-es-phrasebook-data';
 export const DictionaryData = [
   {
     dictionaryId: 'english-words',
-    title: 'Dictionary',
+    title: 'English dictionary',
     viewTypes: [
       'CARDS_VIEW',
       'FAKE_FLASHCARDS_VIEW',
@@ -20,16 +20,18 @@ export const DictionaryData = [
       'SPELLING_TEST_VIEW',
       'FLASHCARDS_VIEW',
     ],
-    dictionary: TranslationsData
+    dictionary: TranslationsData,
+    icon: "i-en-language"
   },
   {
     dictionaryId: 'glossary',
-    title: 'Glossary',
+    title: 'Glossary of terms',
     viewTypes: [
       'CARDS_VIEW',
       'ARTICLE_VIEW'
     ],
     dictionary: GlossaryData,
+    icon: 'i-book'
   },
   {
     dictionaryId: '6-minute-english',
@@ -42,6 +44,7 @@ export const DictionaryData = [
       'FLASHCARDS_VIEW',
     ],
     dictionary: SixMinuteEnglish,
+    icon: 'i-en-language'
   },
   {
     dictionaryId: 'js-interview-questions',
@@ -51,6 +54,7 @@ export const DictionaryData = [
       'ARTICLE_VIEW'
     ],
     dictionary: jsQuestionsData(),
+    icon: 'i-javascript'
   },
   {
     dictionaryId: 'ts-interview-questions',
@@ -60,6 +64,7 @@ export const DictionaryData = [
       'ARTICLE_VIEW'
     ],
     dictionary: tsQuestionsData(),
+    icon: 'i-typescript'
   },
   {
     dictionaryId: 'transition-words',
@@ -71,6 +76,7 @@ export const DictionaryData = [
       'FLASHCARDS_VIEW',
     ],
     dictionary: TransitionWordsData,
+    icon: 'i-en-language'
   },
   {
     dictionaryId: 'ru-be-phrasebook',
@@ -82,6 +88,7 @@ export const DictionaryData = [
       'FLASHCARDS_VIEW',
     ],
     dictionary: RuBePhrasebookData,
+    icon: 'i-empty-book'
   },
   {
     dictionaryId: 'ru-uk-phrasebook',
@@ -93,6 +100,7 @@ export const DictionaryData = [
       'FLASHCARDS_VIEW',
     ],
     dictionary: RuUkPhrasebookData,
+    icon: 'i-empty-book'
   },
   {
     dictionaryId: 'ru-es-phrasebook',
@@ -104,5 +112,6 @@ export const DictionaryData = [
       'FLASHCARDS_VIEW',
     ],
     dictionary: RuEsPhrasebookData,
+    icon: 'i-empty-book'
   }
 ]

@@ -7,18 +7,16 @@ import {
   DictionaryData
  } from '../data/dictionary-data';
 
-
-
-const defaultData: DictionaryItem[] = [];
-
-for (let index = 0; index < DictionaryData.length; index++) {
-  defaultData.push(new DictionaryItem(DictionaryData[index]))
-}
-
 @Injectable({
   providedIn: 'root'
 })
 export class DictionaryApiService {
-  public subject = new BehaviorSubject(defaultData);
+  public subject = new BehaviorSubject((() => {
+    const defaultData: DictionaryItem[] = [];
+    for (let index = 0; index < DictionaryData.length; index++) {
+      defaultData.push(new DictionaryItem(DictionaryData[index]))
+    };
+    return defaultData;
+  })());
   constructor() {}
 }
