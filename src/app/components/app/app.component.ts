@@ -1,10 +1,10 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatMenuTrigger } from '@angular/material/menu';
 import { createSFSMenuData, SFSMenuItem } from 'src/app/data/data-lib';
-import { UtilsService } from 'src/app/services/utils.service';
-import { SidebarService } from 'src/app/services/sidebar.service';
+import { UtilsService } from 'src/app/services/utils/utils.service';
+import { SidebarService } from 'src/app/services/sidebar/sidebar.service';
 import { EN } from 'src/app/i18n/i18n.model';
-import { I18nService } from 'src/app/services/i18n.service';
+import { I18nService } from 'src/app/services/i18n/i18n.service';
 
 const version = 'v0.9.47';
 

@@ -1,6 +1,6 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, ValidatorFn, AbstractControl, ValidationErrors } from '@angular/forms';
-import { UserApiService } from '../../../../services/user-api.service';
+import { UserApiService } from '../../../../services/user-api/user-api.service';
 import { Subscription } from 'rxjs';
 import { UserRegistrationModel } from '../../profile.model';
 @Component({

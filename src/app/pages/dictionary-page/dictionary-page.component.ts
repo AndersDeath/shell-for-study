@@ -1,7 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { DictionaryApiService } from '../../services/dictionary-api.service';
+import { DictionaryApiService } from '../../services/dictionary-api/dictionary-api.service';
 
 @Component({
   selector: 'sfs-dictionary-page',

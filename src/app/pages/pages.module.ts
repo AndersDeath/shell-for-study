@@ -17,7 +17,7 @@ import { SpanishDictionaryModule } from '../modules/spanish-dictionary/spanish-d
 import { ViewsModule } from '../modules/views/views.module';
 import { DictionaryModule } from '../modules/dictionary/dictionary.module';
 import { UserSettingsPageComponent } from './user-settings-page/user-settings-page.component';
-import { UserProfileSerivce } from '../services/user-profile.service';
+import { UserProfileSerivce } from '../services/user-profile/user-profile.service';
 
 const pages = [
   DictionaryPageComponent,

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserLoginModel } from 'src/app/modules/profile/profile.model';
-import { SidebarService } from '../../services/sidebar.service';
+import { SidebarService } from '../../services/sidebar/sidebar.service';
 
 @Component({
   selector: 'sfs-user-auth-page',

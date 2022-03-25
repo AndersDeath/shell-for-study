@@ -2,7 +2,7 @@ import { Component, Input, OnChanges, OnInit } from '@angular/core';
 import { Dictionary } from '../../data/data-lib';
 import { MatDialog } from '@angular/material/dialog';
 import { SettingsComponent } from '../../components/settings/settings.component';
-import { SidebarService } from 'src/app/services/sidebar.service';
+import { SidebarService } from 'src/app/services/sidebar/sidebar.service';
 import { ARTICLE_VIEW, CARDS_VIEW, FAKE_FLASHCARDS_VIEW, TABLE_VIEW, SPELLING_TEST_VIEW, FLASHCARDS_VIEW } from 'src/app/data/data-lib';
 
 @Component({

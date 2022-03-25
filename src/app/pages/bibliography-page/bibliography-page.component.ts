@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { SidebarService } from 'src/app/services/sidebar.service';
+import { SidebarService } from 'src/app/services/sidebar/sidebar.service';
 
 @Component({
   selector: 'sfs-bibliography-page',

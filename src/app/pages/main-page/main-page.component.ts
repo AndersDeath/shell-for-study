@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { SidebarService } from '../../services/sidebar.service';
+import { SidebarService } from '../../services/sidebar/sidebar.service';
 
 @Component({
   selector: 'sfs-main-page',

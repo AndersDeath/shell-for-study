@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from 'src/app/modules/profile/profile.model';
-import { UserProfileSerivce } from 'src/app/services/user-profile.service';
-import { SidebarService } from '../../services/sidebar.service';
+import { UserProfileSerivce } from 'src/app/services/user-profile/user-profile.service';
+import { SidebarService } from '../../services/sidebar/sidebar.service';
 
 @Component({
   selector: 'sfs-user-page',

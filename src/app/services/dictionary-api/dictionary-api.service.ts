@@ -2,10 +2,10 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import {
   DictionaryItem
-} from '../data/data-lib';
+} from '../../data/data-lib';
 import {
   DictionaryData
- } from '../data/dictionary-data';
+ } from '../../data/dictionary-data';
 
 @Injectable({
   providedIn: 'root'

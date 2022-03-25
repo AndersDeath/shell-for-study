@@ -11,7 +11,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { SettingsComponent } from './components/settings/settings.component';
-import { SidebarService } from './services/sidebar.service';
+import { SidebarService } from './services/sidebar/sidebar.service';
 import { DictionaryPageComponent } from './pages/dictionary-page/dictionary-page.component';
 import { FreeDictionaryPageComponent } from './pages/free-dictionary-page/free-dictionary-page.component';
 import { NgxUiLoaderModule,

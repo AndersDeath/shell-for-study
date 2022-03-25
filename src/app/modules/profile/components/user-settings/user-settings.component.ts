@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { EN, RU } from 'src/app/i18n/i18n.model';
-import { I18nService } from 'src/app/services/i18n.service';
+import { I18nService } from 'src/app/services/i18n/i18n.service';
 
 interface UserProfileSettingsModel {
   name: string;

@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
-import { User } from '../modules/profile/profile.model';
-import { UserApiService } from "./user-api.service";
+import { User } from '../../modules/profile/profile.model';
+import { UserApiService } from "../user-api/user-api.service";
 
 @Injectable()
 export class UserProfileSerivce {
