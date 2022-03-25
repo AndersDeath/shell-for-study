@@ -1,8 +1,33 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-import { timeout } from 'rxjs/operators';
 import { createSFSMenuData, SFSMenuItem, DictionaryItem } from '../../data/data-lib';
 import { DictionaryApiService } from '../dictionary-api/dictionary-api.service';
+
+
+const dashboardSegment = [
+  {
+    path: '/dashboard',
+    title: 'Dashboard',
+    icon: ''
+  }
+];
+const commonSegment = [
+  {
+    path: '/free-dictionary',
+    title: 'Free Dictionary',
+    icon: 'i-dictionary'
+  },
+  {
+    path: '/spanish-dictionary',
+    title: 'Spanish Dictionary',
+    icon: 'i-dictionary'
+  },
+  {
+    path: '/bibliography',
+    title: 'Bibliograpy',
+    icon: 'i-empty-book'
+  }
+];
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +35,7 @@ import { DictionaryApiService } from '../dictionary-api/dictionary-api.service';
 export class NavigationService {
   public fullNavigation: BehaviorSubject<SFSMenuItem[]> = new BehaviorSubject<SFSMenuItem[]>([]);
   public dashboardNavigation: BehaviorSubject<SFSMenuItem[]> = new BehaviorSubject<SFSMenuItem[]>([]);
-  public dictionaryData: DictionaryItem[] = [];
+  public dictionarySegment: DictionaryItem[] = [];
 
   constructor(
     public dictionaryApiService: DictionaryApiService
@@ -21,10 +46,14 @@ export class NavigationService {
 
   init() {
     this.dictionaryApiService.subject.subscribe((d:DictionaryItem[]) => {
-      this.dictionaryData = d;
+      this.dictionarySegment = d;
       this.setFullNavigation();
       this.setDashboardNavigation();
     });
+  }
+
+  buildDictionarySegment(d:DictionaryItem[]) {
+
   }
 
   setFullNavigation() {
