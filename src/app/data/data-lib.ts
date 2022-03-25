@@ -93,10 +93,19 @@ export const FLASHCARDS_VIEW = "FLASHCARDS_VIEW";
 export const ARTICLE_VIEW = "ARTICLE_VIEW";
 export const SPELLING_TEST_VIEW = "SPELLING_TEST_VIEW";
 
-export interface SFSMenuItem {
-  path: string;
-  title: string;
-  icon: string;
+export class SFSMenuItem {
+  public path: string = '';
+  public title: string = '';
+  public icon: string = '';
+  constructor(
+    path:string = '',
+    title: string = '',
+    icon: string = ''
+  ) {
+    this.path = path;
+    this.title = title;
+    this.icon = icon;
+  }
 }
 
 const menuData = [

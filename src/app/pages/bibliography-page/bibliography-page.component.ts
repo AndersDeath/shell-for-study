@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { createSFSMenuData, SFSMenuItem } from 'src/app/data/data-lib';
 import { SidebarService } from 'src/app/services/sidebar.service';
 
 @Component({
@@ -9,7 +8,6 @@ import { SidebarService } from 'src/app/services/sidebar.service';
 })
 export class BibliographyPageComponent implements OnInit {
 
-  public items: SFSMenuItem[] = createSFSMenuData(true);
   public title: string = "Bibliography";
   public linksList: {
     url: string;
