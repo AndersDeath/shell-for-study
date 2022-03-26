@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-import { createSFSMenuData, SFSMenuItem, DictionaryItem } from '../../data/data-lib';
+import { SFSMenuItem, DictionaryItem } from '../../data/data-lib';
 import { DictionaryApiService } from '../dictionary-api/dictionary-api.service';
 
 

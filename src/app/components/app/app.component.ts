@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild, OnDestroy } from '@angular/core';
 import { MatMenuTrigger } from '@angular/material/menu';
-import { createSFSMenuData, SFSMenuItem } from 'src/app/data/data-lib';
+import { SFSMenuItem } from 'src/app/data/data-lib';
 import { UtilsService } from 'src/app/services/utils/utils.service';
 import { SidebarService } from 'src/app/services/sidebar/sidebar.service';
 import { EN } from 'src/app/i18n/i18n.model';

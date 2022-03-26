@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { createSFSMenuData, SFSMenuItem } from 'src/app/data/data-lib';
+import { SFSMenuItem } from 'src/app/data/data-lib';
 import { User } from 'src/app/modules/profile/profile.model';
 import { SidebarService } from 'src/app/services/sidebar/sidebar.service';
 import { UserProfileSerivce } from 'src/app/services/user-profile/user-profile.service';
