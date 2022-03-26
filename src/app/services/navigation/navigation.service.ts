@@ -60,16 +60,13 @@ export class NavigationService {
         item.icon
       );
     });
-    console.log(this.dictionarySegment)
   }
 
   setFullNavigation() {
-    console.log('setFullNavigation');
-    this.fullNavigation.next(createSFSMenuData());
+    this.fullNavigation.next([...dashboardSegment, ...this.dictionarySegment, ...commonSegment]);
   }
 
   setDashboardNavigation() {
-    console.log('setDashboardNavigation');
-    this.dashboardNavigation.next(createSFSMenuData(true));
+    this.dashboardNavigation.next([...this.dictionarySegment, ...commonSegment]);
   }
 }
