@@ -35,7 +35,7 @@ const commonSegment = [
 export class NavigationService {
   public fullNavigation: BehaviorSubject<SFSMenuItem[]> = new BehaviorSubject<SFSMenuItem[]>([]);
   public dashboardNavigation: BehaviorSubject<SFSMenuItem[]> = new BehaviorSubject<SFSMenuItem[]>([]);
-  public dictionarySegment: DictionaryItem[] = [];
+  public dictionarySegment: SFSMenuItem[] = [];
 
   constructor(
     public dictionaryApiService: DictionaryApiService
@@ -46,14 +46,21 @@ export class NavigationService {
 
   init() {
     this.dictionaryApiService.subject.subscribe((d:DictionaryItem[]) => {
-      this.dictionarySegment = d;
+      this.buildDictionarySegment(d);
       this.setFullNavigation();
       this.setDashboardNavigation();
     });
   }
 
   buildDictionarySegment(d:DictionaryItem[]) {
-
+    this.dictionarySegment = d.map((item: DictionaryItem):SFSMenuItem=> {
+      return new SFSMenuItem(
+        '/dictionary/' + item.dictionaryId,
+        item.title,
+        item.icon
+      );
+    });
+    console.log(this.dictionarySegment)
   }
 
   setFullNavigation() {

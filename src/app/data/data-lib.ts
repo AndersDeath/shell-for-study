@@ -191,10 +191,12 @@ export class DictionaryItem {
   public title: string = '';
   public viewTypes: string[] = [];
   public dictionary: Dictionary = new Dictionary();
+  public icon: string = '';
   constructor(json: any) {
     this.dictionaryId = json['dictionaryId'] || '';
     this.title = json['title'] || '';
     this.viewTypes = json['viewTypes'] || [];
     this.dictionary = DictionaryBuilder(json.dictionary) || new Dictionary();
+    this.icon = json['icon'] || '';
   }
 };
