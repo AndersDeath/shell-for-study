@@ -11,7 +11,8 @@
     "gh-prepare": "ng build --configuration production --base-href https://andersdeath.github.io/shell-for-study/",
     "gh-deploy": "ngh --dir=dist/shell-for-study/",
     "gh": "npm run gh-prepare && npm run gh-deploy",
-    "compodoc": "compodoc -p tsconfig.doc.json -s"
+    "compodoc": "compodoc -p tsconfig.doc.json -s",
+    "build:static-server": "sh ./scripts/build-static.sh"
   },
   "private": true,
   "dependencies": {
