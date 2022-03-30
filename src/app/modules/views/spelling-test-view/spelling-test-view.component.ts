@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { NgxUiLoaderService, SPINNER } from 'ngx-ui-loader';
-import { Dictionary, Subject } from 'src/app/data/data-lib';
+import { Dictionary, Subject } from 'sfs-data-model';
 import { FreeDictionaryService } from '../../free-dictionary/services/free-dictionary.service';
 
 interface ISpellingTestSubject extends Subject {

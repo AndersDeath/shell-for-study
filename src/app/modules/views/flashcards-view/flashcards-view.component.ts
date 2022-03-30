@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Dictionary, Subject } from 'src/app/data/data-lib';
+import { Dictionary, Subject } from 'sfs-data-model';
 
 @Component({
   selector: 'sfs-flashcards-view',

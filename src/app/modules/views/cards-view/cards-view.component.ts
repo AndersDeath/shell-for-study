@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { SubjectGroup } from 'src/app/data/data-lib';
+import { SubjectGroup } from 'sfs-data-model';
 
 @Component({
   selector: 'sfs-cards-view',

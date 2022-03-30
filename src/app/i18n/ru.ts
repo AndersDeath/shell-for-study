@@ -1,4 +1,4 @@
-import { TranslateModel } from "./i18n.model";
+import { TranslateModel } from "sfs-data-model";
 
 export const RU_TRANSLATION: TranslateModel = {
   download: 'Скачать',
