@@ -1,9 +1,8 @@
 import { Component, OnInit, ViewChild, OnDestroy } from '@angular/core';
 import { MatMenuTrigger } from '@angular/material/menu';
-import { SFSMenuItem } from 'src/app/data/data-lib';
 import { UtilsService } from 'src/app/services/utils/utils.service';
 import { SidebarService } from 'src/app/services/sidebar/sidebar.service';
-import { EN } from 'src/app/i18n/i18n.model';
+import { EN, SFSMenuItem } from 'sfs-data-model';
 import { I18nService } from 'src/app/services/i18n/i18n.service';
 import { Subscription } from 'rxjs';
 import { NavigationService } from '../../services/navigation/navigation.service';

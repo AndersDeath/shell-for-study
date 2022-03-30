@@ -1,4 +1,4 @@
-import { Dictionary } from "./data-lib";
+import { Dictionary } from "sfs-data-model";
 
 export const RuEsPhrasebookData : Dictionary = {
   title: 'Russian-Spanish Phrasebook',

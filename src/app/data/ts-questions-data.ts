@@ -1,4 +1,4 @@
-import { Dictionary } from "./data-lib"
+import { Dictionary } from "sfs-data-model"
 import {
   tsQuestions1,
   tsQuestions2,

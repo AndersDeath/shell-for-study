@@ -1,7 +1,6 @@
 import {Component, Inject, OnInit} from '@angular/core';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
-import { Dictionary, DictionaryBuilder } from 'src/app/data/data-lib';
-import { TranslationsData } from 'src/app/data/translations-data';
+import { Dictionary } from 'sfs-data-model';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 @Component({

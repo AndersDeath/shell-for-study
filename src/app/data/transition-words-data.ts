@@ -1,4 +1,4 @@
-import { Dictionary } from "./data-lib";
+import { Dictionary } from "sfs-data-model";
 
 export const TransitionWordsData : Dictionary = {
   title: 'Transition words',

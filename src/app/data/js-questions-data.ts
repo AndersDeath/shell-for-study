@@ -1,4 +1,4 @@
-import { Dictionary } from "./data-lib"
+import { Dictionary } from "sfs-data-model"
 
 export const jsQuestoinsArray =[`## 1.  В чем разница между null и undefined?
 Для начала давайте поговорим о том, что у них общего.

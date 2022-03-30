@@ -1,7 +1,7 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { UserLoginModel } from '../../profile.model';
+import { UserLoginModel } from 'sfs-data-model';
 
 @Component({
   selector: 'sfs-user-login',

@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { User } from '../../profile.model';
+import { User } from 'sfs-data-model';
 
 @Component({
   selector: 'sfs-user-profile',

@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormGroup, Validators, FormBuilder } from '@angular/forms';
-import { UserRestorPasswordModel } from '../../profile.model';
+import { UserRestorPasswordModel } from 'sfs-data-model';
 
 @Component({
   selector: 'sfs-user-restore-password',
