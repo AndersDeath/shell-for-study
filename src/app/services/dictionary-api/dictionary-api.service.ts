@@ -1,11 +1,7 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-import {
-  DictionaryItem
-} from '../../data/data-lib';
-import {
-  DictionaryData
- } from '../../data/dictionary-data';
+import { DictionaryItem } from 'sfs-data-model';
+import { DictionaryData } from 'src/app/data/dictionary-data';
 
 @Injectable({
   providedIn: 'root'
