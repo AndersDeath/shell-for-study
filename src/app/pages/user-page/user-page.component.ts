@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { User } from 'src/app/modules/profile/profile.model';
+import { User } from 'sfs-data-model';
 import { UserProfileSerivce } from 'src/app/services/user-profile/user-profile.service';
 import { SidebarService } from '../../services/sidebar/sidebar.service';
 

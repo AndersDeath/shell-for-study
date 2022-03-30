@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { User } from '../../modules/profile/profile.model';
+import { User } from "sfs-data-model";
 import { UserApiService } from "../user-api/user-api.service";
 
 @Injectable()
