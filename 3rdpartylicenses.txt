@@ -379,6 +379,9 @@ Apache-2.0
  
 
 
+sfs-data-model
+ISC
+
 zone.js
 MIT
 The MIT License
