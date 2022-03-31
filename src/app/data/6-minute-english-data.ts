@@ -2,7 +2,7 @@ import { Dictionary } from "sfs-data-model";
 
 export const SixMinuteEnglish : Dictionary = {
   title: '6 minute English',
-  version: 9,
+  version: 10,
   sections: [
     {
       title: '6 Minute English',
@@ -703,6 +703,35 @@ export const SixMinuteEnglish : Dictionary = {
             {
               subject: "pool",
               en: "collect, group together"
+            }
+          ]
+        },
+        {
+          title: "Grime: Music from architecture",
+          subjects: [
+            {
+              subject: "eclectic",
+              en: "describes taste which includes a wide variety of styles"
+            },
+            {
+              subject: "contentious",
+              en: "creating or causing conflict"
+            },
+            {
+              subject: "coming of age",
+              en: "becoming an adult"
+            },
+            {
+              subject: "predominant",
+              en: "the strongest or most important"
+            },
+            {
+              subject: "chants",
+              en: "sings the same thing over and over again"
+            },
+            {
+              subject: "existential",
+              en: "relating to human existence"
             }
           ]
         }
