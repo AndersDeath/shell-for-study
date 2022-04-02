@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { User, UserMockData } from 'sfs-data-model';
+import { environment } from 'src/environments/environment';
 
-enum HttpUrls {
-  register = 'register',
-  login = 'login',
-  restore = 'restore'
+const HttpUrls  = {
+  register: `${environment.api}/register`,
+  login: `${environment.api}/login`,
+  restore: `${environment.api}/restore`
 }
 @Injectable()
 export class UserApiService {
