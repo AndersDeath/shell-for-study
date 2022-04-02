@@ -7,7 +7,7 @@ import { I18nService } from 'src/app/services/i18n/i18n.service';
 import { Subscription } from 'rxjs';
 import { NavigationService } from '../../services/navigation/navigation.service';
 
-const version = 'v0.9.50';
+const version = 'v0.9.51';
 
 enum ContextLinks {
   SearchGoogle = 'https://www.google.com/search?q=',
