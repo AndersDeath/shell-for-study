@@ -26,6 +26,12 @@ export class BibliographyPageComponent implements OnInit {
       header: "BBC Learning English",
       title: "Learning english, inspiring language learning since 1943",
       description: "Learn English with these free learning English videos and materials from BBC Learning English. This site will help you learn English and improve your pronunciation, grammar and vocabulary knowledge."
+    },
+    {
+      url: "https://practicepteonline.com/",
+      header: "IELTS MASTER",
+      title: "Large collection of IELTS tests for four modules",
+      description: "For IELTS we have the largest collection of tests for all four modules. These tests have been prepared from the actual IELTS examination that have come in the recent time. Students can do comprehensive practice for IELTS from our website for each module. Our Youtube Tutorials are extremely helpful with valuable tips on scoring high bands in IELTS."
     }
   ]
 
