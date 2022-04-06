@@ -11,7 +11,7 @@ export class UserRegistrationComponent {
 
   @Input() set formData(data: UserRegistrationModel) {
     this.registrationForm.setValue({
-      name: data.name,
+      firstName: data.firstName,
       password: data.password,
       email: data.email,
     })
@@ -24,19 +24,19 @@ export class UserRegistrationComponent {
     private api: UserApiService
     ) {
     this.registrationForm = this.fb.group({
-      name: ['', [Validators.required]],
+      firstName: ['', [Validators.required]],
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required]],
-      password2: ['', [Validators.required]],
+      passwordConfirmation: ['', [Validators.required]],
     }, { validators: this.checkPasswords })
   }
 
   sendFormData(form: FormGroup) {
     this.formDataEmitter.emit({
-      name: form.value.name,
+      firstName: form.value.firstName,
       password: form.value.password,
-      password2: form.value.password2,
-      email: form.value.email
+      passwordConfirmation: form.value.passwordConfirmation,
+      email: form.value.email,
     });
   }
 

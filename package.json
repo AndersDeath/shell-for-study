@@ -12,7 +12,8 @@
     "gh-deploy": "ngh --dir=dist/shell-for-study/",
     "gh": "npm run gh-prepare && npm run gh-deploy",
     "compodoc": "compodoc -p tsconfig.doc.json -s",
-    "build:static-server": "sh ./scripts/build-static.sh"
+    "build:static-server": "sh ./scripts/build-static.sh",
+    "update:model": "rm -R node_modules/sfs-data-model && rm package-lock.json && npm i"
   },
   "private": true,
   "dependencies": {
@@ -35,7 +36,7 @@
     "ngx-markdown": "^13.1.0",
     "ngx-ui-loader": "^11.0.0",
     "rxjs": "~6.6.0",
-    "sfs-data-model": "git+https://github.com/AndersDeath/sfs-data-model.git#v0.0.3",
+    "sfs-data-model": "git+https://github.com/AndersDeath/sfs-data-model.git#v0.0.6",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
   },

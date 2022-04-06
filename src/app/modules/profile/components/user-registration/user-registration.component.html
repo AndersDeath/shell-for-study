@@ -2,9 +2,9 @@
 <form [formGroup]="registrationForm" (ngSubmit)="sendFormData(registrationForm)">
   <mat-form-field class="form-field">
     <mat-label>Name</mat-label>
-    <input matInput inputmode="text" placeholder="Type name" formControlName="name">
+    <input matInput inputmode="text" placeholder="Type name" formControlName="firstName">
     <mat-error>Name is required</mat-error>
-    <mat-error *ngIf="(registrationForm.get('name'))?.errors?.required">
+    <mat-error *ngIf="(registrationForm.get('firstName'))?.errors?.required">
       This field is required
     </mat-error>
   </mat-form-field>
@@ -30,9 +30,9 @@
 
   <mat-form-field class="form-field">
     <mat-label>Password2</mat-label>
-    <input matInput type="password" placeholder="Type password" formControlName="password2">
+    <input matInput type="password" placeholder="Type password" formControlName="passwordConfirmation">
     <mat-error>Password2 is required</mat-error>
-    <mat-error *ngIf="(registrationForm.get('password2'))?.errors?.required">
+    <mat-error *ngIf="(registrationForm.get('passwordConfirmation'))?.errors?.required">
       This field is required
     </mat-error>
   </mat-form-field>
