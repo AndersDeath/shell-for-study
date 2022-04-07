@@ -6,6 +6,7 @@ import { EN, SFSMenuItem } from 'sfs-data-model';
 import { I18nService } from 'src/app/services/i18n/i18n.service';
 import { Subscription } from 'rxjs';
 import { NavigationService } from '../../services/navigation/navigation.service';
+import { ApiService } from 'src/app/services/api/api.service';
 
 const version = 'v0.9.51';
 
@@ -42,7 +43,8 @@ export class AppComponent implements OnInit, OnDestroy {
     public sidebar: SidebarService,
     private i18n: I18nService,
     private utils: UtilsService,
-    private navigation: NavigationService
+    private navigation: NavigationService,
+    private api: ApiService
     ) {}
 
 
@@ -79,6 +81,9 @@ export class AppComponent implements OnInit, OnDestroy {
       this.menuData = e;
     });
     this.subscriptions.push(sub);
+
+    const sub2 = this.api.checkServer().subscribe((e) => { console.log(e)});
+    this.subscriptions.push(sub2);
   }
 
   toggleSidebar() {
