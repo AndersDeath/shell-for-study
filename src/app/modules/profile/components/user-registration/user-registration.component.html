@@ -1,22 +1,27 @@
 <div class="form-layout">
 <form [formGroup]="registrationForm" (ngSubmit)="sendFormData(registrationForm)">
   <mat-form-field class="form-field">
-    <mat-label>Name</mat-label>
+    <mat-label>First Name</mat-label>
     <input matInput inputmode="text" placeholder="Type name" formControlName="firstName">
-    <mat-error>Name is required</mat-error>
     <mat-error *ngIf="(registrationForm.get('firstName'))?.errors?.required">
-      This field is required
+      First Name is required
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field class="form-field">
+    <mat-label>Second Name</mat-label>
+    <input matInput inputmode="text" placeholder="Type name" formControlName="secondName">
+    <mat-error *ngIf="(registrationForm.get('secondName'))?.errors?.required">
+      Second Name is required
     </mat-error>
   </mat-form-field>
   <mat-form-field class="form-field">
     <mat-label>Email</mat-label>
     <input matInput type="email" placeholder="Type name" formControlName="email">
-    <mat-error>Email is required</mat-error>
     <mat-error *ngIf="(registrationForm.get('email'))?.errors?.required">
-      This field is required
+      Email is require
     </mat-error>
     <mat-error *ngIf="(registrationForm.get('email'))?.errors?.email">
-      It should be email
+      Email has format like "foo@bar.com"
     </mat-error>
   </mat-form-field>
   <mat-form-field class="form-field">
