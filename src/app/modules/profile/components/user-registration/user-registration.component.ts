@@ -43,7 +43,7 @@ export class UserRegistrationComponent {
   checkPasswords: ValidatorFn = (group: AbstractControl | any):  ValidationErrors | null => {
     if(group !== null) {
       let pass = group.get('password').value;
-      let confirmPass = group.get('password2').value
+      let confirmPass = group.get('passwordConfirmation').value
       return pass === confirmPass ? null : { notSame: true }
     }
     return null
