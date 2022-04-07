@@ -29,16 +29,15 @@
   </mat-form-field>
 
   <mat-form-field class="form-field">
-    <mat-label>Password2</mat-label>
-    <input matInput type="password" placeholder="Type password" formControlName="passwordConfirmation">
-    <mat-error>Password2 is required</mat-error>
+    <mat-label>Confirm password</mat-label>
+    <input matInput type="password" placeholder="Confirm password" formControlName="passwordConfirmation">
     <mat-error *ngIf="(registrationForm.get('passwordConfirmation'))?.errors?.required">
-      This field is required
+      Password confirmation is required
     </mat-error>
   </mat-form-field>
-  <div *ngIf="(registrationForm.hasError('notSame'))">
+  <mat-error *ngIf="(registrationForm.hasError('notSame'))">
     Passwords must be matched
-  </div>
+  </mat-error>
   <div class="form-actions">
     <button mat-raised-button color="primary" type="submit" [disabled]="!registrationForm.valid">Submit</button>
   </div>
