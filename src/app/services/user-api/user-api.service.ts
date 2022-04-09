@@ -4,9 +4,13 @@ import { User, UserMockData } from 'sfs-data-model';
 import { environment } from 'src/environments/environment';
 
 const HttpUrls  = {
-  register: `${environment.api}/register`,
-  login: `${environment.api}/login`,
-  restore: `${environment.api}/restore`
+  registration: `${environment.api}/auth/registration`,
+  login: `${environment.api}/auth/login`,
+  logout: `${environment.api}/auth/logout`,
+  refresh: `${environment.api}/auth/refresh`,
+  restore: `${environment.api}/auth/restore`,
+  profile: `${environment.api}/profile`
+
 }
 @Injectable()
 export class UserApiService {
@@ -15,9 +19,9 @@ export class UserApiService {
   }
 
   registration(data: any) {
-    console.log(HttpUrls.register +': ', data);
+    console.log(HttpUrls.registration +': ', data);
     return false;
-    return this.http.get(HttpUrls.register);
+    return this.http.get(HttpUrls.registration);
   }
 
   login(data: any) {
