@@ -1,6 +1,5 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, ValidatorFn, AbstractControl, ValidationErrors } from '@angular/forms';
-import { UserApiService } from '../../../../services/user-api/user-api.service';
 import { UserRegistrationModel } from 'sfs-data-model';
 @Component({
   selector: 'sfs-user-registration',
@@ -14,6 +13,7 @@ export class UserRegistrationComponent {
       firstName: data.firstName,
       secondName: data.secondName,
       password: data.password,
+      passwordConfirmation: data.passwordConfirmation,
       email: data.email,
     })
   }
@@ -21,9 +21,8 @@ export class UserRegistrationComponent {
   public registrationForm: FormGroup;
 
   constructor(
-    public fb: FormBuilder,
-    private api: UserApiService
-    ) {
+    public fb: FormBuilder
+  ) {
     this.registrationForm = this.fb.group({
       firstName: ['', [Validators.required]],
       secondName: ['', [Validators.required]],
@@ -34,7 +33,6 @@ export class UserRegistrationComponent {
   }
 
   sendFormData(form: FormGroup) {
-    console.log(form.value)
     this.formDataEmitter.emit({
       firstName: form.value.firstName,
       secondName: form.value.secondName,

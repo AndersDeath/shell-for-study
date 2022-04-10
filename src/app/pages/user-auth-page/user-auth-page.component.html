@@ -9,13 +9,13 @@
 </mat-toolbar>
 <div>
 <mat-tab-group mat-align-tabs="start">
-  <mat-tab label="User Login">
-    <sfs-user-login [formData]="data" (formDataEmitter)="formDataEmitter($event)" ></sfs-user-login>
-  </mat-tab>
+  <!-- <mat-tab label="User Login">
+    <sfs-user-login ></sfs-user-login>
+  </mat-tab> -->
   <mat-tab label="User Registration">
-    <sfs-user-registration></sfs-user-registration>
+    <sfs-user-registration [formData]="data" (formDataEmitter)="formDataEmitter($event)"></sfs-user-registration>
   </mat-tab>
-  <mat-tab label="User Restore Password">
+  <!-- <mat-tab label="User Restore Password">
     <sfs-user-restore-password></sfs-user-restore-password>
-  </mat-tab>
+  </mat-tab> -->
 </mat-tab-group>

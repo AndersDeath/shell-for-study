@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { UserLoginModel } from 'sfs-data-model';
+import { UserLoginModel, UserRegistrationModel } from 'sfs-data-model';
+import { UserApiService } from 'src/app/services/user-api/user-api.service';
 import { SidebarService } from '../../services/sidebar/sidebar.service';
 
 @Component({
@@ -10,15 +11,25 @@ import { SidebarService } from '../../services/sidebar/sidebar.service';
 export class UserAuthPageComponent implements OnInit {
 
   public title: string = "Auth Page";
-  public data: UserLoginModel = new UserLoginModel();
+  public data: UserRegistrationModel = new UserRegistrationModel({
+    firstName: 'Test',
+    secondName: 'Testov',
+    email: 'test@test.test',
+    password: '12',
+    passwordConfirmation: '12'
+  });
   constructor(
     public sidebar: SidebarService,
+    private userApi: UserApiService
     ) { }
 
   ngOnInit(): void {}
 
-  public formDataEmitter(data: UserLoginModel) {
-    console.log('UserAuthData: ',data);
+  public formDataEmitter(data: UserRegistrationModel) {
+    console.log('UserRegistrationModel: ',data);
+    this.userApi.registration(data).subscribe((e) => {
+      console.log(e);
+    })
   }
 
   toggleSidebar() {

@@ -20,8 +20,7 @@ export class UserApiService {
 
   registration(data: any) {
     console.log(HttpUrls.registration +': ', data);
-    return false;
-    return this.http.get(HttpUrls.registration);
+    return this.http.post(HttpUrls.registration, data);
   }
 
   login(data: any) {
