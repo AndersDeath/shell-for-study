@@ -11,7 +11,7 @@ import { UserLoginModel } from 'sfs-data-model';
 export class UserLoginComponent {
   @Input() set formData(data: any) {
     this.loginForm.setValue({
-      name: data.name,
+      email: data.name,
       password: data.password
     })
   }
@@ -23,14 +23,14 @@ export class UserLoginComponent {
     private router: Router
     ) {
       this.loginForm = this.fb.group({
-        name: [null, [Validators.required]],
+        email: [null, [Validators.required, Validators.email]],
         password: [null, [Validators.required]]
       })
   }
 
   sendFormData(form: FormGroup) {
     this.formDataEmitter.emit({
-      name: form.value.name,
+      email: form.value.email,
       password: form.value.password
     })
     this.router.navigate(['dashboard']);

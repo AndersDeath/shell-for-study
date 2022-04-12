@@ -1,11 +1,14 @@
 <div class="form-layout">
   <form [formGroup]="loginForm" (ngSubmit)="sendFormData(loginForm)">
     <mat-form-field class="form-field">
-      <mat-label>Name</mat-label>
-      <input matInput inputmode="text" placeholder="Type name" formControlName="name">
-      <mat-error>Name is required</mat-error>
-      <mat-error *ngIf="(loginForm.get('name'))?.errors?.required">
+      <mat-label>Email</mat-label>
+      <input matInput inputmode="text" placeholder="Email" formControlName="email">
+      <mat-error>Email is required</mat-error>
+      <mat-error *ngIf="(loginForm.get('email'))?.errors?.required">
         This field is required
+      </mat-error>
+      <mat-error *ngIf="(loginForm.get('email'))?.errors?.email">
+        Email has format like "foo@bar.com"
       </mat-error>
     </mat-form-field>
     <mat-form-field class="form-field">
