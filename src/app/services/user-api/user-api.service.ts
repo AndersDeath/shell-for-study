@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { User, UserMockData } from 'sfs-data-model';
+import { User, UserLoginModel, UserMockData, UserRegistrationModel } from 'sfs-data-model';
 import { environment } from 'src/environments/environment';
 
 const HttpUrls  = {
@@ -18,15 +18,14 @@ export class UserApiService {
     console.log('User API Service init')
   }
 
-  registration(data: any) {
+  registration(data: UserRegistrationModel) {
     console.log(HttpUrls.registration +': ', data);
     return this.http.post(HttpUrls.registration, data);
   }
 
-  login(data: any) {
+  login(data: UserLoginModel) {
     console.log(HttpUrls.login +': ', data);
-    return false;
-    return this.http.get(HttpUrls.login);
+    return this.http.post(HttpUrls.login, data);
   }
 
   restore(data: any) {

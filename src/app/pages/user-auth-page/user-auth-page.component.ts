@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { UserLoginModel, UserRegistrationModel } from 'sfs-data-model';
 import { UserApiService } from 'src/app/services/user-api/user-api.service';
 import { SidebarService } from '../../services/sidebar/sidebar.service';
@@ -8,7 +9,7 @@ import { SidebarService } from '../../services/sidebar/sidebar.service';
   templateUrl: './user-auth-page.component.html',
   styleUrls: ['./user-auth-page.component.scss']
 })
-export class UserAuthPageComponent implements OnInit {
+export class UserAuthPageComponent implements OnInit, OnDestroy {
 
   public title: string = "Auth Page";
   public data: UserRegistrationModel = new UserRegistrationModel({
@@ -25,6 +26,8 @@ export class UserAuthPageComponent implements OnInit {
     password: '12',
   });
 
+  private subsciptions: Subscription[] = []
+
   constructor(
     public sidebar: SidebarService,
     private userApi: UserApiService
@@ -34,19 +37,27 @@ export class UserAuthPageComponent implements OnInit {
 
   public formDataEmitter(data: UserRegistrationModel) {
     console.log('UserRegistrationModel: ',data);
-    this.userApi.registration(data).subscribe((e) => {
+    const sub = this.userApi.registration(data).subscribe((e) => {
       console.log(e);
-    })
+    });
+    this.subsciptions.push(sub);
   }
 
   public formDataEmitter2(data: UserLoginModel) {
     console.log('UserRegistrationModel: ',data);
-    // this.userApi.registration(data).subscribe((e) => {
-    //   console.log(e);
-    // })
+    const sub = this.userApi.login(data).subscribe((e) => {
+      console.log('Login result: ',e);
+    });
+    this.subsciptions.push(sub);
   }
 
   toggleSidebar() {
     this.sidebar.toggle();
+  }
+
+  ngOnDestroy() {
+    for (let index = 0; index < this.subsciptions.length; index++) {
+      this.subsciptions[index].unsubscribe();
+    }
   }
 }

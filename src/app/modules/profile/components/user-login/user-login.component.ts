@@ -32,7 +32,7 @@ export class UserLoginComponent {
     this.formDataEmitter.emit({
       email: form.value.email,
       password: form.value.password
-    })
+    });
     this.router.navigate(['dashboard']);
     localStorage.setItem('isLogin', 'true');
   }
