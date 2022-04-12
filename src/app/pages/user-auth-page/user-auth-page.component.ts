@@ -16,7 +16,8 @@ export class UserAuthPageComponent implements OnInit {
     secondName: 'Testov',
     email: 'test@test.test',
     password: '12',
-    passwordConfirmation: '12'
+    passwordConfirmation: '12',
+    phone: '+79990001122'
   });
   constructor(
     public sidebar: SidebarService,

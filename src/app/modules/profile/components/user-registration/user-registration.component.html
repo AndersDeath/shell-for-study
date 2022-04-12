@@ -25,6 +25,13 @@
     </mat-error>
   </mat-form-field>
   <mat-form-field class="form-field">
+    <mat-label>Phone</mat-label>
+    <input matInput type="phone" placeholder="Type phone" formControlName="phone">
+    <mat-error *ngIf="(registrationForm.get('phone'))?.errors?.required">
+      Phone is require
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field class="form-field">
     <mat-label>Password</mat-label>
     <input matInput type="password" placeholder="Type password" formControlName="password">
     <mat-error>Password is required</mat-error>

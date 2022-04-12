@@ -15,6 +15,7 @@ export class UserRegistrationComponent {
       password: data.password,
       passwordConfirmation: data.passwordConfirmation,
       email: data.email,
+      phone: data.phone
     })
   }
   @Output() formDataEmitter = new EventEmitter<UserRegistrationModel>();
@@ -27,6 +28,7 @@ export class UserRegistrationComponent {
       firstName: ['', [Validators.required]],
       secondName: ['', [Validators.required]],
       email: ['', [Validators.required, Validators.email]],
+      phone: ['', [Validators.required]],
       password: ['', [Validators.required]],
       passwordConfirmation: ['', [Validators.required]],
     }, { validators: this.checkPasswords })
@@ -39,6 +41,7 @@ export class UserRegistrationComponent {
       password: form.value.password,
       passwordConfirmation: form.value.passwordConfirmation,
       email: form.value.email,
+      phone: form.value.phone,
     });
   }
 
