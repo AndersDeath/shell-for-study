@@ -19,6 +19,12 @@ export class UserAuthPageComponent implements OnInit {
     passwordConfirmation: '12',
     phone: '+79990001122'
   });
+
+  public data2: UserLoginModel = new UserLoginModel({
+    email: 'test@test.test',
+    password: '12',
+  });
+
   constructor(
     public sidebar: SidebarService,
     private userApi: UserApiService
@@ -31,6 +37,13 @@ export class UserAuthPageComponent implements OnInit {
     this.userApi.registration(data).subscribe((e) => {
       console.log(e);
     })
+  }
+
+  public formDataEmitter2(data: UserLoginModel) {
+    console.log('UserRegistrationModel: ',data);
+    // this.userApi.registration(data).subscribe((e) => {
+    //   console.log(e);
+    // })
   }
 
   toggleSidebar() {
