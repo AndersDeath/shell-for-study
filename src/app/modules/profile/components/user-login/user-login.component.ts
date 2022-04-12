@@ -11,7 +11,7 @@ import { UserLoginModel } from 'sfs-data-model';
 export class UserLoginComponent {
   @Input() set formData(data: any) {
     this.loginForm.setValue({
-      email: data.name,
+      email: data.email,
       password: data.password
     })
   }
