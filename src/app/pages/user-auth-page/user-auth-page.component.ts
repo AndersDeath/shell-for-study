@@ -13,7 +13,7 @@ export class UserAuthPageComponent implements OnInit {
   public title: string = "Auth Page";
   public data: UserRegistrationModel = new UserRegistrationModel({
     firstName: 'Test',
-    secondName: 'Testov',
+    lastName: 'Testov',
     email: 'test@test.test',
     password: '12',
     passwordConfirmation: '12',

@@ -11,7 +11,7 @@ export class UserRegistrationComponent {
   @Input() set formData(data: UserRegistrationModel) {
     this.registrationForm.setValue({
       firstName: data.firstName,
-      secondName: data.secondName,
+      lastName: data.lastName,
       password: data.password,
       passwordConfirmation: data.passwordConfirmation,
       email: data.email,
@@ -26,7 +26,7 @@ export class UserRegistrationComponent {
   ) {
     this.registrationForm = this.fb.group({
       firstName: ['', [Validators.required]],
-      secondName: ['', [Validators.required]],
+      lastName: ['', [Validators.required]],
       email: ['', [Validators.required, Validators.email]],
       phone: ['', [Validators.required]],
       password: ['', [Validators.required]],
@@ -37,7 +37,7 @@ export class UserRegistrationComponent {
   sendFormData(form: FormGroup) {
     this.formDataEmitter.emit({
       firstName: form.value.firstName,
-      secondName: form.value.secondName,
+      lastName: form.value.lastName,
       password: form.value.password,
       passwordConfirmation: form.value.passwordConfirmation,
       email: form.value.email,

@@ -2,16 +2,16 @@
 <form [formGroup]="registrationForm" (ngSubmit)="sendFormData(registrationForm)">
   <mat-form-field class="form-field">
     <mat-label>First Name</mat-label>
-    <input matInput inputmode="text" placeholder="Type name" formControlName="firstName">
+    <input matInput inputmode="text" placeholder="Type first name" formControlName="firstName">
     <mat-error *ngIf="(registrationForm.get('firstName'))?.errors?.required">
       First Name is required
     </mat-error>
   </mat-form-field>
   <mat-form-field class="form-field">
-    <mat-label>Second Name</mat-label>
-    <input matInput inputmode="text" placeholder="Type name" formControlName="secondName">
-    <mat-error *ngIf="(registrationForm.get('secondName'))?.errors?.required">
-      Second Name is required
+    <mat-label>Last Name</mat-label>
+    <input matInput inputmode="text" placeholder="Type last name" formControlName="lastName">
+    <mat-error *ngIf="(registrationForm.get('lastName'))?.errors?.required">
+      Last Name is required
     </mat-error>
   </mat-form-field>
   <mat-form-field class="form-field">
