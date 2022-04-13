@@ -1,8 +1,9 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { UserLoginModel, UserRegistrationModel } from 'sfs-data-model';
+import { Tokens, UserLoginModel, UserRegistrationModel } from 'sfs-data-model';
 import { UserApiService } from 'src/app/services/user-api/user-api.service';
 import { SidebarService } from '../../services/sidebar/sidebar.service';
+
 
 @Component({
   selector: 'sfs-user-auth-page',
@@ -45,8 +46,12 @@ export class UserAuthPageComponent implements OnInit, OnDestroy {
 
   public formDataEmitter2(data: UserLoginModel) {
     console.log('UserRegistrationModel: ',data);
-    const sub = this.userApi.login(data).subscribe((e) => {
-      console.log('Login result: ',e);
+    const sub = this.userApi.login(data).subscribe((e: any) => {
+      const tokens = new Tokens(e)
+      console.log('Login result: ',tokens);
+      console.log('Login access: ',tokens.access);
+      console.log('Login refresh: ',tokens.refresh);
+
     });
     this.subsciptions.push(sub);
   }

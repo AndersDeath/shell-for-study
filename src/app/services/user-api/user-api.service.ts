@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { User, UserLoginModel, UserMockData, UserRegistrationModel } from 'sfs-data-model';
 import { environment } from 'src/environments/environment';
+import { Observable } from 'rxjs';
 
 const HttpUrls  = {
   registration: `${environment.api}/auth/registration`,
@@ -23,7 +24,7 @@ export class UserApiService {
     return this.http.post(HttpUrls.registration, data);
   }
 
-  login(data: UserLoginModel) {
+  login(data: UserLoginModel): Observable<any> {
     console.log(HttpUrls.login +': ', data);
     return this.http.post(HttpUrls.login, data);
   }

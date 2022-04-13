@@ -33,8 +33,8 @@ export class UserLoginComponent {
       email: form.value.email,
       password: form.value.password
     });
-    this.router.navigate(['dashboard']);
-    localStorage.setItem('isLogin', 'true');
+    // this.router.navigate(['dashboard']);
+    // localStorage.setItem('isLogin', 'true');
   }
 
 }
