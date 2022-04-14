@@ -25,6 +25,9 @@ import { AuthGuard } from './auth.guard';
 import { SharedModule } from './modules/shared.module';
 import { PagesModule } from './pages/pages.module';
 import { BibliographyPageComponent } from './pages/bibliography-page/bibliography-page.component';
+import { StoreModule } from '@ngrx/store';
+import { authTokensReducer } from './state/auth-tokens/auth-tokens.reducer';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 @NgModule({
   declarations: [
     AppComponent,
@@ -63,7 +66,13 @@ import { BibliographyPageComponent } from './pages/bibliography-page/bibliograph
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,
       registrationStrategy: 'registerWithDelay:3000'
-    })
+    }),
+    StoreModule.forRoot({auth: authTokensReducer}),
+    StoreDevtoolsModule.instrument({
+      maxAge: 25, // Retains last 25 states
+      logOnly: environment.production, // Restrict extension to log-only mode
+      autoPause: true, // Pauses recording actions and state changes when the extension window is not open
+    }),
   ],
   providers: [SidebarService, AuthGuard],
   bootstrap: [AppComponent]

@@ -2,7 +2,7 @@
 
 import { createReducer, on } from '@ngrx/store';
 import { Tokens } from 'sfs-data-model';
-import { updateAccess, updateAll } from './auth-tokens.actions';
+import { update } from './auth-tokens.actions';
 
 
 export const initialState: Tokens = new Tokens({
@@ -10,8 +10,7 @@ export const initialState: Tokens = new Tokens({
   refresh_token: ''
 });
 
-export const counterReducer = createReducer(
+export const authTokensReducer = createReducer(
   initialState,
-  on(updateAccess,  (state) => { return {...state, refresh: 'new'}}),
-  on(updateAll, (state) => { return {...state}})
+  on(update, (state, tokens) => { return {...state, ...tokens}})
 );

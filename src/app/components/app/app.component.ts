@@ -2,11 +2,14 @@ import { Component, OnInit, ViewChild, OnDestroy } from '@angular/core';
 import { MatMenuTrigger } from '@angular/material/menu';
 import { UtilsService } from 'src/app/services/utils/utils.service';
 import { SidebarService } from 'src/app/services/sidebar/sidebar.service';
-import { EN, SFSMenuItem } from 'sfs-data-model';
+import { EN, SFSMenuItem, Tokens } from 'sfs-data-model';
 import { I18nService } from 'src/app/services/i18n/i18n.service';
 import { Subscription } from 'rxjs';
 import { NavigationService } from '../../services/navigation/navigation.service';
 import { ApiService } from 'src/app/services/api/api.service';
+import { select, Store } from '@ngrx/store';
+import { update } from 'src/app/state/auth-tokens/auth-tokens.actions';
+import { selectAuthTokens } from 'src/app/state/auth-tokens/auth-tokens.selectors';
 
 const version = 'v0.9.51';
 
@@ -44,7 +47,8 @@ export class AppComponent implements OnInit, OnDestroy {
     private i18n: I18nService,
     private utils: UtilsService,
     private navigation: NavigationService,
-    private api: ApiService
+    private api: ApiService,
+    private store: Store
     ) {}
 
 
@@ -84,6 +88,15 @@ export class AppComponent implements OnInit, OnDestroy {
 
     const sub2 = this.api.checkServer().subscribe((e) => { console.log(e)});
     this.subscriptions.push(sub2);
+    this.store.dispatch(update(new Tokens({
+      access_token: 'access_token',
+      refresh_token: 'refresh_token'
+    })));
+    const i = this.store.select(selectAuthTokens).subscribe((e) => {
+      console.log(e);
+    });
+    this.subscriptions.push(i)
+
   }
 
   toggleSidebar() {
