@@ -36,7 +36,7 @@
     "ngx-markdown": "^13.1.0",
     "ngx-ui-loader": "^11.0.0",
     "rxjs": "~6.6.0",
-    "sfs-data-model": "git+https://github.com/AndersDeath/sfs-data-model.git#v0.0.11",
+    "sfs-data-model": "git+https://github.com/AndersDeath/sfs-data-model.git#v0.0.12",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
   },
