@@ -7,9 +7,9 @@ import { I18nService } from 'src/app/services/i18n/i18n.service';
 import { Subscription } from 'rxjs';
 import { NavigationService } from '../../services/navigation/navigation.service';
 import { ApiService } from 'src/app/services/api/api.service';
-import { select, Store } from '@ngrx/store';
-import { update } from 'src/app/state/auth-tokens/auth-tokens.actions';
-import { selectAuthTokens } from 'src/app/state/auth-tokens/auth-tokens.selectors';
+import { Store } from '@ngrx/store';
+import { authUpdate } from 'src/app/state/auth/auth.actions';
+import { selectAuthTokens } from 'src/app/state/auth/auth.selectors';
 
 const version = 'v0.9.51';
 
@@ -88,7 +88,7 @@ export class AppComponent implements OnInit, OnDestroy {
 
     const sub2 = this.api.checkServer().subscribe((e) => { console.log(e)});
     this.subscriptions.push(sub2);
-    this.store.dispatch(update(new Tokens({
+    this.store.dispatch(authUpdate(new Tokens({
       access_token: 'access_token',
       refresh_token: 'refresh_token'
     })));

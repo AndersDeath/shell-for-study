@@ -26,10 +26,10 @@ import { SharedModule } from './modules/shared.module';
 import { PagesModule } from './pages/pages.module';
 import { BibliographyPageComponent } from './pages/bibliography-page/bibliography-page.component';
 import { StoreModule } from '@ngrx/store';
-import { authTokensReducer } from './state/auth-tokens/auth-tokens.reducer';
+import { authTokensReducer } from './state/auth/auth.reducer';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { EffectsModule } from '@ngrx/effects';
-import { LoginEffect } from './state/auth-tokens/auth-tokens.effects';
+import { LoginEffect } from './state/auth/auth.effects';
 @NgModule({
   declarations: [
     AppComponent,
