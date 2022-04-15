@@ -28,6 +28,8 @@ import { BibliographyPageComponent } from './pages/bibliography-page/bibliograph
 import { StoreModule } from '@ngrx/store';
 import { authTokensReducer } from './state/auth-tokens/auth-tokens.reducer';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { EffectsModule } from '@ngrx/effects';
+import { LoginEffect } from './state/auth-tokens/auth-tokens.effects';
 @NgModule({
   declarations: [
     AppComponent,
@@ -68,6 +70,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
       registrationStrategy: 'registerWithDelay:3000'
     }),
     StoreModule.forRoot({auth: authTokensReducer}),
+    EffectsModule.forRoot([LoginEffect]),
     StoreDevtoolsModule.instrument({
       maxAge: 25, // Retains last 25 states
       logOnly: environment.production, // Restrict extension to log-only mode
