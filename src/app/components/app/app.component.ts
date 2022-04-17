@@ -88,12 +88,12 @@ export class AppComponent implements OnInit, OnDestroy {
 
     const sub2 = this.api.checkServer().subscribe((e) => { console.log(e)});
     this.subscriptions.push(sub2);
-    this.store.dispatch(authUpdate(new Tokens({
-      access_token: 'access_token',
-      refresh_token: 'refresh_token'
-    })));
+    // this.store.dispatch(authUpdate(new Tokens({
+    //   access_token: 'access_token',
+    //   refresh_token: 'refresh_token'
+    // })));
     const i = this.store.select(selectAuthTokens).subscribe((e) => {
-      console.log(e);
+      console.log('app component: ',e);
     });
     this.subscriptions.push(i)
 

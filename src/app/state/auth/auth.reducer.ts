@@ -19,5 +19,9 @@ export const authTokensReducer = createReducer(
   initialState,
   on(authLogin, (state, tokens) => {
     return { ...state, ...tokens };
-  })
+  }),
+  on(authUpdate, (state, tokens: any) => {
+    console.log(tokens.payload)
+    return { ...state, ...{tokens: tokens.payload} };
+  }),
 );
