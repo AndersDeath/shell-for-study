@@ -47,7 +47,7 @@ export class UserAuthPageComponent implements OnInit, OnDestroy {
     this.subsciptions.push(sub);
   }
 
-  public formDataEmitter2(data: UserLoginModel) {
+  public formDataEmitter2(data: any) {
     console.log('UserRegistrationModel: ',data);
     // const sub = this.userApi.login(data).subscribe((e: any) => {
     //   const tokens = new Tokens(e)
@@ -57,7 +57,7 @@ export class UserAuthPageComponent implements OnInit, OnDestroy {
 
     // });
     // this.subsciptions.push(sub);
-    this.store.dispatch(authLogin({credentials: data}));
+    this.store.dispatch(authLogin(data));
 
   }
 

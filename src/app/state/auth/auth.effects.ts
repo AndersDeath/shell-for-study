@@ -13,7 +13,7 @@ export class LoginEffect {
     mergeMap(
       (creds: any) => this.api.login(creds)
       .pipe(
-        map((cred) => { console.log('CRED', cred);return ({ type: AUTH_UPDATE, payload: cred })}),
+        map((cred) => { console.log('CRED', cred);return ({ type: AUTH_UPDATE, ...cred })}),
         catchError(() => EMPTY)
       ))
     )

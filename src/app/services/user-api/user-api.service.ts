@@ -25,9 +25,9 @@ export class UserApiService {
   }
 
   login(data: any): Observable<any> {
-    console.log(data.credentials);
+    console.log(data);
     // console.log(HttpUrls.login +': ', data);
-    return this.http.post(HttpUrls.login, data.credentials);
+    return this.http.post(HttpUrls.login, data);
   }
 
   restore(data: any) {

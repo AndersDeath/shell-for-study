@@ -18,10 +18,18 @@ export const initialState: SFStore = {
 export const authTokensReducer = createReducer(
   initialState,
   on(authLogin, (state, payload: any) => {
-    return { ...state, ...{ userForm: {email: payload.credentials.email }} };
+    return { ...state, ...{ userForm: { email: payload.email } } };
   }),
-  on(authUpdate, (state, tokens: any) => {
-    console.log(tokens.payload)
-    return { ...state, ...{tokens: tokens.payload} };
-  }),
+  on(authUpdate, (state, payload: any) => {
+    console.log('payload', payload)
+    return {
+      ...state,
+      ...{
+        tokens: {
+          access: payload.access_token,
+          refresh: payload.refresh_token,
+        },
+      },
+    };
+  })
 );

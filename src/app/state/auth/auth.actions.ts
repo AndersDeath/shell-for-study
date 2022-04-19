@@ -8,5 +8,5 @@ export const AUTH_LOGIN = AUTH_PREFIX + 'Login';
 export const authUpdate = createAction(AUTH_UPDATE, props<Tokens>());
 export const authLogin = createAction(
   AUTH_LOGIN,
-  props<{ credentials: any }>()
+  props<{ email: any,  password: any}>()
 );
