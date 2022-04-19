@@ -10,8 +10,8 @@ const HttpUrls  = {
   logout: `${environment.api}/auth/logout`,
   refresh: `${environment.api}/auth/refresh`,
   restore: `${environment.api}/auth/restore`,
-  profile: `${environment.api}/profile`
-
+  profile: `${environment.api}/profile`,
+  checkAuth: `${environment.api}/check-auth`,
 }
 @Injectable()
 export class UserApiService {
@@ -37,6 +37,15 @@ export class UserApiService {
       'Authorization': 'Bearer ' + data.access_token
     });
     return this.http.get(HttpUrls.profile,  {headers: headers});
+  }
+
+  checkAuth(data: any): Observable<any> {
+    console.log('checkAuth data: ', data);
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer ' + data.access_token
+    });
+    return this.http.get(HttpUrls.checkAuth, {headers: headers})
   }
 
   restore(data: any) {
