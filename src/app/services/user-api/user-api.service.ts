@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { User, UserLoginModel, UserMockData, UserRegistrationModel } from 'sfs-data-model';
 import { environment } from 'src/environments/environment';
 import { Observable } from 'rxjs';
@@ -25,9 +25,18 @@ export class UserApiService {
   }
 
   login(data: any): Observable<any> {
-    console.log(data);
+    console.log('sqweqw',data);
     // console.log(HttpUrls.login +': ', data);
     return this.http.post(HttpUrls.login, data);
+  }
+
+  getProfile(data: any): Observable<any> {
+    console.log(data);
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer ' + data.access_token
+    });
+    return this.http.get(HttpUrls.profile,  {headers: headers});
   }
 
   restore(data: any) {
