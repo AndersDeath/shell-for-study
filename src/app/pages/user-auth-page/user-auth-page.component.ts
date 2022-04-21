@@ -3,7 +3,7 @@ import { Store } from '@ngrx/store';
 import { Subscription } from 'rxjs';
 import { Tokens, UserLoginModel, UserRegistrationModel } from 'sfs-data-model';
 import { UserApiService } from 'src/app/services/user-api/user-api.service';
-import { authLogin } from 'src/app/state/auth/auth.actions';
+import { authLogin, checkAuthAction } from 'src/app/state/auth/auth.actions';
 import { SidebarService } from '../../services/sidebar/sidebar.service';
 
 
@@ -59,6 +59,11 @@ export class UserAuthPageComponent implements OnInit, OnDestroy {
     // this.subsciptions.push(sub);
     this.store.dispatch(authLogin(data));
 
+  }
+
+  checkAuth() {
+    console.log('check auth works!');
+    this.store.dispatch(checkAuthAction({test: 'check'}));
   }
 
   toggleSidebar() {

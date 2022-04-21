@@ -6,6 +6,8 @@ export const AUTH_UPDATE = AUTH_PREFIX + 'Update';
 export const AUTH_LOGIN = AUTH_PREFIX + 'Login';
 export const UPDATE_PROFILE = AUTH_PREFIX + 'Profile';
 
+export const CHECK_AUTH = AUTH_PREFIX + 'Check Auth';
+
 export const authUpdate = createAction(AUTH_UPDATE, props<Tokens>());
 export const authLogin = createAction(
   AUTH_LOGIN,
@@ -30,3 +32,5 @@ export const profileUpdate = createAction(
     isActive: any;
   }>()
 );
+
+export const checkAuthAction = createAction(CHECK_AUTH, props<{test: any}>());
