@@ -6,7 +6,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatTabsModule } from '@angular/material/tabs';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatNativeDateModule } from '@angular/material/core';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { SettingsComponent } from './components/settings/settings.component';
@@ -31,6 +31,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { EffectsModule } from '@ngrx/effects';
 import { LoginEffect } from './state/auth/auth.effects';
 import { CheckAuthEffect } from './state/auth/check-auth.effects';
+import { AuthInterceptor } from './auth.interceptor';
 @NgModule({
   declarations: [
     AppComponent,
@@ -78,7 +79,15 @@ import { CheckAuthEffect } from './state/auth/check-auth.effects';
       autoPause: true, // Pauses recording actions and state changes when the extension window is not open
     }),
   ],
-  providers: [SidebarService, AuthGuard],
+  providers: [
+    SidebarService,
+    AuthGuard,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
