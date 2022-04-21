@@ -1,8 +1,13 @@
 import {createSelector } from '@ngrx/store';
 
-export const getTokens = (state: any) => state;
+export const getStore = (state: any) => state;
 
 export const selectAuthTokens = createSelector(
-  getTokens,
+  getStore,
   (state: any) => state.auth.tokens
+);
+
+export const selectStore = createSelector(
+  getStore,
+  (state: any) => state.auth
 );

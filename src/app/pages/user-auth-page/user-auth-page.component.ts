@@ -4,7 +4,7 @@ import { Subscription } from 'rxjs';
 import { Tokens, UserLoginModel, UserRegistrationModel } from 'sfs-data-model';
 import { UserApiService } from 'src/app/services/user-api/user-api.service';
 import { authLogin, checkAuthAction } from 'src/app/state/auth/auth.actions';
-import { selectAuthTokens } from 'src/app/state/auth/auth.selectors';
+import { selectStore } from 'src/app/state/auth/auth.selectors';
 import { SidebarService } from '../../services/sidebar/sidebar.service';
 
 
@@ -41,7 +41,7 @@ export class UserAuthPageComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
 
-    const sub = this.store.select(selectAuthTokens).subscribe((e) => {
+    const sub = this.store.select(selectStore).subscribe((e) => {
       console.log('user-auth-page component: ',e);
       this.snapshot = {...e};
     });

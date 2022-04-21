@@ -4,7 +4,7 @@ import { User, UserLoginModel, UserMockData, UserRegistrationModel } from 'sfs-d
 import { environment } from 'src/environments/environment';
 import { Observable } from 'rxjs';
 
-const HttpUrls  = {
+export const HTTP_URLS  = {
   registration: `${environment.api}/auth/registration`,
   login: `${environment.api}/auth/login`,
   logout: `${environment.api}/auth/logout`,
@@ -20,38 +20,29 @@ export class UserApiService {
   }
 
   registration(data: UserRegistrationModel) {
-    console.log(HttpUrls.registration +': ', data);
-    return this.http.post(HttpUrls.registration, data);
+    console.log(HTTP_URLS.registration +': ', data);
+    return this.http.post(HTTP_URLS.registration, data);
   }
 
   login(data: any): Observable<any> {
     // console.log('sqweqw',data);
     // console.log(HttpUrls.login +': ', data);
-    return this.http.post(HttpUrls.login, data);
+    return this.http.post(HTTP_URLS.login, data);
   }
 
   getProfile(data: any): Observable<any> {
-    // console.log(data);
-    const headers = new HttpHeaders({
-      'Content-Type': 'application/json',
-      'Authorization': 'Bearer ' + data.access_token
-    });
-    return this.http.get(HttpUrls.profile,  {headers: headers});
+    return this.http.get(HTTP_URLS.profile);
   }
 
   checkAuth(data: any): Observable<any> {
     console.log('checkAuth data: ', data);
-    const headers = new HttpHeaders({
-      'Content-Type': 'application/json',
-      'Authorization': 'Bearer ' + data.access
-    });
-    return this.http.get(HttpUrls.checkAuth, {headers: headers})
+    return this.http.get(HTTP_URLS.checkAuth)
   }
 
   restore(data: any) {
-    console.log(HttpUrls.restore +': ', data);
+    console.log(HTTP_URLS.restore +': ', data);
     return false;
-    return this.http.get(HttpUrls.restore);
+    return this.http.get(HTTP_URLS.restore);
   }
 
   getUserData():User {

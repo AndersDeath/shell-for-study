@@ -9,6 +9,7 @@ import {
 import { Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
 import { selectAuthTokens } from './state/auth/auth.selectors';
+
 @Injectable()
 export class AuthInterceptor implements HttpInterceptor {
 
@@ -24,13 +25,19 @@ export class AuthInterceptor implements HttpInterceptor {
 
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
 
-    // request = request.clone({
-    //   setHeaders: {
-    //     Authorization: `Bearer`
-    //   }
-    // });
+    if(
+      request.url.indexOf('auth/login') === -1 ||
+      request.url.indexOf('auth/registration') === -1
+    ) {
+      request = request.clone({
+        setHeaders: {
+          Authorization: `Bearer ${this.tokens.access}`
+        }
+      });
+    }
 
     console.log('AUTH INTERCEPTOR: ', request, this.tokens);
+
     return next.handle(request);
   }
 
