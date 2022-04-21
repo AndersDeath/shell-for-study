@@ -1,9 +1,10 @@
 import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
+import { Store } from '@ngrx/store';
 import { EMPTY } from 'rxjs';
-import { map, mergeMap, catchError } from 'rxjs/operators';
+import { map, mergeMap, catchError, tap } from 'rxjs/operators';
 import { UserApiService } from 'src/app/services/user-api/user-api.service';
-import { AUTH_LOGIN, AUTH_UPDATE, UPDATE_PROFILE } from './auth.actions';
+import { authUpdate, AUTH_LOGIN, AUTH_UPDATE, UPDATE_PROFILE } from './auth.actions';
 
 @Injectable()
 export class LoginEffect {
@@ -13,16 +14,16 @@ export class LoginEffect {
       mergeMap((creds: any) =>
         this.api.login(creds).pipe(
           map((cred) => {
-            console.log('CRED', cred);
-            return { type: AUTH_UPDATE, ...cred };
+            return {...cred };
           }),
           catchError(() => EMPTY)
         )
       ),
+      tap(res => this.store.dispatch(authUpdate(res)),),
       mergeMap((creds: any) =>
         this.api.getProfile(creds).pipe(
           map((profile) => {
-            console.log('Profile', profile);
+            // console.log('Profile', profile, creds);
             return { type: UPDATE_PROFILE, ...profile };
           }),
           catchError(() => EMPTY)
@@ -31,5 +32,5 @@ export class LoginEffect {
     )
   );
 
-  constructor(private actions$: Actions, private api: UserApiService) {}
+  constructor(private actions$: Actions, private api: UserApiService, private store: Store) {}
 }

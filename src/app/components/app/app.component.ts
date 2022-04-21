@@ -92,10 +92,10 @@ export class AppComponent implements OnInit, OnDestroy {
     //   access_token: 'access_token',
     //   refresh_token: 'refresh_token'
     // })));
-    const i = this.store.select(selectAuthTokens).subscribe((e) => {
-      console.log('app component: ',e);
-    });
-    this.subscriptions.push(i)
+    // const i = this.store.select(selectAuthTokens).subscribe((e) => {
+    //   console.log('app component: ',e);
+    // });
+    // this.subscriptions.push(i)
 
   }
 

@@ -4,6 +4,7 @@ import { Subscription } from 'rxjs';
 import { Tokens, UserLoginModel, UserRegistrationModel } from 'sfs-data-model';
 import { UserApiService } from 'src/app/services/user-api/user-api.service';
 import { authLogin, checkAuthAction } from 'src/app/state/auth/auth.actions';
+import { selectAuthTokens } from 'src/app/state/auth/auth.selectors';
 import { SidebarService } from '../../services/sidebar/sidebar.service';
 
 
@@ -14,6 +15,7 @@ import { SidebarService } from '../../services/sidebar/sidebar.service';
 })
 export class UserAuthPageComponent implements OnInit, OnDestroy {
 
+  public snapshot: any = {};
   public title: string = "Auth Page";
   public data: UserRegistrationModel = new UserRegistrationModel({
     firstName: 'Test',
@@ -37,10 +39,17 @@ export class UserAuthPageComponent implements OnInit, OnDestroy {
     private store: Store
     ) { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+
+    const sub = this.store.select(selectAuthTokens).subscribe((e) => {
+      console.log('user-auth-page component: ',e);
+      this.snapshot = {...e};
+    });
+    this.subsciptions.push(sub)
+  }
 
   public formDataEmitter(data: UserRegistrationModel) {
-    console.log('UserRegistrationModel: ',data);
+    // console.log('UserRegistrationModel: ',data);
     const sub = this.userApi.registration(data).subscribe((e) => {
       console.log(e);
     });
@@ -48,7 +57,7 @@ export class UserAuthPageComponent implements OnInit, OnDestroy {
   }
 
   public formDataEmitter2(data: any) {
-    console.log('UserRegistrationModel: ',data);
+    // console.log('UserRegistrationModel: ',data);
     // const sub = this.userApi.login(data).subscribe((e: any) => {
     //   const tokens = new Tokens(e)
     //   console.log('Login result: ',tokens);
@@ -63,7 +72,7 @@ export class UserAuthPageComponent implements OnInit, OnDestroy {
 
   checkAuth() {
     console.log('check auth works!');
-    this.store.dispatch(checkAuthAction({test: 'check'}));
+    this.store.dispatch(checkAuthAction(this.snapshot.tokens));
   }
 
   toggleSidebar() {

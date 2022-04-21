@@ -25,13 +25,13 @@ export class UserApiService {
   }
 
   login(data: any): Observable<any> {
-    console.log('sqweqw',data);
+    // console.log('sqweqw',data);
     // console.log(HttpUrls.login +': ', data);
     return this.http.post(HttpUrls.login, data);
   }
 
   getProfile(data: any): Observable<any> {
-    console.log(data);
+    // console.log(data);
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
       'Authorization': 'Bearer ' + data.access_token
@@ -43,7 +43,7 @@ export class UserApiService {
     console.log('checkAuth data: ', data);
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
-      'Authorization': 'Bearer ' + data.access_token
+      'Authorization': 'Bearer ' + data.access
     });
     return this.http.get(HttpUrls.checkAuth, {headers: headers})
   }
