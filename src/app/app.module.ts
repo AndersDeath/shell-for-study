@@ -32,6 +32,7 @@ import { EffectsModule } from '@ngrx/effects';
 import { LoginEffect } from './state/auth/auth.effects';
 import { CheckAuthEffect } from './state/auth/check-auth.effects';
 import { AuthInterceptor } from './auth.interceptor';
+import { RefreshTokensEffect } from './state/auth/refresh-tokens.effects';
 @NgModule({
   declarations: [
     AppComponent,
@@ -72,7 +73,7 @@ import { AuthInterceptor } from './auth.interceptor';
       registrationStrategy: 'registerWithDelay:3000'
     }),
     StoreModule.forRoot({auth: authTokensReducer}),
-    EffectsModule.forRoot([LoginEffect, CheckAuthEffect]),
+    EffectsModule.forRoot([LoginEffect, CheckAuthEffect,RefreshTokensEffect]),
     StoreDevtoolsModule.instrument({
       maxAge: 25, // Retains last 25 states
       logOnly: environment.production, // Restrict extension to log-only mode

@@ -34,6 +34,11 @@ export class UserApiService {
     return this.http.get(HTTP_URLS.profile);
   }
 
+  refresh(data: any): Observable<any> {
+    return this.http.post(HTTP_URLS.refresh, data);
+  }
+
+
   checkAuth(data: any): Observable<any> {
     console.log('checkAuth data: ', data);
     return this.http.get(HTTP_URLS.checkAuth)

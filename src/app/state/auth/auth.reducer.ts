@@ -1,6 +1,6 @@
 import { createReducer, on } from '@ngrx/store';
 import { Tokens } from 'sfs-data-model';
-import { authLogin, authUpdate, profileUpdate, updateCheckAuthAction } from './auth.actions';
+import { authLogin, authUpdate, profileUpdate, refreshTokensAction, updateCheckAuthAction } from './auth.actions';
 
 interface SFStore {
   tokens: Tokens;
@@ -62,5 +62,10 @@ export const authTokensReducer = createReducer(
       ...state,
       test: payload.check
     }
-  })
+  }),
+  on(refreshTokensAction, (state, payload: any) => {
+    return {
+      ...state
+    }
+  } )
 );
