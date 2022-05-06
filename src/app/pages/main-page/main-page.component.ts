@@ -1,3 +1,6 @@
+import { UserLoginModel } from 'sfs-data-model';
+import { authLogin } from 'src/app/state/auth/auth.actions';
+import { Store } from '@ngrx/store';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { SidebarService } from '../../services/sidebar/sidebar.service';
@@ -12,9 +15,18 @@ export class MainPageComponent implements OnInit {
   public isLoginShow = false;
   public isRegisterShow = false;
   public isRestorePassword = false;
+
+  public data2: UserLoginModel = new UserLoginModel({
+    email: 'test@test.test',
+    password: '12',
+  });
+
+
   constructor(
     public sidebar: SidebarService,
-    private router: Router
+    private router: Router,
+    private store: Store
+
     ) { }
 
   ngOnInit(): void {
@@ -25,6 +37,14 @@ export class MainPageComponent implements OnInit {
 
   toggleSidebar() {
     this.sidebar.toggle();
+  }
+
+  public formDataEmitter2(data: any) {
+    this.store.dispatch(authLogin(data));
+
+    // TODO: remove it in prod
+    localStorage.setItem('isLogin','true')
+    this.router.navigate(['dashboard']);
   }
 
   showLogin() {
