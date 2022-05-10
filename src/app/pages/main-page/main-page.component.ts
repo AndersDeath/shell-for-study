@@ -34,7 +34,13 @@ export class MainPageComponent implements OnInit, OnDestroy {
     ) { }
 
   ngOnInit(): void {
-    if(localStorage.getItem('isLogin') === 'true') {
+    this.authCheck();
+  }
+
+  authCheck() {
+    console.log('sdfds')
+    if(localStorage.getItem('tokens') !== undefined) {
+      console.log(localStorage.getItem('tokens'));
       this.router.navigate(['dashboard']);
     }
   }
@@ -45,14 +51,11 @@ export class MainPageComponent implements OnInit, OnDestroy {
 
   public loginEmitter(data: any) {
     const sub = this.api.login(data).subscribe((e) => {
-      console.log(e);
+      localStorage.setItem('tokens', JSON.stringify(e));
+      this.authCheck();
     })
     this.subscriptions.push(sub);
     // this.store.dispatch(authLogin(data));
-
-    // TODO: remove it in prod
-    // localStorage.setItem('isLogin','true')
-    // this.router.navigate(['dashboard']);
   }
 
   showLogin() {

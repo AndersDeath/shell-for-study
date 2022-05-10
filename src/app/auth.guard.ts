@@ -7,7 +7,7 @@ export class AuthGuard implements CanActivate {
     constructor(private router:Router) {}
 
     canActivate(activatedRouter: ActivatedRouteSnapshot, state: RouterStateSnapshot) : Observable<boolean> | boolean{
-        if(!localStorage.getItem('isLogin')) {
+        if(!localStorage.getItem('tokens')) {
           this.router.navigate([''])
           return false
         } else {
