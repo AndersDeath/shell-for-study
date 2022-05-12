@@ -1,6 +1,6 @@
 import { Subscription } from 'rxjs';
 import { UserApiService } from 'src/app/services/user-api/user-api.service';
-import { UserLoginModel } from 'sfs-data-model';
+import { LS_TOKENS, UserLoginModel } from 'sfs-data-model';
 import { authLogin } from 'src/app/state/auth/auth.actions';
 import { Store } from '@ngrx/store';
 import { Component, OnInit, OnDestroy } from '@angular/core';
@@ -38,8 +38,8 @@ export class MainPageComponent implements OnInit, OnDestroy {
   }
 
   authCheck() {
-    if(localStorage.getItem('tokens') !== undefined) {
-      console.log(localStorage.getItem('tokens'));
+    if(localStorage.getItem(LS_TOKENS) !== undefined) {
+      console.log(localStorage.getItem(LS_TOKENS));
       this.router.navigate(['auth']);
     }
   }
@@ -50,7 +50,7 @@ export class MainPageComponent implements OnInit, OnDestroy {
 
   public loginEmitter(data: any) {
     const sub = this.api.login(data).subscribe((e) => {
-      localStorage.setItem('tokens', JSON.stringify(e));
+      localStorage.setItem(LS_TOKENS, JSON.stringify(e));
       this.authCheck();
     })
     this.subscriptions.push(sub);

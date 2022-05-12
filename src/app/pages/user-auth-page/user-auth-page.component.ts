@@ -1,7 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Subscription } from 'rxjs';
-import { Tokens, UserLoginModel, UserRegistrationModel } from 'sfs-data-model';
+import { LS_TOKENS, Tokens, UserLoginModel, UserRegistrationModel } from 'sfs-data-model';
 import { UserApiService } from 'src/app/services/user-api/user-api.service';
 import { authLogin, checkAuthAction } from 'src/app/state/auth/auth.actions';
 import { selectStore } from 'src/app/state/auth/auth.selectors';
@@ -57,11 +57,11 @@ export class UserAuthPageComponent implements OnInit, OnDestroy {
   }
 
   public logout() {
-    const tokens = localStorage.getItem('tokens') || '';
-    console.log('tokens', tokens);
+    const tokens = localStorage.getItem(LS_TOKENS) || '';
+    console.log(LS_TOKENS, tokens);
     const sub = this.userApi.logout(JSON.parse(tokens) || {}).subscribe((e) => {
       console.log(e);
-      localStorage.removeItem('tokens');
+      localStorage.removeItem(LS_TOKENS);
     })
     this.subsciptions.push(sub);
   }
