@@ -12,6 +12,8 @@
   <mat-tab label="User Login">
     <sfs-user-login [formData]="data2" (formDataEmitter)="formDataEmitter2($event)" ></sfs-user-login>
     <button mat-raised-button (click)="checkAuth()" color="primary">Check auth request</button>
+    <button mat-raised-button (click)="logout()" color="primary">Logout</button>
+
   </mat-tab>
   <mat-tab label="User Registration">
     <sfs-user-registration [formData]="data" (formDataEmitter)="formDataEmitter($event)"></sfs-user-registration>

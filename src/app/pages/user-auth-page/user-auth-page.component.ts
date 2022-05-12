@@ -56,6 +56,15 @@ export class UserAuthPageComponent implements OnInit, OnDestroy {
     this.subsciptions.push(sub);
   }
 
+  public logout() {
+    const tokens = localStorage.getItem('tokens') || '';
+    console.log('tokens', tokens);
+    const sub = this.userApi.logout(JSON.parse(tokens) || {}).subscribe((e) => {
+      console.log(e);
+    })
+    this.subsciptions.push(sub);
+  }
+
   public formDataEmitter2(data: any) {
     // console.log('UserRegistrationModel: ',data);
     // const sub = this.userApi.login(data).subscribe((e: any) => {

@@ -38,10 +38,9 @@ export class MainPageComponent implements OnInit, OnDestroy {
   }
 
   authCheck() {
-    console.log('sdfds')
     if(localStorage.getItem('tokens') !== undefined) {
       console.log(localStorage.getItem('tokens'));
-      this.router.navigate(['dashboard']);
+      this.router.navigate(['auth']);
     }
   }
 
