@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { User, UserLoginModel, UserMockData, UserRegistrationModel } from 'sfs-data-model';
+import { User, UserLoginModel, UserMockData, UserRegistrationModel, Tokens } from 'sfs-data-model';
 import { environment } from 'src/environments/environment';
 import { Observable } from 'rxjs';
 
@@ -22,6 +22,11 @@ export class UserApiService {
   registration(data: UserRegistrationModel) {
     console.log(HTTP_URLS.registration +': ', data);
     return this.http.post(HTTP_URLS.registration, data);
+  }
+
+  logout(data: Tokens) {
+    console.log('This is a logout');
+    return this.http.post(HTTP_URLS.logout, data);
   }
 
   login(data: any): Observable<any> {

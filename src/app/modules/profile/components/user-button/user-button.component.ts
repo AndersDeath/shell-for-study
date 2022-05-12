@@ -27,8 +27,8 @@ export class UserButtonComponent implements OnInit {
   }
 
   logout(event: any) {
-    localStorage.removeItem('isLogin');
-    this.router.navigate([''])
+    localStorage.removeItem('auth');
+    this.router.navigate(['']);
   }
 
 }
