@@ -1,6 +1,7 @@
+import { getProfile } from './../../state/auth/auth.actions';
 import { Subscription } from 'rxjs';
 import { UserApiService } from 'src/app/services/user-api/user-api.service';
-import { LS_TOKENS, UserLoginModel } from 'sfs-data-model';
+import { LS_TOKENS, UserLoginModel, Tokens } from 'sfs-data-model';
 import { authLogin } from 'src/app/state/auth/auth.actions';
 import { Store } from '@ngrx/store';
 import { Component, OnInit, OnDestroy } from '@angular/core';
@@ -41,6 +42,9 @@ export class MainPageComponent implements OnInit, OnDestroy {
     if(localStorage.getItem(LS_TOKENS) !== undefined) {
       console.log(localStorage.getItem(LS_TOKENS));
       this.router.navigate(['auth']);
+    } else {
+      // const tokens = JSON.parse(localStorage.getItem(LS_TOKENS) || '');
+      // this.store.dispatch(getProfile({access: tokens.access, refresh: tokens.refresh }));
     }
   }
 
@@ -54,7 +58,6 @@ export class MainPageComponent implements OnInit, OnDestroy {
       this.authCheck();
     })
     this.subscriptions.push(sub);
-    // this.store.dispatch(authLogin(data));
   }
 
   showLogin() {

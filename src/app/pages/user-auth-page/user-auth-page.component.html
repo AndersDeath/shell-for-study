@@ -10,8 +10,10 @@
 <div>
 <mat-tab-group mat-align-tabs="start">
   <mat-tab label="User Login">
-    <sfs-user-login [formData]="data2" (formDataEmitter)="formDataEmitter2($event)" ></sfs-user-login>
+    <sfs-user-login [formData]="data2" (formDataEmitter)="loginEmitter($event)" ></sfs-user-login>
     <button mat-raised-button (click)="checkAuth()" color="primary">Check auth request</button>
+    <button mat-raised-button (click)="getProfile()" color="primary">getProfile</button>
+
     <button mat-raised-button (click)="logout()" color="primary">Logout</button>
 
   </mat-tab>

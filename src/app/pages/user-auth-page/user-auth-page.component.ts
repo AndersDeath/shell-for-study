@@ -1,3 +1,5 @@
+import { getProfile } from './../../state/auth/auth.actions';
+import { Router } from '@angular/router';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Subscription } from 'rxjs';
@@ -31,12 +33,13 @@ export class UserAuthPageComponent implements OnInit, OnDestroy {
     password: '12',
   });
 
-  private subsciptions: Subscription[] = []
+  private subscriptions: Subscription[] = []
 
   constructor(
     public sidebar: SidebarService,
     private userApi: UserApiService,
-    private store: Store
+    private store: Store,
+    private router: Router,
     ) { }
 
   ngOnInit(): void {
@@ -45,7 +48,9 @@ export class UserAuthPageComponent implements OnInit, OnDestroy {
       console.log('user-auth-page component: ',e);
       this.snapshot = {...e};
     });
-    this.subsciptions.push(sub)
+    this.subscriptions.push(sub);
+    // const tokens = JSON.parse(localStorage.getItem(LS_TOKENS) || '');
+    // this.store.dispatch(getProfile({access: tokens.access, refresh: tokens.refresh }));
   }
 
   public formDataEmitter(data: UserRegistrationModel) {
@@ -53,7 +58,7 @@ export class UserAuthPageComponent implements OnInit, OnDestroy {
     const sub = this.userApi.registration(data).subscribe((e) => {
       console.log(e);
     });
-    this.subsciptions.push(sub);
+    this.subscriptions.push(sub);
   }
 
   public logout() {
@@ -62,8 +67,14 @@ export class UserAuthPageComponent implements OnInit, OnDestroy {
     const sub = this.userApi.logout(JSON.parse(tokens) || {}).subscribe((e) => {
       console.log(e);
       localStorage.removeItem(LS_TOKENS);
+      this.router.navigate(['']);
     })
-    this.subsciptions.push(sub);
+    this.subscriptions.push(sub);
+  }
+
+  public getProfile() {
+    const tokens = JSON.parse(localStorage.getItem(LS_TOKENS) || '');
+    this.store.dispatch(getProfile({access: tokens.access, refresh: tokens.refresh }));
   }
 
   public formDataEmitter2(data: any) {
@@ -80,6 +91,13 @@ export class UserAuthPageComponent implements OnInit, OnDestroy {
 
   }
 
+  loginEmitter(data: any) {
+    const sub = this.userApi.login(data).subscribe((e) => {
+      localStorage.setItem(LS_TOKENS, JSON.stringify(e));
+    })
+    this.subscriptions.push(sub);
+  }
+
   checkAuth() {
     console.log('check auth works!');
     this.store.dispatch(checkAuthAction(this.snapshot.tokens));
@@ -90,8 +108,8 @@ export class UserAuthPageComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    for (let index = 0; index < this.subsciptions.length; index++) {
-      this.subsciptions[index].unsubscribe();
+    for (let index = 0; index < this.subscriptions.length; index++) {
+      this.subscriptions[index].unsubscribe();
     }
   }
 }

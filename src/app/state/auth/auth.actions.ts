@@ -4,7 +4,9 @@ import { Tokens } from 'sfs-data-model';
 const AUTH_PREFIX = '[Auth] ';
 export const AUTH_UPDATE = AUTH_PREFIX + 'Update';
 export const AUTH_LOGIN = AUTH_PREFIX + 'Login';
-export const UPDATE_PROFILE = AUTH_PREFIX + 'Profile';
+export const UPDATE_PROFILE = AUTH_PREFIX + 'Update Profile';
+
+export const GET_PROFILE = AUTH_PREFIX + 'Get Profile'
 
 export const REFRESH_TOKENS = AUTH_PREFIX + 'Refresh tokens';
 
@@ -17,7 +19,13 @@ export const authLogin = createAction(
   AUTH_LOGIN,
   props<{ email: any; password: any }>()
 );
-export const profileUpdate = createAction(
+
+export const getProfile = createAction(
+  GET_PROFILE,
+  props<Tokens>()
+)
+
+export const updateProfile = createAction(
   UPDATE_PROFILE,
   props<{
     id: any;

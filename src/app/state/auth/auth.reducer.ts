@@ -1,6 +1,6 @@
 import { createReducer, on } from '@ngrx/store';
 import { Tokens } from 'sfs-data-model';
-import { authLogin, authUpdate, profileUpdate, refreshTokensAction, updateCheckAuthAction } from './auth.actions';
+import { authLogin, authUpdate, updateProfile, refreshTokensAction, updateCheckAuthAction, getProfile } from './auth.actions';
 
 interface SFStore {
   tokens: Tokens;
@@ -32,7 +32,7 @@ export const authTokensReducer = createReducer(
       },
     };
   }),
-  on(profileUpdate, (state, payload: any) => {
+  on(updateProfile, (state, payload: any) => {
     // console.log('payload: ===== ', payload);
     return {
       ...state,

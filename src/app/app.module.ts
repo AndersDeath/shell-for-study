@@ -1,3 +1,4 @@
+import { GetProfileEffect } from './state/auth/get-profile.effects';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
@@ -73,7 +74,7 @@ import { RefreshTokensEffect } from './state/auth/refresh-tokens.effects';
       registrationStrategy: 'registerWithDelay:3000'
     }),
     StoreModule.forRoot({auth: authTokensReducer}),
-    EffectsModule.forRoot([LoginEffect, CheckAuthEffect, RefreshTokensEffect]),
+    EffectsModule.forRoot([LoginEffect, CheckAuthEffect, RefreshTokensEffect,GetProfileEffect]),
     StoreDevtoolsModule.instrument({
       maxAge: 25, // Retains last 25 states
       logOnly: environment.production, // Restrict extension to log-only mode

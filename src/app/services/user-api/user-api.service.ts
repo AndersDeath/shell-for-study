@@ -36,7 +36,7 @@ export class UserApiService {
   }
 
   getProfile(data: any): Observable<any> {
-    return this.http.get(HTTP_URLS.profile);
+    return this.http.get(HTTP_URLS.profile, data);
   }
 
   refresh(data: any): Observable<any> {
