@@ -61,6 +61,7 @@ export class UserAuthPageComponent implements OnInit, OnDestroy {
     console.log('tokens', tokens);
     const sub = this.userApi.logout(JSON.parse(tokens) || {}).subscribe((e) => {
       console.log(e);
+      localStorage.removeItem('tokens');
     })
     this.subsciptions.push(sub);
   }
