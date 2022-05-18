@@ -10,6 +10,22 @@ import { selectStore } from 'src/app/state/auth/auth.selectors';
 import { SidebarService } from '../../services/sidebar/sidebar.service';
 
 
+function parseJwt(token:string) {
+  try {
+    return JSON.parse(atob(token.split('.')[1]));
+  } catch (e) {
+    return null;
+  }
+};
+
+// function checkTokenExp() {
+//   if(store.getAccessToken() === '') {
+//     return true;
+//   } else {
+//     return parseJwt(store.getAccessToken()).exp * 1000 < Date.now();
+//   }
+// }
+
 @Component({
   selector: 'sfs-user-auth-page',
   templateUrl: './user-auth-page.component.html',
@@ -74,6 +90,11 @@ export class UserAuthPageComponent implements OnInit, OnDestroy {
 
   public getProfile() {
     const tokens = JSON.parse(localStorage.getItem(LS_TOKENS) || '');
+    const test = parseJwt(tokens.access);
+    console.log(test)
+    console.log(test.exp * 1000)
+    console.log(Date.now());
+    console.log(test.exp * 1000 < Date.now());
     this.store.dispatch(getProfile({access: tokens.access, refresh: tokens.refresh }));
   }
 
