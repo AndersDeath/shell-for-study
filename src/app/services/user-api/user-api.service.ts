@@ -40,6 +40,7 @@ export class UserApiService {
   }
 
   refresh(data: any): Observable<any> {
+    console.log(data)
     return this.http.post(HTTP_URLS.refresh, data);
   }
 

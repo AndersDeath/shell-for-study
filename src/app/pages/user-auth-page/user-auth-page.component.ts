@@ -90,11 +90,11 @@ export class UserAuthPageComponent implements OnInit, OnDestroy {
 
   public getProfile() {
     const tokens = JSON.parse(localStorage.getItem(LS_TOKENS) || '');
-    const test = parseJwt(tokens.access);
-    console.log(test)
-    console.log(test.exp * 1000)
-    console.log(Date.now());
-    console.log(test.exp * 1000 < Date.now());
+    // const test = parseJwt(tokens.access);
+    // console.log(test)
+    // console.log(test.exp * 1000)
+    // console.log(Date.now());
+    // console.log(test.exp * 1000 < Date.now());
     this.store.dispatch(getProfile({access: tokens.access, refresh: tokens.refresh }));
   }
 
