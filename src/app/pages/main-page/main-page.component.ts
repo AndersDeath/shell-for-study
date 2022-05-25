@@ -1,7 +1,7 @@
 import { getProfile } from './../../state/auth/auth.actions';
 import { Subscription } from 'rxjs';
 import { UserApiService } from 'src/app/services/user-api/user-api.service';
-import { LS_TOKENS, UserLoginModel, Tokens } from 'sfs-data-model';
+import { LS_TOKENS, UserLoginModel, Tokens, UserRegistrationModel } from 'sfs-data-model';
 import { authLogin } from 'src/app/state/auth/auth.actions';
 import { Store } from '@ngrx/store';
 import { Component, OnInit, OnDestroy } from '@angular/core';
@@ -23,6 +23,16 @@ export class MainPageComponent implements OnInit, OnDestroy {
     email: 'test@test.test',
     password: '12',
   });
+
+  public registrationData: UserRegistrationModel = new UserRegistrationModel({
+    firstName: 'Test',
+    lastName: 'Testov',
+    email: 'test@test.test',
+    password: '12',
+    passwordConfirmation: '12',
+    phone: '+79990001122'
+  });
+
 
   private subscriptions: Subscription[] = []
 
@@ -57,6 +67,14 @@ export class MainPageComponent implements OnInit, OnDestroy {
       localStorage.setItem(LS_TOKENS, JSON.stringify(e));
       this.authCheck();
     })
+    this.subscriptions.push(sub);
+  }
+
+  public registrationEmitter(data: UserRegistrationModel) {
+    // console.log('UserRegistrationModel: ',data);
+    const sub = this.api.registration(data).subscribe((e) => {
+      console.log(e);
+    });
     this.subscriptions.push(sub);
   }
 
