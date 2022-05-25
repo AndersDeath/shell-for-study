@@ -38,7 +38,15 @@ export class AuthInterceptor implements HttpInterceptor {
     }
 
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    const tokens = JSON.parse(localStorage.getItem(LS_TOKENS) || '');
+    const localData = localStorage.getItem(LS_TOKENS) || '';
+    let tokens = {
+      access: '',
+      refresh: ''
+    };
+    if(localData) {
+      tokens = JSON.parse(localData) || '';
+
+    }
 
 
     if(
@@ -48,17 +56,17 @@ export class AuthInterceptor implements HttpInterceptor {
     ) {
 
 
-      if(parseJwt(tokens.access).exp * 1000 < Date.now()) {
-        // console.log('adasd')
-        return this.api.refresh(tokens).pipe(switchMap((res: any) => {
-          console.log('aaarwr',res);
-          return next.handle(request);
-        }))
+    //   if(parseJwt(tokens.access).exp * 1000 < Date.now()) {
+    //     // console.log('adasd')
+    //     return this.api.refresh(tokens).pipe(switchMap((res: any) => {
+    //       console.log('aaarwr',res);
+    //       return next.handle(request);
+    //     }))
 
-        // .subscribe((e: any) => {
-        //   return next.handle()
-        // });
-      }
+    //     // .subscribe((e: any) => {
+    //     //   return next.handle()
+    //     // });
+    //   }
 
 
       request = request.clone({
