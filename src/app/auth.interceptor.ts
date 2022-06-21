@@ -40,24 +40,27 @@ export class AuthInterceptor implements HttpInterceptor {
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     const tokens = JSON.parse(localStorage.getItem(LS_TOKENS) || '');
 
-
+    // console.log(request.url)
     if(
-      request.url.indexOf('auth/login') === -1 ||
-      request.url.indexOf('auth/registration') === -1 ||
-      request.url.indexOf('auth/refresh') === -1
+      request.url.indexOf('auth/login') === -1 &&
+      request.url.indexOf('auth/registration') === -1 &&
+      request.url.indexOf('auth/refresh') === -1 &&
+      request.url.indexOf('check-server') === -1
+
     ) {
 
 
       if(parseJwt(tokens.access).exp * 1000 < Date.now()) {
-        // console.log('adasd')
         return this.api.refresh(tokens).pipe(switchMap((res: any) => {
-          console.log('aaarwr',res);
+          localStorage.setItem(LS_TOKENS, JSON.stringify(res));
+          const tokens = JSON.parse(localStorage.getItem(LS_TOKENS) || '');
+          request = request.clone({
+            setHeaders: {
+              Authorization: `Bearer ${tokens.access}`
+            }
+          });
           return next.handle(request);
-        }))
-
-        // .subscribe((e: any) => {
-        //   return next.handle()
-        // });
+        }));
       }
 
 
@@ -67,19 +70,7 @@ export class AuthInterceptor implements HttpInterceptor {
         }
       });
     }
-
-    console.log('AUTH INTERCEPTOR: ', request, tokens);
     return next.handle(request);
-    // return next.handle(request).pipe(catchError((error) => {
-    //   if(error instanceof HttpErrorResponse && (request.url.indexOf('auth/login') === -1 ||
-    //   request.url.indexOf('auth/registration') === -1 ||
-    //   request.url.indexOf('auth/refresh') === -1) && error.status  === 401) {
-    //     console.log('THIS IS 401');
-    //     this.store.dispatch(refreshTokensAction(this.tokens));
-    //     return next.handle(request.clone());
-    //   }
-    //   return throwError(error);
-    // }));
   }
 
   check(url: string) {
