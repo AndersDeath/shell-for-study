@@ -7,7 +7,7 @@
       <button mat-stroked-button  *ngIf="isLoginShow && !isRestorePassword" color="basic" (click)="showRestorePassword()">Forgot password?</button>
     </span>
     <span *ngIf="isRegisterShow">
-      <sfs-user-registration></sfs-user-registration>
+      <sfs-user-registration [formData]="registrationData" (formDataEmitter)="registrationEmitter($event)"></sfs-user-registration>
     </span>
     <button mat-stroked-button  *ngIf="!isLoginShow" color="basic" (click)="showLogin()">Login</button>
     <button mat-stroked-button  *ngIf="!isRegisterShow" color="primary" (click)="showRegister()">Register</button>

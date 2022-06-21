@@ -59,7 +59,7 @@ export class UserAuthPageComponent implements OnInit, OnDestroy {
     ) { }
 
   ngOnInit(): void {
-
+    console.log('THis is auth page')
     const sub = this.store.select(selectStore).subscribe((e) => {
       console.log('user-auth-page component: ',e);
       this.snapshot = {...e};
@@ -122,6 +122,23 @@ export class UserAuthPageComponent implements OnInit, OnDestroy {
   checkAuth() {
     console.log('check auth works!');
     this.store.dispatch(checkAuthAction(this.snapshot.tokens));
+  }
+
+  refresh() {
+    const localData = localStorage.getItem(LS_TOKENS) || '';
+    let tokens = {
+      access: '',
+      refresh: ''
+    };
+    if(localData) {
+      tokens = JSON.parse(localData) || '';
+    }
+
+    const sub = this.userApi.refresh(tokens).subscribe((e) => {
+      console.log('this is new token pair', e);
+      localStorage.setItem(LS_TOKENS, JSON.stringify(e));
+    });
+    this.subscriptions.push(sub);
   }
 
   toggleSidebar() {

@@ -38,7 +38,15 @@ export class AuthInterceptor implements HttpInterceptor {
     }
 
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    const tokens = JSON.parse(localStorage.getItem(LS_TOKENS) || '');
+    const localData = localStorage.getItem(LS_TOKENS) || '';
+    let tokens = {
+      access: '',
+      refresh: ''
+    };
+    if(localData) {
+      tokens = JSON.parse(localData) || '';
+
+    }
 
     // console.log(request.url)
     if(
