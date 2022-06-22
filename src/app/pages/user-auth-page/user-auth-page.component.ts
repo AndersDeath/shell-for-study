@@ -1,12 +1,12 @@
-import { getProfile } from './../../state/auth/auth.actions';
+import { getProfile } from '../../state/auth.actions';
 import { Router } from '@angular/router';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Subscription } from 'rxjs';
 import { LS_TOKENS, Tokens, UserLoginModel, UserRegistrationModel } from 'sfs-data-model';
 import { UserApiService } from 'src/app/services/user-api/user-api.service';
-import { authLogin, checkAuthAction } from 'src/app/state/auth/auth.actions';
-import { selectStore } from 'src/app/state/auth/auth.selectors';
+import { authLogin, checkAuthAction } from 'src/app/state/auth.actions';
+import { selectStore } from 'src/app/state/auth.selectors';
 import { SidebarService } from '../../services/sidebar/sidebar.service';
 
 

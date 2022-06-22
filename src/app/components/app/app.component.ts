@@ -8,8 +8,8 @@ import { Subscription } from 'rxjs';
 import { NavigationService } from '../../services/navigation/navigation.service';
 import { ApiService } from 'src/app/services/api/api.service';
 import { Store } from '@ngrx/store';
-import { authUpdate } from 'src/app/state/auth/auth.actions';
-import { selectAuthTokens } from 'src/app/state/auth/auth.selectors';
+import { authUpdate } from 'src/app/state/auth.actions';
+import { selectAuthTokens } from 'src/app/state/auth.selectors';
 
 const version = 'v0.9.51';
 

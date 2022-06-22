@@ -1,4 +1,4 @@
-import { GetProfileEffect } from './state/auth/get-profile.effects';
+import { GetProfileEffect } from './state/get-profile.effects';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
@@ -27,13 +27,12 @@ import { SharedModule } from './modules/shared.module';
 import { PagesModule } from './pages/pages.module';
 import { BibliographyPageComponent } from './pages/bibliography-page/bibliography-page.component';
 import { StoreModule } from '@ngrx/store';
-import { authTokensReducer } from './state/auth/auth.reducer';
+import { mainReducer } from './state/main.reducer';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { EffectsModule } from '@ngrx/effects';
 // import { LoginEffect } from './state/auth/auth.effects';
-import { CheckAuthEffect } from './state/auth/check-auth.effects';
+import { CheckAuthEffect } from './state/check-auth.effects';
 import { AuthInterceptor } from './auth.interceptor';
-import { RefreshTokensEffect } from './state/auth/refresh-tokens.effects';
 @NgModule({
   declarations: [
     AppComponent,
@@ -73,8 +72,8 @@ import { RefreshTokensEffect } from './state/auth/refresh-tokens.effects';
       enabled: environment.production,
       registrationStrategy: 'registerWithDelay:3000'
     }),
-    StoreModule.forRoot({auth: authTokensReducer}),
-    EffectsModule.forRoot([ CheckAuthEffect, RefreshTokensEffect,GetProfileEffect]),
+    StoreModule.forRoot({auth: mainReducer}),
+    EffectsModule.forRoot([ CheckAuthEffect,GetProfileEffect]),
     StoreDevtoolsModule.instrument({
       maxAge: 25, // Retains last 25 states
       logOnly: environment.production, // Restrict extension to log-only mode

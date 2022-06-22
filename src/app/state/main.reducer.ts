@@ -1,8 +1,8 @@
-import { initialState } from '../initial.store';
+import { initialState } from './initial.store';
 import { createReducer, on } from '@ngrx/store';
 import { authLogin, authUpdate, updateProfile, refreshTokensAction, updateCheckAuthAction, getProfile } from './auth.actions';
 
-export const authTokensReducer = createReducer(
+export const mainReducer = createReducer(
   initialState,
   on(authLogin, (state, payload: any) => {
     return { ...state, ...{ userForm: { email: payload.email } } };

@@ -10,9 +10,9 @@ import {
 // import { AuthService } from './auth/auth.service';
 import { Observable, throwError } from 'rxjs';
 import { Store } from '@ngrx/store';
-import { selectAuthTokens } from './state/auth/auth.selectors';
+import { selectAuthTokens } from './state/auth.selectors';
 import { catchError, mergeMap, switchMap, map, concatMap } from 'rxjs/operators';
-import { refreshTokensAction } from './state/auth/auth.actions';
+import { refreshTokensAction } from './state/auth.actions';
 import { LS_TOKENS } from 'sfs-data-model';
 
 export function parseJwt(token:string) {

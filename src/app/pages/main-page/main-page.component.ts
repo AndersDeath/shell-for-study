@@ -1,8 +1,8 @@
-import { getProfile } from './../../state/auth/auth.actions';
+import { getProfile } from '../../state/auth.actions';
 import { Subscription } from 'rxjs';
 import { UserApiService } from 'src/app/services/user-api/user-api.service';
 import { LS_TOKENS, UserLoginModel, Tokens, UserRegistrationModel } from 'sfs-data-model';
-import { authLogin } from 'src/app/state/auth/auth.actions';
+import { authLogin } from 'src/app/state/auth.actions';
 import { Store } from '@ngrx/store';
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
