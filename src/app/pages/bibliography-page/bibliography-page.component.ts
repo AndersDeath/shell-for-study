@@ -1,3 +1,5 @@
+import { getBibliography } from './../../state/data.actions';
+import { Store } from '@ngrx/store';
 import { Component, OnInit } from '@angular/core';
 import { SidebarService } from 'src/app/services/sidebar/sidebar.service';
 
@@ -37,9 +39,11 @@ export class BibliographyPageComponent implements OnInit {
 
   constructor(
     public sidebar: SidebarService,
+    private store: Store,
     ) { }
 
   ngOnInit(): void {
+    this.store.dispatch(getBibliography());
   }
 
   toggleSidebar() {

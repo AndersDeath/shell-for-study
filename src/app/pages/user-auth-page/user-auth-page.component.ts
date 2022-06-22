@@ -10,22 +10,6 @@ import { selectStore } from 'src/app/state/auth.selectors';
 import { SidebarService } from '../../services/sidebar/sidebar.service';
 
 
-function parseJwt(token:string) {
-  try {
-    return JSON.parse(atob(token.split('.')[1]));
-  } catch (e) {
-    return null;
-  }
-};
-
-// function checkTokenExp() {
-//   if(store.getAccessToken() === '') {
-//     return true;
-//   } else {
-//     return parseJwt(store.getAccessToken()).exp * 1000 < Date.now();
-//   }
-// }
-
 @Component({
   selector: 'sfs-user-auth-page',
   templateUrl: './user-auth-page.component.html',

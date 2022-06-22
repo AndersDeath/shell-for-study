@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { User, UserLoginModel, UserMockData, UserRegistrationModel, Tokens } from 'sfs-data-model';
 import { environment } from 'src/environments/environment';
 import { Observable } from 'rxjs';
@@ -16,6 +16,7 @@ export class DataApiService {
   }
 
   getBiblography(data: any): Observable<any> {
-    return this.http.get(HTTP_URLS.getData, data);
+    const params = new HttpParams().set('type', 'bibliography')
+    return this.http.get(HTTP_URLS.getData, {params});
   }
 }

@@ -29,7 +29,7 @@ import { StoreModule } from '@ngrx/store';
 import { mainReducer } from './state/main.reducer';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { EffectsModule } from '@ngrx/effects';
-import { CheckAuthEffect, GetProfileEffect } from './state/effects';
+import { CheckAuthEffect, GetProfileEffect, GetBibliographyLinksEffect } from './state/effects';
 import { AuthInterceptor } from './auth.interceptor';
 @NgModule({
   declarations: [
@@ -71,7 +71,7 @@ import { AuthInterceptor } from './auth.interceptor';
       registrationStrategy: 'registerWithDelay:3000'
     }),
     StoreModule.forRoot({store: mainReducer}),
-    EffectsModule.forRoot([ CheckAuthEffect,GetProfileEffect]),
+    EffectsModule.forRoot([ CheckAuthEffect,GetProfileEffect, GetBibliographyLinksEffect]),
     StoreDevtoolsModule.instrument({
       maxAge: 25, // Retains last 25 states
       logOnly: environment.production, // Restrict extension to log-only mode
