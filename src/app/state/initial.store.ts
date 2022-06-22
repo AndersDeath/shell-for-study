@@ -3,6 +3,7 @@ import { Tokens } from 'sfs-data-model';
 interface SFStore {
   tokens: Tokens;
   profile: {};
+  data: any
 }
 
 export const initialState: SFStore = {
@@ -11,4 +12,7 @@ export const initialState: SFStore = {
     access_token: '',
     refresh_token: '',
   }),
+  data: {
+    bibliography: []
+  }
 };

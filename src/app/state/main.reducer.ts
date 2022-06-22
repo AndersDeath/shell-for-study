@@ -1,3 +1,4 @@
+import { updateBibliography } from './data.actions';
 import { initialState } from './initial.store';
 import { createReducer, on } from '@ngrx/store';
 import { authLogin, authUpdate, updateProfile, updateCheckAuthAction } from './auth.actions';
@@ -39,6 +40,17 @@ export const mainReducer = createReducer(
           salt: payload.salt,
           dateCreate: payload.dateCreate,
           isActive: payload.isActive,
+        },
+      },
+    };
+  }),
+  on(updateBibliography, (state, payload: any) => {
+    // console.log('payload: ===== ', payload);
+    return {
+      ...state,
+      ...{
+        data: {
+         bibliography: payload
         },
       },
     };
