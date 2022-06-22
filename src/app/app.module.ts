@@ -1,4 +1,4 @@
-import { GetProfileEffect } from './state/get-profile.effects';
+import { GetProfileEffect } from './state/get-profile.effect';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
@@ -31,7 +31,7 @@ import { mainReducer } from './state/main.reducer';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { EffectsModule } from '@ngrx/effects';
 // import { LoginEffect } from './state/auth/auth.effects';
-import { CheckAuthEffect } from './state/check-auth.effects';
+import { CheckAuthEffect } from './state/check-auth.effect';
 import { AuthInterceptor } from './auth.interceptor';
 @NgModule({
   declarations: [
