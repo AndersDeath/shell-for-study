@@ -3,7 +3,7 @@ import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { EMPTY } from 'rxjs';
 import { map, mergeMap, catchError } from 'rxjs/operators';
 import { UserApiService } from 'src/app/services/user-api/user-api.service';
-import { CHECK_AUTH, UPDATE_CHECK_AUTH } from './auth.actions';
+import { CHECK_AUTH, UPDATE_CHECK_AUTH } from '../auth.actions';
 
 @Injectable()
 export class CheckAuthEffect {
