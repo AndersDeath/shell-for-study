@@ -28,14 +28,7 @@ export class AuthInterceptor implements HttpInterceptor {
 
   public tokens: any = {};
 
-  constructor(
-    public api: UserApiService
-    // public store: Store
-    ) {
-      // store.select(selectAuthTokens).subscribe((e) => {
-      //   this.tokens = e;
-      // });
-    }
+  constructor(public api: UserApiService) {}
 
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     const localData = localStorage.getItem(LS_TOKENS) || '';
@@ -45,43 +38,30 @@ export class AuthInterceptor implements HttpInterceptor {
     };
     if(localData) {
       tokens = JSON.parse(localData) || '';
-
     }
-
-    // console.log(request.url)
     if(
       request.url.indexOf('auth/login') === -1 &&
       request.url.indexOf('auth/registration') === -1 &&
       request.url.indexOf('auth/refresh') === -1 &&
       request.url.indexOf('check-server') === -1
-
     ) {
-
-
       if(parseJwt(tokens.access).exp * 1000 < Date.now()) {
         return this.api.refresh(tokens).pipe(switchMap((res: any) => {
           localStorage.setItem(LS_TOKENS, JSON.stringify(res));
-          const tokens = JSON.parse(localStorage.getItem(LS_TOKENS) || '');
-          request = request.clone({
-            setHeaders: {
-              Authorization: `Bearer ${tokens.access}`
-            }
-          });
-          return next.handle(request);
+          console.log('refresh')
+          return next.handle(this.setAuthToken(request, res));
         }));
       }
-
-
-      request = request.clone({
-        setHeaders: {
-          Authorization: `Bearer ${tokens.access}`
-        }
-      });
     }
-    return next.handle(request);
+    return next.handle(this.setAuthToken(request, tokens));
   }
 
-  check(url: string) {
-
+  setAuthToken(request:any ,tokens: any) {
+    request = request.clone({
+      setHeaders: {
+        Authorization: `Bearer ${tokens.access}`
+      }
+    });
+    return request;
   }
 }
