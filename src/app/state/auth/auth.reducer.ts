@@ -1,19 +1,6 @@
+import { initialState } from '../initial.store';
 import { createReducer, on } from '@ngrx/store';
-import { Tokens } from 'sfs-data-model';
 import { authLogin, authUpdate, updateProfile, refreshTokensAction, updateCheckAuthAction, getProfile } from './auth.actions';
-
-interface SFStore {
-  tokens: Tokens;
-  profile: {};
-}
-
-export const initialState: SFStore = {
-  profile: {},
-  tokens: new Tokens({
-    access_token: '',
-    refresh_token: '',
-  }),
-};
 
 export const authTokensReducer = createReducer(
   initialState,
