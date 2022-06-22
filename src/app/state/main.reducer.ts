@@ -1,6 +1,6 @@
 import { initialState } from './initial.store';
 import { createReducer, on } from '@ngrx/store';
-import { authLogin, authUpdate, updateProfile, refreshTokensAction, updateCheckAuthAction, getProfile } from './auth.actions';
+import { authLogin, authUpdate, updateProfile, updateCheckAuthAction } from './auth.actions';
 
 export const mainReducer = createReducer(
   initialState,
@@ -49,10 +49,5 @@ export const mainReducer = createReducer(
       ...state,
       test: payload.check
     }
-  }),
-  on(refreshTokensAction, (state, payload: any) => {
-    return {
-      ...state
-    }
-  } )
+  })
 );

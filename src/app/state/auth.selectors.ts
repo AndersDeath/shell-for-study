@@ -4,10 +4,10 @@ export const getStore = (state: any) => state;
 
 export const selectAuthTokens = createSelector(
   getStore,
-  (state: any) => state.auth.tokens
+  (state: any) => state.store.tokens
 );
 
 export const selectStore = createSelector(
   getStore,
-  (state: any) => state.auth
+  (state: any) => state.store
 );

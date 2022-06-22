@@ -72,7 +72,7 @@ import { AuthInterceptor } from './auth.interceptor';
       enabled: environment.production,
       registrationStrategy: 'registerWithDelay:3000'
     }),
-    StoreModule.forRoot({auth: mainReducer}),
+    StoreModule.forRoot({store: mainReducer}),
     EffectsModule.forRoot([ CheckAuthEffect,GetProfileEffect]),
     StoreDevtoolsModule.instrument({
       maxAge: 25, // Retains last 25 states

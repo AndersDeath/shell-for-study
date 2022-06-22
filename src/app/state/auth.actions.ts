@@ -47,5 +47,3 @@ export const updateProfile = createAction(
 
 export const updateCheckAuthAction = createAction(UPDATE_CHECK_AUTH, props<Tokens>());
 export const checkAuthAction = createAction(CHECK_AUTH, props<Tokens>());
-
-export const refreshTokensAction = createAction(REFRESH_TOKENS, props<{access: string, refresh: string}>());
