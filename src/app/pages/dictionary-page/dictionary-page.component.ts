@@ -1,3 +1,5 @@
+import { getDictionaries } from './../../state/data.actions';
+import { Store } from '@ngrx/store';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
@@ -15,10 +17,12 @@ export class DictionaryPageComponent implements OnInit, OnDestroy {
   constructor(
     private router: Router,
     private activatedRoute: ActivatedRoute,
-    private dictionaryApiService: DictionaryApiService
+    private dictionaryApiService: DictionaryApiService,
+    private store: Store
   ) { }
 
   ngOnInit(): void {
+  this.store.dispatch(getDictionaries());
   const sub2 = this.dictionaryApiService.subject.subscribe((e) => {
     console.log(e);
       this.data = e;

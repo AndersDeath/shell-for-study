@@ -1,4 +1,4 @@
-import { UPDATE_DICTIONARIES } from './../data.actions';
+import { UPDATE_DICTIONARIES, GET_DICTIONARIES } from './../data.actions';
 import { GET_BIBLIOGRAPHY } from '../data.actions';
 import { DataApiService } from '../../services/data-api/data-api.service';
 import { Injectable } from '@angular/core';
@@ -10,7 +10,7 @@ import { map, mergeMap, catchError, tap } from 'rxjs/operators';
 export class GetDictionariesEffect {
   loginEffect$ = createEffect(() =>
     this.actions$.pipe(
-      ofType(GET_BIBLIOGRAPHY),
+      ofType(GET_DICTIONARIES),
       mergeMap((creds: any) =>
         this.api.getDictionaries(creds).pipe(
           map((list) => {
