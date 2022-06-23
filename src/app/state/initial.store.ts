@@ -13,6 +13,7 @@ export const initialState: SFStore = {
     refresh_token: '',
   }),
   data: {
-    bibliography: []
+    bibliography: [],
+    dictionaries: []
   }
 };

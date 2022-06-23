@@ -6,3 +6,9 @@ export const selectBibliography = createSelector(
   getStore,
   (state: any) => state.store.data.bibliography
 );
+
+
+export const selectDictionaries = createSelector(
+  getStore,
+  (state: any) => state.store.data.dictionaries
+);

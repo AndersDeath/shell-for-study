@@ -1,4 +1,4 @@
-import { updateBibliography } from './data.actions';
+import { updateBibliography, updateDictionaries } from './data.actions';
 import { initialState } from './initial.store';
 import { createReducer, on } from '@ngrx/store';
 import { authLogin, authUpdate, updateProfile, updateCheckAuthAction } from './auth.actions';
@@ -50,6 +50,16 @@ export const mainReducer = createReducer(
       ...{
         data: {
          bibliography: payload.data
+        },
+      },
+    };
+  }),
+  on(updateDictionaries, (state, payload: any) => {
+    return {
+      ...state,
+      ...{
+        data: {
+         dictionaries: payload.data
         },
       },
     };

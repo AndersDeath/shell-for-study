@@ -20,6 +20,7 @@ export class DictionaryPageComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
   const sub2 = this.dictionaryApiService.subject.subscribe((e) => {
+    console.log(e);
       this.data = e;
       const sub = this.activatedRoute.params.subscribe((params) => {
         this.currentData = undefined;

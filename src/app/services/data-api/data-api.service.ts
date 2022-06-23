@@ -19,4 +19,9 @@ export class DataApiService {
     const params = new HttpParams().set('type', 'bibliography')
     return this.http.get(HTTP_URLS.getData, {params});
   }
+
+  getDictionaries(data: any): Observable<any> {
+    const params = new HttpParams().set('type', 'dictionaries')
+    return this.http.get(HTTP_URLS.getData, {params});
+  }
 }
