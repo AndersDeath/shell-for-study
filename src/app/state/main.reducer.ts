@@ -45,12 +45,11 @@ export const mainReducer = createReducer(
     };
   }),
   on(updateBibliography, (state, payload: any) => {
-    // console.log('payload: ===== ', payload);
     return {
       ...state,
       ...{
         data: {
-         bibliography: payload
+         bibliography: payload.data
         },
       },
     };

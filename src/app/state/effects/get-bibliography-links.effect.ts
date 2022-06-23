@@ -13,7 +13,7 @@ export class GetBibliographyLinksEffect {
       mergeMap((creds: any) =>
         this.api.getBiblography(creds).pipe(
           map((list) => {
-            return { type: UPDATE_BIBLIOGRAPHY, ...list.data };
+            return { type: UPDATE_BIBLIOGRAPHY, data: list.data };
           }),
           catchError(() => EMPTY)
         )
