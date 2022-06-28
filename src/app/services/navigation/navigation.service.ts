@@ -1,7 +1,9 @@
+import { selectDictionaries } from './../../state/data.selectors';
+import { Store } from '@ngrx/store';
+import { getDictionaries } from './../../state/data.actions';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { DictionaryItem, SFSMenuItem } from 'sfs-data-model';
-import { DictionaryApiService } from '../dictionary-api/dictionary-api.service';
 
 
 const dashboardSegment = [
@@ -38,15 +40,16 @@ export class NavigationService {
   public dictionarySegment: SFSMenuItem[] = [];
 
   constructor(
-    public dictionaryApiService: DictionaryApiService
+    private store: Store
   ) {
     this.init();
   }
   // TODO: resolve dictionaryAPi subscriptions
 
   init() {
-    this.dictionaryApiService.subject.subscribe((d:DictionaryItem[]) => {
-      this.buildDictionarySegment(d);
+    this.store.dispatch(getDictionaries());
+    this.store.select(selectDictionaries).subscribe((e: any) => {
+      this.buildDictionarySegment(e);
       this.setFullNavigation();
       this.setDashboardNavigation();
     });
