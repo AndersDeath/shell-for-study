@@ -44,7 +44,10 @@
               "node_modules/prismjs/components/prism-typescript.min.js"
             ],
             "serviceWorker": true,
-            "ngswConfigPath": "ngsw-config.json"
+            "ngswConfigPath": "ngsw-config.json",
+            "allowedCommonJsDependencies": [
+              "sfs-data-model"
+            ]
           },
           "configurations": {
             "production": {
