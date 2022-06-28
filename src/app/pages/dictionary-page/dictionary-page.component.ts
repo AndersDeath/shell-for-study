@@ -1,3 +1,4 @@
+import { selectDictionaries } from './../../state/data.selectors';
 import { getDictionaries } from './../../state/data.actions';
 import { Store } from '@ngrx/store';
 import { Component, OnDestroy, OnInit } from '@angular/core';
@@ -19,12 +20,11 @@ export class DictionaryPageComponent implements OnInit, OnDestroy {
     private activatedRoute: ActivatedRoute,
     private dictionaryApiService: DictionaryApiService,
     private store: Store
-  ) { }
+  ) {}
 
   ngOnInit(): void {
-  this.store.dispatch(getDictionaries());
-  const sub2 = this.dictionaryApiService.subject.subscribe((e) => {
-    console.log(e);
+    this.store.dispatch(getDictionaries());
+    const sub2 = this.store.select(selectDictionaries).subscribe((e: any) => {
       this.data = e;
       const sub = this.activatedRoute.params.subscribe((params) => {
         this.currentData = undefined;
@@ -41,7 +41,7 @@ export class DictionaryPageComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    if(this.subscriptions) {
+    if (this.subscriptions) {
       this.subscriptions.forEach((e: Subscription) => e.unsubscribe());
     }
   }
