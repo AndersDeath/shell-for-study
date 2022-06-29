@@ -1,5 +1,5 @@
 import { createAction, props, UPDATE } from '@ngrx/store';
-import { Tokens } from 'sfs-data-model';
+import { Tokens, User } from 'sfs-data-model';
 
 const AUTH_PREFIX = '[Auth] ';
 export const AUTH_UPDATE = AUTH_PREFIX + 'Update';
@@ -27,22 +27,7 @@ export const getProfile = createAction(
 
 export const updateProfile = createAction(
   UPDATE_PROFILE,
-  props<{
-    id: any;
-    login: any;
-    firstName: any;
-    lastName: any;
-    email: any;
-    phone: any;
-    status: any;
-    description: any;
-    avatar: any;
-    banner: any;
-    password: any;
-    salt: any;
-    dateCreate: any;
-    isActive: any;
-  }>()
+  props<User>()
 );
 
 export const updateCheckAuthAction = createAction(UPDATE_CHECK_AUTH, props<Tokens>());

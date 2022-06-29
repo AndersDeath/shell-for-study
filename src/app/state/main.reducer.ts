@@ -1,3 +1,4 @@
+import { User } from 'sfs-data-model';
 import { updateBibliography, updateDictionaries } from './data.actions';
 import { initialState } from './initial.store';
 import { createReducer, on } from '@ngrx/store';
@@ -25,22 +26,7 @@ export const mainReducer = createReducer(
     return {
       ...state,
       ...{
-        profile: {
-          id: payload.id,
-          login: payload.login,
-          firstName: payload.firstName,
-          lastName: payload.lastName,
-          email: payload.email,
-          phone: payload.phone,
-          status: payload.status,
-          description: payload.description,
-          avatar: payload.avatar,
-          banner: payload.banner,
-          password: payload.password,
-          salt: payload.salt,
-          dateCreate: payload.dateCreate,
-          isActive: payload.isActive,
-        },
+        profile: new User(payload),
       },
     };
   }),
