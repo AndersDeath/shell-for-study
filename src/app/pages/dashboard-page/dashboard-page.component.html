@@ -11,7 +11,7 @@
 
   <div class="dashboard-content">
 
-    <sfs-user-profile [user]="user"></sfs-user-profile>
+    <sfs-user-profile [user]="user$ | async"></sfs-user-profile>
 
     <div class="cards-container">
       <mat-card class="dashboard-card" [routerLink]="item.path"  *ngFor="let item of items">
