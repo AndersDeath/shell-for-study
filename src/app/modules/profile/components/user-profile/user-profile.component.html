@@ -3,12 +3,12 @@
   <mat-card class="user-card">
     <mat-card-header>
       <div mat-card-avatar class="user-header-image"></div>
-      <mat-card-title>{{ user.firstName }}</mat-card-title>
-      <mat-card-subtitle>{{ user.status }}</mat-card-subtitle>
+      <mat-card-title>{{ user?.firstName }}</mat-card-title>
+      <mat-card-subtitle>{{ user?.status }}</mat-card-subtitle>
     </mat-card-header>
     <div mat-card-image class="user-big-image"  alt="Photo of a Duck"></div>
     <mat-card-content>
-      <p>{{ user.description }}</p>
+      <p>{{ user?.description }}</p>
     </mat-card-content>
     <mat-card-actions>
       <button mat-button>Send a message</button>

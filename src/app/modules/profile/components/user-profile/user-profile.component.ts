@@ -7,7 +7,7 @@ import { User } from 'sfs-data-model';
   styleUrls: ['./user-profile.component.scss']
 })
 export class UserProfileComponent implements OnInit {
-  @Input() public user: User = new User({})
+  @Input() public user: User | null = new User({})
   constructor(
   ) { }
 

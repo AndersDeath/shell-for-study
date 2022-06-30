@@ -8,6 +8,6 @@
 
 </mat-toolbar>
 <div class="user-page-container">
-  <sfs-user-profile [user]="user"></sfs-user-profile>
+  <sfs-user-profile [user]="user$ | async"></sfs-user-profile>
   <button mat-raised-button [routerLink]="'/u/settings'">Settings</button>
 </div>

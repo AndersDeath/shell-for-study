@@ -1,5 +1,5 @@
 import { selectProfile } from './../../state/auth.selectors';
-import { Subscription } from 'rxjs';
+import { Subscription, Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { User } from 'sfs-data-model';
@@ -12,7 +12,7 @@ import { SidebarService } from '../../services/sidebar/sidebar.service';
 })
 export class UserPageComponent implements OnInit, OnDestroy {
   public title: string = "Demo User";
-  public user = new User({});
+  public user$: Observable<User> = new Observable();
   private sub: Subscription = new Subscription;
   constructor(
     public sidebar: SidebarService,
@@ -20,10 +20,7 @@ export class UserPageComponent implements OnInit, OnDestroy {
   ) { }
 
   ngOnInit(): void {
-    this.sub = this.store.select(selectProfile).subscribe((e: User) => {
-      console.log(e);
-      this.user = e;
-    });
+    this.user$ = this.store.select(selectProfile)
   }
 
   toggleSidebar() {
