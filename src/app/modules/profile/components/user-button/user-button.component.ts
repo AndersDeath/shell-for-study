@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
+import { Store } from '@ngrx/store';
+import { selectProfile } from './../../../../state/auth.selectors';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { LoginPopupComponent } from '../login-popup/login-popup.component';
@@ -8,14 +11,22 @@ import { LoginPopupComponent } from '../login-popup/login-popup.component';
   templateUrl: './user-button.component.html',
   styleUrls: ['./user-button.component.scss']
 })
-export class UserButtonComponent implements OnInit {
+export class UserButtonComponent implements OnInit, OnDestroy {
   show: boolean = true;
+  private subscriptions: Subscription[] = [];
+  public profile: any;
   constructor(
     public dialog: MatDialog,
-    private router: Router
+    private router: Router,
+    private store: Store
     ) { }
 
   ngOnInit(): void {
+    const sub = this.store.select(selectProfile).subscribe((e) => {
+      console.log('Profile info: ',e);
+      this.profile = {...e};
+    });
+    this.subscriptions.push(sub);
   }
 
   openLogin(event: any) {
@@ -29,6 +40,12 @@ export class UserButtonComponent implements OnInit {
   logout(event: any) {
     localStorage.removeItem('auth');
     this.router.navigate(['']);
+  }
+
+  ngOnDestroy() {
+    this.subscriptions.forEach((e: Subscription) => {
+      e.unsubscribe();
+    })
   }
 
 }

@@ -99,6 +99,7 @@ export class UserAuthPageComponent implements OnInit, OnDestroy {
   loginEmitter(data: any) {
     const sub = this.userApi.login(data).subscribe((e) => {
       localStorage.setItem(LS_TOKENS, JSON.stringify(e));
+      this.store.dispatch(getProfile({access: e.access, refresh: e.refresh }));
     })
     this.subscriptions.push(sub);
   }
