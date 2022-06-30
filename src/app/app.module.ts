@@ -1,3 +1,5 @@
+import { getProfile } from './state/auth.actions';
+import { LS_TOKENS } from 'sfs-data-model';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
@@ -25,7 +27,7 @@ import { AuthGuard } from './auth.guard';
 import { SharedModule } from './modules/shared.module';
 import { PagesModule } from './pages/pages.module';
 import { BibliographyPageComponent } from './pages/bibliography-page/bibliography-page.component';
-import { StoreModule } from '@ngrx/store';
+import { Store, StoreModule } from '@ngrx/store';
 import { mainReducer } from './state/main.reducer';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { EffectsModule } from '@ngrx/effects';
@@ -89,4 +91,17 @@ import { AuthInterceptor } from './auth.interceptor';
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  constructor(private store: Store) {
+    const localData = localStorage.getItem(LS_TOKENS) || '';
+    let tokens = {
+      access: '',
+      refresh: ''
+    };
+    if(localData) {
+      tokens = JSON.parse(localData) || '';
+      this.store.dispatch(getProfile(tokens));
+    }
+
+  }
+ }
