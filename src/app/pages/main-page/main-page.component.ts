@@ -24,14 +24,15 @@ export class MainPageComponent implements OnInit, OnDestroy {
   // }
   public loginData: UserLoginModel = new UserLoginModel({});
 
-  public registrationData: UserRegistrationModel = new UserRegistrationModel({
-    firstName: 'Test',
-    lastName: 'Testov',
-    email: 'test@test.test',
-    password: '12',
-    passwordConfirmation: '12',
-    phone: '+79990001122'
-  });
+  // {
+  //   firstName: 'Test',
+  //   lastName: 'Testov',
+  //   email: 'test@test.test',
+  //   password: '12',
+  //   passwordConfirmation: '12',
+  //   phone: '+79990001122'
+  // }
+  public registrationData: UserRegistrationModel = new UserRegistrationModel({});
 
 
   private subscriptions: Subscription[] = []
