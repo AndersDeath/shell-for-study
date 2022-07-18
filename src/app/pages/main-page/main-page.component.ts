@@ -18,11 +18,11 @@ export class MainPageComponent implements OnInit, OnDestroy {
   public isLoginShow = false;
   public isRegisterShow = false;
   public isRestorePassword = false;
-
-  public loginData: UserLoginModel = new UserLoginModel({
-    email: 'test@test.test',
-    password: '12',
-  });
+  // {
+  //   email: 'test@test.test',
+  //   password: '12',
+  // }
+  public loginData: UserLoginModel = new UserLoginModel({});
 
   public registrationData: UserRegistrationModel = new UserRegistrationModel({
     firstName: 'Test',

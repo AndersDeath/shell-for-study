@@ -10,10 +10,16 @@ import { UserLoginModel } from 'sfs-data-model';
 })
 export class UserLoginComponent {
   @Input() set formData(data: any) {
+    let email = data.email || '';
+    let remember = data.rememeber || false;
+    if(localStorage.getItem('saved_email') && email === '') {
+      email = localStorage.getItem('saved_email');
+      remember = true;
+    }
     this.loginForm.setValue({
-      email: data.email,
+      email: email,
       password: data.password,
-      remember: data.remember
+      remember: remember
     })
   }
   @Output() formDataEmitter = new EventEmitter<UserLoginModel>();
@@ -26,8 +32,7 @@ export class UserLoginComponent {
       this.loginForm = this.fb.group({
         email: [null, [Validators.required, Validators.email]],
         password: [null, [Validators.required]],
-        remember: [null],
-
+        remember: [false, []],
       })
   }
 
@@ -37,6 +42,12 @@ export class UserLoginComponent {
       password: form.value.password,
       remember: form.value.remember
     });
+    console.log(form.value.remember);
+    if(form.value.remember === true) {
+      localStorage.setItem('saved_email', form.value.email);
+    } else {
+      localStorage.removeItem('saved_email');
+    }
     // this.router.navigate(['dashboard']);
     // localStorage.setItem('isLogin', 'true');
   }
