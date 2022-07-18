@@ -12,7 +12,8 @@ export class UserLoginComponent {
   @Input() set formData(data: any) {
     this.loginForm.setValue({
       email: data.email,
-      password: data.password
+      password: data.password,
+      remember: data.remember
     })
   }
   @Output() formDataEmitter = new EventEmitter<UserLoginModel>();
@@ -24,14 +25,17 @@ export class UserLoginComponent {
     ) {
       this.loginForm = this.fb.group({
         email: [null, [Validators.required, Validators.email]],
-        password: [null, [Validators.required]]
+        password: [null, [Validators.required]],
+        remember: [null],
+
       })
   }
 
   sendFormData(form: FormGroup) {
     this.formDataEmitter.emit({
       email: form.value.email,
-      password: form.value.password
+      password: form.value.password,
+      remember: form.value.remember
     });
     // this.router.navigate(['dashboard']);
     // localStorage.setItem('isLogin', 'true');
