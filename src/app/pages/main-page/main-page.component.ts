@@ -52,7 +52,7 @@ export class MainPageComponent implements OnInit, OnDestroy {
   authCheck() {
     if(localStorage.getItem(LS_TOKENS) !== undefined) {
       console.log(localStorage.getItem(LS_TOKENS));
-      this.router.navigate(['auth']);
+      this.router.navigate(['dashboard']);
     } else {
       // const tokens = JSON.parse(localStorage.getItem(LS_TOKENS) || '');
       // this.store.dispatch(getProfile({access: tokens.access, refresh: tokens.refresh }));
