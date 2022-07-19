@@ -13,7 +13,6 @@ export class GetProfileEffect {
       mergeMap((creds: any) =>
         this.api.getProfile(creds).pipe(
           map((profile) => {
-            console.log(profile)
             return { type: UPDATE_PROFILE, ...profile };
           }),
           catchError(() => EMPTY)

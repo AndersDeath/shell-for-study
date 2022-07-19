@@ -43,7 +43,6 @@ export class AuthInterceptor implements HttpInterceptor {
       if(parseJwt(tokens.access).exp * 1000 < Date.now()) {
         return this.api.refresh(tokens).pipe(switchMap((res: any) => {
           localStorage.setItem(LS_TOKENS, JSON.stringify(res));
-          console.log('refresh')
           return next.handle(this.setAuthToken(request, res));
         }));
       }

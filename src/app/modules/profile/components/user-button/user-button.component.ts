@@ -23,7 +23,6 @@ export class UserButtonComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     const sub = this.store.select(selectProfile).subscribe((e) => {
-      console.log('Profile info: ',e);
       this.profile = {...e};
     });
     this.subscriptions.push(sub);
