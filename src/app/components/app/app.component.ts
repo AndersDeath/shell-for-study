@@ -11,7 +11,7 @@ import { Store } from '@ngrx/store';
 import { authUpdate } from 'src/app/state/auth.actions';
 import { selectAuthTokens } from 'src/app/state/auth.selectors';
 
-const version = 'v1.0.0';
+const version = 'v1.0.1';
 
 enum ContextLinks {
   SearchGoogle = 'https://www.google.com/search?q=',
