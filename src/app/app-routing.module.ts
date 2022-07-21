@@ -42,13 +42,13 @@ const routes: Routes = [
   canActivate: [AuthGuard]
 },
 {
-  path: 'u/:login',
-  component: UserPageComponent,
+  path: 'u/settings',
+  component: UserSettingsPageComponent,
   canActivate: [AuthGuard]
 },
 {
-  path: 'u/settings',
-  component: UserSettingsPageComponent,
+  path: 'u/:login',
+  component: UserPageComponent,
   canActivate: [AuthGuard]
 },
 {

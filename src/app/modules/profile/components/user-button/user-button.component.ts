@@ -37,7 +37,7 @@ export class UserButtonComponent implements OnInit, OnDestroy {
   }
 
   logout(event: any) {
-    localStorage.removeItem('auth');
+    localStorage.removeItem('tokens');
     this.router.navigate(['']);
   }
 

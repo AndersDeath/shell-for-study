@@ -4,7 +4,8 @@ import { EN, RU } from 'sfs-data-model';
 import { I18nService } from 'src/app/services/i18n/i18n.service';
 
 interface UserProfileSettingsModel {
-  name: string;
+  firstName: string;
+  lastName: string;
   status: string;
   description: string;
 }
@@ -15,11 +16,14 @@ interface UserProfileSettingsModel {
 })
 export class UserSettingsComponent implements OnInit{
   @Input() set user(data: any) {
+
+    console.log('asdsa',data);
     this.profileSettingsForm.setValue({
-      name: data.name,
-      status: data.status,
-      description: data.description
-    })
+      firstName: data.firstName || '',
+      lastName: data.lastName || '',
+      description: data.description || '',
+      status: data.status || ''
+    });
   }
   @Output() formDataEmitter = new EventEmitter<UserProfileSettingsModel>();
 
@@ -40,7 +44,8 @@ export class UserSettingsComponent implements OnInit{
     public i18n: I18nService
   ) {
     this.profileSettingsForm = this.fb.group({
-      name: ['', [Validators.required]],
+      firstName: ['', [Validators.required]],
+      lastName: ['', [Validators.required]],
       status: ['', [Validators.required]],
       description: ['', [Validators.required]]
     });
@@ -58,7 +63,8 @@ export class UserSettingsComponent implements OnInit{
 
   sendFormData(form: UntypedFormGroup) {
     this.formDataEmitter.emit({
-      name: form.value.name,
+      firstName: form.value.firstName,
+      lastName: form.value.lastName,
       status: form.value.status,
       description: form.value.description
     });

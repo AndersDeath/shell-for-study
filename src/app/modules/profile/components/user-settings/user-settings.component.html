@@ -2,10 +2,18 @@
 <div class="form-layout">
   <form [formGroup]="profileSettingsForm" (ngSubmit)="sendFormData(profileSettingsForm)">
     <mat-form-field class="form-field">
-      <mat-label>Name</mat-label>
-      <input matInput inputmode="text" placeholder="Type name" formControlName="name">
-      <mat-error>Name is required</mat-error>
-      <mat-error *ngIf="(profileSettingsForm.get('name'))?.errors?.required">
+      <mat-label>First Name</mat-label>
+      <input matInput inputmode="text" placeholder="Type first name" formControlName="firstName">
+      <mat-error>First Name is required</mat-error>
+      <mat-error *ngIf="(profileSettingsForm.get('firstName'))?.errors?.required">
+        This field is required
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field class="form-field">
+      <mat-label>Last Name</mat-label>
+      <input matInput inputmode="text" placeholder="Type last name" formControlName="lastName">
+      <mat-error>Last Name is required</mat-error>
+      <mat-error *ngIf="(profileSettingsForm.get('lastName'))?.errors?.required">
         This field is required
       </mat-error>
     </mat-form-field>

@@ -1,7 +1,8 @@
+import { selectProfile } from './../../state/auth.selectors';
+import { Store } from '@ngrx/store';
 import { Component, OnInit } from '@angular/core';
 import { User } from 'sfs-data-model';
 import { SidebarService } from 'src/app/services/sidebar/sidebar.service';
-import { UserProfileSerivce } from 'src/app/services/user-profile/user-profile.service';
 
 @Component({
   selector: 'sfs-user-settings-page',
@@ -10,15 +11,18 @@ import { UserProfileSerivce } from 'src/app/services/user-profile/user-profile.s
 })
 export class UserSettingsPageComponent implements OnInit {
   public title: string = "Demo User";
-  public user = new User({});
+  public user$: any;
 
   constructor(
     public sidebar: SidebarService,
-    private profile: UserProfileSerivce
+    private store: Store
     ) { }
 
   ngOnInit(): void {
-    this.user = this.profile.get();
+    // this.user = this.profile.get();
+    // this.user = new User({name:'sd'})
+    this.user$ = this.store.select(selectProfile)
+
   }
 
   toggleSidebar() {
@@ -26,9 +30,9 @@ export class UserSettingsPageComponent implements OnInit {
   }
 
   formDataEmitter(data: any) {
-    this.profile.set({
-      ...this.user,
-      ...data
-    });
+    // this.profile.set({
+    //   ...this.user,
+    //   ...data
+    // });
   }
 }
