@@ -5,6 +5,7 @@
   <div class="logo"></div>
   <div class="logo-title">{{title}}</div>
   <span class="space"></span>
+  <sfs-user-button></sfs-user-button>
 
 </mat-toolbar>
 <sfs-user-settings [user]="user$ | async"  (formDataEmitter)="formDataEmitter($event)" ></sfs-user-settings>
