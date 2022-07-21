@@ -18,6 +18,7 @@ export class UserSettingsComponent implements OnInit{
   @Input() set user(data: any) {
 
     console.log('asdsa',data);
+    this.backToProfileLink = this.backToProfileLink + data.login
     this.profileSettingsForm.setValue({
       firstName: data.firstName || '',
       lastName: data.lastName || '',
@@ -27,6 +28,7 @@ export class UserSettingsComponent implements OnInit{
   }
   @Output() formDataEmitter = new EventEmitter<UserProfileSettingsModel>();
 
+  public backToProfileLink = '/u/';
   public languages = [
     {
       name: 'English',
