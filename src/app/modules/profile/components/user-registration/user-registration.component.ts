@@ -1,5 +1,5 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { FormGroup, FormBuilder, Validators, ValidatorFn, AbstractControl, ValidationErrors } from '@angular/forms';
+import { UntypedFormGroup, UntypedFormBuilder, Validators, ValidatorFn, AbstractControl, ValidationErrors } from '@angular/forms';
 import { UserRegistrationModel } from 'sfs-data-model';
 @Component({
   selector: 'sfs-user-registration',
@@ -19,10 +19,10 @@ export class UserRegistrationComponent {
     })
   }
   @Output() formDataEmitter = new EventEmitter<UserRegistrationModel>();
-  public registrationForm: FormGroup;
+  public registrationForm: UntypedFormGroup;
 
   constructor(
-    public fb: FormBuilder
+    public fb: UntypedFormBuilder
   ) {
     this.registrationForm = this.fb.group({
       firstName: ['', [Validators.required]],
@@ -34,7 +34,7 @@ export class UserRegistrationComponent {
     }, { validators: this.checkPasswords })
   }
 
-  sendFormData(form: FormGroup) {
+  sendFormData(form: UntypedFormGroup) {
     this.formDataEmitter.emit({
       firstName: form.value.firstName,
       lastName: form.value.lastName,

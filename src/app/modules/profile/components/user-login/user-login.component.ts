@@ -1,5 +1,5 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UserLoginModel } from 'sfs-data-model';
 
@@ -24,9 +24,9 @@ export class UserLoginComponent {
   }
   @Output() formDataEmitter = new EventEmitter<UserLoginModel>();
 
-  public loginForm: FormGroup;
+  public loginForm: UntypedFormGroup;
   constructor(
-    public fb: FormBuilder,
+    public fb: UntypedFormBuilder,
     private router: Router
     ) {
       this.loginForm = this.fb.group({
@@ -36,7 +36,7 @@ export class UserLoginComponent {
       })
   }
 
-  sendFormData(form: FormGroup) {
+  sendFormData(form: UntypedFormGroup) {
     this.formDataEmitter.emit({
       email: form.value.email,
       password: form.value.password,

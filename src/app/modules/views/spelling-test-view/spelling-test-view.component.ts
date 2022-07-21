@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { UntypedFormControl } from '@angular/forms';
 import { NgxUiLoaderService, SPINNER } from 'ngx-ui-loader';
 import { Dictionary, Subject } from 'sfs-data-model';
 import { FreeDictionaryService } from '../../free-dictionary/services/free-dictionary.service';
@@ -17,7 +17,7 @@ export class SpellingTestViewComponent implements OnInit {
 
   @Input() dictionary: Dictionary = new Dictionary();
 
-  public answerControl = new FormControl();
+  public answerControl = new UntypedFormControl();
   swipeCoord: any;
   swipeTime: any;
   flashCardsData: any[] = [];

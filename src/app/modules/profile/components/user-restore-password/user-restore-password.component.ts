@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { FormGroup, Validators, FormBuilder } from '@angular/forms';
+import { UntypedFormGroup, Validators, UntypedFormBuilder } from '@angular/forms';
 import { UserRestorPasswordModel } from 'sfs-data-model';
 
 @Component({
@@ -16,9 +16,9 @@ export class UserRestorePasswordComponent {
   }
   @Output() formDataEmitter = new EventEmitter<UserRestorPasswordModel>();
 
-  public restorePasswordForm: FormGroup;
+  public restorePasswordForm: UntypedFormGroup;
   constructor(
-    public fb: FormBuilder
+    public fb: UntypedFormBuilder
       ) {
     this.restorePasswordForm = this.fb.group({
       email: [null, [Validators.required, Validators.email]],

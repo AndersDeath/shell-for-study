@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { UntypedFormControl } from '@angular/forms';
 import { Subscription } from 'rxjs';
 
 import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
@@ -13,7 +13,7 @@ import { FreeDictionaryService } from '../../services/free-dictionary.service';
 })
 export class FreeDictionaryComponent implements OnInit {
   @Input() word = '';
-  public searchControl = new FormControl('');
+  public searchControl = new UntypedFormControl('');
   public result: any  = [];
 
   private subsciptions: Subscription[] = [];

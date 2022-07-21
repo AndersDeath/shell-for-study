@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { EN, RU } from 'sfs-data-model';
 import { I18nService } from 'src/app/services/i18n/i18n.service';
 
@@ -33,10 +33,10 @@ export class UserSettingsComponent implements OnInit{
       value: RU
     },
   ];
-  public profileSettingsForm: FormGroup;
-  public languageForm: FormGroup;
+  public profileSettingsForm: UntypedFormGroup;
+  public languageForm: UntypedFormGroup;
   constructor(
-    public fb: FormBuilder,
+    public fb: UntypedFormBuilder,
     public i18n: I18nService
   ) {
     this.profileSettingsForm = this.fb.group({
@@ -56,7 +56,7 @@ export class UserSettingsComponent implements OnInit{
     })
   }
 
-  sendFormData(form: FormGroup) {
+  sendFormData(form: UntypedFormGroup) {
     this.formDataEmitter.emit({
       name: form.value.name,
       status: form.value.status,
