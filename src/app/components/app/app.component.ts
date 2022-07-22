@@ -9,7 +9,7 @@ import { NavigationService } from '../../services/navigation/navigation.service'
 import { ApiService } from 'src/app/services/api/api.service';
 import { Store } from '@ngrx/store';
 
-const version = 'v1.2.0';
+const version = 'v1.2.1';
 
 enum ContextLinks {
   SearchGoogle = 'https://www.google.com/search?q=',
