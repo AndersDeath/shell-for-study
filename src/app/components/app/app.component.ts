@@ -8,8 +8,6 @@ import { Subscription } from 'rxjs';
 import { NavigationService } from '../../services/navigation/navigation.service';
 import { ApiService } from 'src/app/services/api/api.service';
 import { Store } from '@ngrx/store';
-import { authUpdate } from 'src/app/state/auth.actions';
-import { selectAuthTokens } from 'src/app/state/auth.selectors';
 
 const version = 'v1.1.0';
 
@@ -22,7 +20,7 @@ enum ContextLinks {
 
 function sfsIntroduction(version: string) {
   console.log('----------------------');
-  console.log('Shell for study (SFS) ' + version);
+  console.log('Whitesova.com ' + version);
   console.log('----------------------');
 }
 

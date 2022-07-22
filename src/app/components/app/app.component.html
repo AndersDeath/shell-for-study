@@ -1,7 +1,7 @@
 <mat-drawer-container class="container" [hasBackdrop]="true">
   <mat-drawer class="side-navigation" #drawer [opened]="sidebar.opened" (closedStart)="watchClose()" mode="over">
     <button *ngFor="let item of menuData" color="primary" mat-flat-button [routerLink]="item.path" (click)="toggleSidebar()">{{item.title}}</button>
-    <div class="app-version">Shell for study <br> (SFS) <br> {{version}}</div>
+    <div class="app-version">Whitesova.com <br> {{version}}</div>
   </mat-drawer>
 
   <mat-drawer-content (contextmenu)="onRightClick($event)">
