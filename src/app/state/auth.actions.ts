@@ -5,6 +5,7 @@ const AUTH_PREFIX = '[Auth] ';
 export const AUTH_UPDATE = AUTH_PREFIX + 'Update';
 export const AUTH_LOGIN = AUTH_PREFIX + 'Login';
 export const UPDATE_PROFILE = AUTH_PREFIX + 'Update Profile';
+export const SAVE_PROFILE = AUTH_PREFIX + 'Save Profile';
 
 export const GET_PROFILE = AUTH_PREFIX + 'Get Profile'
 
@@ -29,6 +30,14 @@ export const updateProfile = createAction(
   UPDATE_PROFILE,
   props<User>()
 );
+
+export const saveProfile = createAction(
+  SAVE_PROFILE,
+  props<{
+    tokens: Tokens,
+    user: User
+  }>()
+)
 
 export const updateCheckAuthAction = createAction(UPDATE_CHECK_AUTH, props<Tokens>());
 export const checkAuthAction = createAction(CHECK_AUTH, props<Tokens>());

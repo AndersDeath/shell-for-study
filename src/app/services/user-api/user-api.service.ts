@@ -39,6 +39,10 @@ export class UserApiService {
     return this.http.get(HTTP_URLS.profile, data);
   }
 
+  saveProfile(tokens: any, user: any): Observable<any> {
+    return this.http.post(HTTP_URLS.profile, tokens);
+  }
+
   refresh(data: any): Observable<any> {
     return this.http.post(HTTP_URLS.refresh, data);
   }
