@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
-import { EN, RU } from 'sfs-data-model';
+import { EN, RU, User } from 'sfs-data-model';
 import { I18nService } from 'src/app/services/i18n/i18n.service';
 
 interface UserProfileSettingsModel {
@@ -15,9 +15,13 @@ interface UserProfileSettingsModel {
   styleUrls: ['./user-settings.component.scss']
 })
 export class UserSettingsComponent implements OnInit{
+
+  public profile = new User({});
+
   @Input() set user(data: any) {
 
     console.log('asdsa',data);
+    this.profile = new User(data);
     this.backToProfileLink = this.backToProfileLink + data.login
     this.profileSettingsForm.setValue({
       firstName: data.firstName || '',
@@ -64,12 +68,13 @@ export class UserSettingsComponent implements OnInit{
   }
 
   sendFormData(form: UntypedFormGroup) {
-    this.formDataEmitter.emit({
+    console.log('Profile', this.profile);
+    this.formDataEmitter.emit({ ...this.profile, ...{
       firstName: form.value.firstName,
       lastName: form.value.lastName,
       status: form.value.status,
       description: form.value.description
-    });
+    }});
   }
 
 }

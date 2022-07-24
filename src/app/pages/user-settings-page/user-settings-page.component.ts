@@ -31,7 +31,7 @@ export class UserSettingsPageComponent implements OnInit {
   }
 
   formDataEmitter(data: any) {
-    console.log(data);
+    console.log('User setting page component: ' ,data);
     this.store.dispatch(saveProfile(data));
     // this.profile.set({
     //   ...this.user,
