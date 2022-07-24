@@ -1,3 +1,4 @@
+import { saveProfile } from './../../state/auth.actions';
 import { selectProfile } from './../../state/auth.selectors';
 import { Store } from '@ngrx/store';
 import { Component, OnInit } from '@angular/core';
@@ -30,6 +31,8 @@ export class UserSettingsPageComponent implements OnInit {
   }
 
   formDataEmitter(data: any) {
+    console.log(data);
+    this.store.dispatch(saveProfile(data));
     // this.profile.set({
     //   ...this.user,
     //   ...data

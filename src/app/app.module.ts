@@ -1,3 +1,4 @@
+import { SaveProfileEffect } from './state/effects/save-profile.effect';
 import { getProfile } from './state/auth.actions';
 import { LS_TOKENS } from 'sfs-data-model';
 import { NgModule } from '@angular/core';
@@ -73,7 +74,7 @@ import { AuthInterceptor } from './auth.interceptor';
       registrationStrategy: 'registerWithDelay:3000'
     }),
     StoreModule.forRoot({store: mainReducer}),
-    EffectsModule.forRoot([ GetDictionariesEffect, CheckAuthEffect, GetProfileEffect, GetBibliographyLinksEffect]),
+    EffectsModule.forRoot([ GetDictionariesEffect, CheckAuthEffect, GetProfileEffect, GetBibliographyLinksEffect, SaveProfileEffect]),
     StoreDevtoolsModule.instrument({
       maxAge: 25, // Retains last 25 states
       logOnly: environment.production, // Restrict extension to log-only mode

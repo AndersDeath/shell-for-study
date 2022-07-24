@@ -33,10 +33,7 @@ export const updateProfile = createAction(
 
 export const saveProfile = createAction(
   SAVE_PROFILE,
-  props<{
-    tokens: Tokens,
-    user: User
-  }>()
+  props<User>()
 )
 
 export const updateCheckAuthAction = createAction(UPDATE_CHECK_AUTH, props<Tokens>());

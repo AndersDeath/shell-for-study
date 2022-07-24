@@ -48,8 +48,8 @@ export class UserSettingsComponent implements OnInit{
     this.profileSettingsForm = this.fb.group({
       firstName: ['', [Validators.required]],
       lastName: ['', [Validators.required]],
-      status: ['', [Validators.required]],
-      description: ['', [Validators.required]]
+      status: ['', []],
+      description: ['', []]
     });
     this.languageForm = this.fb.group({
       select: [this.i18n.get()]

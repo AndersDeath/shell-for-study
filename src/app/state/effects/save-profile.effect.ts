@@ -11,8 +11,8 @@ export class SaveProfileEffect {
   loginEffect$ = createEffect(() =>
     this.actions$.pipe(
       ofType(SAVE_PROFILE),
-      mergeMap((data: any) =>
-        this.api.saveProfile(data.tokens, data.user).pipe(
+      mergeMap((user: any) =>
+        this.api.saveProfile(user).pipe(
           map((profile) => {
             return { type: UPDATE_PROFILE, ...profile };
           }),

@@ -12,7 +12,6 @@ export const selectStore = createSelector(
   (state: any) => state.store
 );
 
-
 export const selectProfile = createSelector(
   getStore,
   (state: any) => state.store.profile
