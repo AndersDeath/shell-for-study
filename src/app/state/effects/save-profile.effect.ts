@@ -1,3 +1,4 @@
+import { User } from 'sfs-data-model';
 import { SAVE_PROFILE } from './../auth.actions';
 import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
@@ -8,18 +9,19 @@ import { GET_PROFILE, UPDATE_PROFILE } from '../auth.actions';
 
 @Injectable()
 export class SaveProfileEffect {
-  loginEffect$ = createEffect(() =>
+  saveProfileEffect$ = createEffect(() =>
     this.actions$.pipe(
       ofType(SAVE_PROFILE),
       mergeMap((user: any) =>
         this.api.saveProfile(user).pipe(
           map((profile) => {
-            return { type: UPDATE_PROFILE, ...profile };
+            console.log('saave profile');
+            return { type: UPDATE_PROFILE, ...new User(profile) };
           }),
           catchError(() => EMPTY)
         )
-      ),
-    ),
+      )
+    )
   );
 
   constructor(private actions$: Actions, private api: UserApiService) {}

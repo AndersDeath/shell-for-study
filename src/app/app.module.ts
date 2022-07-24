@@ -1,4 +1,3 @@
-import { SaveProfileEffect } from './state/effects/save-profile.effect';
 import { getProfile } from './state/auth.actions';
 import { LS_TOKENS } from 'sfs-data-model';
 import { NgModule } from '@angular/core';
@@ -32,7 +31,7 @@ import { Store, StoreModule } from '@ngrx/store';
 import { mainReducer } from './state/main.reducer';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { EffectsModule } from '@ngrx/effects';
-import { CheckAuthEffect, GetProfileEffect, GetBibliographyLinksEffect, GetDictionariesEffect } from './state/effects';
+import { CheckAuthEffect, GetProfileEffect, GetBibliographyLinksEffect, GetDictionariesEffect, SaveProfileEffect } from './state/effects';
 import { AuthInterceptor } from './auth.interceptor';
 @NgModule({
   declarations: [
