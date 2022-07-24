@@ -15,7 +15,6 @@ export class SaveProfileEffect {
       mergeMap((user: any) =>
         this.api.saveProfile(user).pipe(
           map((profile) => {
-            console.log('saave profile');
             return { type: UPDATE_PROFILE, ...new User(profile) };
           }),
           catchError(() => EMPTY)
