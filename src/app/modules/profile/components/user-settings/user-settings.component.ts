@@ -77,4 +77,11 @@ export class UserSettingsComponent implements OnInit{
     }});
   }
 
+  onFileSelected(event: any) {
+    const file:File = event.target.files[0];
+    if (file) {
+        const formData = new FormData();
+        formData.append("thumbnail", file);
+    }
+  }
 }

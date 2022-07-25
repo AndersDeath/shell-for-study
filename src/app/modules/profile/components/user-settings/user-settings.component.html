@@ -1,5 +1,11 @@
 <button mat-raised-button [routerLink]="backToProfileLink">Back to profile</button>
 <div class="form-layout">
+  <input type="file" class="file-input" (change)="onFileSelected($event)" #fileUpload>
+  <div class="file-upload">
+    <button mat-mini-fab color="primary" class="upload-btn" (click)="fileUpload.click()">
+      <mat-icon>upload</mat-icon>
+    </button>
+  </div>
   <form [formGroup]="profileSettingsForm" (ngSubmit)="sendFormData(profileSettingsForm)">
     <mat-form-field class="form-field">
       <mat-label>First Name</mat-label>
@@ -27,18 +33,15 @@
     </mat-form-field>
     <mat-form-field appearance="fill" class="form-field">
       <mat-label>Description</mat-label>
-      <textarea matInput
-                cdkTextareaAutosize
-                formControlName="description"
-                #autosize="cdkTextareaAutosize"
-                ></textarea>
+      <textarea matInput cdkTextareaAutosize formControlName="description" #autosize="cdkTextareaAutosize"></textarea>
       <mat-error>Description is required</mat-error>
       <mat-error *ngIf="(profileSettingsForm.get('description'))?.errors?.required">
         This field is required
       </mat-error>
     </mat-form-field>
-    <div  class="form-actions">
-      <button class="fill" mat-flat-button color="primary" type="submit" [disabled]="!profileSettingsForm.valid">Save</button>
+    <div class="form-actions">
+      <button class="fill" mat-flat-button color="primary" type="submit"
+        [disabled]="!profileSettingsForm.valid">Save</button>
     </div>
   </form>
 </div>
