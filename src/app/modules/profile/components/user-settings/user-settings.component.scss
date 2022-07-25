@@ -1,5 +1,31 @@
 @import '../../styles.scss';
 
-.file-input {
-  display: none;
+
+
+:host {
+  .user-card {
+    margin: 10px auto;
+  }
+
+  .user-header-image {
+    background-image: url('../../../../../assets/no-avatar.jpeg');
+    background-size: cover;
+    width: 120px;
+    height: 120px;
+  }
+  .user-big-image {
+    background-image: url('../../../../../assets/no-background.jpeg');
+    background-size: cover;
+    min-height: 250px;
+    background-position: center;
+  }
+
+  .avatar-input {
+    display: none;
+  }
+
+  .avatar-upload {
+    position: absolute;
+    margin: 16px 0 0 41px;
+  }
 }
